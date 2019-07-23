@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg">
-<meta property="og:updated_time" content="2019-07-18T13:10:11.633Z">
+<meta property="og:updated_time" content="2019-07-23T14:32:09.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
 <meta name="twitter:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。  zhs16">
@@ -98,7 +98,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 26</p>
-			<p>总字数 <span class="post-count">34.8k</span></p>
+			<p>总字数 <span class="post-count">35.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -181,7 +181,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：4.9k字 | 阅读本文大概需要 ：22分钟
+					字数：5k字 | 阅读本文大概需要 ：23分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -375,6 +375,24 @@
 <blockquote>
 <p><a href="https://www.cnblogs.com/yx007/p/6723522.html" target="_blank" rel="noopener">https://www.cnblogs.com/yx007/p/6723522.html</a></p>
 </blockquote>
+<h3 id="分组后返回非分组字段组合"><a href="#分组后返回非分组字段组合" class="headerlink" title="分组后返回非分组字段组合"></a>分组后返回非分组字段组合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, wm_concat(name), COUNT(*) num FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+<h3 id="分隔字符串成多列"><a href="#分隔字符串成多列" class="headerlink" title="分隔字符串成多列"></a>分隔字符串成多列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">REGEXP_SUBSTR(&apos;123,456,789&apos;, &apos;[^,]+&apos;, 1, 1) d1,</span><br><span class="line">REGEXP_SUBSTR(&apos;123,456,789&apos;, &apos;[^,]+&apos;, 1, 2) d2,</span><br><span class="line">REGEXP_SUBSTR(&apos;123,456,789&apos;, &apos;[^,]+&apos;, 1, 3) d3 from dual;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">D1</th>
+<th style="text-align:center">D2</th>
+<th style="text-align:center">D3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">123</td>
+<td style="text-align:center">456</td>
+<td style="text-align:center">789</td>
+</tr>
+</tbody>
+</table>
 <h3 id="本地oracle可以通过localhost连接-无法通过ip地址连接解决方法"><a href="#本地oracle可以通过localhost连接-无法通过ip地址连接解决方法" class="headerlink" title="本地oracle可以通过localhost连接,无法通过ip地址连接解决方法"></a>本地oracle可以通过localhost连接,无法通过ip地址连接解决方法</h3><ol>
 <li>打开 Net Manager</li>
 <li>添加地址，输入 ip 端口 1521</li>
@@ -684,15 +702,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,7 +718,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,11 +726,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,7 +742,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,7 +750,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,11 +758,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">

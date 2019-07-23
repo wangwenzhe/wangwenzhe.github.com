@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用 正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的 反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-18T13:10:11.633Z">
+<meta property="og:updated_time" content="2019-07-23T15:26:47.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
 <meta name="twitter:description" content="http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用 正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的 反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的">
@@ -94,7 +94,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 26</p>
-			<p>总字数 <span class="post-count">34.8k</span></p>
+			<p>总字数 <span class="post-count">35.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：126字 | 阅读本文大概需要 ：1分钟
+					字数：244字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -190,7 +190,54 @@
 <li>Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用</li>
 <li>正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的</li>
 <li>反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的</li>
-<li></li>
+</ol>
+<h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><ol>
+<li><p>安装 brew「软件包管理工具」</p>
+<ul>
+<li><p>参考</p>
+<p><a href="https://www.jianshu.com/p/2ca8a4e47dff" target="_blank" rel="noopener">https://www.jianshu.com/p/2ca8a4e47dff</a></p>
+</li>
+<li><p>安装命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>安装 nginx</p>
+<ul>
+<li><p>参考</p>
+<p><a href="https://segmentfault.com/a/1190000016020328" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016020328</a></p>
+</li>
+<li><p>命令</p>
+<ol>
+<li><p>更新 homebrew</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>发布目录和配置文件</p>
+<ul>
+<li><p>发布目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/var/www</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx 默认使用 8080 端口，配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>启动 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新启动 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
@@ -452,15 +499,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,7 +515,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -480,11 +523,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,7 +539,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,7 +547,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,11 +555,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
