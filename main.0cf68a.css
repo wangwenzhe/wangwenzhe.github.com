@@ -1204,7 +1204,10 @@ html {
 }
 
 .article-entry .highlight .line {
-	color: #656060;
+	font-size: 15px;
+    font-family: consolas,Courier,"MS Courier New",monospace !important;
+    color: #666;
+    letter-spacing: 1px;
 	min-height: 19px
 }
 
@@ -2318,7 +2321,6 @@ pre .id {
 
 .article-inner h4 {
 	letter-spacing: .140625em;
-	text-transform: uppercase
 }
 
 .article-inner h6 {
@@ -2432,7 +2434,8 @@ pre .id {
 .article-entry li ol li:before,
 .article-entry li ul li:before {
 	content: "";
-	background: #dedede
+	background: #f8f8f8;
+    margin-top: 13px;
 }
 
 .article-entry h1 {
@@ -2482,7 +2485,6 @@ pre .id {
 	overflow-x: auto;
 	color: #657b83;
 	border: 1px solid #ccc;
-	text-shadow: 0 1px #444;
 	font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
 }
 

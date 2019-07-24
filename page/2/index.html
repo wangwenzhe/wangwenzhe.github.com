@@ -89,7 +89,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 26</p>
-			<p>总字数 <span class="post-count">35.1k</span></p>
+			<p>总字数 <span class="post-count">35.2k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -174,7 +174,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：975字 | 阅读本文大概需要 ：4分钟
+					字数：978字 | 阅读本文大概需要 ：4分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -269,6 +269,8 @@
 <li>http get、post 测试</li>
 </ul>
 </li>
+<li><p><strong>JUnitGenerator V2.0</strong></p>
+</li>
 <li><p><strong>MyBatis Log Plugin</strong></p>
 <ul>
 <li>开启方法 Tools—Mybatis Log Plugin</li>
@@ -318,15 +320,19 @@
 </li>
 <li><p>某模块提示 Java 编译版本过低，不支持 XXX</p>
 <blockquote>
-<p>查看 Java 编译版本，此处修改也可，但有问题的模块都要修改<br><img src="https://ws1.sinaimg.cn/large/ade42695ly1g4q98tf50oj210g0rf76i.jpg"><br>最快解决方法：在工程的 pom.xml 中添加</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">	&lt;plugins&gt;</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;3.3&lt;/version&gt;</span><br><span class="line">			&lt;configuration&gt;</span><br><span class="line">				&lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">				&lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">			&lt;/configuration&gt;</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	&lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+<p>查看 Java 编译版本，此处修改也可，但有问题的模块都要修改</p>
 </blockquote>
 </li>
-<li><p>修改 jsp、js等前台文件后没有手动重启情况下，没有生效</p>
-</li>
 </ol>
-<p><img src="https://ws1.sinaimg.cn/large/ade42695ly1g4th6sjpm6j210f0rcq4f.jpg"></p>
-<p><img src="https://ws1.sinaimg.cn/large/ade42695ly1g4th6ue3r5g21180nh77e.gif"></p>
+<blockquote>
+<p><img src="https://i.loli.net/2019/07/24/5d37b3879a66283529.jpg" alt="ade42695ly1g4q98tf50oj210g0rf76i.jpg"><br>    最快解决方法：在工程的 pom.xml 中添加</p>
+</blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">	&lt;plugins&gt;</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;3.3&lt;/version&gt;</span><br><span class="line">			&lt;configuration&gt;</span><br><span class="line">				&lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">				&lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">			&lt;/configuration&gt;</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	&lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="3">
+<li>修改 jsp、js等前台文件后没有手动重启情况下，没有生效</li>
+</ol>
+<p><img src="https://i.loli.net/2019/07/24/5d37b346e9ea043623.jpg" alt="ade42695ly1g4th6sjpm6j210f0rcq4f.jpg"></p>
+<p><img src="https://i.loli.net/2019/07/24/5d37b38c1387875182.gif" alt="ade42695ly1g4th6ue3r5g21180nh77e.gif"></p>
 
       
 
@@ -2184,11 +2190,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2196,11 +2202,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2212,11 +2222,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2224,11 +2230,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2236,15 +2238,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">

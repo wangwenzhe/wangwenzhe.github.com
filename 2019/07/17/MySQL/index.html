@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="参考资料 廖雪峰：https://www.liaoxuefeng.com/wiki/1177760294764384  基础必知 MySQL本身实际上只是一个SQL接口，它的内部还包含了多种存储引擎，常用的包括  InnoDB：支持事务，行级别锁，外键 MyISAM：MySQL早期集成的默认数据库引擎，不支持事务   安装 MySQL 过程中，创建了默认的 4 个数据库，创建了 root 账号">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T14:32:09.286Z">
+<meta property="og:updated_time" content="2019-07-24T14:49:30.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
 <meta name="twitter:description" content="参考资料 廖雪峰：https://www.liaoxuefeng.com/wiki/1177760294764384  基础必知 MySQL本身实际上只是一个SQL接口，它的内部还包含了多种存储引擎，常用的包括  InnoDB：支持事务，行级别锁，外键 MyISAM：MySQL早期集成的默认数据库引擎，不支持事务   安装 MySQL 过程中，创建了默认的 4 个数据库，创建了 root 账号">
@@ -94,7 +94,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 26</p>
-			<p>总字数 <span class="post-count">35.1k</span></p>
+			<p>总字数 <span class="post-count">35.2k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -181,7 +181,31 @@
 			</div>
     
 			<!-- 目录内容 -->
-					
+			
+					<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+								<span class="btn-bg"></span>
+								<span class="btn-text">文章导航</span>
+								</p>
+				<div id="toc-article" class="toc-article">
+						<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+					<strong class="toc-title">文章目录</strong>
+								 <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基础"><span class="toc-number">2.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#必知"><span class="toc-number">2.1.</span> <span class="toc-text">必知</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命令"><span class="toc-number">2.2.</span> <span class="toc-text">命令</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库"><span class="toc-number">3.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户"><span class="toc-number">4.</span> <span class="toc-text">用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#权限"><span class="toc-number">5.</span> <span class="toc-text">权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表管理"><span class="toc-number">6.</span> <span class="toc-text">表管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表查询"><span class="toc-number">7.</span> <span class="toc-text">表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#条件"><span class="toc-number">7.1.</span> <span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#投影"><span class="toc-number">7.2.</span> <span class="toc-text">投影</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#排序"><span class="toc-number">7.3.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分页"><span class="toc-number">7.4.</span> <span class="toc-text">分页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#聚合"><span class="toc-number">7.5.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分组"><span class="toc-number">7.6.</span> <span class="toc-text">分组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多表"><span class="toc-number">7.7.</span> <span class="toc-text">多表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#连接"><span class="toc-number">7.8.</span> <span class="toc-text">连接</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CRUD"><span class="toc-number">8.</span> <span class="toc-text">CRUD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#索引"><span class="toc-number">9.</span> <span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基础-1"><span class="toc-number">9.1.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#操作"><span class="toc-number">9.2.</span> <span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实用SQL语句"><span class="toc-number">10.</span> <span class="toc-text">实用SQL语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事务"><span class="toc-number">11.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">12.</span> <span class="toc-text">事务隔离级别</span></a></li></ol>
+							 </div>
+				 <script type="text/javascript">
+				function showToc(){
+					var toc_article = document.getElementById("toc-article");
+					var show_toc_btn = document.getElementById("show-toc-btn");
+					toc_article.setAttribute("style","display:block");
+					show_toc_btn.setAttribute("style","display:none");
+					};
+				function showBtn(){
+					var toc_article = document.getElementById("toc-article");
+					var show_toc_btn = document.getElementById("show-toc-btn");
+					toc_article.setAttribute("style","display:none");
+					show_toc_btn.setAttribute("style","display:block");
+					};
+				 </script>
+								
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -262,28 +286,27 @@
 </ol>
 <h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><ol>
 <li><p>创建用户</p>
-<blockquote>
-<p>创建 test 用户，只允许通过 localhost 访问 </p>
-</blockquote>
+<ul>
+<li><p>创建 test 用户，只允许通过 localhost 访问 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;test&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建 demo 用户，只允许通过 ip 访问</p>
-</blockquote>
+</li>
+<li><p>创建 demo 用户，只允许通过 ip 访问</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;demo&apos;@&apos;192.168.0.109&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建 admin 用户，允许任何方式访问</p>
-</blockquote>
+</li>
+<li><p>创建 admin 用户，允许任何方式访问</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;admin&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+</li>
 <li><p>用户授权</p>
-<blockquote>
-<p>允许用户 test 拥有数据库 mydb 的所有权限</p>
-</blockquote>
+<ul>
+<li><p>允许用户 test 拥有数据库 mydb 的所有权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建用户并分配适当的权限后，请确保重新加载权限</p>
-</blockquote>
+</li>
+<li><p>创建用户并分配适当的权限后，请确保重新加载权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 <li><p>撤消用户权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE DELETE ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;; //撤销 delete 权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
@@ -435,10 +458,12 @@
 </ol>
 <h5 id="多表"><a href="#多表" class="headerlink" title="多表"></a>多表</h5><ol>
 <li><p>查询多张表的语法是：<code>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;</code></p>
+<ol>
+<li>使用多表查询可以获取M x N行记录</li>
+<li>多表查询的结果集可能非常巨大，要小心使用</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students, classes;</span><br></pre></td></tr></table></figure>
-<pre><code>1. 使用多表查询可以获取M x N行记录
-2. 多表查询的结果集可能非常巨大，要小心使用
-</code></pre></li>
+</li>
 </ol>
 <h5 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h5><ol>
 <li><p>INNER JOIN「<strong>交集</strong>」</p>
@@ -493,10 +518,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD INDEX idx_name_score (name, score);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>唯一索引</p>
-<blockquote>
-<p>通过创建唯一索引，可以保证某一列的值具有唯一性</p>
-</blockquote>
+<ul>
+<li><p>通过创建唯一索引，可以保证某一列的值具有唯一性</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD UNIQUE INDEX uni_name (name);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 <li><p>对某一列添加一个<strong>唯一约束而不创建唯一索引</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD CONSTRAINT uni_name UNIQUE (name);</span><br></pre></td></tr></table></figure>
@@ -518,22 +544,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99) ON DUPLICATE KEY UPDATE name=&apos;小明&apos;, gender=&apos;F&apos;, score=99;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>插入或忽略</p>
-<blockquote>
-<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，不执行任何操作</p>
-<p><strong>不存在则插入，存在则不执行任何操作</strong></p>
-</blockquote>
+<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，不执行任何操作。</p>
+<p><strong>即不存在则插入，存在则不执行任何操作</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>表快照</p>
-<blockquote>
 <p>新创建的表结构和<code>SELECT</code>使用的表结构完全一致</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查询结果集写入表中</p>
-<blockquote>
 <p>确保<code>INSERT</code>语句的列和<code>SELECT</code>语句的列能对应，数量和类型一致</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -729,6 +749,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基础"><span class="toc-number">2.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#必知"><span class="toc-number">2.1.</span> <span class="toc-text">必知</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命令"><span class="toc-number">2.2.</span> <span class="toc-text">命令</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库"><span class="toc-number">3.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户"><span class="toc-number">4.</span> <span class="toc-text">用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#权限"><span class="toc-number">5.</span> <span class="toc-text">权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表管理"><span class="toc-number">6.</span> <span class="toc-text">表管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表查询"><span class="toc-number">7.</span> <span class="toc-text">表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#条件"><span class="toc-number">7.1.</span> <span class="toc-text">条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#投影"><span class="toc-number">7.2.</span> <span class="toc-text">投影</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#排序"><span class="toc-number">7.3.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分页"><span class="toc-number">7.4.</span> <span class="toc-text">分页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#聚合"><span class="toc-number">7.5.</span> <span class="toc-text">聚合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分组"><span class="toc-number">7.6.</span> <span class="toc-text">分组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多表"><span class="toc-number">7.7.</span> <span class="toc-text">多表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#连接"><span class="toc-number">7.8.</span> <span class="toc-text">连接</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CRUD"><span class="toc-number">8.</span> <span class="toc-text">CRUD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#索引"><span class="toc-number">9.</span> <span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基础-1"><span class="toc-number">9.1.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#操作"><span class="toc-number">9.2.</span> <span class="toc-text">操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实用SQL语句"><span class="toc-number">10.</span> <span class="toc-text">实用SQL语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事务"><span class="toc-number">11.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事务隔离级别"><span class="toc-number">12.</span> <span class="toc-text">事务隔离级别</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -854,11 +887,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,11 +899,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -882,11 +919,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,11 +927,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -906,15 +935,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">

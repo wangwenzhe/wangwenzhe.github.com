@@ -89,7 +89,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 26</p>
-			<p>总字数 <span class="post-count">35.1k</span></p>
+			<p>总字数 <span class="post-count">35.2k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -259,28 +259,27 @@
 </ol>
 <h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><ol>
 <li><p>创建用户</p>
-<blockquote>
-<p>创建 test 用户，只允许通过 localhost 访问 </p>
-</blockquote>
+<ul>
+<li><p>创建 test 用户，只允许通过 localhost 访问 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;test&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建 demo 用户，只允许通过 ip 访问</p>
-</blockquote>
+</li>
+<li><p>创建 demo 用户，只允许通过 ip 访问</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;demo&apos;@&apos;192.168.0.109&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建 admin 用户，允许任何方式访问</p>
-</blockquote>
+</li>
+<li><p>创建 admin 用户，允许任何方式访问</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;admin&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+</li>
 <li><p>用户授权</p>
-<blockquote>
-<p>允许用户 test 拥有数据库 mydb 的所有权限</p>
-</blockquote>
+<ul>
+<li><p>允许用户 test 拥有数据库 mydb 的所有权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建用户并分配适当的权限后，请确保重新加载权限</p>
-</blockquote>
+</li>
+<li><p>创建用户并分配适当的权限后，请确保重新加载权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 <li><p>撤消用户权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE DELETE ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;; //撤销 delete 权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
@@ -432,10 +431,12 @@
 </ol>
 <h5 id="多表"><a href="#多表" class="headerlink" title="多表"></a>多表</h5><ol>
 <li><p>查询多张表的语法是：<code>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;</code></p>
+<ol>
+<li>使用多表查询可以获取M x N行记录</li>
+<li>多表查询的结果集可能非常巨大，要小心使用</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students, classes;</span><br></pre></td></tr></table></figure>
-<pre><code>1. 使用多表查询可以获取M x N行记录
-2. 多表查询的结果集可能非常巨大，要小心使用
-</code></pre></li>
+</li>
 </ol>
 <h5 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h5><ol>
 <li><p>INNER JOIN「<strong>交集</strong>」</p>
@@ -490,10 +491,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD INDEX idx_name_score (name, score);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>唯一索引</p>
-<blockquote>
-<p>通过创建唯一索引，可以保证某一列的值具有唯一性</p>
-</blockquote>
+<ul>
+<li><p>通过创建唯一索引，可以保证某一列的值具有唯一性</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD UNIQUE INDEX uni_name (name);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 <li><p>对某一列添加一个<strong>唯一约束而不创建唯一索引</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD CONSTRAINT uni_name UNIQUE (name);</span><br></pre></td></tr></table></figure>
@@ -515,22 +517,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99) ON DUPLICATE KEY UPDATE name=&apos;小明&apos;, gender=&apos;F&apos;, score=99;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>插入或忽略</p>
-<blockquote>
-<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，不执行任何操作</p>
-<p><strong>不存在则插入，存在则不执行任何操作</strong></p>
-</blockquote>
+<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，不执行任何操作。</p>
+<p><strong>即不存在则插入，存在则不执行任何操作</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>表快照</p>
-<blockquote>
 <p>新创建的表结构和<code>SELECT</code>使用的表结构完全一致</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查询结果集写入表中</p>
-<blockquote>
 <p>确保<code>INSERT</code>语句的列和<code>SELECT</code>语句的列能对应，数量和类型一致</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -671,7 +667,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：295字 | 阅读本文大概需要 ：1分钟
+					字数：345字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -731,6 +727,9 @@
 <li><p>安装 nginx</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>安装目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/Cellar/nginx/1.17.1/</span><br><span class="line"></span><br><span class="line">bin 目录中 nginx 为可执行文件，/usr/local/bin/nginx 指向该文件</span><br><span class="line">html 目录为软连接，指向 /usr/local/var/www</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 </li>
 </ul>
@@ -747,6 +746,9 @@
 </li>
 <li><p>启动 nginx</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重新启动 nginx</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
@@ -1927,11 +1929,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1939,11 +1941,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1955,11 +1961,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1967,11 +1969,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1979,15 +1977,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
