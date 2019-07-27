@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg">
-<meta property="og:updated_time" content="2019-07-23T14:32:09.286Z">
+<meta property="og:updated_time" content="2019-07-27T13:52:24.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
 <meta name="twitter:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。  zhs16">
@@ -97,8 +97,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 32</p>
-			<p>总字数 <span class="post-count">35.7k</span></p>
+			<p>总文章数 34</p>
+			<p>总字数 <span class="post-count">35.8k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -243,15 +243,15 @@
 <h4 id="账户锁定解锁"><a href="#账户锁定解锁" class="headerlink" title="账户锁定解锁"></a>账户锁定解锁</h4><blockquote>
 <p>问题：ORA-28000: the account is locked<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER username ACCOUNT UNLOCK;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="添加字段的语法"><a href="#添加字段的语法" class="headerlink" title="添加字段的语法"></a>添加字段的语法</h4><blockquote>
+<h4 id="添加字段的语法「增加列」"><a href="#添加字段的语法「增加列」" class="headerlink" title="添加字段的语法「增加列」"></a>添加字段的语法「增加列」</h4><blockquote>
 <p>alter table tablename add (column datatype [default value][null/not null],….);</p>
 </blockquote>
-<h4 id="修改字段的语法"><a href="#修改字段的语法" class="headerlink" title="修改字段的语法"></a>修改字段的语法</h4><blockquote>
+<h4 id="修改字段的语法「修改列」"><a href="#修改字段的语法「修改列」" class="headerlink" title="修改字段的语法「修改列」"></a>修改字段的语法「修改列」</h4><blockquote>
 <p>alter table tablename modify (column datatype [default value][null/not null],….);</p>
 </blockquote>
 <h4 id="修改表字段类型（有数据情况）"><a href="#修改表字段类型（有数据情况）" class="headerlink" title="修改表字段类型（有数据情况）"></a>修改表字段类型（有数据情况）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 原字段改名</span><br><span class="line">alter table SGP_PREGNANCY rename column  PLASTDATE to PLASTDATE1;</span><br><span class="line"></span><br><span class="line">2. 新增字段（原字段名）</span><br><span class="line">alter table SGP_PREGNANCY add PLASTDATE date;</span><br><span class="line"></span><br><span class="line">3. 给新增字段赋值（从原字段值提取）</span><br><span class="line">update SGP_PREGNANCY set PLASTDATE=to_date(PLASTDATE1, &apos;yyyy-mm-dd&apos;);</span><br><span class="line"></span><br><span class="line">4. 删除改名后的原字段</span><br><span class="line">alter table SGP_PREGNANCY drop column PLASTDATE1;</span><br></pre></td></tr></table></figure>
-<h4 id="删除字段的语法"><a href="#删除字段的语法" class="headerlink" title="删除字段的语法"></a>删除字段的语法</h4><blockquote>
-<p>alter table tablename drop (column);</p>
+<h4 id="删除表字段的语法「删除列」"><a href="#删除表字段的语法「删除列」" class="headerlink" title="删除表字段的语法「删除列」"></a>删除表字段的语法「删除列」</h4><blockquote>
+<p>alter table tablename drop column columnname;</p>
 </blockquote>
 <h4 id="获取表的列信息"><a href="#获取表的列信息" class="headerlink" title="获取表的列信息"></a>获取表的列信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select  *  from user_tab_columns  where table_name = &apos;CMS_T_VIEW_RECORD&apos;</span><br></pre></td></tr></table></figure>
 <h4 id="修改用户名"><a href="#修改用户名" class="headerlink" title="修改用户名"></a>修改用户名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 列出所有用户，找到用户标识 user_id「以 sysdba 登录」</span><br><span class="line">conn /as sysdba;</span><br><span class="line">select username, user_id from dba_users;</span><br><span class="line">2. 修改用户名并提交</span><br><span class="line">UPDATE USER$ SET NAME=&apos;SCMZHZF&apos; WHERE user#=158;</span><br><span class="line">COMMIT;</span><br><span class="line">3. 强制刷新</span><br><span class="line">ALTER SYSTEM CHECKPOINT;</span><br><span class="line">ALTER SYSTEM FLUSH SHARED_POOL;</span><br><span class="line">4. 修改用户密码</span><br><span class="line">ALTER USER scmzhzf IDENTIFIED BY scmzhzf;</span><br></pre></td></tr></table></figure>
@@ -702,6 +702,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -710,19 +714,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,11 +722,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -742,11 +738,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
