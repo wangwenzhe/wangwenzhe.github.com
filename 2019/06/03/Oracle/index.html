@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg">
-<meta property="og:updated_time" content="2019-07-27T13:52:24.135Z">
+<meta property="og:updated_time" content="2019-07-31T15:00:46.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
 <meta name="twitter:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。  zhs16">
@@ -98,7 +98,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">35.8k</span></p>
+			<p>总字数 <span class="post-count">35.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -399,6 +399,8 @@
 <li>关闭，保存</li>
 <li>稍等 3 分钟，如果不行，可以重启监听服务</li>
 </ol>
+<h3 id="获取结果集中前N条数据"><a href="#获取结果集中前N条数据" class="headerlink" title="获取结果集中前N条数据"></a>获取结果集中前N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum &lt;= N;</span><br></pre></td></tr></table></figure>
+<h3 id="获取结果集中第N条数据"><a href="#获取结果集中第N条数据" class="headerlink" title="获取结果集中第N条数据"></a>获取结果集中第N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum = N;</span><br></pre></td></tr></table></figure>
 <h3 id="instr函数「类似indexof」"><a href="#instr函数「类似indexof」" class="headerlink" title="instr函数「类似indexof」"></a>instr函数「类似indexof」</h3><ul>
 <li><p>UTF8 编码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1)-1 from dual;</span><br><span class="line">解释：1. &apos;保定市南市区&apos; =&gt;可以是表达式，也可以是具体数据</span><br><span class="line">          2. &apos;市&apos;=&gt;为分离的标志，这里为两组数据中的“市”这个字</span><br><span class="line">          3. 第一个1为从左边开始，如果为-1，则从右边开始。</span><br><span class="line">          4. 第二个1为“市”出现的第几次。</span><br></pre></td></tr></table></figure>
@@ -694,15 +696,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,11 +704,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -742,15 +744,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">

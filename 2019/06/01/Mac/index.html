@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="通用 command + Z 撤销 command + X 剪切 command + C 拷贝（Copy） command + V 粘贴 command + A 全选（All） command + S 保存（Save) command + F 查找（Find） command + N 创建新窗口 command + delete 删除 command + control + F 全屏或退出全屏">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-18T13:10:11.633Z">
+<meta property="og:updated_time" content="2019-07-31T15:06:52.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac">
 <meta name="twitter:description" content="通用 command + Z 撤销 command + X 剪切 command + C 拷贝（Copy） command + V 粘贴 command + A 全选（All） command + S 保存（Save) command + F 查找（Find） command + N 创建新窗口 command + delete 删除 command + control + F 全屏或退出全屏">
@@ -94,7 +94,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">35.8k</span></p>
+			<p>总字数 <span class="post-count">35.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：540字 | 阅读本文大概需要 ：2分钟
+					字数：581字 | 阅读本文大概需要 ：2分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -189,7 +189,7 @@
 				<div id="toc-article" class="toc-article">
 						<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 					<strong class="toc-title">文章目录</strong>
-								 <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用"><span class="toc-number">1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件管理器"><span class="toc-number">2.</span> <span class="toc-text">文件管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序"><span class="toc-number">3.</span> <span class="toc-text">应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截屏"><span class="toc-number">4.</span> <span class="toc-text">截屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器"><span class="toc-number">5.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机系统"><span class="toc-number">6.</span> <span class="toc-text">虚拟机系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#技巧"><span class="toc-number">7.</span> <span class="toc-text">技巧</span></a></li></ol>
+								 <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用"><span class="toc-number">1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件管理器"><span class="toc-number">2.</span> <span class="toc-text">文件管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序"><span class="toc-number">3.</span> <span class="toc-text">应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截屏"><span class="toc-number">4.</span> <span class="toc-text">截屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器"><span class="toc-number">5.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机系统"><span class="toc-number">6.</span> <span class="toc-text">虚拟机系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#技巧"><span class="toc-number">7.</span> <span class="toc-text">技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#命令行解压-rar-文件"><span class="toc-number">7.1.</span> <span class="toc-text">命令行解压 rar 文件</span></a></li></ol></li></ol>
 							 </div>
 				 <script type="text/javascript">
 				function showToc(){
@@ -278,6 +278,14 @@
 <li>方法一：将文件夹拖至终端，前面加上 cd</li>
 <li>方法二：系统偏好设置-键盘-快捷键-服务-勾选新建位于文件夹位置的终端标签/窗口，选中文件夹，右键-新建位于文件夹位置的终端窗口</li>
 </ul>
+<h4 id="命令行解压-rar-文件"><a href="#命令行解压-rar-文件" class="headerlink" title="命令行解压 rar 文件"></a>命令行解压 rar 文件</h4><ol>
+<li><p>使用 Homebrew 安装 unrar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install unrar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cd 到 rar文件的目录下，然后在终端输入下列命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unrar x document.rar</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
 
@@ -420,7 +428,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用"><span class="toc-number">1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件管理器"><span class="toc-number">2.</span> <span class="toc-text">文件管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序"><span class="toc-number">3.</span> <span class="toc-text">应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截屏"><span class="toc-number">4.</span> <span class="toc-text">截屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器"><span class="toc-number">5.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机系统"><span class="toc-number">6.</span> <span class="toc-text">虚拟机系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#技巧"><span class="toc-number">7.</span> <span class="toc-text">技巧</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用"><span class="toc-number">1.</span> <span class="toc-text">通用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件管理器"><span class="toc-number">2.</span> <span class="toc-text">文件管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序"><span class="toc-number">3.</span> <span class="toc-text">应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截屏"><span class="toc-number">4.</span> <span class="toc-text">截屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器"><span class="toc-number">5.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟机系统"><span class="toc-number">6.</span> <span class="toc-text">虚拟机系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#技巧"><span class="toc-number">7.</span> <span class="toc-text">技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#命令行解压-rar-文件"><span class="toc-number">7.1.</span> <span class="toc-text">命令行解压 rar 文件</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -543,15 +551,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,11 +559,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,15 +599,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">

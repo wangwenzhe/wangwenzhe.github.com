@@ -89,7 +89,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">35.8k</span></p>
+			<p>总字数 <span class="post-count">35.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -2232,6 +2232,8 @@
 <li>关闭，保存</li>
 <li>稍等 3 分钟，如果不行，可以重启监听服务</li>
 </ol>
+<h3 id="获取结果集中前N条数据"><a href="#获取结果集中前N条数据" class="headerlink" title="获取结果集中前N条数据"></a>获取结果集中前N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum &lt;= N;</span><br></pre></td></tr></table></figure>
+<h3 id="获取结果集中第N条数据"><a href="#获取结果集中第N条数据" class="headerlink" title="获取结果集中第N条数据"></a>获取结果集中第N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum = N;</span><br></pre></td></tr></table></figure>
 <h3 id="instr函数「类似indexof」"><a href="#instr函数「类似indexof」" class="headerlink" title="instr函数「类似indexof」"></a>instr函数「类似indexof」</h3><ul>
 <li><p>UTF8 编码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1)-1 from dual;</span><br><span class="line">解释：1. &apos;保定市南市区&apos; =&gt;可以是表达式，也可以是具体数据</span><br><span class="line">          2. &apos;市&apos;=&gt;为分离的标志，这里为两组数据中的“市”这个字</span><br><span class="line">          3. 第一个1为从左边开始，如果为-1，则从右边开始。</span><br><span class="line">          4. 第二个1为“市”出现的第几次。</span><br></pre></td></tr></table></figure>
@@ -2425,15 +2427,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2441,11 +2435,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2473,15 +2475,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">
