@@ -8,14 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Docker | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="参考 https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04  Ubuntu 18.0.4问题解决 docker pull ubuntu  12Using default tag: latestError response from daemon: Get https://registry-1.docker.io">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
 <meta property="og:url" content="http://yoursite.com/2019/07/25/Docker/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
+<meta property="og:description" content="参考 https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04  Ubuntu 18.0.4问题解决 docker pull ubuntu  12Using default tag: latestError response from daemon: Get https://registry-1.docker.io">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T14:11:01.408Z">
+<meta property="og:updated_time" content="2019-08-05T15:28:36.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
+<meta name="twitter:description" content="参考 https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04  Ubuntu 18.0.4问题解决 docker pull ubuntu  12Using default tag: latestError response from daemon: Get https://registry-1.docker.io">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -90,7 +94,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">35.9k</span></p>
+			<p>总字数 <span class="post-count">36.2k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -173,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：0字 | 阅读本文大概需要 ：1分钟
+					字数：117字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -181,7 +185,37 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04" target="_blank" rel="noopener">https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04</a></li>
+</ol>
+<h3 id="Ubuntu-18-0-4"><a href="#Ubuntu-18-0-4" class="headerlink" title="Ubuntu 18.0.4"></a>Ubuntu 18.0.4</h3><h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><ol>
+<li><p>docker pull ubuntu </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Using default tag: latest</span><br><span class="line">Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>配置 DNS</p>
+<ul>
+<li><p>vi /etc/resolv.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 114.114.115.115</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启网络</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>修改镜像仓库地址</p>
+<ul>
+<li><p>vim /etc/docker/daemon.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;:[&quot;https://docker.mirrors.ustc.edu.cn&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>重启守护进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+
       
 
       
@@ -210,6 +244,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -422,23 +467,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,11 +483,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,11 +515,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +527,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">

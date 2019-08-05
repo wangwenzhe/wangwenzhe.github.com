@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="查看 tomcat 进程打开文件数量  12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l  查看目录下文件或目录个数  1ls -l|wc -l  查看磁盘空间分配情况  1df -h  查看当前目录下各目录大小  1du -sh *  时间校准   1) 安装 ntpdate，执行以下命令  1yum insta">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-18T13:10:11.633Z">
+<meta property="og:updated_time" content="2019-08-05T12:55:06.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
 <meta name="twitter:description" content="查看 tomcat 进程打开文件数量  12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l  查看目录下文件或目录个数  1ls -l|wc -l  查看磁盘空间分配情况  1df -h  查看当前目录下各目录大小  1du -sh *  时间校准   1) 安装 ntpdate，执行以下命令  1yum insta">
@@ -94,7 +94,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">35.9k</span></p>
+			<p>总字数 <span class="post-count">36.2k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：641字 | 阅读本文大概需要 ：3分钟
+					字数：762字 | 阅读本文大概需要 ：3分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -253,7 +253,22 @@
 <li><p>忘记 root 密码</p>
 <blockquote>
 <p>以 单用户模式进入，修改 root 密码。如果 /etc/passwd 文件不存在，则需要手动创建，并填写如下内容「必需」</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">sssd:x:989:986:User for sssd:/:/sbin/nologin</span><br><span class="line">gdm:x:42:42::/var/lib/gdm:/sbin/nologin</span><br><span class="line">gnome-initial-setup:x:988:983::/run/gnome-initial-setup/:/sbin/nologin</span><br><span class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br></pre></td></tr></table></figure></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">sssd:x:989:986:User for sssd:/:/sbin/nologin</span><br><span class="line">gdm:x:42:42::/var/lib/gdm:/sbin/nologin</span><br><span class="line">gnome-initial-setup:x:988:983::/run/gnome-initial-setup/:/sbin/nologin</span><br><span class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><ol>
+<li><p>将 jdkXXX.tar.gz 放入/usr/java 文件夹中，解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf jdkXXX.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line">在最后添加：</span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_191</span><br><span class="line">export JRE_HOME=/usr/java/jdk1.8.0_191/jre</span><br><span class="line">export PATH=$PATH:./:/usr/java/jdk1.8.0_191/bin:/sbin</span><br><span class="line">export CLASSPATH=./:/usr/java/jdk1.8.0_191/lib:/usr/java/jdk1.8.0_191/jre/lib</span><br><span class="line"></span><br><span class="line">//使刚才的修改生效</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立软链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//先删除软连接</span><br><span class="line">rm -fr /usr/bin/java</span><br><span class="line"></span><br><span class="line">ln –s /usr/java/1.8.0_191/bin/java  /usr/bin/java</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试 jdk 是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java –version</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -508,23 +523,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,11 +539,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +571,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,11 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
               </li>
              
               <li class="article-tag-list-item">
