@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Tomcat | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JVM 内存配置「提高内存利用率」 连接数配置「提高 CPU 利用率」 CATALINA_HOME 与 CATALINA_BASE CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录 使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。 参考 h">
+  <meta name="description" content="配置 JVM 内存配置「提高内存利用率」  连接数配置「提高 CPU 利用率」  CATALINA_HOME 与 CATALINA_BASE 注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误  CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录 使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、l">
 <meta name="keywords" content="Tomcat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat">
 <meta property="og:url" content="http://yoursite.com/2019/07/05/Tomcat/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="JVM 内存配置「提高内存利用率」 连接数配置「提高 CPU 利用率」 CATALINA_HOME 与 CATALINA_BASE CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录 使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。 参考 h">
+<meta property="og:description" content="配置 JVM 内存配置「提高内存利用率」  连接数配置「提高 CPU 利用率」  CATALINA_HOME 与 CATALINA_BASE 注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误  CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录 使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、l">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-18T13:10:11.634Z">
+<meta property="og:updated_time" content="2019-11-21T14:53:01.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat">
-<meta name="twitter:description" content="JVM 内存配置「提高内存利用率」 连接数配置「提高 CPU 利用率」 CATALINA_HOME 与 CATALINA_BASE CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录 使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。 参考 h">
+<meta name="twitter:description" content="配置 JVM 内存配置「提高内存利用率」  连接数配置「提高 CPU 利用率」  CATALINA_HOME 与 CATALINA_BASE 注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误  CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录 使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、l">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">36.2k</span></p>
+			<p>总文章数 46</p>
+			<p>总字数 <span class="post-count">50.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：96字 | 阅读本文大概需要 ：1分钟
+					字数：320字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,13 +185,35 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>JVM 内存配置「提高内存利用率」</li>
-<li>连接数配置「提高 CPU 利用率」</li>
-<li>CATALINA_HOME 与 CATALINA_BASE<ul>
+        <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
+<li><p>JVM 内存配置「提高内存利用率」</p>
+</li>
+<li><p>连接数配置「提高 CPU 利用率」</p>
+</li>
+<li><p>CATALINA_HOME 与 CATALINA_BASE</p>
+<p><strong>注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误</strong></p>
+<ul>
 <li>CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录</li>
 <li>使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。</li>
 <li>参考 <a href="https://blog.csdn.net/jiaotuwoaini/article/details/51455829" target="_blank" rel="noopener">https://blog.csdn.net/jiaotuwoaini/article/details/51455829</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="Tomcat-日志排查问题"><a href="#Tomcat-日志排查问题" class="headerlink" title="Tomcat 日志排查问题"></a>Tomcat 日志排查问题</h2><ol>
+<li><p>项目日志文件: tomcat/bin/XXX.log  XXX.log 日志文件名称在项目 log4j.properties 中配置</p>
+<blockquote>
+<p>项目运行过程中报 500 错误时，从该日志文件查找原因</p>
+</blockquote>
+</li>
+<li><p>Tomcat 日志文件: tomcat/logs/catalina.out tomcat/logs/catalina.yyyy-mm-dd.log</p>
+<blockquote>
+<p>Tomcat 报错问题</p>
+</blockquote>
+</li>
+<li><p>查看方法 </p>
+<ul>
+<li>日志文件较小时，10Mb 以内。windows 平台中直接打开查看，例如使用 notepad++等。Linux 平台中可以将文件拷贝至 windows 中查看，也可通过命令 <code>less 文件名</code> 查看文件，大写字母 <code>G</code> 快速跳转至文件尾部，<code>Ctrl u</code> 向上翻页，<code>Ctrl d</code> 向下翻页</li>
+<li>日志文件较大时，10Mb 以上。windows 平台中借助 LogViewer 工具查看。Linux 平台通过上述 <code>less</code> 等命令查看</li>
 </ul>
 </li>
 </ol>
@@ -447,19 +469,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,7 +477,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,7 +501,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,7 +517,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,7 +537,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,7 +553,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,11 +569,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,7 +597,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>

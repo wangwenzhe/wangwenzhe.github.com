@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Oracle | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。  zhs16">
+  <meta name="description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。 zhs16g">
 <meta name="keywords" content="Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle">
 <meta property="og:url" content="http://yoursite.com/2019/06/03/Oracle/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。  zhs16">
+<meta property="og:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。 zhs16g">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg">
-<meta property="og:updated_time" content="2019-07-31T15:00:46.004Z">
+<meta property="og:updated_time" content="2019-11-17T14:54:46.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
-<meta name="twitter:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。  zhs16">
+<meta name="twitter:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。 zhs16g">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
@@ -97,8 +97,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">36.2k</span></p>
+			<p>总文章数 46</p>
+			<p>总字数 <span class="post-count">50.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -181,7 +181,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：5k字 | 阅读本文大概需要 ：23分钟
+					字数：6k字 | 阅读本文大概需要 ：27分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -217,10 +217,8 @@
 </tbody>
 </table>
 <ol>
-<li><p>安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。</p>
-</li>
-<li><p>zhs16gbk是中文字符集，也就是适合在中国用，只能存储中文和英文字符，如果你存储韩文则显示为乱码（没有编码），而al32utf8是utf8字符集，u是unicode的意思，适合中文、韩语、日语等等不同的语言使用。那么为什么我们要在中国使用zhs16gbk存储中文呢？这是因为utf8存储中文的效率不如zhs16gbk，比如一个字“懂”，zhs16gbk采用2个字符存储，而al32utf8采用3-4个字符存储，这样效率就有了高低之分。</p>
-</li>
+<li>安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。</li>
+<li>zhs16gbk是中文字符集，也就是适合在中国用，只能存储中文和英文字符，如果你存储韩文则显示为乱码（没有编码），而al32utf8是utf8字符集，u是unicode的意思，适合中文、韩语、日语等等不同的语言使用。那么为什么我们要在中国使用zhs16gbk存储中文呢？这是因为utf8存储中文的效率不如zhs16gbk，比如一个字“懂”，zhs16gbk采用2个字符存储，而al32utf8采用3-4个字符存储，这样效率就有了高低之分。</li>
 </ol>
 <h3 id="服务器端字符集设置（修改为zhs16gbk）"><a href="#服务器端字符集设置（修改为zhs16gbk）" class="headerlink" title="服务器端字符集设置（修改为zhs16gbk）"></a>服务器端字符集设置（修改为zhs16gbk）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$sqlplus /nolog</span><br><span class="line">$conn /as sysdba </span><br><span class="line">SQL&gt;select * from v$nls_parameters where parameter=&apos;NLS_CHARACTERSET&apos;;               </span><br><span class="line"></span><br><span class="line">若此时数据库服务器已启动，</span><br><span class="line">则先关闭数据库：  </span><br><span class="line">SQL&gt;shutdown immediate;</span><br><span class="line">SQL&gt;STARTUP MOUNT;</span><br><span class="line">SQL&gt;ALTER SYSTEM ENABLE RESTRICTED SESSION;</span><br><span class="line">SQL&gt;ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0;</span><br><span class="line">SQL&gt;ALTER SYSTEM SET AQ_TM_PROCESSES=0;</span><br><span class="line">SQL&gt;ALTER DATABASE OPEN;</span><br><span class="line">SQL&gt;ALTER DATABASE character set INTERNAL_USE zhs16gbk;</span><br><span class="line">数据库重启：</span><br><span class="line">SQL&gt;shutdown immediate;</span><br><span class="line">SQL&gt; startup</span><br></pre></td></tr></table></figure>
 <h3 id="客户端字符集设置"><a href="#客户端字符集设置" class="headerlink" title="客户端字符集设置"></a>客户端字符集设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows:（cmd命令行下）</span><br><span class="line">//常用中文字符集</span><br><span class="line">set NLS_LANG=SIMPLIFIED CHINESE_CHINA.ZHS16GBK</span><br><span class="line">//常用unicode字符集</span><br><span class="line">set NLS_LANG=american_america.AL32UTF8</span><br></pre></td></tr></table></figure>
@@ -243,6 +241,12 @@
 <h4 id="账户锁定解锁"><a href="#账户锁定解锁" class="headerlink" title="账户锁定解锁"></a>账户锁定解锁</h4><blockquote>
 <p>问题：ORA-28000: the account is locked<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER username ACCOUNT UNLOCK;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<h4 id="分配给一个表的物理空间数量，而不管空间是否被使用"><a href="#分配给一个表的物理空间数量，而不管空间是否被使用" class="headerlink" title="分配给一个表的物理空间数量，而不管空间是否被使用"></a>分配给一个表的物理空间数量，而不管空间是否被使用</h4><ol>
+<li><p>select segment_name, bytes from user_segments where segment_type = ‘TABLE’;</p>
+</li>
+<li><p>Select Segment_Name,Sum(bytes)/1024/1024 From User_Extents Group By Segment_Name</p>
+</li>
+</ol>
 <h4 id="添加字段的语法「增加列」"><a href="#添加字段的语法「增加列」" class="headerlink" title="添加字段的语法「增加列」"></a>添加字段的语法「增加列」</h4><blockquote>
 <p>alter table tablename add (column datatype [default value][null/not null],….);</p>
 </blockquote>
@@ -393,6 +397,7 @@
 </tr>
 </tbody>
 </table>
+<h3 id="oracle-分组后取每组第一条数据"><a href="#oracle-分组后取每组第一条数据" class="headerlink" title="oracle 分组后取每组第一条数据"></a>oracle 分组后取每组第一条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//根据 x 列分组，y 列倒序，取每组第一条</span><br><span class="line">SELECT * FROM (SELECT ROW_NUMBER() OVER(PARTITION BY t.x ORDER BY t.y DESC) rn,       </span><br><span class="line">          t.* FROM test t) WHERE rn = 1;</span><br></pre></td></tr></table></figure>
 <h3 id="本地oracle可以通过localhost连接-无法通过ip地址连接解决方法"><a href="#本地oracle可以通过localhost连接-无法通过ip地址连接解决方法" class="headerlink" title="本地oracle可以通过localhost连接,无法通过ip地址连接解决方法"></a>本地oracle可以通过localhost连接,无法通过ip地址连接解决方法</h3><ol>
 <li>打开 Net Manager</li>
 <li>添加地址，输入 ip 端口 1521</li>
@@ -401,17 +406,66 @@
 </ol>
 <h3 id="获取结果集中前N条数据"><a href="#获取结果集中前N条数据" class="headerlink" title="获取结果集中前N条数据"></a>获取结果集中前N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum &lt;= N;</span><br></pre></td></tr></table></figure>
 <h3 id="获取结果集中第N条数据"><a href="#获取结果集中第N条数据" class="headerlink" title="获取结果集中第N条数据"></a>获取结果集中第N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum = N;</span><br></pre></td></tr></table></figure>
-<h3 id="instr函数「类似indexof」"><a href="#instr函数「类似indexof」" class="headerlink" title="instr函数「类似indexof」"></a>instr函数「类似indexof」</h3><ul>
-<li><p>UTF8 编码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1)-1 from dual;</span><br><span class="line">解释：1. &apos;保定市南市区&apos; =&gt;可以是表达式，也可以是具体数据</span><br><span class="line">          2. &apos;市&apos;=&gt;为分离的标志，这里为两组数据中的“市”这个字</span><br><span class="line">          3. 第一个1为从左边开始，如果为-1，则从右边开始。</span><br><span class="line">          4. 第二个1为“市”出现的第几次。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>GBK 编码下，一个中文占两个字节</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1) from dual;的值就是5</span><br><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,2) from dual;的值就是9</span><br></pre></td></tr></table></figure>
+<h3 id="union-与-union-all"><a href="#union-与-union-all" class="headerlink" title="union 与 union all"></a>union 与 union all</h3><ol>
+<li>union all 仅仅是简单的合并查询结果, 并不会做去重操作, 也不会排序, 所以 union all 效率要比 union 高，在确定没有重复记录的情况下, 尽量使用union all</li>
+<li>根据索引查询时，union 比 or 效率更高。or 不会使用索引</li>
+</ol>
+<h3 id="NUMBER-（-precision，-scale）"><a href="#NUMBER-（-precision，-scale）" class="headerlink" title="NUMBER （ precision， scale）"></a><strong>NUMBER</strong> <strong>（ precision， scale）</strong></h3><blockquote>
+<p>参考 <a href="https://www.cnblogs.com/oumyye/p/4448656.html" target="_blank" rel="noopener">https://www.cnblogs.com/oumyye/p/4448656.html</a></p>
+</blockquote>
+<ol>
+<li>precision 有效位数，包括整数位+小数位</li>
+<li>scale 小数点后精确位数</li>
+<li>precision-scale 整数部分最大位数</li>
+<li>precision 与 scale 相等，则表示整数部分为0</li>
+</ol>
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>group by 两个或以上条件的分析</p>
+<p><a href="https://www.iteye.com/blog/uule-1569262" target="_blank" rel="noopener">https://www.iteye.com/blog/uule-1569262</a></p>
+<ul>
+<li>GBK 编码下，一个中文占两个字节<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1) from dual;的值就是5</span><br><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,2) from dual;的值就是9</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务"><a href="#ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务" class="headerlink" title="ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务"></a>ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务</h3><ol>
+<h2 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h2><h3 id="dbms-random-value"><a href="#dbms-random-value" class="headerlink" title="dbms_random.value"></a>dbms_random.value</h3><blockquote>
+<p>获取 0-1 之间随机值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 获取 80 到 100之间随机小数,小数点后保留两位</span><br><span class="line">SELECT TRUNC(80+20*dbms_random.value, 2) FROM dual</span><br></pre></td></tr></table></figure>
+<h3 id="trunc"><a href="#trunc" class="headerlink" title="trunc"></a>trunc</h3><h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select trunc (sysdate) from dual --2013-01-06 今天的日期为 2013-01-06</span><br><span class="line">select trunc (sysdate, &apos;mm&apos;) from dual --2013-01-01 返回当月第一天.</span><br><span class="line">select trunc (sysdate,&apos;yy&apos;) from dual --2013-01-01 返回当年第一天</span><br><span class="line">select trunc (sysdate,&apos;dd&apos;) from dual --2013-01-06 返回当前年月日</span><br><span class="line">select trunc (sysdate,&apos;yyyy&apos;) from dual --2013-01-01 返回当年第一天</span><br><span class="line">select trunc (sysdate,&apos;d&apos;) from dual --2013-01-06 (星期天) 返回当前星期的第一天</span><br><span class="line">select trunc (sysdate, &apos;hh&apos;) from dual --2013-01-06 17:00:00 当前时间为 17:35</span><br><span class="line">select trunc (sysdate, &apos;mi&apos;) from dual --2013-01-06 17:35:00 TRUNC () 函数没有秒的精确</span><br></pre></td></tr></table></figure>
+<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><blockquote>
+<p>TRUNC（number,num_digits）<br>Number 需要截尾取整的数字。<br>Num_digits 用于指定取整精度的数字。Num_digits 的默认值为 0。<br>TRUNC () 函数截取时不进行四舍五入</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select trunc(123.458) from dual --123</span><br><span class="line">select trunc(123.458,0) from dual --123</span><br><span class="line">select trunc(123.458,1) from dual --123.4</span><br><span class="line">select trunc(123.458,-1) from dual --120</span><br><span class="line">select trunc(123.458,-4) from dual --0</span><br><span class="line">select trunc(123.458,4) from dual --123.458</span><br><span class="line">select trunc(123) from dual --123</span><br><span class="line">select trunc(123,1) from dual --123</span><br><span class="line">select trunc(123,-1) from dual --120</span><br></pre></td></tr></table></figure>
+<h3 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h3><blockquote>
+<p>substr(字符串，截取开始位置，截取长度) // 返回截取的字</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">substr (&apos;Hello World&apos;,0,1) // 返回结果为 &apos;H&apos;  * 从字符串第一个字符开始截取长度为 1 的字符串</span><br><span class="line"></span><br><span class="line">substr (&apos;Hello World&apos;,1,1) // 返回结果为 &apos;H&apos;  *0 和 1 都是表示截取的开始位置为第一个字符</span><br><span class="line"></span><br><span class="line">substr (&apos;Hello World&apos;,2,4) // 返回结果为 &apos;ello&apos;</span><br><span class="line"></span><br><span class="line">substr (&apos;Hello World&apos;,-3,3)// 返回结果为 &apos;rld&apos; * 负数 (-i) 表示截取的开始位置为字符串右端向左数第 i 个字符</span><br><span class="line"></span><br><span class="line">测试：</span><br><span class="line"></span><br><span class="line">select substr(&apos;Hello World&apos;,-3,3) value from dual;</span><br></pre></td></tr></table></figure>
+<h3 id="instr"><a href="#instr" class="headerlink" title="instr"></a>instr</h3><blockquote>
+<p>类似 indexof</p>
+</blockquote>
+<ul>
+<li>UTF8 编码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1)-1 from dual;</span><br><span class="line">解释：1. &apos;保定市南市区&apos; =&gt;可以是表达式，也可以是具体数据</span><br><span class="line">          2. &apos;市&apos;=&gt;为分离的标志，这里为两组数据中的“市”这个字</span><br><span class="line">          3. 第一个1为从左边开始，如果为-1，则从右边开始。</span><br><span class="line">          4. 第二个1为“市”出现的第几次。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="nvl-p1-p2"><a href="#nvl-p1-p2" class="headerlink" title="nvl(p1, p2)"></a>nvl(p1, p2)</h3><blockquote>
+<p>p1 为空，则返回 p2，不为空，则返回p1</p>
+</blockquote>
+<h3 id="nvl2-expre1-expre2-expre3"><a href="#nvl2-expre1-expre2-expre3" class="headerlink" title="nvl2(expre1,expre2,expre3)"></a>nvl2(expre1,expre2,expre3)</h3><blockquote>
+<p>如果 expre1 不为空，则返回 expre2，如果为空，返回expre3</p>
+</blockquote>
+<h3 id="nullif-expre1-expre2"><a href="#nullif-expre1-expre2" class="headerlink" title="nullif (expre1,expre2)"></a>nullif (expre1,expre2)</h3><blockquote>
+<p>比较两个参数，如果参数 1 和参数 2 相等，返回 null<br>如果不相等，返回第一个参数</p>
+</blockquote>
+<h3 id="coalesce-expre1-expre2-expre3"><a href="#coalesce-expre1-expre2-expre3" class="headerlink" title="coalesce(expre1,expre2,expre3)"></a>coalesce(expre1,expre2,expre3)</h3><blockquote>
+<p>参数 1：如果第一参数不为空，返回第一个参数。<br>参数 2：如果参数 1 为空，则返回第二个参数。<br>参数 3：如果参数 1 和参赛 2 都为空，返回第三个参数。</p>
+</blockquote>
+<h3 id="case-when-then"><a href="#case-when-then" class="headerlink" title="case when then"></a>case when then</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT ENAME,SAL,JOB, </span><br><span class="line">CASE JOB </span><br><span class="line">  WHEN &apos;MANAGER&apos; THEN SAL+100</span><br><span class="line">  WHEN &apos;ANALYSIS&apos; THEN SAL+200</span><br><span class="line">  WHEN &apos;SALESMAN&apos; THEN SAL+300</span><br><span class="line">  ELSE SAL+400</span><br><span class="line">  END &quot;RESULTS&quot;</span><br><span class="line">  FROM EMP;</span><br></pre></td></tr></table></figure>
+<h3 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h3><blockquote>
+<p>DECODE(col|expression ,search1,result1<br>   [,search2,result2]<br>   [,default])<br>如果 default 值被省略了，那么当 search 值没有与任何的 math 值匹配，将返回 null 值。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT ENAME,JOB,SAL,</span><br><span class="line">  DECODE(JOB, &apos;MANAGER&apos;, SAL+100, &apos;SALESMAN&apos;,SAL+200, SAL) REVISED_SAL</span><br><span class="line">  FROM EMP;</span><br></pre></td></tr></table></figure>
+<h2 id="运维问题"><a href="#运维问题" class="headerlink" title="运维问题"></a>运维问题</h2><h3 id="ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务"><a href="#ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务" class="headerlink" title="ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务"></a>ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务</h3><ol>
 <li>重启服务 OracleServiceORCL</li>
 <li>重启监听 OracleOraDb11g_home1TNSListener</li>
+<li>等待一会儿，重新连接</li>
 </ol>
 <h3 id="ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法"><a href="#ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法" class="headerlink" title="ORA-00020:maximum number of processes (150) exceeded 错误解决方法"></a>ORA-00020:maximum number of processes (150) exceeded 错误解决方法</h3><blockquote>
 <p>processes 进程，可以认为是数据库物理连接数</p>
@@ -435,9 +489,6 @@
 <li>查看 processes 「已生效」 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- -------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     300</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="随机值"><a href="#随机值" class="headerlink" title="随机值"></a>随机值</h3><blockquote>
-<p>SELECT TRUNC(80+20*dbms_random.value,2) FROM dual;’;  获取 80 到 100之间随机小数,小数点后保留两位</p>
-</blockquote>
 <h3 id="本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"><a href="#本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。" class="headerlink" title="本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"></a>本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。</h3><p><img src="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg"></p>
 <h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h4><p>本机ip发生了变化(本机ip变化后与监听器配置中的ip不一致)</p>
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>打开Oracle的NetManager，保证本机ip与配置远程访问设置的ip一致即可启动监听(修改本机ip或修改远程访问ip)<br><img src="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg"></p>
@@ -696,19 +747,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,7 +755,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,7 +779,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,7 +795,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -744,7 +815,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,7 +831,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,11 +847,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,7 +875,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>

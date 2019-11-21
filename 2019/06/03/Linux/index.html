@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Linux | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="查看 tomcat 进程打开文件数量  12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l  查看目录下文件或目录个数  1ls -l|wc -l  查看磁盘空间分配情况  1df -h  查看当前目录下各目录大小  1du -sh *  时间校准   1) 安装 ntpdate，执行以下命令  1yum insta">
+  <meta name="description" content="常用命令查看 tomcat 进程打开文件数量12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l 查看目录下文件或目录个数1ls -l|wc -l 查看磁盘空间分配情况1df -h 查看当前目录下各目录大小1du -sh * 时间校准1) 安装 ntpdate，执行以下命令1yum install ntpdate -y">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://yoursite.com/2019/06/03/Linux/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="查看 tomcat 进程打开文件数量  12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l  查看目录下文件或目录个数  1ls -l|wc -l  查看磁盘空间分配情况  1df -h  查看当前目录下各目录大小  1du -sh *  时间校准   1) 安装 ntpdate，执行以下命令  1yum insta">
+<meta property="og:description" content="常用命令查看 tomcat 进程打开文件数量12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l 查看目录下文件或目录个数1ls -l|wc -l 查看磁盘空间分配情况1df -h 查看当前目录下各目录大小1du -sh * 时间校准1) 安装 ntpdate，执行以下命令1yum install ntpdate -y">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T12:55:06.930Z">
+<meta property="og:updated_time" content="2019-11-17T14:54:46.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
-<meta name="twitter:description" content="查看 tomcat 进程打开文件数量  12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l  查看目录下文件或目录个数  1ls -l|wc -l  查看磁盘空间分配情况  1df -h  查看当前目录下各目录大小  1du -sh *  时间校准   1) 安装 ntpdate，执行以下命令  1yum insta">
+<meta name="twitter:description" content="常用命令查看 tomcat 进程打开文件数量12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|wc -l 查看目录下文件或目录个数1ls -l|wc -l 查看磁盘空间分配情况1df -h 查看当前目录下各目录大小1du -sh * 时间校准1) 安装 ntpdate，执行以下命令1yum install ntpdate -y">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">36.2k</span></p>
+			<p>总文章数 46</p>
+			<p>总字数 <span class="post-count">50.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：762字 | 阅读本文大概需要 ：3分钟
+					字数：1k字 | 阅读本文大概需要 ：4分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,79 +185,52 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>查看 tomcat 进程打开文件数量</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查看进程 pid：</span><br><span class="line">ps aux|grep tomcat</span><br><span class="line"></span><br><span class="line">根据 pid 查看打开文件数量：</span><br><span class="line">lsof -p pid|wc -l</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看目录下文件或目录个数</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l|wc -l</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看磁盘空间分配情况</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看当前目录下各目录大小</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>时间校准 <br></p>
-<p> 1) 安装 ntpdate，执行以下命令</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install ntpdate -y</span><br></pre></td></tr></table></figure>
-<p> 2) 手工同步网络时间，执行以下命令，将从 time.nist.gov 同步时间</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ntpdate 0.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">若上面的时间服务器不可用，也可以选择以下服务器同步时间</span><br><span class="line"></span><br><span class="line">　　time.nist.gov</span><br><span class="line"></span><br><span class="line">　　time.nuri.net</span><br><span class="line"></span><br><span class="line">　　0.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　1.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　2.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　3.asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
-<p> 3) 使用 crontab 计划任务定时更新网络时间，修改 crontab 文件</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/crontab</span><br><span class="line"></span><br><span class="line">* */1 * * * ntpdate 0.asia.pool.ntp.org //在末尾增加,每隔1小时同步一次时间。</span><br></pre></td></tr></table></figure>
-<p> </p><p>4) 使用 date 命令查看当前时间</p><br> <p>5) 系统时间同步到硬件，防止系统重启后时间呗还原</p><p></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>防火墙设置（centos)</p>
-<ul>
-<li><p>关闭防火墙命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>开启防火墙</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭开机自启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>开启开机启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable firewalld.service</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>lsof 命令不识别</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装命令：yum install lsof</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>shell 获取当前日期，当前时间</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DATE=&quot;`date +%Y-%m-%d`&quot;</span><br><span class="line">echo $DATE</span><br><span class="line"></span><br><span class="line">DATETIME=&quot;`date +%Y-%m-%d,%H:%m:%s`&quot;</span><br><span class="line">echo $DATE</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看当前shell</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $SHELL</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加开机自启动脚本</p>
-<blockquote>
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看-tomcat-进程打开文件数量"><a href="#查看-tomcat-进程打开文件数量" class="headerlink" title="查看 tomcat 进程打开文件数量"></a>查看 tomcat 进程打开文件数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查看进程 pid：</span><br><span class="line">ps aux|grep tomcat</span><br><span class="line"></span><br><span class="line">根据 pid 查看打开文件数量：</span><br><span class="line">lsof -p pid|wc -l</span><br></pre></td></tr></table></figure>
+<h3 id="查看目录下文件或目录个数"><a href="#查看目录下文件或目录个数" class="headerlink" title="查看目录下文件或目录个数"></a>查看目录下文件或目录个数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l|wc -l</span><br></pre></td></tr></table></figure>
+<h3 id="查看磁盘空间分配情况"><a href="#查看磁盘空间分配情况" class="headerlink" title="查看磁盘空间分配情况"></a>查看磁盘空间分配情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<h3 id="查看当前目录下各目录大小"><a href="#查看当前目录下各目录大小" class="headerlink" title="查看当前目录下各目录大小"></a>查看当前目录下各目录大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
+<h3 id="时间校准"><a href="#时间校准" class="headerlink" title="时间校准"></a>时间校准</h3><p>1) 安装 ntpdate，执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install ntpdate -y</span><br></pre></td></tr></table></figure></p>
+<p>2) 手工同步网络时间，执行以下命令，将从 time.nist.gov 同步时间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ntpdate 0.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">若上面的时间服务器不可用，也可以选择以下服务器同步时间</span><br><span class="line"></span><br><span class="line">　　time.nist.gov</span><br><span class="line"></span><br><span class="line">　　time.nuri.net</span><br><span class="line"></span><br><span class="line">　　0.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　1.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　2.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　3.asia.pool.ntp.org</span><br></pre></td></tr></table></figure></p>
+<p>3) 使用 crontab 计划任务定时更新网络时间，修改 crontab 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/crontab</span><br><span class="line"></span><br><span class="line">* */1 * * * ntpdate 0.asia.pool.ntp.org //在末尾增加,每隔1小时同步一次时间。</span><br></pre></td></tr></table></figure></p>
+<p></p><p>4) 使用 date 命令查看当前时间</p><p></p>
+<p></p><p>5) 系统时间同步到硬件，防止系统重启后时间呗还原</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure><p></p>
+<h3 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h3><h4 id="查看-firewall-服务状态"><a href="#查看-firewall-服务状态" class="headerlink" title="查看 firewall 服务状态"></a>查看 firewall 服务状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br><span class="line"></span><br><span class="line">出现Active: active (running)切高亮显示则表示是启动状态</span><br><span class="line">出现 Active: inactive (dead)灰色表示停止</span><br></pre></td></tr></table></figure>
+<h4 id="关闭防火墙命令"><a href="#关闭防火墙命令" class="headerlink" title="关闭防火墙命令"></a>关闭防火墙命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="开启防火墙"><a href="#开启防火墙" class="headerlink" title="开启防火墙"></a>开启防火墙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="关闭开机自启动"><a href="#关闭开机自启动" class="headerlink" title="关闭开机自启动"></a>关闭开机自启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="开启开机启动"><a href="#开启开机启动" class="headerlink" title="开启开机启动"></a>开启开机启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="查看-firewall-的状态"><a href="#查看-firewall-的状态" class="headerlink" title="查看 firewall 的状态"></a>查看 firewall 的状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<h4 id="查看防火墙规则"><a href="#查看防火墙规则" class="headerlink" title="查看防火墙规则"></a>查看防火墙规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+<h4 id="查询端口是否开放"><a href="#查询端口是否开放" class="headerlink" title="查询端口是否开放"></a>查询端口是否开放</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --query-port=8080/tcp</span><br></pre></td></tr></table></figure>
+<h4 id="开放-80-端口"><a href="#开放-80-端口" class="headerlink" title="开放 80 端口"></a>开放 80 端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=80/tcp</span><br></pre></td></tr></table></figure>
+<h4 id="移除-80-端口"><a href="#移除-80-端口" class="headerlink" title="移除 80 端口"></a>移除 80 端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --remove-port=8080/tcp</span><br></pre></td></tr></table></figure>
+<h4 id="重启防火墙-修改配置后要重启防火墙"><a href="#重启防火墙-修改配置后要重启防火墙" class="headerlink" title="重启防火墙(修改配置后要重启防火墙)"></a>重启防火墙(修改配置后要重启防火墙)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h3 id="lsof-命令不识别"><a href="#lsof-命令不识别" class="headerlink" title="lsof 命令不识别"></a>lsof 命令不识别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装命令：yum install lsof</span><br></pre></td></tr></table></figure>
+<h3 id="shell-获取当前日期，当前时间"><a href="#shell-获取当前日期，当前时间" class="headerlink" title="shell 获取当前日期，当前时间"></a>shell 获取当前日期，当前时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DATE=&quot;`date +%Y-%m-%d`&quot;</span><br><span class="line">echo $DATE</span><br><span class="line"></span><br><span class="line">DATETIME=&quot;`date +%Y-%m-%d,%H:%m:%s`&quot;</span><br><span class="line">echo $DATE</span><br></pre></td></tr></table></figure>
+<h3 id="查看当前shell"><a href="#查看当前shell" class="headerlink" title="查看当前shell"></a>查看当前shell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $SHELL</span><br></pre></td></tr></table></figure>
+<h3 id="添加开机自启动脚本"><a href="#添加开机自启动脚本" class="headerlink" title="添加开机自启动脚本"></a>添加开机自启动脚本</h3><blockquote>
 <p>在/etc/rc.local中添加</p>
 </blockquote>
+<h2 id="Linux-定时任务示例"><a href="#Linux-定时任务示例" class="headerlink" title="Linux 定时任务示例"></a>Linux 定时任务示例</h2><h3 id="重启-Tomcat-服务脚本-restarttomcat-sh"><a href="#重启-Tomcat-服务脚本-restarttomcat-sh" class="headerlink" title="重启 Tomcat 服务脚本 - restarttomcat.sh"></a>重启 Tomcat 服务脚本 - restarttomcat.sh</h3><ul>
+<li><p>脚本下载地址</p>
+<p><a href="https://gitee.com/championwang/Linux/blob/master/restarttomcat.sh" target="_blank" rel="noopener">https://gitee.com/championwang/Linux/blob/master/restarttomcat.sh</a></p>
 </li>
-<li><p>Linux 定时任务</p>
-<ul>
-<li><p>restarttomcat.sh <em>重启任务脚本</em></p>
+<li><p>可执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//赋予可执行权限命令</span><br><span class="line">chmod 777 restarttomcat.sh</span><br><span class="line"></span><br><span class="line">//执行命令-单独执行模式</span><br><span class="line">nohup ./restarttomcat.sh &amp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>脚本内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export LANG=zh_CN.UTF-8</span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_191</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">export CATALINA_BASE=/home/wangwz/Desktop/apache-tomcat-8.0.53</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$CATALINA_BASE/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line"></span><br><span class="line">echo &quot;[$(date +&apos;%F %T&apos;)] &gt;&gt;&gt; Tomcat begin to restart.&quot;</span><br><span class="line">$CATALINA_BASE/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line"># Kill all remaining processes</span><br><span class="line">pidList=$(ps aux | grep $CATALINA_BASE | grep -v grep | awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line">for pid in $pidList; do</span><br><span class="line">	kill -9 $pid</span><br><span class="line">	echo &quot;[$(date +&apos;%F %T&apos;)] &gt;&gt;&gt; Kill the process [$pid] successfully.&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">sleep 5</span><br><span class="line">$CATALINA_BASE/bin/startup.sh</span><br><span class="line">echo &quot;[$(date +&apos;%F %T&apos;)] &gt;&gt;&gt; Tomcat restart complete.&quot;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>crontab -e <em>添加定时任务</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 * * * /bin/bash /home/wangwz/Desktop/restarttomcat.sh &gt;&gt; /home/restart.log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>crontab -l <em>查看定时任务</em></p>
-</li>
 </ul>
-</li>
-<li><p>忘记 root 密码</p>
-<blockquote>
-<p>以 单用户模式进入，修改 root 密码。如果 /etc/passwd 文件不存在，则需要手动创建，并填写如下内容「必需」</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">sssd:x:989:986:User for sssd:/:/sbin/nologin</span><br><span class="line">gdm:x:42:42::/var/lib/gdm:/sbin/nologin</span><br><span class="line">gnome-initial-setup:x:988:983::/run/gnome-initial-setup/:/sbin/nologin</span><br><span class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br></pre></td></tr></table></figure>
+<h3 id="添加定时任务，实现定时重启-Tomcat-服务器"><a href="#添加定时任务，实现定时重启-Tomcat-服务器" class="headerlink" title="添加定时任务，实现定时重启 Tomcat 服务器"></a>添加定时任务，实现定时重启 Tomcat 服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>添加内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 * * * /bin/bash /home/wangwz/Desktop/restarttomcat.sh &gt;&gt; /home/restart.log</span><br></pre></td></tr></table></figure>
+<h3 id="查看定时任务"><a href="#查看定时任务" class="headerlink" title="查看定时任务"></a>查看定时任务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+<h3 id="忘记-root-密码"><a href="#忘记-root-密码" class="headerlink" title="忘记 root 密码"></a>忘记 root 密码</h3><blockquote>
+<p>以 单用户模式进入，修改 root 密码。如果 /etc/passwd 文件不存在，则需要手动创建，并填写如下内容「必需」<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">sssd:x:989:986:User for sssd:/:/sbin/nologin</span><br><span class="line">gdm:x:42:42::/var/lib/gdm:/sbin/nologin</span><br><span class="line">gnome-initial-setup:x:988:983::/run/gnome-initial-setup/:/sbin/nologin</span><br><span class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-</li>
-</ol>
-<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><ol>
+<h3 id="Ubuntu-开启-root"><a href="#Ubuntu-开启-root" class="headerlink" title="Ubuntu 开启 root"></a>Ubuntu 开启 root</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//给 root 用户设置密码</span><br><span class="line">sudo passwd root</span><br><span class="line"></span><br><span class="line">//使用 root 用户登陆</span><br><span class="line">sudo vi /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</span><br><span class="line">在最后增加 greeter-show-manual-login=true </span><br><span class="line"></span><br><span class="line">//关闭 guest 用户</span><br><span class="line">sudo vi /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</span><br><span class="line">在最后增加 allow-guest=false</span><br></pre></td></tr></table></figure>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><ol>
 <li><p>将 jdkXXX.tar.gz 放入/usr/java 文件夹中，解压</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf jdkXXX.tar.gz</span><br></pre></td></tr></table></figure>
 </li>
@@ -271,6 +244,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java –version</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h2 id="Samba"><a href="#Samba" class="headerlink" title="Samba"></a>Samba</h2><blockquote>
+<p>待整理</p>
+<p>E:\Study\Samba</p>
+</blockquote>
 
       
 
@@ -523,19 +500,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,7 +508,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +532,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +548,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,7 +568,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,7 +584,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,11 +600,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,7 +628,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>

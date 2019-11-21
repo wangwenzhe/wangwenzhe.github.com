@@ -8,23 +8,24 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SVN | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 文件或文件夹还未 Add，如何删除情况 1. 文件或文件夹较少，直接删除即可情况 2. 文件或文件夹较多，不适合一个个删除空白处右键-TortoiseSVN-Clean up… 2. 文件或文件夹 Add 之后但未 Commit，如何删除方法 1 再选择文件或文件夹删除即可。 方法 2「一般用于文件或文件夹已删除」 3. 其它 如果文件或目录已经被其他人锁定 lock，可以在 Get loc">
+  <meta name="description" content="SVN 服务端SVN 客户端基础知识 如果文件或目录已经被其他人锁定 lock，可以在 Get lock 选项中勾选 steal the locks SVN 的版本递增是针对整个仓库的，即使只更新了一个文件，那么，整体的版本也会加1 推荐使用目录树为 /repos/trunk     产品或项目主线 /repos/branches  分支 /repos/tags      阶段性成果，例如版本 v">
 <meta name="keywords" content="SVN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVN">
 <meta property="og:url" content="http://yoursite.com/2019/06/11/SVN/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="1. 文件或文件夹还未 Add，如何删除情况 1. 文件或文件夹较少，直接删除即可情况 2. 文件或文件夹较多，不适合一个个删除空白处右键-TortoiseSVN-Clean up… 2. 文件或文件夹 Add 之后但未 Commit，如何删除方法 1 再选择文件或文件夹删除即可。 方法 2「一般用于文件或文件夹已删除」 3. 其它 如果文件或目录已经被其他人锁定 lock，可以在 Get loc">
+<meta property="og:description" content="SVN 服务端SVN 客户端基础知识 如果文件或目录已经被其他人锁定 lock，可以在 Get lock 选项中勾选 steal the locks SVN 的版本递增是针对整个仓库的，即使只更新了一个文件，那么，整体的版本也会加1 推荐使用目录树为 /repos/trunk     产品或项目主线 /repos/branches  分支 /repos/tags      阶段性成果，例如版本 v">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx4hwj20me0j275s.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx0gyj20c808omxe.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/09/04/b9UqgRu3MGX7tDF.png">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqxh47j20om0hz407.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqwy55j20cf08v74m.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx7jmj20od0igdh8.jpg">
-<meta property="og:updated_time" content="2019-07-18T13:10:11.633Z">
+<meta property="og:updated_time" content="2019-11-17T14:54:46.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVN">
-<meta name="twitter:description" content="1. 文件或文件夹还未 Add，如何删除情况 1. 文件或文件夹较少，直接删除即可情况 2. 文件或文件夹较多，不适合一个个删除空白处右键-TortoiseSVN-Clean up… 2. 文件或文件夹 Add 之后但未 Commit，如何删除方法 1 再选择文件或文件夹删除即可。 方法 2「一般用于文件或文件夹已删除」 3. 其它 如果文件或目录已经被其他人锁定 lock，可以在 Get loc">
+<meta name="twitter:description" content="SVN 服务端SVN 客户端基础知识 如果文件或目录已经被其他人锁定 lock，可以在 Get lock 选项中勾选 steal the locks SVN 的版本递增是针对整个仓库的，即使只更新了一个文件，那么，整体的版本也会加1 推荐使用目录树为 /repos/trunk     产品或项目主线 /repos/branches  分支 /repos/tags      阶段性成果，例如版本 v">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx4hwj20me0j275s.jpg">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
@@ -99,8 +100,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 34</p>
-			<p>总字数 <span class="post-count">36.2k</span></p>
+			<p>总文章数 46</p>
+			<p>总字数 <span class="post-count">50.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -183,7 +184,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：360字 | 阅读本文大概需要 ：1分钟
+					字数：397字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -195,7 +196,7 @@
 				<div id="toc-article" class="toc-article">
 						<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 					<strong class="toc-title">文章目录</strong>
-								 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-文件或文件夹还未-Add，如何删除"><span class="toc-number">1.</span> <span class="toc-text">1. 文件或文件夹还未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#情况-1-文件或文件夹较少，直接删除即可"><span class="toc-number">1.1.</span> <span class="toc-text">情况 1. 文件或文件夹较少，直接删除即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#情况-2-文件或文件夹较多，不适合一个个删除"><span class="toc-number">1.2.</span> <span class="toc-text">情况 2. 文件或文件夹较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-文件或文件夹-Add-之后但未-Commit，如何删除"><span class="toc-number">2.</span> <span class="toc-text">2. 文件或文件夹 Add 之后但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-1"><span class="toc-number">2.1.</span> <span class="toc-text">方法 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-2「一般用于文件或文件夹已删除」"><span class="toc-number">2.2.</span> <span class="toc-text">方法 2「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-其它"><span class="toc-number">3.</span> <span class="toc-text">3. 其它</span></a></li></ol>
+								 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-服务端"><span class="toc-number">1.</span> <span class="toc-text">SVN 服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-客户端"><span class="toc-number">2.</span> <span class="toc-text">SVN 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未-Add，如何删除"><span class="toc-number">2.2.</span> <span class="toc-text">未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较少，直接删除即可"><span class="toc-number">2.2.1.</span> <span class="toc-text">文件较少，直接删除即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较多，不适合一个个删除"><span class="toc-number">2.2.2.</span> <span class="toc-text">文件较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-但未-Commit，如何删除"><span class="toc-number">2.3.</span> <span class="toc-text">Add 但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法1"><span class="toc-number">2.3.1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">方法 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-3「一般用于文件或文件夹已删除」"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法 3「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用中遇到的问题"><span class="toc-number">2.4.</span> <span class="toc-text">使用中遇到的问题</span></a></li></ol></li></ol>
 							 </div>
 				 <script type="text/javascript">
 				function showToc(){
@@ -215,11 +216,7 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-文件或文件夹还未-Add，如何删除"><a href="#1-文件或文件夹还未-Add，如何删除" class="headerlink" title="1. 文件或文件夹还未 Add，如何删除"></a>1. 文件或文件夹还未 Add，如何删除</h2><h3 id="情况-1-文件或文件夹较少，直接删除即可"><a href="#情况-1-文件或文件夹较少，直接删除即可" class="headerlink" title="情况 1. 文件或文件夹较少，直接删除即可"></a>情况 1. 文件或文件夹较少，直接删除即可</h3><h3 id="情况-2-文件或文件夹较多，不适合一个个删除"><a href="#情况-2-文件或文件夹较多，不适合一个个删除" class="headerlink" title="情况 2. 文件或文件夹较多，不适合一个个删除"></a>情况 2. 文件或文件夹较多，不适合一个个删除</h3><p>空白处右键-TortoiseSVN-Clean up…<br><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx4hwj20me0j275s.jpg" alt><br><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx0gyj20c808omxe.jpg" alt></p>
-<h2 id="2-文件或文件夹-Add-之后但未-Commit，如何删除"><a href="#2-文件或文件夹-Add-之后但未-Commit，如何删除" class="headerlink" title="2. 文件或文件夹 Add 之后但未 Commit，如何删除"></a>2. 文件或文件夹 Add 之后但未 Commit，如何删除</h2><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法 1"></a>方法 1</h3><p><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqxh47j20om0hz407.jpg" alt><br><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqwy55j20cf08v74m.jpg" alt></p>
-<p>再选择文件或文件夹删除即可。</p>
-<h3 id="方法-2「一般用于文件或文件夹已删除」"><a href="#方法-2「一般用于文件或文件夹已删除」" class="headerlink" title="方法 2「一般用于文件或文件夹已删除」"></a>方法 2「一般用于文件或文件夹已删除」</h3><p><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx7jmj20od0igdh8.jpg" alt></p>
-<h2 id="3-其它"><a href="#3-其它" class="headerlink" title="3. 其它"></a>3. 其它</h2><ul>
+        <h2 id="SVN-服务端"><a href="#SVN-服务端" class="headerlink" title="SVN 服务端"></a>SVN 服务端</h2><h2 id="SVN-客户端"><a href="#SVN-客户端" class="headerlink" title="SVN 客户端"></a>SVN 客户端</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
 <li>如果文件或目录已经被其他人锁定 lock，可以在 Get lock 选项中勾选 steal the locks</li>
 <li>SVN 的版本递增是针对整个仓库的，即使只更新了一个文件，那么，整体的版本也会加1</li>
 <li>推荐使用目录树为<ul>
@@ -230,13 +227,34 @@
 </li>
 <li>SVN 的更新和提交是异步的，互不影响</li>
 <li>.svn 目录是用来管理目录与服务器的同步情况和来管理工作copy的，<br>如果不小心删除了，可以把该目录内所有文件删掉，然后返回父目录，update</li>
-<li>锁定 Get lock 文件或文件夹，并且 unlock 随时可以解除<ul>
-<li>如果一旦提交了更新，那么所有的文件都将解锁，即使有部分文件可能还没有更新。</li>
-<li>如果 commit 时，选择 keep locks，则文件还是被锁定。</li>
-</ul>
+<li><p>锁定 Get lock 文件或文件夹，并且 unlock 随时可以解除</p>
 </li>
-<li>借助 beyond compare 工具比对提交。</li>
+<li><p>如果一旦提交了更新，那么所有的文件都将解锁，即使有部分文件可能还没有更新。</p>
+</li>
+<li><p>如果 commit 时，选择 keep locks，则文件还是被锁定。</p>
+</li>
+<li><p>借助 beyond compare 工具比对提交。</p>
+</li>
 </ul>
+<h3 id="未-Add，如何删除"><a href="#未-Add，如何删除" class="headerlink" title="未 Add，如何删除"></a>未 Add，如何删除</h3><h4 id="文件较少，直接删除即可"><a href="#文件较少，直接删除即可" class="headerlink" title="文件较少，直接删除即可"></a>文件较少，直接删除即可</h4><h4 id="文件较多，不适合一个个删除"><a href="#文件较多，不适合一个个删除" class="headerlink" title="文件较多，不适合一个个删除"></a>文件较多，不适合一个个删除</h4><p>空白处右键-TortoiseSVN-Clean up…<br><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx4hwj20me0j275s.jpg" alt><br><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx0gyj20c808omxe.jpg" alt></p>
+<h3 id="Add-但未-Commit，如何删除"><a href="#Add-但未-Commit，如何删除" class="headerlink" title="Add 但未 Commit，如何删除"></a>Add 但未 Commit，如何删除</h3><h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><blockquote>
+<p>选中文件夹，右键 TortoiseSVN，Undo Add…</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/09/04/b9UqgRu3MGX7tDF.png" alt="snipaste20190904_162044.png"></p>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法 2"></a>方法 2</h4><blockquote>
+<p>选中文件夹，右键 TortoiseSVN，Clean up…， Revert all changes recursively</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqxh47j20om0hz407.jpg" alt><br><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqwy55j20cf08v74m.jpg" alt></p>
+<p>再选择文件或文件夹删除即可</p>
+<h4 id="方法-3「一般用于文件或文件夹已删除」"><a href="#方法-3「一般用于文件或文件夹已删除」" class="headerlink" title="方法 3「一般用于文件或文件夹已删除」"></a>方法 3「一般用于文件或文件夹已删除」</h4><blockquote>
+<p>右键 TortoiseSVN，Revert…</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx7jmj20od0igdh8.jpg" alt></p>
+<h3 id="使用中遇到的问题"><a href="#使用中遇到的问题" class="headerlink" title="使用中遇到的问题"></a>使用中遇到的问题</h3><ol>
+<li><p>清除 svn 保存的账号密码信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TortoiseSVN--&gt;settings——&gt;Saved Data——&gt;Clear</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
 
@@ -379,7 +397,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-文件或文件夹还未-Add，如何删除"><span class="toc-number">1.</span> <span class="toc-text">1. 文件或文件夹还未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#情况-1-文件或文件夹较少，直接删除即可"><span class="toc-number">1.1.</span> <span class="toc-text">情况 1. 文件或文件夹较少，直接删除即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#情况-2-文件或文件夹较多，不适合一个个删除"><span class="toc-number">1.2.</span> <span class="toc-text">情况 2. 文件或文件夹较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-文件或文件夹-Add-之后但未-Commit，如何删除"><span class="toc-number">2.</span> <span class="toc-text">2. 文件或文件夹 Add 之后但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-1"><span class="toc-number">2.1.</span> <span class="toc-text">方法 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法-2「一般用于文件或文件夹已删除」"><span class="toc-number">2.2.</span> <span class="toc-text">方法 2「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-其它"><span class="toc-number">3.</span> <span class="toc-text">3. 其它</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-服务端"><span class="toc-number">1.</span> <span class="toc-text">SVN 服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-客户端"><span class="toc-number">2.</span> <span class="toc-text">SVN 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未-Add，如何删除"><span class="toc-number">2.2.</span> <span class="toc-text">未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较少，直接删除即可"><span class="toc-number">2.2.1.</span> <span class="toc-text">文件较少，直接删除即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较多，不适合一个个删除"><span class="toc-number">2.2.2.</span> <span class="toc-text">文件较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-但未-Commit，如何删除"><span class="toc-number">2.3.</span> <span class="toc-text">Add 但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法1"><span class="toc-number">2.3.1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">方法 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-3「一般用于文件或文件夹已删除」"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法 3「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用中遇到的问题"><span class="toc-number">2.4.</span> <span class="toc-text">使用中遇到的问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -502,19 +520,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,7 +528,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,7 +552,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,7 +568,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,7 +588,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,7 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,11 +620,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,7 +648,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>
