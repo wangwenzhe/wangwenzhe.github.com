@@ -89,7 +89,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 46</p>
-			<p>总字数 <span class="post-count">50.3k</span></p>
+			<p>总字数 <span class="post-count">50.5k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -871,7 +871,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：397字 | 阅读本文大概需要 ：1分钟
+					字数：455字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -879,7 +879,24 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="SVN-服务端"><a href="#SVN-服务端" class="headerlink" title="SVN 服务端"></a>SVN 服务端</h2><h2 id="SVN-客户端"><a href="#SVN-客户端" class="headerlink" title="SVN 客户端"></a>SVN 客户端</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
+        <h2 id="SVN-服务端"><a href="#SVN-服务端" class="headerlink" title="SVN 服务端"></a>SVN 服务端</h2><h3 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h3><p><a href="https://www.jianshu.com/p/295b423d50ad" target="_blank" rel="noopener">https://www.jianshu.com/p/295b423d50ad</a></p>
+<h4 id="1-备份「最好先停止服务」"><a href="#1-备份「最好先停止服务」" class="headerlink" title="1. 备份「最好先停止服务」"></a>1. 备份「最好先停止服务」</h4><ul>
+<li><p>svnadmin dump</p>
+</li>
+<li><p><strong>svnadmin hotcopy</strong></p>
+<p><img src="http://yanxuan.nosdn.127.net/e59fa29faa92bff1419a70095d6fc44e.png" alt="UTOOLS1574690205732.png" style="zoom:50%;"></p>
+<p><img src="http://yanxuan.nosdn.127.net/ab974a89667cad2c60e15d89cb5fdfb9.png" alt="截屏2019-11-2521.54.00.png" style="zoom:50%;"></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date</span><br></pre></td></tr></table></figure>
+<h4 id="2-恢复「恢复不需要先建立库」"><a href="#2-恢复「恢复不需要先建立库」" class="headerlink" title="2. 恢复「恢复不需要先建立库」"></a>2. 恢复「恢复不需要先建立库」</h4><ul>
+<li><p>svnadmin dump</p>
+</li>
+<li><p><strong>svnadmin hotcopy</strong></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnadmin hotcopy C:\Repositories\gms-backup.date C:\Repositories\gms_news</span><br></pre></td></tr></table></figure>
+<h2 id="SVN-客户端"><a href="#SVN-客户端" class="headerlink" title="SVN 客户端"></a>SVN 客户端</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
 <li>如果文件或目录已经被其他人锁定 lock，可以在 Get lock 选项中勾选 steal the locks</li>
 <li>SVN 的版本递增是针对整个仓库的，即使只更新了一个文件，那么，整体的版本也会加1</li>
 <li>推荐使用目录树为<ul>
@@ -2298,11 +2315,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2318,7 +2335,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2326,7 +2343,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2338,10 +2359,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
@@ -2350,11 +2367,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2366,10 +2383,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
@@ -2378,7 +2391,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2386,15 +2399,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
