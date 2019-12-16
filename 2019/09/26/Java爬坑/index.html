@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java爬坑 | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况 多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式 Mybatis 中 DRUD SQL 语句结尾不能有分号 ;">
+  <meta name="description" content="数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况 多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式 Mybatis 中 DRUD SQL 语句结尾不能有分号 ;  后台计算的对象「非全局」如果后续马上还要使用，则可以暂时存放于 session 域中，session 域支持存储对象。如果页面需要使用，则放到 request 域中，jsp 中 EL">
 <meta name="keywords" content="Java爬坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java爬坑">
 <meta property="og:url" content="http://yoursite.com/2019/09/26/Java爬坑/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况 多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式 Mybatis 中 DRUD SQL 语句结尾不能有分号 ;">
+<meta property="og:description" content="数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况 多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式 Mybatis 中 DRUD SQL 语句结尾不能有分号 ;  后台计算的对象「非全局」如果后续马上还要使用，则可以暂时存放于 session 域中，session 域支持存储对象。如果页面需要使用，则放到 request 域中，jsp 中 EL">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-17T14:54:46.527Z">
+<meta property="og:updated_time" content="2019-12-16T14:50:47.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java爬坑">
-<meta name="twitter:description" content="数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况 多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式 Mybatis 中 DRUD SQL 语句结尾不能有分号 ;">
+<meta name="twitter:description" content="数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况 多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式 Mybatis 中 DRUD SQL 语句结尾不能有分号 ;  后台计算的对象「非全局」如果后续马上还要使用，则可以暂时存放于 session 域中，session 域支持存储对象。如果页面需要使用，则放到 request 域中，jsp 中 EL">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 46</p>
-			<p>总字数 <span class="post-count">50.5k</span></p>
+			<p>总文章数 48</p>
+			<p>总字数 <span class="post-count">52k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：81字 | 阅读本文大概需要 ：1分钟
+					字数：185字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -189,6 +189,7 @@
 <li>数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况</li>
 <li>多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式</li>
 <li>Mybatis 中 DRUD SQL 语句结尾不能有分号 ; </li>
+<li>后台计算的对象「非全局」如果后续马上还要使用，则可以暂时存放于 session 域中，session 域支持存储对象。如果页面需要使用，则放到 request 域中，jsp 中 EL 表达式解析对象即可；如果 js 代码需要使用，则后台先使用 <code>JSON.toJSON(obj)</code> 转换，js 代码<code>${obj}</code>获取对象，然后当做<code>Json</code> 变量进行操作</li>
 </ol>
 
       
@@ -462,15 +463,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,7 +471,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,19 +491,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,19 +515,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +535,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
@@ -542,15 +547,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,11 +559,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">

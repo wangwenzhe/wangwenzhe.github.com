@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SVN | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SVN 服务端迁移https://www.jianshu.com/p/295b423d50ad 1. 备份「最好先停止服务」 svnadmin dump  svnadmin hotcopy     1svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date 2. 恢复「恢复不需要先建立库」 svnad">
+  <meta name="description" content="VisualSVN Server迁移「不包含用户、组信息」https://www.jianshu.com/p/295b423d50ad 1. 备份「最好先停止服务」 svnadmin dump  svnadmin hotcopy     1svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date 2.">
 <meta name="keywords" content="SVN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVN">
 <meta property="og:url" content="http://yoursite.com/2019/06/11/SVN/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="SVN 服务端迁移https://www.jianshu.com/p/295b423d50ad 1. 备份「最好先停止服务」 svnadmin dump  svnadmin hotcopy     1svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date 2. 恢复「恢复不需要先建立库」 svnad">
+<meta property="og:description" content="VisualSVN Server迁移「不包含用户、组信息」https://www.jianshu.com/p/295b423d50ad 1. 备份「最好先停止服务」 svnadmin dump  svnadmin hotcopy     1svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date 2.">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yanxuan.nosdn.127.net/e59fa29faa92bff1419a70095d6fc44e.png">
 <meta property="og:image" content="http://yanxuan.nosdn.127.net/ab974a89667cad2c60e15d89cb5fdfb9.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqxh47j20om0hz407.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqwy55j20cf08v74m.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/ade42695ly1g3x0aqx7jmj20od0igdh8.jpg">
-<meta property="og:updated_time" content="2019-11-25T13:59:27.690Z">
+<meta property="og:updated_time" content="2019-12-16T14:50:47.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVN">
-<meta name="twitter:description" content="SVN 服务端迁移https://www.jianshu.com/p/295b423d50ad 1. 备份「最好先停止服务」 svnadmin dump  svnadmin hotcopy     1svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date 2. 恢复「恢复不需要先建立库」 svnad">
+<meta name="twitter:description" content="VisualSVN Server迁移「不包含用户、组信息」https://www.jianshu.com/p/295b423d50ad 1. 备份「最好先停止服务」 svnadmin dump  svnadmin hotcopy     1svnadmin hotcopy C:\Repositories\gmsdengzhou  C:\Repositories\gms-backup.date 2.">
 <meta name="twitter:image" content="http://yanxuan.nosdn.127.net/e59fa29faa92bff1419a70095d6fc44e.png">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
@@ -102,8 +102,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 46</p>
-			<p>总字数 <span class="post-count">50.5k</span></p>
+			<p>总文章数 48</p>
+			<p>总字数 <span class="post-count">52k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -186,7 +186,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：455字 | 阅读本文大概需要 ：1分钟
+					字数：461字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -198,7 +198,7 @@
 				<div id="toc-article" class="toc-article">
 						<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 					<strong class="toc-title">文章目录</strong>
-								 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-服务端"><span class="toc-number">1.</span> <span class="toc-text">SVN 服务端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移"><span class="toc-number">1.1.</span> <span class="toc-text">迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-备份「最好先停止服务」"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 备份「最好先停止服务」</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-恢复「恢复不需要先建立库」"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 恢复「恢复不需要先建立库」</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-客户端"><span class="toc-number">2.</span> <span class="toc-text">SVN 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未-Add，如何删除"><span class="toc-number">2.2.</span> <span class="toc-text">未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较少，直接删除即可"><span class="toc-number">2.2.1.</span> <span class="toc-text">文件较少，直接删除即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较多，不适合一个个删除"><span class="toc-number">2.2.2.</span> <span class="toc-text">文件较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-但未-Commit，如何删除"><span class="toc-number">2.3.</span> <span class="toc-text">Add 但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法1"><span class="toc-number">2.3.1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">方法 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-3「一般用于文件或文件夹已删除」"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法 3「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用中遇到的问题"><span class="toc-number">2.4.</span> <span class="toc-text">使用中遇到的问题</span></a></li></ol></li></ol>
+								 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VisualSVN-Server"><span class="toc-number">1.</span> <span class="toc-text">VisualSVN Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移「不包含用户、组信息」"><span class="toc-number">1.1.</span> <span class="toc-text">迁移「不包含用户、组信息」</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-备份「最好先停止服务」"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 备份「最好先停止服务」</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-恢复「恢复不需要先建立库」"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 恢复「恢复不需要先建立库」</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-客户端"><span class="toc-number">2.</span> <span class="toc-text">SVN 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未-Add，如何删除"><span class="toc-number">2.2.</span> <span class="toc-text">未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较少，直接删除即可"><span class="toc-number">2.2.1.</span> <span class="toc-text">文件较少，直接删除即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较多，不适合一个个删除"><span class="toc-number">2.2.2.</span> <span class="toc-text">文件较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-但未-Commit，如何删除"><span class="toc-number">2.3.</span> <span class="toc-text">Add 但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法1"><span class="toc-number">2.3.1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">方法 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-3「一般用于文件或文件夹已删除」"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法 3「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用中遇到的问题"><span class="toc-number">2.4.</span> <span class="toc-text">使用中遇到的问题</span></a></li></ol></li></ol>
 							 </div>
 				 <script type="text/javascript">
 				function showToc(){
@@ -218,7 +218,7 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="SVN-服务端"><a href="#SVN-服务端" class="headerlink" title="SVN 服务端"></a>SVN 服务端</h2><h3 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h3><p><a href="https://www.jianshu.com/p/295b423d50ad" target="_blank" rel="noopener">https://www.jianshu.com/p/295b423d50ad</a></p>
+        <h2 id="VisualSVN-Server"><a href="#VisualSVN-Server" class="headerlink" title="VisualSVN Server"></a>VisualSVN Server</h2><h3 id="迁移「不包含用户、组信息」"><a href="#迁移「不包含用户、组信息」" class="headerlink" title="迁移「不包含用户、组信息」"></a>迁移「不包含用户、组信息」</h3><p><a href="https://www.jianshu.com/p/295b423d50ad" target="_blank" rel="noopener">https://www.jianshu.com/p/295b423d50ad</a></p>
 <h4 id="1-备份「最好先停止服务」"><a href="#1-备份「最好先停止服务」" class="headerlink" title="1. 备份「最好先停止服务」"></a>1. 备份「最好先停止服务」</h4><ul>
 <li><p>svnadmin dump</p>
 </li>
@@ -416,7 +416,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-服务端"><span class="toc-number">1.</span> <span class="toc-text">SVN 服务端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移"><span class="toc-number">1.1.</span> <span class="toc-text">迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-备份「最好先停止服务」"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 备份「最好先停止服务」</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-恢复「恢复不需要先建立库」"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 恢复「恢复不需要先建立库」</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-客户端"><span class="toc-number">2.</span> <span class="toc-text">SVN 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未-Add，如何删除"><span class="toc-number">2.2.</span> <span class="toc-text">未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较少，直接删除即可"><span class="toc-number">2.2.1.</span> <span class="toc-text">文件较少，直接删除即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较多，不适合一个个删除"><span class="toc-number">2.2.2.</span> <span class="toc-text">文件较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-但未-Commit，如何删除"><span class="toc-number">2.3.</span> <span class="toc-text">Add 但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法1"><span class="toc-number">2.3.1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">方法 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-3「一般用于文件或文件夹已删除」"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法 3「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用中遇到的问题"><span class="toc-number">2.4.</span> <span class="toc-text">使用中遇到的问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VisualSVN-Server"><span class="toc-number">1.</span> <span class="toc-text">VisualSVN Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移「不包含用户、组信息」"><span class="toc-number">1.1.</span> <span class="toc-text">迁移「不包含用户、组信息」</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-备份「最好先停止服务」"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 备份「最好先停止服务」</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-恢复「恢复不需要先建立库」"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 恢复「恢复不需要先建立库」</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN-客户端"><span class="toc-number">2.</span> <span class="toc-text">SVN 客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未-Add，如何删除"><span class="toc-number">2.2.</span> <span class="toc-text">未 Add，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较少，直接删除即可"><span class="toc-number">2.2.1.</span> <span class="toc-text">文件较少，直接删除即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件较多，不适合一个个删除"><span class="toc-number">2.2.2.</span> <span class="toc-text">文件较多，不适合一个个删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-但未-Commit，如何删除"><span class="toc-number">2.3.</span> <span class="toc-text">Add 但未 Commit，如何删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法1"><span class="toc-number">2.3.1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2"><span class="toc-number">2.3.2.</span> <span class="toc-text">方法 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-3「一般用于文件或文件夹已删除」"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法 3「一般用于文件或文件夹已删除」</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用中遇到的问题"><span class="toc-number">2.4.</span> <span class="toc-text">使用中遇到的问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -559,15 +559,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,7 +567,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,19 +587,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,19 +611,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,6 +631,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
@@ -639,15 +643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +655,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">

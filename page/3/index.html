@@ -88,8 +88,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 46</p>
-			<p>总字数 <span class="post-count">50.5k</span></p>
+			<p>总文章数 48</p>
+			<p>总字数 <span class="post-count">52k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -155,6 +155,194 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/Vue/">Vue</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/25/Vue/" class="archive-article-date">
+  	<time datetime="2019-07-25T14:11:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：0字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/25/Vue/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/Docker/">Docker</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/25/Docker/" class="archive-article-date">
+  	<time datetime="2019-07-25T14:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：117字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04" target="_blank" rel="noopener">https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04</a></li>
+</ol>
+<h3 id="Ubuntu-18-0-4"><a href="#Ubuntu-18-0-4" class="headerlink" title="Ubuntu 18.0.4"></a>Ubuntu 18.0.4</h3><h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><ol>
+<li><p>docker pull ubuntu </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Using default tag: latest</span><br><span class="line">Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>配置 DNS</p>
+<ul>
+<li><p>vi /etc/resolv.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 114.114.115.115</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启网络</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>修改镜像仓库地址</p>
+<ul>
+<li><p>vim /etc/docker/daemon.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;:[&quot;https://docker.mirrors.ustc.edu.cn&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>重启守护进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/25/Docker/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-JUnit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1404,382 +1592,6 @@
 
 
   
-    <article id="post-爱上读书2019-06" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/07/爱上读书2019-06/">爱上读书2019-06</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/07/爱上读书2019-06/" class="archive-article-date">
-  	<time datetime="2019-07-07T06:12:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：3.6k字 | 阅读本文大概需要 ：12分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>这世界到处是情绪失控的人，随处释放着情绪的垃圾，试图给你呈现出一个悲惨世界。</li>
-<li><p>我也知道，中年人对年轻人有所告诫的样子，往往是面目可憎的。在酒桌上，油头胖脸的中年男人最招人烦的三件事，就是跟同龄人吹牛逼，跟小姑娘讲荤段子，跟小伙子讲“我在你这个岁数的时候”。</p>
-</li>
-<li><p>成长中必须学会的</p>
-<ul>
-<li>即便已经一败涂地你仍然要坚持奋斗<blockquote>
-<p>曾经有一个记者问拳王阿里：你每天做多少个仰卧起坐？阿里回答道：「我从来不数自己做了多少个仰卧起坐，我会一直做到肌肉痛到实在无法坚持，这才是关键。」<br>其实在职场上也一样，在很多艰难时刻你都会面临两种选择：要么是含着眼泪硬扛下去，要么是让困难、痛苦把你打倒在地。<br>人是一种习惯的动物，一旦你开始为自己的失败找理由，有困难就逃跑将会成为你的本能。换句话说，如果你总是坚持让自己扛过苦难，那你最终才能够成就伟大。</p>
-</blockquote>
-</li>
-<li>你必须晚点吃棉花糖<blockquote>
-<p>斯坦福大学有一个非常著名的「棉花糖」实验，实验者会让一个孩子独自在一个房间里面对一块棉花糖 15 分钟。实验者离开之前会告诉这个孩子，如果你忍不住了你可以吃掉它，但是如果你 15 分钟不吃这块棉花糖，那你就会得到两块棉花糖作奖励。<br>斯坦福棉花糖实验中三分之一的孩子没有吃棉花糖，他们的人生大多非常成功、幸福，吃掉棉花糖的孩子们则相对过着贫穷、失意的生活，其中有不少被毒品、酗酒、肥胖等问题困扰。<br>最终证明，那些能够抵御诱惑的孩子们后来的人生都很顺遂、成功，学历好、工作成功、家庭美满，甚至被肥胖困扰的都很少。<br>「坚毅测试」发现对一个人的成功来说，耐心和延迟享受是一个非常关键的因素。达科沃斯说，真正内心强大的人知道只有当他能够忍受时间和欲望的煎熬，他才有机会实现梦想。</p>
-</blockquote>
-</li>
-<li>即使犯了超傻X的错误也要无所畏惧、不断尝试直到成功<blockquote>
-<p>最近威廉玛丽学院调查了 800 位企业家，发现这些人中最成功的那一批都有两个共同特质：从不害怕失败而且从不在乎别人是怎么看他们的。<br>换句话说，这个世界上最成功的那些人都不害怕失败，甚至把失败看作是人生的必经之路。</p>
-</blockquote>
-</li>
-<li>你是个大人了你必须学会控制情绪<blockquote>
-<p>很多人没有意识到的是，坏情绪会不断的削弱你内心的力量，一个成年人无法控制自己的情绪，那后果可能是灾难性的。如果让情绪控制了你的大脑，那你就可能会丧失了清醒的思考力、判断力、意志力，以及解决问题的能力。事实也证明，容易情绪失控的人很多都有脾气暴躁、攻击性强、过度自负等一系列问题。<br>尽管情绪这东西看不见摸不着，但是我们还是可以有效的控制情绪，例如你可以在每次自己要发脾气之前问自己：我的怒气从何而来？我为什么要发脾气？发脾气有什么意义？坚持久了，你就可以控制自己的情绪了。</p>
-</blockquote>
-</li>
-<li>即使那个决定让你万分恐惧你也必须承担责任<blockquote>
-<p>有很多时候我们不得不做一些我们非常不想做的事情，因为我们知道这些事情从长远来看都是很有价值的：炒掉不负责的员工、给陌生人打电话推销、通宵工作为了把公司从死亡线上拉回来，或者是为了一个至关重要的项目不懈奋斗。<br>在面对困难的时候说放弃真的很简单，但是最优秀的人知道最佳选择也是必选项，并不是放弃而是「开始干吧」！<br>每一次你在害怕的时候都没有真正解决问题，也是在浪费时间。那些真正敢于打出「不想打的电话」的人都无一例外的是踏石留印、抓铁有痕的人。</p>
-</blockquote>
-</li>
-<li>你必须毫不迟疑地追随直觉<blockquote>
-<p>追随直觉和莽撞之间是有很明确的分界线的。追随直觉的前提是你已经非常理性、客观、全面的分析了问题的所有角度，即使是当事情的走向并不明朗或者不符合你的预期时，你也会真诚的相信自己的内心已经做出了正确的选择，然后拼劲全力的去实现目标。</p>
-</blockquote>
-</li>
-<li>即使全世界都反对，你也要勇往直前<blockquote>
-<p>当有人支持你的时候，不管是选定一个新方向还是做一件困难的事情都会比较容易。但是「坚毅测试」发现，真正考验你的内心力量大小的是在所有人都不支持你、反对你的时候，你是不是还能始终如一。<br>内心真正强大的人并不是喜欢没有人支持、没有人陪伴，他们只是决不放弃，证明给别人看自己是对的，然后就会有人支持你了。</p>
-</blockquote>
-</li>
-<li>不管有多急、多累，你都要竭尽所能地慢慢来<blockquote>
-<p>越是当你已经非常累，非常急，或者感到受委屈的时候，你就越容易出错。这种情况下你的内心会受到极大的考验。<br>晚清名臣沈葆桢是林则徐的女婿，据说林则徐曾让沈葆桢彻夜抄写一篇加急公文。为了试试沈葆桢的耐性，林则徐故意把沈葆桢誊了三四个小时的公文扔在一边，找借口让他重抄。尽管公文再有三四个小时就要发出，沈葆桢也已经十分辛苦，但是他丝毫不急、不乱，更也不觉得是委屈，默默地掌灯重写。沈葆桢写好后把文件呈给林则徐再看。林则徐大悦：墨迹丝毫不乱，字迹清秀比第一次犹有过之，此子宠辱不惊，未来必成大器。<br>越是忙、急、累、委屈，就越容易出错，这个时候就请你慢慢来，小心点。</p>
-</blockquote>
-</li>
-<li>你必须善待你的敌人<blockquote>
-<p>当你的敌人对你倾斜恶意时，他也是在期望把你拉到跟他一样的水平上，把你变成跟他一样的人。而内心强大的人绝不会允许别人掌控自己的人生，他们绝对不会因此对自己的敌人或者讨厌的人变粗鲁。他们会像对待别人一样对自己的敌人，耐心、善良、包容。因为他们绝不容许有任何一个人把自己变 low ，即使是敌人也不行。</p>
-</blockquote>
-</li>
-<li>即使细节让你抓狂也要保持专注<blockquote>
-<p>让人抓狂的细节拿捏，是最考验一个人的坚毅的，尤其是当你疲惫的时候。但我们发现，成功的人往往既能掌控大局，也愿意琢磨细节，对他们来说，一切的挑战都是通往目标的必经之路。</p>
-</blockquote>
-</li>
-<li>你必须对你的所作所为负责<blockquote>
-<p>人们更容易记住一个人是怎么解决问题的，而不提容易记住他是怎么引发问题的。只要是你造成的问题，你就一定要承担责任，然后解决问题。要做一个永远都负责任的人，即便找个借口再容易不过，也不要这样做。<br>要知道对一个梦想远大的人来说，明哲保身绝非正途。你准备好做一个内心强大的人了吗？加油！</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>这个世界上最成功的那些人都不害怕失败，甚至把失败看作是人生的必经之路。</p>
-</li>
-<li><p>对一个人的成功来说，耐心和延迟享受是一个非常关键的因素。达科沃斯说，真正内心强大的人知道只有当他能够忍受时间和欲望的煎熬，他才有机会实现梦想。</p>
-</li>
-<li><p>人是一种习惯的动物，一旦你开始为自己的失败找理由，有困难就逃跑将会成为你的本能。换句话说，如果你总是坚持让自己扛过苦难，那你最终才能够成就伟大。</p>
-</li>
-<li><p>坚毅让一部分人成为了富有激情、韧性、进取心的人，从而取得了巨大成功。</p>
-</li>
-<li><p>在这位教育学家的研究成果中，她发现，坚毅（Grit） 是追寻长期目标中更为重要的因素，而不是IQ。成熟且坚毅的人通常拥有四项隐形资产：兴趣（interest），激情源于充分享受所做之事；练习（practice），今天要比昨天做得更好；目的（purpose），确信自己的工作很重要；希望（hope），一种从逆境中奋起的毅力。<br>某种程度上确实如此，人生漫漫长路，在你实现想要目标的时候，总会有人向你泼冷水，这一路上也会有各种各样想象不到的事情发生，但想要实现目标之人也并不会甘于因此改变前行的决心。</p>
-</li>
-<li><p>把想做的事安排到早上，你就会有动力早起。</p>
-</li>
-<li><p>一个人如果没有能力承受坏的，就没有资格享受好的。</p>
-</li>
-<li><p>因为贪婪，焦虑，缺乏耐心，是韭菜三大共性素质。迎合贪婪，贩卖焦虑，速成承诺，是割韭菜的三大标准姿势。</p>
-</li>
-<li><p>何炅说：没有生气不一定代表没有负面的情绪，能够不将负面情绪带给他人，才是真正的修养。</p>
-</li>
-<li><p>奥里森·马登在《一生的资本》中说：任何时候，一个人都不应该做自己情绪的奴隶，不应该使一切行动都受制于自己的情绪，而应该反过来控制情绪。无论境况多么糟糕，你应该努力去支配你的环境，把自己从黑暗中拯救出来。</p>
-</li>
-<li><p>社会心理学家费斯汀格有过这样一个理论：人生中10%的事件是由发生在你身上的事情组成，而另外90%则是你对事情如何反应决定的。</p>
-</li>
-<li><p>情绪稳定，就是一个人最顶级的修养。失败者，都是被情绪操控的奴隶。厉害的人，早就戒掉了情绪。</p>
-</li>
-<li><p>尼采在《善恶的彼岸》中说：“如果情绪总是处于失控状态，就会被感情牵着鼻子走，丧失自由。”</p>
-</li>
-<li><p>冯仑说，伟大都是熬出来的。为什么用熬？因为普通人承受不了的委屈你得承受，普通人需要别人理解安慰鼓励，但你没有；普通人用对抗消极指责来发泄情绪，但你必须看到爱和光，在任何事情上学会转化消化；普通人需要一个肩膀在脆弱的时候靠一靠，而你就是别人依靠的肩膀。</p>
-</li>
-<li><p>做人智商高不高没关系，情商高不高也问题不大，但做人的格局一定要大，说白了，你可以不聪明，也可以不懂交际，但一定要大气。</p>
-</li>
-<li><p>如果一点点挫折就让你爬不起来，如果一两句坏话、就让你不能释怀，如果动不动就讨厌人，憎恨人，那格局就太小了。</p>
-</li>
-<li><p>做人有多大气，就会有多成功。海纳百川，有容乃大；壁立千仞，无欲则刚。因为胸怀，才是成功者的标志。</p>
-</li>
-<li><p>永远要记住这句话：越努力，越幸运！</p>
-</li>
-<li><p>放下你的浮躁，放下你的懒惰，放下你的三分钟热度，放空你禁不住诱惑的大脑，放开你容易被任何事物吸引的眼睛，放淡你什么都想聊两句八卦的嘴巴，静下心来好好做你该做的事，该好好努力了！有时候真的努力后，你会发现自己要比想象的优秀很多。</p>
-</li>
-<li><p>世上除了生死，其它都是小事。不管遇到了什么烦心事，都不要自己为难自己；无论今天发生多么糟糕的事，都不要对生活失望，因为还有明天。</p>
-</li>
-<li><p>有目标的人在奔跑，沒目标的人在流浪，因为不知道要去哪里！有目标的人在感恩，沒目标的人在报怨，因为觉得全世界都欠他的！</p>
-</li>
-<li><p>有目标的人睡不着，沒目标的人睡不醒，因为不知道起来去干嘛！</p>
-</li>
-<li><p>生命只有走出来的精彩，沒有等待出来的辉煌！</p>
-</li>
-<li><p>如果，感到此时的自己很辛苦，那告诉自己：容易走的都是下坡路！坚持住，因为你正在走上坡路，走过去，你就一定会有进步。</p>
-</li>
-<li><p>如果，你正在埋怨命运不眷顾，那请记住：命，是失败者的借口；运，是成功者的谦词。命虽由天定，但埋怨，只是一种懦弱的表现。</p>
-</li>
-<li><p>时尚芭莎的前执行主编说：世界上最无效的努力，就是对年轻人掏心掏肺地讲道理。</p>
-</li>
-<li><p>心理学的目的，就是让我们对自以为了然于胸的事情，有截然不同的见解</p>
-</li>
-<li><p>“你”语言听起来像是一种对别人的指责和评价，容易变成引起吵架的争端；而“我”语言，是在如实说出自己的真实感受，会让对方更容易理解你。</p>
-</li>
-<li><p>花半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人，注定有截然不同的命运。</p>
-</li>
-<li><p>痛苦+反思=进步</p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">爱上读书</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/07/爱上读书2019-06/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/07/Git/">Git</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/07/Git/" class="archive-article-date">
-  	<time datetime="2019-07-07T06:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：898字 | 阅读本文大概需要 ：3分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ol>
-<li>廖雪峰 <a href="https://www.liaoxuefeng.com/wiki/896043488029600/897889638509536" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/897889638509536</a></li>
-<li><a href="https://mp.weixin.qq.com/s/caVfg8qCRjSiogD-jitIeA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/caVfg8qCRjSiogD-jitIeA</a></li>
-<li><a href="https://mp.weixin.qq.com/s/XcmrClMqqTWoDIDitXEcmQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/XcmrClMqqTWoDIDitXEcmQ</a></li>
-<li><a href="https://learnku.com/articles/22068" target="_blank" rel="noopener">https://learnku.com/articles/22068</a></li>
-</ol>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. git init</span><br><span class="line">   rm filename</span><br><span class="line">2. git add filename</span><br><span class="line">   rm filename</span><br><span class="line">   git rm --cached filename</span><br><span class="line">3. git commit -m &quot;add filename&quot;</span><br><span class="line">	 rm filename</span><br><span class="line">	 git rm filename</span><br><span class="line">	 git commit -m &quot;delete filename&quot;</span><br><span class="line">4. git status</span><br><span class="line">5. git log</span><br><span class="line">6. git reset --hard HEAD^</span><br><span class="line">   git reset --hard commit_id</span><br><span class="line">7. git reflog</span><br><span class="line">8. git reset --hard commit_id</span><br></pre></td></tr></table></figure>
-<ol>
-<li><code>git commit</code>只负责把暂存区的修改提交</li>
-<li><code>git diff HEAD -- readme.txt</code>命令可以查看工作区和版本库里面最新版本的区别</li>
-<li><code>git checkout -- file</code>可以丢弃工作区的修改，让这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态</li>
-<li><code>git reset HEAD &lt;file&gt;</code> 或 <code>git reset HEAD -- 目录</code> 可以把暂存区的修改撤销掉（unstage），工作区不变</li>
-<li>提交后删除，发现删错了，可以<code>git checkout -- file</code> 恢复最新版本</li>
-<li>已经提交了不合适的修改到版本库时，想要撤销本次提交，可以<code>git reset --hard HEAD^</code></li>
-<li>先手动删除文件，然后使用<code>git rm file</code> 和 <code>git add file</code>效果是一样的</li>
-</ol>
-<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><ol>
-<li><p>查看分支：<code>git branch</code></p>
-</li>
-<li><p>创建分支：<code>git branch &lt;name&gt;</code></p>
-</li>
-<li><p>切换分支：<code>git checkout &lt;name&gt;</code></p>
-</li>
-<li><p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></p>
-</li>
-<li><p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-</li>
-<li><p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-</li>
-<li><p>解决冲突：编辑冲突文件，再提交</p>
-</li>
-<li><p>禁用<code>Fast forward</code>模式合并，即普通模式合并，合并是一次 commit，有历史记录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --no-ff -m &quot;merge with no-ff&quot; dev</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实际开发分支策略</p>
-<p><img src="https://static.liaoxuefeng.com/files/attachments/919023260793600/0" alt></p>
-</li>
-</ol>
-<h4 id="Bug-分支-stash"><a href="#Bug-分支-stash" class="headerlink" title="Bug 分支 stash"></a>Bug 分支 stash</h4><ol>
-<li><p>保存工作现场 「当前在 <code>dev</code> 分支」</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="2">
-<li><p>切换到 <code>master</code> 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建并切换至修复 bug 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b issue-101</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修复完成后，切换到 <code>master</code> 分支，并完成合并，最后删除<code>issue-101</code>分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101</span><br><span class="line">git branch -d issue-101</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>切换回 <code>dev</code> 分支，继续干活</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看工作现场</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>恢复现场并删除 stash</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">方式一：</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">方式二：</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多次 stash，恢复的时候，先用<code>git stash list</code>查看，然后恢复指定的stash</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply stash@&#123;0&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="Feature-分支"><a href="#Feature-分支" class="headerlink" title="Feature 分支"></a>Feature 分支</h4><ol>
-<li><p>开发一个新 feature，最好新建一个分支</p>
-<ol start="2">
-<li>如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除</li>
-</ol>
-</li>
-</ol>
-<h4 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h4><ol>
-<li><p>从远程库 <code>clone</code> 时，会把仓库所有分支代码都会下载到本地，但默认只显示 <code>master</code> 分支</p>
-<p>可以通过 <code>-b dev</code> 默认显示 <code>dev</code> 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/wangwenzhe/test.git</span><br><span class="line"></span><br><span class="line">git clone -b https://github.com/wangwenzhe/test.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地显示并切换至 dev 分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev origin/dev</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><ol>
-<li><p>查看远程库的信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加远程库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/wangwenzhe/test.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除本地的远程库配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>推送分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//把指定分支推送到远程库对应的分支上</span><br><span class="line">git push origin master</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="多人协作的工作模式"><a href="#多人协作的工作模式" class="headerlink" title="多人协作的工作模式"></a>多人协作的工作模式</h4><ol>
-<li>首先，可以试图用<code>git push origin &lt;branch-name&gt;</code>推送自己的修改</li>
-<li>如果推送失败，则因为远程分支比你的本地更新，需要先用<code>git pull</code>试图合并</li>
-<li>如果合并有冲突，则解决冲突，并在本地提交</li>
-<li><p>没有冲突或者解决掉冲突后，再用<code>git push origin &lt;branch-name&gt;</code>推送就能成功</p>
-</li>
-<li><p>如果<code>git pull</code>提示<code>no tracking information</code>，则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream branch-name origin/branch-name</code></p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/07/Git/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1897,15 +1709,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1913,7 +1717,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1921,19 +1737,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1945,19 +1761,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1969,6 +1781,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
@@ -1977,15 +1793,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1993,11 +1805,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="集合 Java 集合中有两类，一类是 List，一类是 Set 。List 有序且可以重复，而 Set 无序不可重复  ArrayList、LinkedList 在使用 ArrayList 时，如果能提前预测到数据量大小，比较大时一定要指定其长度 尽可能避免使用 add(index,e) ，会导致复制数组，降低效率 ArrayList 是数组结构，LinkedList 是双向链表 在 ArrayL">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-21T14:53:01.468Z">
+<meta property="og:updated_time" content="2019-12-16T14:50:47.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java">
 <meta name="twitter:description" content="集合 Java 集合中有两类，一类是 List，一类是 Set 。List 有序且可以重复，而 Set 无序不可重复  ArrayList、LinkedList 在使用 ArrayList 时，如果能提前预测到数据量大小，比较大时一定要指定其长度 尽可能避免使用 add(index,e) ，会导致复制数组，降低效率 ArrayList 是数组结构，LinkedList 是双向链表 在 ArrayL">
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 46</p>
-			<p>总字数 <span class="post-count">50.5k</span></p>
+			<p>总文章数 48</p>
+			<p>总字数 <span class="post-count">52k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.7k字 | 阅读本文大概需要 ：14分钟
+					字数：2.9k字 | 阅读本文大概需要 ：15分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -216,7 +216,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.removeAll(list2)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="多参数"><a href="#多参数" class="headerlink" title="多参数"></a>多参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多参数「同类型」"><a href="#多参数「同类型」" class="headerlink" title="多参数「同类型」"></a>多参数「同类型」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="TreeMap、TreeSet"><a href="#TreeMap、TreeSet" class="headerlink" title="TreeMap、TreeSet"></a>TreeMap、TreeSet</h3><p><strong>待完善</strong></p>
 <h4 id="equals-与-hashCode"><a href="#equals-与-hashCode" class="headerlink" title="equals 与 hashCode"></a>equals 与 hashCode</h4><ol>
 <li>在重写 equals 方法的同时，必须重写 hashCode 方法，让equals方法和hashCode方法始终在逻辑上保持一致性</li>
@@ -319,7 +319,11 @@
 <p>一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//构造方法参数指定了计数的次数</span><br><span class="line">public CountDownLatch(int count);</span><br><span class="line"></span><br><span class="line">//子线程执行完后调用此方法，则计数减1</span><br><span class="line">public void countDown();</span><br><span class="line"></span><br><span class="line">//调用此方法会一直阻塞当前线程，直到计时器的值为 0</span><br><span class="line">public void await() throws InterruptedException</span><br></pre></td></tr></table></figure>
-<h2 id="页面下载-http-图片"><a href="#页面下载-http-图片" class="headerlink" title="页面下载 http 图片"></a>页面下载 http 图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//http://localhost:8000/scm/event/20191114/471e2369a1794dec8c6cfa397934223e.jpg</span><br><span class="line">String httpsrc = request.getParameter(&quot;httpsrc&quot;);</span><br><span class="line"></span><br><span class="line">//文件名</span><br><span class="line">String filename = httpsrc.substring(httpsrc.lastIndexOf(&quot;/&quot;)+1);</span><br><span class="line">//文件后缀 jgp</span><br><span class="line">String suffix = filename.substring(filename.indexOf(&quot;.&quot;)+1);</span><br><span class="line">		try &#123;</span><br><span class="line">			URL httpurl = new URL(httpsrc);</span><br><span class="line">			BufferedImage image = ImageIO.read(httpurl);</span><br><span class="line">			ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">			ImageIO.write(image, suffix, baos);</span><br><span class="line">			baos.flush();</span><br><span class="line"></span><br><span class="line">			response.setContentType(&quot;text/plain;charset=utf-8&quot;);//文本格式</span><br><span class="line">			if(request.getHeader(&quot;User-Agent&quot;).toUpperCase().indexOf(&quot;MSIE&quot;) &gt; 0)&#123;</span><br><span class="line">				//处理IE 的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+URLEncoder.encode(filename,Charsets.UTF_8.toString()));</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				//处理其他的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+filename);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//向客户端输入流下载</span><br><span class="line">			response.getOutputStream().write(baos.toByteArray());</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="页面中下载-http-图片后台代码"><a href="#页面中下载-http-图片后台代码" class="headerlink" title="页面中下载 http 图片后台代码"></a>页面中下载 http 图片后台代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//http://localhost:8000/scm/event/20191114/471e2369a1794dec8c6cfa397934223e.jpg</span><br><span class="line">String httpsrc = request.getParameter(&quot;httpsrc&quot;);</span><br><span class="line"></span><br><span class="line">//文件名</span><br><span class="line">String filename = httpsrc.substring(httpsrc.lastIndexOf(&quot;/&quot;)+1);</span><br><span class="line">//文件后缀 jgp</span><br><span class="line">String suffix = filename.substring(filename.indexOf(&quot;.&quot;)+1);</span><br><span class="line">		try &#123;</span><br><span class="line">			URL httpurl = new URL(httpsrc);</span><br><span class="line">			BufferedImage image = ImageIO.read(httpurl);</span><br><span class="line">			ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">			ImageIO.write(image, suffix, baos);</span><br><span class="line">			baos.flush();</span><br><span class="line"></span><br><span class="line">			response.setContentType(&quot;text/plain;charset=utf-8&quot;);//文本格式</span><br><span class="line">			if(request.getHeader(&quot;User-Agent&quot;).toUpperCase().indexOf(&quot;MSIE&quot;) &gt; 0)&#123;</span><br><span class="line">				//处理IE 的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+URLEncoder.encode(filename,Charsets.UTF_8.toString()));</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				//处理其他的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+filename);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//向客户端输入流下载</span><br><span class="line">			response.getOutputStream().write(baos.toByteArray());</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="String-join、StringJoiner与Join-Collector"><a href="#String-join、StringJoiner与Join-Collector" class="headerlink" title="String.join、StringJoiner与Join Collector"></a>String.join、StringJoiner与Join Collector</h2><p><a href="https://www.jianshu.com/p/3f7bf697ef13" target="_blank" rel="noopener">https://www.jianshu.com/p/3f7bf697ef13</a></p>
+<h3 id="String-join"><a href="#String-join" class="headerlink" title="String.join"></a>String.join</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String joined = String.join(&quot;/&quot;, &quot;2014&quot;, &quot;10&quot;, &quot;28&quot;); // &quot;2014/10/28&quot;</span><br><span class="line"> </span><br><span class="line">List&lt;String&gt; list = Arrays.asList(&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;);</span><br><span class="line">joined = String.join(&quot;;&quot;, list); // &quot;foo;bar;baz&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//字符串用 ，分割</span><br><span class="line">StringJoiner joiner = new StringJoiner(&quot;,&quot;);</span><br><span class="line">joiner.add(&quot;foo&quot;);</span><br><span class="line">joiner.add(&quot;bar&quot;);</span><br><span class="line">joiner.add(&quot;baz&quot;);</span><br><span class="line">String joined = joiner.toString(); // &quot;foo,bar,baz&quot;</span><br><span class="line"> </span><br><span class="line">// add() calls can be chained</span><br><span class="line">joined = new StringJoiner(&quot;-&quot;)</span><br><span class="line"> .add(&quot;foo&quot;)</span><br><span class="line"> .add(&quot;bar&quot;)</span><br><span class="line"> .add(&quot;baz&quot;)</span><br><span class="line"> .toString(); // &quot;foo-bar-baz&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="Join-Collector"><a href="#Join-Collector" class="headerlink" title="Join Collector"></a>Join Collector</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; list = Arrays.asList(</span><br><span class="line"> new Person(&quot;John&quot;, &quot;Smith&quot;),</span><br><span class="line"> new Person(&quot;Anna&quot;, &quot;Martinez&quot;),</span><br><span class="line"> new Person(&quot;Paul&quot;, &quot;Watson &quot;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">String joinedFirstNames = list.stream()</span><br><span class="line"> .map(Person::getFirstName)</span><br><span class="line"> .collect(Collectors.joining(&quot;, &quot;)); // &quot;John, Anna, Paul&quot;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -592,15 +596,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,7 +604,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,19 +624,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,19 +648,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,6 +668,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
@@ -672,15 +680,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,11 +692,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">

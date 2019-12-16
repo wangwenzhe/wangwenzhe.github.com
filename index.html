@@ -88,8 +88,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 46</p>
-			<p>总字数 <span class="post-count">50.5k</span></p>
+			<p>总文章数 48</p>
+			<p>总字数 <span class="post-count">52k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -155,6 +155,241 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Windows中Oracle11g安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/16/Windows中Oracle11g安装/">Windows中Oracle11g安装</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/16/Windows中Oracle11g安装/" class="archive-article-date">
+  	<time datetime="2019-12-16T09:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：578字 | 阅读本文大概需要 ：2分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如果之前安装过Oracle，则先卸载干净，如下"><a href="#如果之前安装过Oracle，则先卸载干净，如下" class="headerlink" title="如果之前安装过Oracle，则先卸载干净，如下"></a>如果之前安装过Oracle，则先卸载干净，如下</h2><ol>
+<li><p>停止所有 <code>Oracle 服务</code></p>
+<p>任务管理器 - 服务 - 打开服务 - 停止 Oracle 开头的服务</p>
+<p><img src="https://img04.sogoucdn.com/app/a/100520146/66ff8037e9fc94eb6259db05159ef538" alt="1.gif"></p>
+</li>
+<li><p>开始－＞程序－＞Universal Installer，单击 “卸载产品”-“全部展开”，选中除 “OraDb11g_home1” 外的全部目录，删除</p>
+<p><img src="https://img01.sogoucdn.com/app/a/100520146/08d2d078a1fe778be09c3e0418c0eafc" alt="1.gif" style="zoom:67%;"></p>
+</li>
+<li><p>删除注册表相关量</p>
+<ol>
+<li>运行 regedit，选择 HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE，按 del 键删除</li>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services，滚动这个列表，删除所有 Oracle 入口 (以 oracle 或 OraWeb 开头的键)</li>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application，删除所有 Oracle 入口</li>
+<li>HKEY_CLASSES_ROOT 目录下所有以 Ora、Oracle、Orcl 或 EnumOra 为前缀的键</li>
+<li>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\Start Menu\Programs 中所有以 oracle 开头的键</li>
+<li>HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI 中除 Microsoft ODBC for Oracle 注册表键以外的所有含有 Oracle 的键</li>
+</ol>
+</li>
+<li><p>删除环境变量 CLASSPATH 和 PATH 中有关 Oracle 的设定</p>
+</li>
+<li><p>删除目录</p>
+<ol>
+<li>C:\Program file\Oracle</li>
+<li>oracle 的安装目录，例如 <code>F:\app</code></li>
+<li>C:\WINDOWS\system32\config\systemprofile\Oracle</li>
+<li>C:\Users\Administrator\Oracle </li>
+<li>C:\WINDOWS 下删除以下文件 ORACLE.INI、oradim73.INI、oradim80.INI、oraodbc.ini 等等</li>
+<li>C:\WINDOWS 下的 WIN.INI 文件中若有 [ORACLE] 的标记段，删除该段。</li>
+</ol>
+</li>
+<li><p>重启电脑</p>
+</li>
+</ol>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><ol>
+<li><p>下载</p>
+<ol>
+<li><p>下载并安装 <code>fdm</code> 工具</p>
+<p><a href="http://115.28.211.10/admin/fdm5_x64_setup.exe" target="_blank" rel="noopener">http://115.28.211.10/admin/fdm5_x64_setup.exe</a></p>
+</li>
+<li><p>使用 <code>fdm</code> 下载 Oracle 安装文件「2 个」</p>
+<p><a href="http://115.28.211.10/admin/win64_11gR2_database_1of2.zip" target="_blank" rel="noopener">http://115.28.211.10/admin/win64_11gR2_database_1of2.zip</a></p>
+<p><a href="http://115.28.211.10/admin/win64_11gR2_database_2of2.zip" target="_blank" rel="noopener">http://115.28.211.10/admin/win64_11gR2_database_2of2.zip</a></p>
+<p><img src="https://img03.sogoucdn.com/app/a/100520146/420ce305efb86a62427d2e64c2423e73" alt="1.gif"></p>
+</li>
+</ol>
+</li>
+<li><p>解压</p>
+<ol>
+<li><p>将文件 <code>win64_11gR2_database_1of2.zip</code> 和 <code>win64_11gR2_database_2of2.zip</code> 移动到<strong>不包含中文</strong>路径的文件夹中</p>
+</li>
+<li><p><code>依次</code>点击上述文件，右键<code>解压到当前文件夹</code></p>
+<p><em>依次：解压完一个再解压另一个，不可同时进行</em></p>
+<p><img src="https://img03.sogoucdn.com/app/a/100520146/269bb0f14607014c149b8eae654e0be7" alt="UTOOLS1576470158614.png"></p>
+</li>
+</ol>
+</li>
+<li><p>安装</p>
+<p><img src="https://img03.sogoucdn.com/app/a/100520146/d1fa3e9e958d959e2989057feaff38c6" alt="1.gif"></p>
+</li>
+<li><p>创建表空间、用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1：首先运行SQLPLUS</span><br><span class="line">C:\Documents and Settings\Administrator&gt;sqlplus /nolog</span><br><span class="line"></span><br><span class="line">2：以 dba 的权限连接数据库</span><br><span class="line">SQL&gt; connect /as sysdba;</span><br><span class="line"></span><br><span class="line">3：创建表空间 scm，路径为 F:\app\Administrator\oradata\orcl\scm.dbf</span><br><span class="line">SQL&gt; create tablespace scm datafile &apos;F:\app\Administrator\oradata\orcl\scm.dbf&apos; size 256m uniform size 128k;</span><br><span class="line"></span><br><span class="line">4：把表空间改为自动扩展存储空间大小</span><br><span class="line">SQL&gt; alter database datafile &apos;F:\app\Administrator\oradata\orcl\scm.dbf&apos; autoextend on;</span><br><span class="line"></span><br><span class="line">5：创建用户 scmtl, 密码 scmtl, 默认表空间 scm</span><br><span class="line">SQL&gt; create user scmtl identified by scmtl default tablespace scm;</span><br><span class="line"></span><br><span class="line">6：为用户授权,把连接管理以dba的权限授权给用户 scmtl</span><br><span class="line">SQL&gt; grant connect,resource,dba to scmtl;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入数据, 数据文件为 scmtl.dmp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Documents and Settings\Administrator&gt;imp scmtl/scmtl file=scmtl.dmp full=y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PLSQL Developer 连接</p>
+<p><img src="https://img04.sogoucdn.com/app/a/100520146/7b1d82adba631b45e90689bbdcc991a5" alt="UTOOLS1576470921656.png"></p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Oracle 安装</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/16/Windows中Oracle11g安装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java编程规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/03/Java编程规范/">Java编程规范</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/03/Java编程规范/" class="archive-article-date">
+  	<time datetime="2019-12-03T01:58:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：39字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><p>Java API 设计清单</p>
+<p><a href="https://mp.weixin.qq.com/s/mVNs49RMa4pFhvmDiCaaWQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/mVNs49RMa4pFhvmDiCaaWQ</a></p>
+</li>
+</ol>
+<h2 id="自己整理"><a href="#自己整理" class="headerlink" title="自己整理"></a>自己整理</h2><ol>
+<li>接口实现类或者子类中重写方法应使用 <code>@Override</code> 修饰</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java编程规范</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/03/Java编程规范/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Postgresql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -256,7 +491,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：231字 | 阅读本文大概需要 ：1分钟
+					字数：240字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -278,9 +513,17 @@
 <p>echarts + highcharts</p>
 <p>BaiduMap + ArcgisMap + SuperMap</p>
 </blockquote>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ol>
+<li>WebStorm</li>
+</ol>
 <h3 id="android"><a href="#android" class="headerlink" title="android"></a>android</h3><blockquote>
 <p>原生 + H5 页面「app 本地页面 + 互联网页面」</p>
 </blockquote>
+<h4 id="效率插件"><a href="#效率插件" class="headerlink" title="效率插件"></a>效率插件</h4><ol>
+<li>Freeline</li>
+<li>ButterKnife</li>
+<li></li>
+</ol>
 <h3 id="5-App"><a href="#5-App" class="headerlink" title="5+App"></a>5+App</h3><blockquote>
 <p>MUI + H5Plus + Native.js</p>
 </blockquote>
@@ -291,7 +534,7 @@
 <h3 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h3><h4 id="POI"><a href="#POI" class="headerlink" title="POI"></a>POI</h4><p><a href="https://juejin.im/post/5c09e559e51d451da152df9c" target="_blank" rel="noopener">https://juejin.im/post/5c09e559e51d451da152df9c</a></p>
 <h4 id="jxl"><a href="#jxl" class="headerlink" title="jxl"></a>jxl</h4><p><a href="https://my.oschina.net/u/1781072/blog/542616" target="_blank" rel="noopener">https://my.oschina.net/u/1781072/blog/542616</a></p>
 <h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SLF4J 和 Logback</span><br></pre></td></tr></table></figure>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><h2 id="全文搜索"><a href="#全文搜索" class="headerlink" title="全文搜索"></a>全文搜索</h2><h3 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h3><p>官网：<a href="https://www.elastic.co/cn/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/cn/products/elasticsearch</a></p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h3><h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><h2 id="全文搜索"><a href="#全文搜索" class="headerlink" title="全文搜索"></a>全文搜索</h2><h3 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h3><p>官网：<a href="https://www.elastic.co/cn/products/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/cn/products/elasticsearch</a></p>
 <p>入门：<a href="https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html</a></p>
 <h2 id="API-管理工具"><a href="#API-管理工具" class="headerlink" title="API 管理工具"></a>API 管理工具</h2><h3 id="Swagger2"><a href="#Swagger2" class="headerlink" title="Swagger2"></a>Swagger2</h3><p><a href="https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html</a></p>
 <p><a href="http://blog.didispace.com/springbootswagger2/" target="_blank" rel="noopener">http://blog.didispace.com/springbootswagger2/</a></p>
@@ -547,7 +790,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.7k字 | 阅读本文大概需要 ：14分钟
+					字数：2.9k字 | 阅读本文大概需要 ：15分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -586,7 +829,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.removeAll(list2)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="多参数"><a href="#多参数" class="headerlink" title="多参数"></a>多参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多参数「同类型」"><a href="#多参数「同类型」" class="headerlink" title="多参数「同类型」"></a>多参数「同类型」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="TreeMap、TreeSet"><a href="#TreeMap、TreeSet" class="headerlink" title="TreeMap、TreeSet"></a>TreeMap、TreeSet</h3><p><strong>待完善</strong></p>
 <h4 id="equals-与-hashCode"><a href="#equals-与-hashCode" class="headerlink" title="equals 与 hashCode"></a>equals 与 hashCode</h4><ol>
 <li>在重写 equals 方法的同时，必须重写 hashCode 方法，让equals方法和hashCode方法始终在逻辑上保持一致性</li>
@@ -689,7 +932,11 @@
 <p>一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//构造方法参数指定了计数的次数</span><br><span class="line">public CountDownLatch(int count);</span><br><span class="line"></span><br><span class="line">//子线程执行完后调用此方法，则计数减1</span><br><span class="line">public void countDown();</span><br><span class="line"></span><br><span class="line">//调用此方法会一直阻塞当前线程，直到计时器的值为 0</span><br><span class="line">public void await() throws InterruptedException</span><br></pre></td></tr></table></figure>
-<h2 id="页面下载-http-图片"><a href="#页面下载-http-图片" class="headerlink" title="页面下载 http 图片"></a>页面下载 http 图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//http://localhost:8000/scm/event/20191114/471e2369a1794dec8c6cfa397934223e.jpg</span><br><span class="line">String httpsrc = request.getParameter(&quot;httpsrc&quot;);</span><br><span class="line"></span><br><span class="line">//文件名</span><br><span class="line">String filename = httpsrc.substring(httpsrc.lastIndexOf(&quot;/&quot;)+1);</span><br><span class="line">//文件后缀 jgp</span><br><span class="line">String suffix = filename.substring(filename.indexOf(&quot;.&quot;)+1);</span><br><span class="line">		try &#123;</span><br><span class="line">			URL httpurl = new URL(httpsrc);</span><br><span class="line">			BufferedImage image = ImageIO.read(httpurl);</span><br><span class="line">			ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">			ImageIO.write(image, suffix, baos);</span><br><span class="line">			baos.flush();</span><br><span class="line"></span><br><span class="line">			response.setContentType(&quot;text/plain;charset=utf-8&quot;);//文本格式</span><br><span class="line">			if(request.getHeader(&quot;User-Agent&quot;).toUpperCase().indexOf(&quot;MSIE&quot;) &gt; 0)&#123;</span><br><span class="line">				//处理IE 的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+URLEncoder.encode(filename,Charsets.UTF_8.toString()));</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				//处理其他的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+filename);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//向客户端输入流下载</span><br><span class="line">			response.getOutputStream().write(baos.toByteArray());</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="页面中下载-http-图片后台代码"><a href="#页面中下载-http-图片后台代码" class="headerlink" title="页面中下载 http 图片后台代码"></a>页面中下载 http 图片后台代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//http://localhost:8000/scm/event/20191114/471e2369a1794dec8c6cfa397934223e.jpg</span><br><span class="line">String httpsrc = request.getParameter(&quot;httpsrc&quot;);</span><br><span class="line"></span><br><span class="line">//文件名</span><br><span class="line">String filename = httpsrc.substring(httpsrc.lastIndexOf(&quot;/&quot;)+1);</span><br><span class="line">//文件后缀 jgp</span><br><span class="line">String suffix = filename.substring(filename.indexOf(&quot;.&quot;)+1);</span><br><span class="line">		try &#123;</span><br><span class="line">			URL httpurl = new URL(httpsrc);</span><br><span class="line">			BufferedImage image = ImageIO.read(httpurl);</span><br><span class="line">			ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">			ImageIO.write(image, suffix, baos);</span><br><span class="line">			baos.flush();</span><br><span class="line"></span><br><span class="line">			response.setContentType(&quot;text/plain;charset=utf-8&quot;);//文本格式</span><br><span class="line">			if(request.getHeader(&quot;User-Agent&quot;).toUpperCase().indexOf(&quot;MSIE&quot;) &gt; 0)&#123;</span><br><span class="line">				//处理IE 的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+URLEncoder.encode(filename,Charsets.UTF_8.toString()));</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				//处理其他的头部信息</span><br><span class="line">				response.setHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot;+filename);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//向客户端输入流下载</span><br><span class="line">			response.getOutputStream().write(baos.toByteArray());</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="String-join、StringJoiner与Join-Collector"><a href="#String-join、StringJoiner与Join-Collector" class="headerlink" title="String.join、StringJoiner与Join Collector"></a>String.join、StringJoiner与Join Collector</h2><p><a href="https://www.jianshu.com/p/3f7bf697ef13" target="_blank" rel="noopener">https://www.jianshu.com/p/3f7bf697ef13</a></p>
+<h3 id="String-join"><a href="#String-join" class="headerlink" title="String.join"></a>String.join</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String joined = String.join(&quot;/&quot;, &quot;2014&quot;, &quot;10&quot;, &quot;28&quot;); // &quot;2014/10/28&quot;</span><br><span class="line"> </span><br><span class="line">List&lt;String&gt; list = Arrays.asList(&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;);</span><br><span class="line">joined = String.join(&quot;;&quot;, list); // &quot;foo;bar;baz&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//字符串用 ，分割</span><br><span class="line">StringJoiner joiner = new StringJoiner(&quot;,&quot;);</span><br><span class="line">joiner.add(&quot;foo&quot;);</span><br><span class="line">joiner.add(&quot;bar&quot;);</span><br><span class="line">joiner.add(&quot;baz&quot;);</span><br><span class="line">String joined = joiner.toString(); // &quot;foo,bar,baz&quot;</span><br><span class="line"> </span><br><span class="line">// add() calls can be chained</span><br><span class="line">joined = new StringJoiner(&quot;-&quot;)</span><br><span class="line"> .add(&quot;foo&quot;)</span><br><span class="line"> .add(&quot;bar&quot;)</span><br><span class="line"> .add(&quot;baz&quot;)</span><br><span class="line"> .toString(); // &quot;foo-bar-baz&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="Join-Collector"><a href="#Join-Collector" class="headerlink" title="Join Collector"></a>Join Collector</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; list = Arrays.asList(</span><br><span class="line"> new Person(&quot;John&quot;, &quot;Smith&quot;),</span><br><span class="line"> new Person(&quot;Anna&quot;, &quot;Martinez&quot;),</span><br><span class="line"> new Person(&quot;Paul&quot;, &quot;Watson &quot;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">String joinedFirstNames = list.stream()</span><br><span class="line"> .map(Person::getFirstName)</span><br><span class="line"> .collect(Collectors.joining(&quot;, &quot;)); // &quot;John, Anna, Paul&quot;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -954,7 +1201,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：81字 | 阅读本文大概需要 ：1分钟
+					字数：185字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -966,6 +1213,7 @@
 <li>数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况</li>
 <li>多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式</li>
 <li>Mybatis 中 DRUD SQL 语句结尾不能有分号 ; </li>
+<li>后台计算的对象「非全局」如果后续马上还要使用，则可以暂时存放于 session 域中，session 域支持存储对象。如果页面需要使用，则放到 request 域中，jsp 中 EL 表达式解析对象即可；如果 js 代码需要使用，则后台先使用 <code>JSON.toJSON(obj)</code> 转换，js 代码<code>${obj}</code>获取对象，然后当做<code>Json</code> 变量进行操作</li>
 </ol>
 
       
@@ -991,209 +1239,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/09/26/Java爬坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/25/Android/">Android</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/25/Android/" class="archive-article-date">
-  	<time datetime="2019-09-25T10:24:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：73字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="申请相机权限"><a href="#申请相机权限" class="headerlink" title="申请相机权限"></a>申请相机权限</h2><h3 id="app-build-gradle"><a href="#app-build-gradle" class="headerlink" title="app/build.gradle"></a>app/build.gradle</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation &apos;com.github.tbruyelle:rxpermissions:0.10.2&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="java-文件"><a href="#java-文件" class="headerlink" title="java 文件"></a>java 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Android 6.0的版本以上</span><br><span class="line">if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M) &#123;</span><br><span class="line">            rxPermissions.request(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)</span><br><span class="line">                    .subscribe(granted -&gt; &#123;</span><br><span class="line">                        if (granted) &#123;</span><br><span class="line">                            // All requested permissions are granted</span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            // At least one permission is denied</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/25/Android/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Windows环境中实现Oracle远程数据自动备份" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/Windows环境中实现Oracle远程数据自动备份/">Windows环境中实现 Oracle远程数据自动备份</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/09/Windows环境中实现Oracle远程数据自动备份/" class="archive-article-date">
-  	<time datetime="2019-09-09T09:06:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：245字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Oracle-数据备份"><a href="#Oracle-数据备份" class="headerlink" title="Oracle 数据备份"></a>Oracle 数据备份</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><blockquote>
-<p>Windows 环境下备份远程 Oracle 数据库数据</p>
-</blockquote>
-<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ol>
-<li><p>windows 备份服务器</p>
-</li>
-<li><p>Oracle 客户端程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1Ok6-HEBi2eVMhDS75Me5cQ </span><br><span class="line">提取码：a46n</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>visual c++ 2013运行库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1vlf2Bbvf4vuVHmjt2B1p2A </span><br><span class="line">提取码：f1cx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>远程 Oracle  IP地址、端口、SID、账号、密码</p>
-</li>
-</ol>
-<h2 id="安装Oracle-客户端程序"><a href="#安装Oracle-客户端程序" class="headerlink" title="安装Oracle 客户端程序"></a>安装Oracle 客户端程序</h2><ol>
-<li><p>拷贝 instantclient_12_2_basic.zip 客户端文件至备数据库服务器 134主机D盘并解压</p>
-<p><img src="http://yanxuan.nosdn.127.net/cc54b8ea9f2d1fa3278dde2492a8956f.png" alt="UTOOLS1568018269824.png" style="zoom:80%;"></p>
-</li>
-<li><p>将解压后的目录 D:\instantclient_12_2_basic 加入到系统环境变量Path中</p>
-<p><img src="http://yanxuan.nosdn.127.net/2a8fe62c9c485a36a1db0138a5f28890.png" alt="UTOOLS1568018297644.png" style="zoom:80%;"></p>
-</li>
-<li><p>检测是否支持exp 命令</p>
-<p><img src="http://yanxuan.nosdn.127.net/c29abb5aa4502547821104ca07b68431.png" alt="UTOOLS1568018318959.png" style="zoom:80%;"></p>
-</li>
-<li><p>如果出现以下弹窗，则需要安装visual c++ 2013运行库</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1568018337653.png" alt="1568018337653" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/fefc67c394c97336a051a4d7b49edd1e.png" alt="UTOOLS1568018353504.png" style="zoom:80%;"></p>
-</li>
-<li><p>再测检测是否支持exp命令，出现如下说明Oracle客户端安装成功</p>
-<p><img src="http://yanxuan.nosdn.127.net/31bcdd4c8720e6bb4471393ca45d29d8.png" alt="UTOOLS1568018389722.png" style="zoom:80%;"></p>
-</li>
-</ol>
-<h2 id="创建数据库备份脚本"><a href="#创建数据库备份脚本" class="headerlink" title="创建数据库备份脚本"></a>创建数据库备份脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1x_ADNSmIBUZwc5XuQbZfqw </span><br><span class="line">提取码：ym1q</span><br></pre></td></tr></table></figure>
-<p><img src="http://yanxuan.nosdn.127.net/b55c9dfac7013edac80b90ae462823be.png" alt="UTOOLS1568018507278.png" style="zoom:80%;"></p>
-<h2 id="创建定时备份任务"><a href="#创建定时备份任务" class="headerlink" title="创建定时备份任务"></a>创建定时备份任务</h2><p>开始-管理工具-任务计划程序，打开任务计划程序库，点击「创建基本任务」</p>
-<p><img src="http://yanxuan.nosdn.127.net/65157a32b694503d0f80eb55d32eec29.png" alt="UTOOLS1568018818487.png" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/2ad410d1efcb6a9824833e746d4d2af7.png" alt="UTOOLS1568018833762.png" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/f81951d2235ece2f1f9f52cdbfb9dde4.png" alt="UTOOLS1568018863747.png" title="UTOOLS1568018863747.png" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/71ab216e5f01da5bfddc277e2073104f.png" alt="UTOOLS1568018922620.png" title="UTOOLS1568018922620.png" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/2c60c522a4610207509eb0797a2c0149.png" alt="UTOOLS1568019120113.png" title="UTOOLS1568019120113.png" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/e4a71f1cf58b59ce63dc64547d6c968a.png" alt="UTOOLS1568019136979.png" title="UTOOLS1568019136979.png" style="zoom:80%;"></p>
-<p><img src="http://yanxuan.nosdn.127.net/8a5161512993bbd105e1ba69e6db5bdf.png" alt="UTOOLS1568019155935.png" title="UTOOLS1568019155935.png" style="zoom:80%;"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle 数据备份</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/09/Windows环境中实现Oracle远程数据自动备份/">展开全文 >></a>
         </p>
       
 
@@ -1340,15 +1385,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,7 +1393,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1364,19 +1413,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1388,19 +1437,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1412,6 +1457,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
@@ -1420,15 +1469,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1436,11 +1481,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
