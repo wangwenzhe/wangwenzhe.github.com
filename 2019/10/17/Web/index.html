@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Web | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Jquery Ajax 发送数据的内容编码类型contentType 默认值为 application/x-www-form-urlencoded，也可以指定其它类型，例如 application/json  CSS display: none; 和 visibility: hidden; 都是不可见，且不支持页面交互。前者不占空间，后者仍然占据空间">
+  <meta name="description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
 <meta name="keywords" content="Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web">
 <meta property="og:url" content="http://yoursite.com/2019/10/17/Web/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="Jquery Ajax 发送数据的内容编码类型contentType 默认值为 application/x-www-form-urlencoded，也可以指定其它类型，例如 application/json  CSS display: none; 和 visibility: hidden; 都是不可见，且不支持页面交互。前者不占空间，后者仍然占据空间">
+<meta property="og:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-17T14:54:46.532Z">
+<meta property="og:updated_time" content="2019-12-27T15:13:29.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web">
-<meta name="twitter:description" content="Jquery Ajax 发送数据的内容编码类型contentType 默认值为 application/x-www-form-urlencoded，也可以指定其它类型，例如 application/json  CSS display: none; 和 visibility: hidden; 都是不可见，且不支持页面交互。前者不占空间，后者仍然占据空间">
+<meta name="twitter:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 48</p>
-			<p>总字数 <span class="post-count">52k</span></p>
+			<p>总文章数 50</p>
+			<p>总字数 <span class="post-count">53k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：69字 | 阅读本文大概需要 ：1分钟
+					字数：247字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,11 +185,30 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Jquery-Ajax"><a href="#Jquery-Ajax" class="headerlink" title="Jquery Ajax"></a>Jquery Ajax</h2><ol>
+        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ol>
+<li><p>引入<code>css</code>文件时，必须指定  <code>rel=&quot;stylesheet&quot;</code>  否则会加载失败</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;iconfont.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ol>
+<li><p>资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//创建 a 标签元素</span><br><span class="line">var anchor = document.createElement(&quot;a&quot;);</span><br><span class="line">anchor.href = img_base64_data;</span><br><span class="line">anchor.download = &quot;webcam.png&quot;;</span><br><span class="line">anchor.innerHTML = &quot;下载&quot;;</span><br><span class="line"></span><br><span class="line">//把 a 标签元素添加到页面中</span><br><span class="line">dom.appendChild(anchor);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h2><ol>
+<li><p>判断 <code>checkbox</code> 是否选中，设置选中与否</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//判断 checkbox 是否选中</span><br><span class="line">var bchecked = $(&quot;#xxx&quot;).prop(&quot;checked&quot;);</span><br><span class="line"></span><br><span class="line">//选中</span><br><span class="line">$(&quot;#xxx&quot;).prop(&quot;checked&quot;, true);</span><br><span class="line"></span><br><span class="line">//不选中</span><br><span class="line">$(&quot;#xxx&quot;).prop(&quot;checked&quot;, false);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Jquery-Ajax"><a href="#Jquery-Ajax" class="headerlink" title="Jquery Ajax"></a>Jquery Ajax</h2><ol>
 <li>发送数据的内容编码类型<code>contentType</code> 默认值为 <code>application/x-www-form-urlencoded</code>，也可以指定其它类型，例如 <code>application/json</code></li>
 </ol>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ol>
-<li>display: none; 和 visibility: hidden; 都是不可见，且不支持页面交互。前者不占空间，后者仍然占据空间</li>
+<li><p>display: none; 和 visibility: hidden; 都是不可见，且不支持页面交互。前者不占空间，后者仍然占据空间</p>
+</li>
+<li><p>文档大小默认占满整个页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html,</span><br><span class="line">body &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
@@ -447,19 +466,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,6 +506,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
@@ -499,11 +526,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,19 +554,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,6 +590,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
@@ -559,19 +606,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,11 +626,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>

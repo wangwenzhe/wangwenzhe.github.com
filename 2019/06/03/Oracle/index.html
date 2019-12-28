@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Oracle | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。 zhs16g">
+  <meta name="description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
 <meta name="keywords" content="Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle">
 <meta property="og:url" content="http://yoursite.com/2019/06/03/Oracle/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。 zhs16g">
+<meta property="og:description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg">
-<meta property="og:updated_time" content="2019-11-17T14:54:46.529Z">
+<meta property="og:updated_time" content="2019-12-27T15:13:29.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
-<meta name="twitter:description" content="99数据库管理员账号 admin admin123 数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。 zhs16g">
+<meta name="twitter:description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
@@ -97,8 +97,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 48</p>
-			<p>总字数 <span class="post-count">52k</span></p>
+			<p>总文章数 50</p>
+			<p>总字数 <span class="post-count">53k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -181,7 +181,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：6k字 | 阅读本文大概需要 ：27分钟
+					字数：6.2k字 | 阅读本文大概需要 ：28分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -190,6 +190,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>99数据库管理员账号 admin admin123</p>
+<h3 id="大小写问题"><a href="#大小写问题" class="headerlink" title="大小写问题"></a>大小写问题</h3><ol>
+<li>用户名不区分大小写「大写或小写不影响连接使用」</li>
+<li>11g 开始，密码默认区分大小写</li>
+</ol>
 <h3 id="数据库字符集"><a href="#数据库字符集" class="headerlink" title="数据库字符集"></a>数据库字符集</h3><table>
 <thead>
 <tr>
@@ -258,7 +262,7 @@
 <p>alter table tablename drop column columnname;</p>
 </blockquote>
 <h4 id="获取表的列信息"><a href="#获取表的列信息" class="headerlink" title="获取表的列信息"></a>获取表的列信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select  *  from user_tab_columns  where table_name = &apos;CMS_T_VIEW_RECORD&apos;</span><br></pre></td></tr></table></figure>
-<h4 id="修改用户名"><a href="#修改用户名" class="headerlink" title="修改用户名"></a>修改用户名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 列出所有用户，找到用户标识 user_id「以 sysdba 登录」</span><br><span class="line">conn /as sysdba;</span><br><span class="line">select username, user_id from dba_users;</span><br><span class="line">2. 修改用户名并提交</span><br><span class="line">UPDATE USER$ SET NAME=&apos;SCMZHZF&apos; WHERE user#=158;</span><br><span class="line">COMMIT;</span><br><span class="line">3. 强制刷新</span><br><span class="line">ALTER SYSTEM CHECKPOINT;</span><br><span class="line">ALTER SYSTEM FLUSH SHARED_POOL;</span><br><span class="line">4. 修改用户密码</span><br><span class="line">ALTER USER scmzhzf IDENTIFIED BY scmzhzf;</span><br></pre></td></tr></table></figure>
+<h4 id="修改用户名"><a href="#修改用户名" class="headerlink" title="修改用户名"></a>修改用户名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 查找 SGP 用户，找到用户标识 user_id「以 sysdba 登录，用户名区分大小写」</span><br><span class="line">conn /as sysdba;</span><br><span class="line">select username, user_id from dba_users where username=&apos;SGP&apos;;</span><br><span class="line">2. 修改用户名为 scm 并提交「下行命令中 158 为上行命令结果中 user_id」</span><br><span class="line">UPDATE USER$ SET NAME=&apos;scm&apos; WHERE user#=158;  </span><br><span class="line">COMMIT;</span><br><span class="line">3. 强制刷新</span><br><span class="line">ALTER SYSTEM CHECKPOINT;</span><br><span class="line">ALTER SYSTEM FLUSH SHARED_POOL;</span><br><span class="line">4. 修改用户密码</span><br><span class="line">ALTER USER SCM IDENTIFIED BY scm;</span><br></pre></td></tr></table></figure>
 <h4 id="查看当前用户的缺省表空间"><a href="#查看当前用户的缺省表空间" class="headerlink" title="查看当前用户的缺省表空间"></a>查看当前用户的缺省表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select username,default_tablespace from user_users;</span><br></pre></td></tr></table></figure>
 <h4 id="查看已建好的表空间"><a href="#查看已建好的表空间" class="headerlink" title="查看已建好的表空间"></a>查看已建好的表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select file_name,tablespace_name from dba_data_files;</span><br></pre></td></tr></table></figure>
 <h4 id="查看当前用户的表空间和有哪些表"><a href="#查看当前用户的表空间和有哪些表" class="headerlink" title="查看当前用户的表空间和有哪些表"></a>查看当前用户的表空间和有哪些表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select table_name,tablespace_name from user_tables;</span><br></pre></td></tr></table></figure>
@@ -462,9 +466,15 @@
 <p>DECODE(col|expression ,search1,result1<br>   [,search2,result2]<br>   [,default])<br>如果 default 值被省略了，那么当 search 值没有与任何的 math 值匹配，将返回 null 值。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT ENAME,JOB,SAL,</span><br><span class="line">  DECODE(JOB, &apos;MANAGER&apos;, SAL+100, &apos;SALESMAN&apos;,SAL+200, SAL) REVISED_SAL</span><br><span class="line">  FROM EMP;</span><br></pre></td></tr></table></figure>
-<h2 id="运维问题"><a href="#运维问题" class="headerlink" title="运维问题"></a>运维问题</h2><h3 id="ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务"><a href="#ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务" class="headerlink" title="ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务"></a>ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务</h3><ol>
-<li>重启服务 OracleServiceORCL</li>
-<li>重启监听 OracleOraDb11g_home1TNSListener</li>
+<h2 id="运维问题"><a href="#运维问题" class="headerlink" title="运维问题"></a>运维问题</h2><h3 id="oracle-从-11g-开始，默认情况下，密码是有大小写区分的"><a href="#oracle-从-11g-开始，默认情况下，密码是有大小写区分的" class="headerlink" title="oracle 从 11g 开始，默认情况下，密码是有大小写区分的"></a>oracle 从 11g 开始，默认情况下，密码是有大小写区分的</h3><p>可通过 SEC_CASE_SENSITIVE_LOGON 参数设置 ，默认情况下该参数的值为 true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter sec_case_sensitive_logon;</span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- ------------------------------</span><br><span class="line">sec_case_sensitive_logon             boolean     TRUE</span><br><span class="line"></span><br><span class="line">SQL&gt; alter system set sec_case_sensitive_logon=false scope=both;</span><br><span class="line">System altered.</span><br></pre></td></tr></table></figure>
+<h3 id="ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务"><a href="#ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务" class="headerlink" title="ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务"></a>ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务</h3><ol>
+<li><p>查看并修改 <code>listener.ora</code>，正确格式如下</p>
+<p><em>F:\app\Administrator\product\11.2.0\dbhome_1\NETWORK\ADMIN</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">SID_LIST_LISTENER =</span><br><span class="line">  (SID_LIST =</span><br><span class="line">    (SID_DESC =</span><br><span class="line">      (SID_NAME = CLRExtProc)</span><br><span class="line">      (ORACLE_HOME = F:\app\Administrator\product\11.2.0\dbhome_1)</span><br><span class="line">      (PROGRAM = extproc)</span><br><span class="line">      (ENVS = &quot;EXTPROC_DLLS=ONLY:F:\app\Administrator\product\11.2.0\dbhome_1\bin\oraclr11.dll&quot;)</span><br><span class="line">    )</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line"># wangqinpei 为计算机名</span><br><span class="line">LISTENER =</span><br><span class="line">  (DESCRIPTION_LIST =</span><br><span class="line">    (DESCRIPTION =</span><br><span class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = wangqinpei)(PORT = 1521))</span><br><span class="line">    )</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">ADR_BASE_LISTENER = F:\app\Administrator</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启监听 OracleOraDb11g_home1TNSListener</p>
+</li>
 <li>等待一会儿，重新连接</li>
 </ol>
 <h3 id="ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法"><a href="#ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法" class="headerlink" title="ORA-00020:maximum number of processes (150) exceeded 错误解决方法"></a>ORA-00020:maximum number of processes (150) exceeded 错误解决方法</h3><blockquote>
@@ -495,6 +505,7 @@
 <h3 id="连接本机Oracle报：ORA-12170-TNS-连接超时"><a href="#连接本机Oracle报：ORA-12170-TNS-连接超时" class="headerlink" title="连接本机Oracle报：ORA-12170: TNS: 连接超时"></a>连接本机Oracle报：ORA-12170: TNS: 连接超时</h3><blockquote>
 <p>本机公网 ip 是防火墙映射地址，需要在防火墙中添加入站规则，将 1521 添加进去。</p>
 </blockquote>
+<h3 id="Oracle-数据表转换为-Shapefile"><a href="#Oracle-数据表转换为-Shapefile" class="headerlink" title="Oracle 数据表转换为 Shapefile"></a>Oracle 数据表转换为 Shapefile</h3><p><a href="https://www.cnblogs.com/hans_gis/p/3482986.html" target="_blank" rel="noopener">https://www.cnblogs.com/hans_gis/p/3482986.html</a></p>
 
       
 
@@ -751,19 +762,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,6 +802,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
@@ -803,11 +822,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -819,19 +850,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,6 +867,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -855,6 +886,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
@@ -863,19 +902,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -891,11 +922,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>
