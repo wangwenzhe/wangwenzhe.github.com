@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="集合 Java 集合中有两类，一类是 List，一类是 Set 。List 有序且可以重复，而 Set 无序不可重复  ArrayList、LinkedList 在使用 ArrayList 时，如果能提前预测到数据量大小，比较大时一定要指定其长度 尽可能避免使用 add(index,e) ，会导致复制数组，降低效率 ArrayList 是数组结构，LinkedList 是双向链表 在 ArrayL">
+  <meta name="description" content="集合简述 Collection  集合的顶级接口。  List 列表  保证元素的存储顺序 — 有序； 有下标 —- 存储重复的元素 List 是有序可重复的集合  ArrayList  底层用数组存储数据。内存连续的，默认初始容量为 10，每次默认在上一次长度上增加一半，底层是基于右移运算来实现的。是一个线程不安全的集合。便于查询，不便于增删  LinkedList  通过节点 Node 实现的">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java">
 <meta property="og:url" content="http://yoursite.com/2019/10/17/Java/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="集合 Java 集合中有两类，一类是 List，一类是 Set 。List 有序且可以重复，而 Set 无序不可重复  ArrayList、LinkedList 在使用 ArrayList 时，如果能提前预测到数据量大小，比较大时一定要指定其长度 尽可能避免使用 add(index,e) ，会导致复制数组，降低效率 ArrayList 是数组结构，LinkedList 是双向链表 在 ArrayL">
+<meta property="og:description" content="集合简述 Collection  集合的顶级接口。  List 列表  保证元素的存储顺序 — 有序； 有下标 —- 存储重复的元素 List 是有序可重复的集合  ArrayList  底层用数组存储数据。内存连续的，默认初始容量为 10，每次默认在上一次长度上增加一半，底层是基于右移运算来实现的。是一个线程不安全的集合。便于查询，不便于增删  LinkedList  通过节点 Node 实现的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-16T14:50:47.226Z">
+<meta property="og:updated_time" content="2020-01-07T13:32:39.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java">
-<meta name="twitter:description" content="集合 Java 集合中有两类，一类是 List，一类是 Set 。List 有序且可以重复，而 Set 无序不可重复  ArrayList、LinkedList 在使用 ArrayList 时，如果能提前预测到数据量大小，比较大时一定要指定其长度 尽可能避免使用 add(index,e) ，会导致复制数组，降低效率 ArrayList 是数组结构，LinkedList 是双向链表 在 ArrayL">
+<meta name="twitter:description" content="集合简述 Collection  集合的顶级接口。  List 列表  保证元素的存储顺序 — 有序； 有下标 —- 存储重复的元素 List 是有序可重复的集合  ArrayList  底层用数组存储数据。内存连续的，默认初始容量为 10，每次默认在上一次长度上增加一半，底层是基于右移运算来实现的。是一个线程不安全的集合。便于查询，不便于增删  LinkedList  通过节点 Node 实现的">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 50</p>
-			<p>总字数 <span class="post-count">53.1k</span></p>
+			<p>总文章数 51</p>
+			<p>总字数 <span class="post-count">54k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.9k字 | 阅读本文大概需要 ：15分钟
+					字数：3.7k字 | 阅读本文大概需要 ：18分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,8 +185,70 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><ol>
-<li>Java 集合中有两类，一类是 <code>List</code>，一类是 <code>Set</code> 。<code>List</code> 有序且可以重复，而 Set 无序不可重复</li>
+        <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><ul>
+<li>Collection<e></e></li>
+</ul>
+<p>集合的顶级接口。</p>
+<ul>
+<li>List 列表</li>
+</ul>
+<p>保证元素的存储顺序 — 有序；</p>
+<p>有下标 —- 存储重复的元素</p>
+<p>List 是有序可重复的集合</p>
+<ul>
+<li>ArrayList</li>
+</ul>
+<p>底层用数组存储数据。内存连续的，默认初始容量为 10，每次默认在上一次长度上增加一半，底层是基于右移运算来实现的。是一个线程不安全的集合。便于查询，不便于增删</p>
+<ul>
+<li>LinkedList</li>
+</ul>
+<p>通过节点 Node 实现的链表，内存不连续，没有初始容量，不需要考虑扩容问题。是一个线程不安全的集合。便于增删，不便于查询元素</p>
+<ul>
+<li>Vector</li>
+</ul>
+<p>向量 — 基于数组来实现的。内存连续的。默认初始容量是 10，默认每次容量翻倍，基于三元运算来实现。是一个线程安全的集合                                                          </p>
+<ul>
+<li>Stack</li>
+</ul>
+<p>栈。是 Vector 的子类。遵循先进先出的原则。</p>
+<p>向栈中放入元素 —- 入栈 / 压栈</p>
+<p>从栈中取出元素 —- 出栈 / 弹栈</p>
+<ul>
+<li>Set</li>
+</ul>
+<p>接口，无序不允许有重复元素的集合</p>
+<ul>
+<li>HashSet—- 线程不安全的</li>
+</ul>
+<p>存储机制：底层是用的一个数组来存储的数据，这个数组的默认大小是 16.</p>
+<p>数组的每个位置称为一个桶（bucket），每一个桶中维系了一个链式栈结构。</p>
+<ul>
+<li>Queue</li>
+</ul>
+<p>队列（先进先出）所有新的元素插入到队列的尾部</p>
+<ul>
+<li>Iterator</li>
+</ul>
+<p>迭代器 — 本质上是通过指针的挪动来获取每一个元素。在遍历的时候，会复制原集合，然后一次给每个元素一个标记，如果这个元素被移除，则标记为 false，反之为 true, 便利完成之后，会去比对原集合，如果标记为 false，则将该元素从原集合中移除 —– 在迭代过程中，不允许直接增删原集合中的元素</p>
+<ul>
+<li>Map&lt;K,V&gt;— 映射 （散列表） </li>
+</ul>
+<p>两组变量 — 键，值。每一个键必然对应一个值，键不可重复 —- 一个映射实际上是由多个键值对组成。</p>
+<p>HashMap: 允许键或者值为 null. 默认初始容量是 16，加载因子是 0.75f，默认增加一倍 是一个异步式线程不安全的映射。</p>
+<p>Hashtable: 不允许键或者值为 null. 默认初始容量 11，加载因子是 0.75f。是一个同步式线程安全的映射</p>
+<p>ConcurrentHashMap— 异步式线程安全的映射</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ol>
+<li><p>Java 集合中有两类，一类是 <code>List</code>，一类是 <code>Set</code> 。<code>List</code> 有序且可以重复，而 Set 无序不可重复</p>
+</li>
+<li><p>求 list 子集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.subList(fromIndex, toIndex) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求两个 list 的并集：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.addAll(list2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求两个 list 的差集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.removeAll(list2)</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <h3 id="ArrayList、LinkedList"><a href="#ArrayList、LinkedList" class="headerlink" title="ArrayList、LinkedList"></a>ArrayList、LinkedList</h3><ol>
 <li>在使用 <code>ArrayList</code> 时，如果能提前预测到数据量大小，比较大时一定要指定其长度</li>
@@ -197,23 +259,22 @@
 <li><code>Map</code> 容器 <code>HashMap</code> 也是推荐要初始化长度从而避免扩容</li>
 </ol>
 <h3 id="Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet"><a href="#Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet" class="headerlink" title="Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet"></a>Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet</h3><ol>
-<li>HashMap 底层实现是数组，但数组的每一项都是一条链</li>
-<li>HashMap 可以允许存在一个为 null 的 key 和任意个为 null 的 value</li>
-<li>HashTable 中的 key 和 value 都不允许为 null</li>
-<li>HashTable 的方法是同步的,线程安全，而 HashMap 的方法不是</li>
-<li>HashSet 基于 HashMap 来实现的，底层采用 HashMap 来保存元素</li>
-<li>Set 接口是一种不包括重复元素的 Collection</li>
-<li>LinkedHashSet 是有序的，非线程安全的</li>
-</ol>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ol>
-<li><p>求 list 子集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.subList(fromIndex, toIndex) ;</span><br></pre></td></tr></table></figure>
+<li><p>HashMap 底层实现是数组，但数组的每一项都是一条链</p>
 </li>
-<li><p>求两个 list 的并集：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.addAll(list2)</span><br></pre></td></tr></table></figure>
+<li><p>HashMap 可以允许存在一个为 null 的 key 和任意个为 null 的 value</p>
 </li>
-<li><p>求两个 list 的差集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.removeAll(list2)</span><br></pre></td></tr></table></figure>
+<li><p>HashTable 中的 key 和 value 都不允许为 null</p>
+</li>
+<li><p>HashTable 的方法是同步的,线程安全，而 HashMap 的方法不是</p>
+</li>
+<li><p>HashSet 基于 HashMap 来实现的，底层采用 HashMap 来保存元素</p>
+</li>
+<li><p>Set 接口是一种不包括重复元素的 Collection</p>
+</li>
+<li><p>LinkedHashSet 是有序的，非线程安全的</p>
+</li>
+<li><p>map 添加元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//添加 map 元素</span><br><span class="line">map.put(key, value);</span><br><span class="line"></span><br><span class="line">//添加一个同类型的 map </span><br><span class="line">map.putAll(subMap);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="多参数「同类型」"><a href="#多参数「同类型」" class="headerlink" title="多参数「同类型」"></a>多参数「同类型」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -324,6 +385,14 @@
 <h3 id="String-join"><a href="#String-join" class="headerlink" title="String.join"></a>String.join</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String joined = String.join(&quot;/&quot;, &quot;2014&quot;, &quot;10&quot;, &quot;28&quot;); // &quot;2014/10/28&quot;</span><br><span class="line"> </span><br><span class="line">List&lt;String&gt; list = Arrays.asList(&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;);</span><br><span class="line">joined = String.join(&quot;;&quot;, list); // &quot;foo;bar;baz&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//字符串用 ，分割</span><br><span class="line">StringJoiner joiner = new StringJoiner(&quot;,&quot;);</span><br><span class="line">joiner.add(&quot;foo&quot;);</span><br><span class="line">joiner.add(&quot;bar&quot;);</span><br><span class="line">joiner.add(&quot;baz&quot;);</span><br><span class="line">String joined = joiner.toString(); // &quot;foo,bar,baz&quot;</span><br><span class="line"> </span><br><span class="line">// add() calls can be chained</span><br><span class="line">joined = new StringJoiner(&quot;-&quot;)</span><br><span class="line"> .add(&quot;foo&quot;)</span><br><span class="line"> .add(&quot;bar&quot;)</span><br><span class="line"> .add(&quot;baz&quot;)</span><br><span class="line"> .toString(); // &quot;foo-bar-baz&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="Join-Collector"><a href="#Join-Collector" class="headerlink" title="Join Collector"></a>Join Collector</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; list = Arrays.asList(</span><br><span class="line"> new Person(&quot;John&quot;, &quot;Smith&quot;),</span><br><span class="line"> new Person(&quot;Anna&quot;, &quot;Martinez&quot;),</span><br><span class="line"> new Person(&quot;Paul&quot;, &quot;Watson &quot;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">String joinedFirstNames = list.stream()</span><br><span class="line"> .map(Person::getFirstName)</span><br><span class="line"> .collect(Collectors.joining(&quot;, &quot;)); // &quot;John, Anna, Paul&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="PostConstruct"><a href="#PostConstruct" class="headerlink" title="@PostConstruct"></a>@PostConstruct</h2><p><a href="https://www.jianshu.com/p/98cf7d8b9ec3" target="_blank" rel="noopener">https://www.jianshu.com/p/98cf7d8b9ec3</a></p>
+<ol>
+<li><p>从 Java EE5 规范开始，Servlet 中增加了两个影响 Servlet 生命周期的注解，@PostConstruct 和 @PreDestroy，这两个注解被用来修饰一个非静态的 void（）方法</p>
+</li>
+<li><p>Constructor &gt; @Autowired &gt; @PostConstruct</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public Class Tools &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private BusMapper busMapper;</span><br><span class="line"></span><br><span class="line">    public Tools() &#123;</span><br><span class="line">        System.out.println (&quot;此时 busMapper 方法未被注入: busMapper =&quot; + busMapper);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    private void init() &#123;</span><br><span class="line">        System.out.println (&quot;busMapper 方法已注入：&quot; + busMapper);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
 
@@ -576,19 +645,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,7 +653,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,19 +673,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,7 +681,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,15 +693,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,7 +701,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,15 +725,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,7 +733,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,11 +745,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,11 +765,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">

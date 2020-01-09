@@ -88,8 +88,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 50</p>
-			<p>总字数 <span class="post-count">53.1k</span></p>
+			<p>总文章数 51</p>
+			<p>总字数 <span class="post-count">54k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -155,6 +155,90 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Excel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/07/Excel/">Excel</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/07/Excel/" class="archive-article-date">
+  	<time datetime="2020-01-07T13:19:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：53字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><ol>
+<li><p>根据身份证号码计算出生日期</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=IF(LEN(C196)=18,TEXT(MID(C196,7,8),&quot;0000-00-00&quot;),IF(LEN(C196)=15,&quot;19&quot;&amp;TEXT(MID(C196,7,6),&quot;00-00-00&quot;),&quot;&quot;))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Excel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/07/Excel/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-IDEA-远程调试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1027,7 +1111,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.9k字 | 阅读本文大概需要 ：15分钟
+					字数：3.7k字 | 阅读本文大概需要 ：18分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -1035,8 +1119,70 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><ol>
-<li>Java 集合中有两类，一类是 <code>List</code>，一类是 <code>Set</code> 。<code>List</code> 有序且可以重复，而 Set 无序不可重复</li>
+        <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><ul>
+<li>Collection<e></e></li>
+</ul>
+<p>集合的顶级接口。</p>
+<ul>
+<li>List 列表</li>
+</ul>
+<p>保证元素的存储顺序 — 有序；</p>
+<p>有下标 —- 存储重复的元素</p>
+<p>List 是有序可重复的集合</p>
+<ul>
+<li>ArrayList</li>
+</ul>
+<p>底层用数组存储数据。内存连续的，默认初始容量为 10，每次默认在上一次长度上增加一半，底层是基于右移运算来实现的。是一个线程不安全的集合。便于查询，不便于增删</p>
+<ul>
+<li>LinkedList</li>
+</ul>
+<p>通过节点 Node 实现的链表，内存不连续，没有初始容量，不需要考虑扩容问题。是一个线程不安全的集合。便于增删，不便于查询元素</p>
+<ul>
+<li>Vector</li>
+</ul>
+<p>向量 — 基于数组来实现的。内存连续的。默认初始容量是 10，默认每次容量翻倍，基于三元运算来实现。是一个线程安全的集合                                                          </p>
+<ul>
+<li>Stack</li>
+</ul>
+<p>栈。是 Vector 的子类。遵循先进先出的原则。</p>
+<p>向栈中放入元素 —- 入栈 / 压栈</p>
+<p>从栈中取出元素 —- 出栈 / 弹栈</p>
+<ul>
+<li>Set</li>
+</ul>
+<p>接口，无序不允许有重复元素的集合</p>
+<ul>
+<li>HashSet—- 线程不安全的</li>
+</ul>
+<p>存储机制：底层是用的一个数组来存储的数据，这个数组的默认大小是 16.</p>
+<p>数组的每个位置称为一个桶（bucket），每一个桶中维系了一个链式栈结构。</p>
+<ul>
+<li>Queue</li>
+</ul>
+<p>队列（先进先出）所有新的元素插入到队列的尾部</p>
+<ul>
+<li>Iterator</li>
+</ul>
+<p>迭代器 — 本质上是通过指针的挪动来获取每一个元素。在遍历的时候，会复制原集合，然后一次给每个元素一个标记，如果这个元素被移除，则标记为 false，反之为 true, 便利完成之后，会去比对原集合，如果标记为 false，则将该元素从原集合中移除 —– 在迭代过程中，不允许直接增删原集合中的元素</p>
+<ul>
+<li>Map&lt;K,V&gt;— 映射 （散列表） </li>
+</ul>
+<p>两组变量 — 键，值。每一个键必然对应一个值，键不可重复 —- 一个映射实际上是由多个键值对组成。</p>
+<p>HashMap: 允许键或者值为 null. 默认初始容量是 16，加载因子是 0.75f，默认增加一倍 是一个异步式线程不安全的映射。</p>
+<p>Hashtable: 不允许键或者值为 null. 默认初始容量 11，加载因子是 0.75f。是一个同步式线程安全的映射</p>
+<p>ConcurrentHashMap— 异步式线程安全的映射</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ol>
+<li><p>Java 集合中有两类，一类是 <code>List</code>，一类是 <code>Set</code> 。<code>List</code> 有序且可以重复，而 Set 无序不可重复</p>
+</li>
+<li><p>求 list 子集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.subList(fromIndex, toIndex) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求两个 list 的并集：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.addAll(list2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求两个 list 的差集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.removeAll(list2)</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <h3 id="ArrayList、LinkedList"><a href="#ArrayList、LinkedList" class="headerlink" title="ArrayList、LinkedList"></a>ArrayList、LinkedList</h3><ol>
 <li>在使用 <code>ArrayList</code> 时，如果能提前预测到数据量大小，比较大时一定要指定其长度</li>
@@ -1047,23 +1193,22 @@
 <li><code>Map</code> 容器 <code>HashMap</code> 也是推荐要初始化长度从而避免扩容</li>
 </ol>
 <h3 id="Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet"><a href="#Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet" class="headerlink" title="Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet"></a>Map、HashMap、LinkedHashMap、Set、HashSet、LinkedHashSet</h3><ol>
-<li>HashMap 底层实现是数组，但数组的每一项都是一条链</li>
-<li>HashMap 可以允许存在一个为 null 的 key 和任意个为 null 的 value</li>
-<li>HashTable 中的 key 和 value 都不允许为 null</li>
-<li>HashTable 的方法是同步的,线程安全，而 HashMap 的方法不是</li>
-<li>HashSet 基于 HashMap 来实现的，底层采用 HashMap 来保存元素</li>
-<li>Set 接口是一种不包括重复元素的 Collection</li>
-<li>LinkedHashSet 是有序的，非线程安全的</li>
-</ol>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ol>
-<li><p>求 list 子集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.subList(fromIndex, toIndex) ;</span><br></pre></td></tr></table></figure>
+<li><p>HashMap 底层实现是数组，但数组的每一项都是一条链</p>
 </li>
-<li><p>求两个 list 的并集：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.addAll(list2)</span><br></pre></td></tr></table></figure>
+<li><p>HashMap 可以允许存在一个为 null 的 key 和任意个为 null 的 value</p>
 </li>
-<li><p>求两个 list 的差集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list1.removeAll(list2)</span><br></pre></td></tr></table></figure>
+<li><p>HashTable 中的 key 和 value 都不允许为 null</p>
+</li>
+<li><p>HashTable 的方法是同步的,线程安全，而 HashMap 的方法不是</p>
+</li>
+<li><p>HashSet 基于 HashMap 来实现的，底层采用 HashMap 来保存元素</p>
+</li>
+<li><p>Set 接口是一种不包括重复元素的 Collection</p>
+</li>
+<li><p>LinkedHashSet 是有序的，非线程安全的</p>
+</li>
+<li><p>map 添加元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//添加 map 元素</span><br><span class="line">map.put(key, value);</span><br><span class="line"></span><br><span class="line">//添加一个同类型的 map </span><br><span class="line">map.putAll(subMap);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="多参数「同类型」"><a href="#多参数「同类型」" class="headerlink" title="多参数「同类型」"></a>多参数「同类型」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1174,6 +1319,14 @@
 <h3 id="String-join"><a href="#String-join" class="headerlink" title="String.join"></a>String.join</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String joined = String.join(&quot;/&quot;, &quot;2014&quot;, &quot;10&quot;, &quot;28&quot;); // &quot;2014/10/28&quot;</span><br><span class="line"> </span><br><span class="line">List&lt;String&gt; list = Arrays.asList(&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;);</span><br><span class="line">joined = String.join(&quot;;&quot;, list); // &quot;foo;bar;baz&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="StringJoiner"><a href="#StringJoiner" class="headerlink" title="StringJoiner"></a>StringJoiner</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//字符串用 ，分割</span><br><span class="line">StringJoiner joiner = new StringJoiner(&quot;,&quot;);</span><br><span class="line">joiner.add(&quot;foo&quot;);</span><br><span class="line">joiner.add(&quot;bar&quot;);</span><br><span class="line">joiner.add(&quot;baz&quot;);</span><br><span class="line">String joined = joiner.toString(); // &quot;foo,bar,baz&quot;</span><br><span class="line"> </span><br><span class="line">// add() calls can be chained</span><br><span class="line">joined = new StringJoiner(&quot;-&quot;)</span><br><span class="line"> .add(&quot;foo&quot;)</span><br><span class="line"> .add(&quot;bar&quot;)</span><br><span class="line"> .add(&quot;baz&quot;)</span><br><span class="line"> .toString(); // &quot;foo-bar-baz&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="Join-Collector"><a href="#Join-Collector" class="headerlink" title="Join Collector"></a>Join Collector</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; list = Arrays.asList(</span><br><span class="line"> new Person(&quot;John&quot;, &quot;Smith&quot;),</span><br><span class="line"> new Person(&quot;Anna&quot;, &quot;Martinez&quot;),</span><br><span class="line"> new Person(&quot;Paul&quot;, &quot;Watson &quot;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">String joinedFirstNames = list.stream()</span><br><span class="line"> .map(Person::getFirstName)</span><br><span class="line"> .collect(Collectors.joining(&quot;, &quot;)); // &quot;John, Anna, Paul&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="PostConstruct"><a href="#PostConstruct" class="headerlink" title="@PostConstruct"></a>@PostConstruct</h2><p><a href="https://www.jianshu.com/p/98cf7d8b9ec3" target="_blank" rel="noopener">https://www.jianshu.com/p/98cf7d8b9ec3</a></p>
+<ol>
+<li><p>从 Java EE5 规范开始，Servlet 中增加了两个影响 Servlet 生命周期的注解，@PostConstruct 和 @PreDestroy，这两个注解被用来修饰一个非静态的 void（）方法</p>
+</li>
+<li><p>Constructor &gt; @Autowired &gt; @PostConstruct</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public Class Tools &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private BusMapper busMapper;</span><br><span class="line"></span><br><span class="line">    public Tools() &#123;</span><br><span class="line">        System.out.println (&quot;此时 busMapper 方法未被注入: busMapper =&quot; + busMapper);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    private void init() &#123;</span><br><span class="line">        System.out.println (&quot;busMapper 方法已注入：&quot; + busMapper);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
 
@@ -1227,119 +1380,9 @@
 
 
   
-    <article id="post-MyBatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/13/MyBatis/">MyBatis</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/13/MyBatis/" class="archive-article-date">
-  	<time datetime="2019-10-13T07:39:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：734字 | 阅读本文大概需要 ：4分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h3 id="参数处理"><a href="#参数处理" class="headerlink" title="参数处理"></a>参数处理</h3><p><a href="https://www.cnblogs.com/mingyue1818/p/3714162.html" target="_blank" rel="noopener">https://www.cnblogs.com/mingyue1818/p/3714162.html</a></p>
-<h4 id="单个参数"><a href="#单个参数" class="headerlink" title="单个参数"></a>单个参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXBean&gt; getXXBeanList(String id);  </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select t.* from tableName t where t.id= #&#123;id&#125;  </span><br><span class="line">&lt;/select&gt;  </span><br><span class="line"></span><br><span class="line">//#&#123;&#125;中的参数名与方法中的参数名一致</span><br></pre></td></tr></table></figure>
-<h4 id="多参数"><a href="#多参数" class="headerlink" title="多参数"></a>多参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(String xxId, String xxCode); </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select t.* from tableName where id = #&#123;0&#125; and name = #&#123;1&#125;  </span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">//由于是多参数那么就不能使用parameterType， 改用#｛index｝是第几个就用第几个的索引，索引从0开始</span><br></pre></td></tr></table></figure>
-<h4 id="多参数注解"><a href="#多参数注解" class="headerlink" title="多参数注解"></a>多参数注解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int getXXXBeanList(@Param(&quot;score&quot;)int score ,@Param(&quot;name&quot;)String name);</span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select * from tableName where score = #&#123;score&#125; and name = #&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Map-封装多参数"><a href="#Map-封装多参数" class="headerlink" title="Map 封装多参数"></a>Map 封装多参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">map.put(&quot;score&quot;, 90);</span><br><span class="line">map.put(&quot;name&quot;, &quot;hello&quot;);</span><br><span class="line"></span><br><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(HashMap map); </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; parameterType=&quot;java.util.Map&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select * from tableName where id = #&#123;score&#125; and name = #&#123;name&#125;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Array-集合"><a href="#Array-集合" class="headerlink" title="Array 集合"></a>Array 集合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(String[] ids);  </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot; parameterType=&quot;java.lang.String&quot;&gt;</span><br><span class="line">　　select * from tableName where id in</span><br><span class="line">　　&lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;array&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;  </span><br><span class="line">　　　　#&#123;item&#125;</span><br><span class="line">　　&lt;/foreach&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="List-集合"><a href="#List-集合" class="headerlink" title="List 集合"></a>List 集合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(List&lt;String&gt; list);  </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select * from tableName where id in</span><br><span class="line">　　&lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;list&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;  </span><br><span class="line">　　　　#&#123;item&#125;</span><br><span class="line">　　&lt;/foreach&gt;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="多参数（String-list-）"><a href="#多参数（String-list-）" class="headerlink" title="多参数（String  list ）"></a>多参数（String  list ）</h4><h5 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h5><h6 id="方式-1：map"><a href="#方式-1：map" class="headerlink" title="方式 1：map"></a>方式 1：map</h6><ol>
-<li><p>参数封装到 map</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map.put(&quot;score&quot;, 90);</span><br><span class="line">map.put(&quot;list&quot;, list);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dao 方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public int operateBatch(Map&lt;String, Object&gt; map);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h6 id="方式-2：-param-注解-Dao-参数"><a href="#方式-2：-param-注解-Dao-参数" class="headerlink" title="方式 2：@param 注解 Dao 参数"></a>方式 2：@param 注解 Dao 参数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public int operateBatch(@Param(&quot;score&quot;)int score ,@Param(&quot;list&quot;)List&lt;Student&gt; list);</span><br></pre></td></tr></table></figure>
-<h5 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;update id=&quot;operateBatch&quot;&gt;</span><br><span class="line">        update student</span><br><span class="line">        set store=#&#123;score&#125;</span><br><span class="line">        where id in</span><br><span class="line">        &lt;foreach collection=&quot;list&quot; index=&quot;index&quot; item=&quot;item&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;</span><br><span class="line">            #&#123;item.id&#125;</span><br><span class="line">        &lt;/foreach&gt;</span><br><span class="line">&lt;/delete&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="MyBatis-Plus「-MyBatis-增强工具」"><a href="#MyBatis-Plus「-MyBatis-增强工具」" class="headerlink" title="MyBatis-Plus「 MyBatis 增强工具」"></a>MyBatis-Plus「 <a href="http://www.mybatis.org/mybatis-3/" target="_blank" rel="noopener">MyBatis</a> 增强工具」</h2><p><a href="https://mp.baomidou.com/guide/#特性" target="_blank" rel="noopener">https://mp.baomidou.com/guide/#%E7%89%B9%E6%80%A7</a></p>
-<h2 id="MyBatisCodeHelper-Pro「IDEA-MyBatis-高效编码插件」"><a href="#MyBatisCodeHelper-Pro「IDEA-MyBatis-高效编码插件」" class="headerlink" title="MyBatisCodeHelper-Pro「IDEA MyBatis 高效编码插件」"></a>MyBatisCodeHelper-Pro「<strong>IDEA MyBatis 高效编码插件</strong>」</h2><p><a href="https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/README" target="_blank" rel="noopener">https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/README</a></p>
-<h2 id="MyBatis-PageHelper「分页插件」"><a href="#MyBatis-PageHelper「分页插件」" class="headerlink" title="MyBatis-PageHelper「分页插件」"></a>MyBatis-PageHelper「分页插件」</h2><p><a href="https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md" target="_blank" rel="noopener">https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md</a></p>
-<ol>
-<li><p>maven 引入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;5.1.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在 Spring 配置文件中配置拦截器插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">  &lt;!-- 注意其他配置 --&gt;</span><br><span class="line">  &lt;property name=&quot;plugins&quot;&gt;</span><br><span class="line">    &lt;array&gt;</span><br><span class="line">      &lt;bean class=&quot;com.github.pagehelper.PageInterceptor&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;properties&quot;&gt;</span><br><span class="line">          &lt;!--使用下面的方式配置参数，一行配置一个 --&gt;</span><br><span class="line">          &lt;value&gt;</span><br><span class="line">            params=value1</span><br><span class="line">          &lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">      &lt;/bean&gt;</span><br><span class="line">    &lt;/array&gt;</span><br><span class="line">  &lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(1, 10);</span><br><span class="line"></span><br><span class="line">//下面紧跟着的第一个select方法会被分页</span><br><span class="line">List&lt;Country&gt; list = countryMapper.selectIf(1);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/13/MyBatis/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1434,19 +1477,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1454,7 +1485,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1462,19 +1505,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1482,7 +1513,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1490,15 +1525,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1506,7 +1533,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1514,15 +1557,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1530,7 +1565,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1538,11 +1577,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1558,11 +1597,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
