@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://championwang.gitee.io/Users/mac126/Library/Application%20Support/typora-user-images/image-20200106141604581.png">
 <meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577257188189.png">
 <meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577158522536.png">
-<meta property="og:updated_time" content="2020-01-11T15:15:45.920Z">
+<meta property="og:updated_time" content="2020-02-06T03:56:27.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IDEA">
 <meta name="twitter:description" content="IDEA 安装注册IDEA 快捷键—windows 以下快捷键是根据自己使用习惯配置的，仅供参考   双击 Shift 查找文件  Ctrl + E 最近打开文件  Ctrl + D 删除当前行或选中行  Ctrl + W 删除光标前 word「word之间一般以空格或逗号分隔」  Ctrl + W 关闭 Editor TabClose  Ctrl + Shift + W 关闭所有 Editor">
@@ -298,45 +298,80 @@
 </li>
 </ol>
 <h3 id="IDEA-快捷键—Mac"><a href="#IDEA-快捷键—Mac" class="headerlink" title="IDEA 快捷键—Mac"></a>IDEA 快捷键—Mac</h3><blockquote>
-<p>以下快捷键是根据自己使用习惯配置的，仅供参考</p>
+<p>以下快捷键是IDEA 默认快捷键+根据自己使用习惯配置快捷键，仅供参考</p>
 </blockquote>
-<ol>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ol>
 <li>双击 Shift 查找文件</li>
-<li>Command + D 删除当前行或选中行 <code>Delete Line</code></li>
-<li>Command + W 删除光标前 word「word之间一般以空格或逗号分隔」<code>Delete to Word Start</code></li>
+<li>Command + F 当前文件范围内查找 <code>Find...</code></li>
+<li>Ctrl + Shift + F 全局范围内查找 <code>Find in Path...</code></li>
+<li>Command + \  查询接口位置</li>
+</ol>
+<h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><ol>
+<li>Command + R 当前文件范围内替换 <code>Replace...</code></li>
+<li>Ctrl + Shift + R 全局范围内替换 <code>Replace in Path...</code></li>
+</ol>
+<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><ol>
+<li>Command + D 复制当前行或选中行</li>
+<li>Command + Delete  删除光标所在行或选中行（一行或多行）</li>
+<li>Option + Shift + ⇧ <code>Move Line Up</code></li>
+<li>Option + Shift + ⇩ <code>Move Line Down</code></li>
+<li>Command + Option + L 代码格式化 <code>Reformat Code</code></li>
+<li>Command + Shift + U  切换大小写</li>
 <li>Command + Z 撤销 <code>Undo</code></li>
 <li>Command + Y 恢复撤销 <code>Redo</code></li>
-<li>Command + F 当前文件范围内查找 <code>Find...</code></li>
-<li>Command + R 当前文件范围内替换 <code>Replace...</code></li>
-<li>Command + Shift + F 全局范围内查找 <code>Find in Path...</code></li>
-<li>Command + Shift + R 全局范围内替换 <code>Replace in Path...</code></li>
-<li>Command + L 定位到指定行 <code>Line/Column...</code></li>
-<li>Command + / 单行注释与反注释 <code>comment</code></li>
-<li>Command + Option + / 块注释与反注释 <code>comment</code></li>
-<li><code>Ctrl + 鼠标左键</code> 进入方法定义代码处; Show usages … 「定位到使用的代码处」 <code>Declaration or Usages</code></li>
-<li><code>Ctrl + 鼠标右键</code> 进入方法实现类定义代码处 <code>Navigate Implementation(s)</code></li>
-<li>Command + Ctrl + H 查看方法被调用关系 <code>Call hierarchy</code></li>
-<li>Command + Option + 方向下键 复制所在行或选中行 <code>Duplicate Line or Selection</code></li>
-<li>Command + Option + 方向左键/右键 回退/前进位置 <code>Back Forward</code> </li>
-<li>Option + 方向左键/右键 上一处/下一处编辑位置 <code>Last Edit Location</code> <code>Next Edit Location</code></li>
-<li>Option + 方向上键/下键 移动所在行或选中行 <code>Move Statement Down/Up</code> <code>Move Line Down/Up</code></li>
-<li>Option + U 切换大小写 <code>Toggle Case</code></li>
-<li>Option + F  代码格式化 <code>Reformat Code</code></li>
+<li>Option + Delete  <code>Delete to Word Start</code></li>
 <li>Option + S <code>Surround With</code>…</li>
 <li>Option + G <code>Generate</code> </li>
-<li>F4 打开文件所在目录 <code>Reveal in Finder</code></li>
-<li>F2 文件重命名 <code>Main Menu - Refactor-Rename...</code></li>
-<li>F5 进入函数</li>
-<li>F6 单步执行</li>
-<li>F7 跳出函数</li>
-<li>F8 运行至下一个断点</li>
-<li>Ctrl + R  运行 Run</li>
+</ol>
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><ol>
+<li>F2  重命名</li>
+<li>F4  打开文件所在位置 <code>Reveal in Finder</code></li>
+</ol>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ol>
+<li>Command + /   单行注释</li>
+<li>Ctrl + Shift + /  块注释</li>
+</ol>
+<h4 id="定位到行"><a href="#定位到行" class="headerlink" title="定位到行"></a>定位到行</h4><ol>
+<li>Command + G <code>Line/Column...</code></li>
+</ol>
+<h4 id="代码跳转"><a href="#代码跳转" class="headerlink" title="代码跳转"></a>代码跳转</h4><ol>
+<li>Command + 左键  进入函数定义或使用「调用」</li>
+<li>Command + Option + 左键 进入函数实现</li>
+<li>Command + Option + ⇦  上一个位置 Back</li>
+<li>Command + Option + ⇨  下一个位置 Forward</li>
+<li>Command + Shift + Delete 上一个编辑位置</li>
+<li>Ctrl + Shift + Delete 下一个编辑位置</li>
+</ol>
+<h4 id="层级关系"><a href="#层级关系" class="headerlink" title="层级关系"></a>层级关系</h4><ol>
+<li>Ctrl + Option + H  调用层级关系</li>
+<li>Command + Shift + H 方法层级关系</li>
+</ol>
+<h4 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h4><ol>
 <li>Command + Option + M 代码块抽离成函数</li>
-<li>Command +  ,  <code>Settings</code></li>
-<li>Alt + V <code>Split Vertically</code></li>
-<li>Alt + H <code>Split Horizontally</code></li>
-<li>Command + Shift + M 代码窗口最大化<code>Hide All Tool Windows</code></li>
-<li>Command + W  关闭 Editor Tab<code>Close</code></li>
+</ol>
+<h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><ol>
+<li>Option + V <code>Split Vertically</code></li>
+<li>Option + H <code>Split Horizontally</code></li>
+</ol>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><ol>
+<li>Command + W  <code>Close</code></li>
+<li><p>Command + Shift + W  <code>Close All</code></p>
+</li>
+<li><p>Command + Shift + O  <code>Close Others</code></p>
+</li>
+<li>Command + Shift + F12 代码窗口最大化<code>Hide All Tool Windows</code></li>
+</ol>
+<h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><ol>
+<li><p>F5 进入函数</p>
+</li>
+<li><p>F6 单步执行</p>
+</li>
+<li><p>F7 跳出函数</p>
+</li>
+<li><p>F8 运行至下一个断点</p>
+</li>
+<li><p>Ctrl + R  运行 Run</p>
+</li>
 </ol>
 <h3 id="IDEA-配置"><a href="#IDEA-配置" class="headerlink" title="IDEA 配置"></a>IDEA 配置</h3><ol>
 <li>教程大全 <a href="https://mp.weixin.qq.com/s/JnEow9mPyEjM-W9DnMkt1Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/JnEow9mPyEjM-W9DnMkt1Q</a></li>
@@ -752,15 +787,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,11 +795,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -788,11 +823,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,11 +839,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,11 +851,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -828,11 +863,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,11 +879,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,7 +891,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -864,11 +907,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -876,19 +919,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -896,11 +927,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -924,11 +959,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
             
             <div class="clearfix"></div>
