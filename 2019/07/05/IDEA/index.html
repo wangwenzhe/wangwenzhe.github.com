@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://championwang.gitee.io/Users/mac126/Library/Application%20Support/typora-user-images/image-20200106141604581.png">
 <meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577257188189.png">
 <meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577158522536.png">
-<meta property="og:updated_time" content="2020-02-06T03:56:27.473Z">
+<meta property="og:updated_time" content="2020-02-06T04:25:23.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IDEA">
 <meta name="twitter:description" content="IDEA 安装注册IDEA 快捷键—windows 以下快捷键是根据自己使用习惯配置的，仅供参考   双击 Shift 查找文件  Ctrl + E 最近打开文件  Ctrl + D 删除当前行或选中行  Ctrl + W 删除光标前 word「word之间一般以空格或逗号分隔」  Ctrl + W 关闭 Editor TabClose  Ctrl + Shift + W 关闭所有 Editor">
@@ -322,6 +322,8 @@
 <li>Option + Delete  <code>Delete to Word Start</code></li>
 <li>Option + S <code>Surround With</code>…</li>
 <li>Option + G <code>Generate</code> </li>
+<li>Option + Enter 显示意向动作和快速修复代码</li>
+<li>Command + Option + O <code>Optimize Imports</code>  优化导入</li>
 </ol>
 <h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><ol>
 <li>F2  重命名</li>
@@ -331,16 +333,14 @@
 <li>Command + /   单行注释</li>
 <li>Ctrl + Shift + /  块注释</li>
 </ol>
-<h4 id="定位到行"><a href="#定位到行" class="headerlink" title="定位到行"></a>定位到行</h4><ol>
-<li>Command + G <code>Line/Column...</code></li>
-</ol>
-<h4 id="代码跳转"><a href="#代码跳转" class="headerlink" title="代码跳转"></a>代码跳转</h4><ol>
+<h4 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h4><ol>
 <li>Command + 左键  进入函数定义或使用「调用」</li>
 <li>Command + Option + 左键 进入函数实现</li>
 <li>Command + Option + ⇦  上一个位置 Back</li>
 <li>Command + Option + ⇨  下一个位置 Forward</li>
 <li>Command + Shift + Delete 上一个编辑位置</li>
 <li>Ctrl + Shift + Delete 下一个编辑位置</li>
+<li>Command + G 定位到行 <code>Line/Column...</code></li>
 </ol>
 <h4 id="层级关系"><a href="#层级关系" class="headerlink" title="层级关系"></a>层级关系</h4><ol>
 <li>Ctrl + Option + H  调用层级关系</li>
@@ -787,11 +787,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -799,11 +799,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -835,11 +835,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,11 +847,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,11 +859,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,19 +883,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -947,11 +947,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,11 +959,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>
