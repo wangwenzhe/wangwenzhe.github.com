@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 52</p>
-			<p>总字数 <span class="post-count">56.1k</span></p>
+			<p>总文章数 53</p>
+			<p>总字数 <span class="post-count">56.6k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,93 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-MUI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/22/MUI/">MUI.md</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/22/MUI/" class="archive-article-date">
+  	<time datetime="2020-02-22T15:32:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：221字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>引入资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--基础mui资源--&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/css/mui.min.css&quot;&gt;</span><br><span class="line">&lt;script src=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/js/mui.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--mui picker 选择器资源--&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/css/mui.picker.min.css&quot;&gt;</span><br><span class="line">&lt;script src=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/js/mui.picker.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>日期时间选择器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//html</span><br><span class="line">&lt;input id=&quot;departtime&quot; type=&quot;text&quot; placeholder=&quot;请选择出发日期&quot;/&gt;</span><br><span class="line">&lt;input id=&quot;visittime&quot; type=&quot;text&quot; placeholder=&quot;请选择到达日期&quot;/&gt;</span><br><span class="line"></span><br><span class="line">//js</span><br><span class="line">$(&apos;#departtime, #visittime&apos;).click(function () &#123;</span><br><span class="line">            var _self = this;</span><br><span class="line">            if(_self.picker) &#123;</span><br><span class="line">                _self.picker.show(function (rs) &#123;</span><br><span class="line">                    _self.value = rs.text;</span><br><span class="line">                    _self.picker.dispose();</span><br><span class="line">                    _self.picker = null;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                _self.picker = new mui.DtPicker(&#123;&#125;);</span><br><span class="line">                _self.picker.show(function(rs) &#123;</span><br><span class="line">                    _self.value = rs.text;</span><br><span class="line">                    _self.picker.dispose();</span><br><span class="line">                    _self.picker = null;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MUI.md</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/22/MUI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-SLF4J-Logback" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -873,7 +960,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：278字 | 阅读本文大概需要 ：1分钟
+					字数：280字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -896,13 +983,13 @@
 <p>echarts + highcharts</p>
 <p>BaiduMap + ArcgisMap + SuperMap</p>
 </blockquote>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ol>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><ol>
 <li>WebStorm</li>
 </ol>
 <h3 id="android"><a href="#android" class="headerlink" title="android"></a>android</h3><blockquote>
 <p>原生 + H5 页面「app 本地页面 + 互联网页面」</p>
 </blockquote>
-<h4 id="效率插件"><a href="#效率插件" class="headerlink" title="效率插件"></a>效率插件</h4><ol>
+<h4 id="AS-效率插件"><a href="#AS-效率插件" class="headerlink" title="AS 效率插件"></a>AS 效率插件</h4><ol>
 <li>Freeline</li>
 <li>ButterKnife</li>
 </ol>
@@ -911,6 +998,7 @@
 </blockquote>
 <h3 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h3><h3 id="移动端UI"><a href="#移动端UI" class="headerlink" title="移动端UI"></a>移动端UI</h3><ol>
 <li>mui</li>
+<li>WeUI</li>
 <li>SUI</li>
 </ol>
 <h3 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h3><h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><h4 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h4><ol>
@@ -1080,148 +1168,6 @@
 
 
   
-    <article id="post-Web" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/Web/">Web</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/17/Web/" class="archive-article-date">
-  	<time datetime="2019-10-17T06:23:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：585字 | 阅读本文大概需要 ：2分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ol>
-<li><p>引入<code>css</code>文件时，必须指定  <code>rel=&quot;stylesheet&quot;</code>  否则会加载失败</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;iconfont.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ol>
-<li><p>资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//创建 a 标签元素</span><br><span class="line">var anchor = document.createElement(&quot;a&quot;);</span><br><span class="line">anchor.href = img_base64_data;</span><br><span class="line">anchor.download = &quot;webcam.png&quot;;</span><br><span class="line">anchor.innerHTML = &quot;下载&quot;;</span><br><span class="line"></span><br><span class="line">//把 a 标签元素添加到页面中</span><br><span class="line">dom.appendChild(anchor);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>打开新页面几种方式</strong></p>
-<ul>
-<li><p>能返回到上个页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. window.open(url, &quot;xxx&quot;)</span><br><span class="line">2. window.location.href = url</span><br><span class="line">3. window.location.assign (url)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>不能返回上个页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.location.replace (url)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>History</p>
-<ol>
-<li><p>window.history.back () - 与在浏览器点击后退按钮相同  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.history.go(-1)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>window.history.forward () - 与在浏览器中点击向前按钮相同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.history.go(1)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>刷新</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.location.reload()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.close();</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h2><ol>
-<li><p>判断 <code>checkbox</code> 是否选中，设置选中与否</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//判断 checkbox 是否选中</span><br><span class="line">var bchecked = $(&quot;#xxx&quot;).prop(&quot;checked&quot;);</span><br><span class="line"></span><br><span class="line">//选中</span><br><span class="line">$(&quot;#xxx&quot;).prop(&quot;checked&quot;, true);</span><br><span class="line"></span><br><span class="line">//不选中</span><br><span class="line">$(&quot;#xxx&quot;).prop(&quot;checked&quot;, false);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>H5 软键盘监听</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> // ios &amp; android 键盘弹出：</span><br><span class="line"> $(&quot;#inputid&quot;).on(&apos;focus&apos;, function () &#123;</span><br><span class="line"> 	//键盘弹出的事件处理</span><br><span class="line"> &#125;);</span><br><span class="line"></span><br><span class="line">const ua = window.navigator.userAgent.toLocaleLowerCase();</span><br><span class="line">const isIOS = /iphone|ipad|ipod/.test(ua);</span><br><span class="line">const isAndroid = /android/.test(ua);</span><br><span class="line"></span><br><span class="line">if(isAndroid) &#123;</span><br><span class="line">	var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">    $(window).on(&apos;resize&apos;, function () &#123;</span><br><span class="line">      var nowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">      if (clientHeight &gt; nowClientHeight) &#123;</span><br><span class="line">			//键盘弹出的事件处理</span><br><span class="line">      &#125;</span><br><span class="line">      else &#123;</span><br><span class="line">        //键盘收起的事件处理</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(isIOS) &#123;</span><br><span class="line">  $(&quot;#inputid&quot;).on(&apos;blue&apos;, function () &#123;</span><br><span class="line">  	//键盘收起的事件处理</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Jquery-Ajax"><a href="#Jquery-Ajax" class="headerlink" title="Jquery Ajax"></a>Jquery Ajax</h2><ol>
-<li>发送数据的内容编码类型<code>contentType</code> 默认值为 <code>application/x-www-form-urlencoded</code>，也可以指定其它类型，例如 <code>application/json</code></li>
-</ol>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ol>
-<li><p>display: none; 和 visibility: hidden; 都是不可见，且不支持页面交互。前者不占空间，后者仍然占据空间</p>
-</li>
-<li><p>文档大小默认占满整个页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">html,</span><br><span class="line">body &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>容器不透明度设置 <code>opacity</code>, 颜色透明度 <code>rgba</code></p>
-</li>
-<li><p>单词换行</p>
-<ul>
-<li>white-space，控制空白字符的显示，同时还能控制是否自动换行。它有五个值：normal | nowrap | pre | pre-wrap | pre-line</li>
-<li>word-break，控制单词如何被拆分换行。它有三个值：normal | break-all | keep-all</li>
-<li>word-wrap（overflow-wrap）控制长度超过一行的单词是否被拆分换行，是 word-break 的补充，它有两个值：normal | break-word</li>
-</ul>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/17/Web/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1319,7 +1265,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1327,15 +1273,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1343,15 +1281,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1363,11 +1309,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1375,7 +1317,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1411,11 +1361,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1423,15 +1373,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1439,7 +1381,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1448,6 +1394,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1463,11 +1413,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1483,11 +1433,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
