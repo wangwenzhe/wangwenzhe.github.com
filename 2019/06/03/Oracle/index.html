@@ -17,9 +17,8 @@
 <meta property="og:description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg">
-<meta property="og:updated_time" content="2020-01-20T09:25:06.101Z">
+<meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/XFumb5.png">
+<meta property="og:updated_time" content="2020-03-05T08:58:18.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
 <meta name="twitter:description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
@@ -98,7 +97,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 54</p>
-			<p>总字数 <span class="post-count">57.6k</span></p>
+			<p>总字数 <span class="post-count">57.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -181,7 +180,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：6.2k字 | 阅读本文大概需要 ：28分钟
+					字数：6.3k字 | 阅读本文大概需要 ：29分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -502,13 +501,17 @@
 <li>查看 processes 「已生效」 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- -------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     300</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"><a href="#本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。" class="headerlink" title="本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"></a>本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。</h3><p><img src="https://ws1.sinaimg.cn/large/ade42695ly1g47bmvh7iqj20dl057t9c.jpg"></p>
-<h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h4><p>本机ip发生了变化(本机ip变化后与监听器配置中的ip不一致)</p>
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>打开Oracle的NetManager，保证本机ip与配置远程访问设置的ip一致即可启动监听(修改本机ip或修改远程访问ip)<br><img src="https://ws1.sinaimg.cn/large/ade42695ly1g47bporbskj20le0i2wft.jpg"></p>
+<h3 id="本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"><a href="#本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。" class="headerlink" title="本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"></a>本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。</h3><h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h4><p>本机ip发生了变化(本机ip变化后与监听器配置中的ip不一致)</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>打开Oracle的NetManager，保证本机ip与配置远程访问设置的ip一致即可启动监听(修改本机ip或修改远程访问ip)</p>
 <h3 id="连接本机Oracle报：ORA-12170-TNS-连接超时"><a href="#连接本机Oracle报：ORA-12170-TNS-连接超时" class="headerlink" title="连接本机Oracle报：ORA-12170: TNS: 连接超时"></a>连接本机Oracle报：ORA-12170: TNS: 连接超时</h3><blockquote>
 <p>本机公网 ip 是防火墙映射地址，需要在防火墙中添加入站规则，将 1521 添加进去。</p>
 </blockquote>
 <h3 id="Oracle-数据表转换为-Shapefile"><a href="#Oracle-数据表转换为-Shapefile" class="headerlink" title="Oracle 数据表转换为 Shapefile"></a>Oracle 数据表转换为 Shapefile</h3><p><a href="https://www.cnblogs.com/hans_gis/p/3482986.html" target="_blank" rel="noopener">https://www.cnblogs.com/hans_gis/p/3482986.html</a></p>
+<h3 id="ORA-12560-TNS-协议适配器错误"><a href="#ORA-12560-TNS-协议适配器错误" class="headerlink" title="ORA-12560: TNS: 协议适配器错误"></a>ORA-12560: TNS: 协议适配器错误</h3><p>参考 <a href="https://blog.csdn.net/Hello_World_QWP/article/details/78392855" target="_blank" rel="noopener">https://blog.csdn.net/Hello_World_QWP/article/details/78392855</a></p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>系统有效：Ctrl + R 输入<code>regedit</code> 查找路径 “HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Oracle -&gt; KEY_OraDb11g_home1”<br>找到 ORACLE_SID 右键，修改为 <code>orcl</code></p>
+<p><img src="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/XFumb5.png" alt="XFumb5" style="zoom:50%;"></p>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>终端有效：Ctrl + R 输入 <code>cmd</code> 进入到 DOS 界面，输入 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set oracle_sid=orcl</span><br></pre></td></tr></table></figure>
 
       
 
@@ -765,6 +768,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -777,7 +784,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,15 +796,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,11 +804,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,11 +836,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,11 +848,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,23 +860,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,31 +884,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -921,7 +912,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -937,15 +944,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Redis</a>
               </li>
             
             <div class="clearfix"></div>
