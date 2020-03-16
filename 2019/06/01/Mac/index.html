@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/4aGh07.png">
 <meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/dt58JP.png">
 <meta property="og:image" content="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647620108.png">
-<meta property="og:updated_time" content="2020-03-08T12:15:37.486Z">
+<meta property="og:updated_time" content="2020-03-13T12:41:59.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac">
 <meta name="twitter:description" content="符号说明123456789101112131415161718⌘ Command⇧ Shift⌥ Option⌃ Control↩︎ Return/Enter⌫ Delete⌦ 向前删除键（Fn+Delete）↑ 上箭头↓ 下箭头← 左箭头→ 右箭头⇞ Page Up（Fn+↑）⇟ Page Down（Fn+↓）Home Fn + ←End Fn + →⇥ 右制表符（Tab 键）⇤ 左制表符（Sh">
@@ -99,7 +99,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 54</p>
-			<p>总字数 <span class="post-count">58.3k</span></p>
+			<p>总字数 <span class="post-count">59.2k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -182,7 +182,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：1.8k字 | 阅读本文大概需要 ：7分钟
+					字数：1.9k字 | 阅读本文大概需要 ：7分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -240,6 +240,9 @@
 <li><strong>Command + Shift + ↓  从光标开始向右、下方选中到文档结尾</strong></li>
 <li><strong>Command + Shift + ←  从光标开始向左选中到行首</strong></li>
 <li><strong>Command + Shift + →  从光标开始向右选中到行尾</strong></li>
+<li>Command + Option + D  显示或隐藏 Dock</li>
+<li>Option + Shift + K  苹果图标 </li>
+<li>Command + I  显示文件或文件夹信息</li>
 <li>Ctrl + C 截图并上传至阿里云oss <code>uPic</code></li>
 <li>Ctrl + V 打开剪切板工具 <code>paste</code></li>
 </ul>
@@ -417,10 +420,27 @@
 <li><p>打开允许『任何来源』选项，只需在终端输入 <code>sudo spctl --master-disable</code> 即可。结果如图<br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647620108.png" alt="UTOOLS1576647620108.png"></p>
 </li>
 <li><p>Mac 系统挂载 NTFS 分区 U 盘 / 硬盘进行读写</p>
-<p>Mac 系统默认将 NTFS 分区的 U 盘或硬盘挂载为只读文件系统，对这些设备中文件做的修改无法保存，也无法将 Mac 系统中的文件复制到这些设备中。尝试在命令行中使用 cp 命令复制文件，会提示”read only file system” 的错误。</p>
+<ul>
+<li><p>使用「NTFS For Mac 助手」</p>
+</li>
+<li><p>Mac 系统默认将 NTFS 分区的 U 盘或硬盘挂载为只读文件系统，对这些设备中文件做的修改无法保存，也无法将 Mac 系统中的文件复制到这些设备中。尝试在命令行中使用 cp 命令复制文件，会提示”read only file system” 的错误。</p>
 <p>要让设备变成可读写，需要改变挂载的属性。步骤如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i // 进入root模式，需输入用户密码</span><br><span class="line">mount   // 查看设备设备信息和挂载点， 例如：/dev/disk2s1, /Volumes/DEVICE_NAME</span><br><span class="line">umount /Volumes/DEVICE_NAME   // 取消挂载(DEVICE_NAME为当前挂载目录)</span><br><span class="line">mkdir /Volumes/NEW_POINT      // 新建挂载点</span><br><span class="line">mount_ntfs -o rw,nobrowse /dev/disk2s1 /Volumes/NEW_POINT</span><br></pre></td></tr></table></figure>
-<p>重新挂载后，新设备点 / Volumes/NEW_POINT 的目录可正常进行读写，打开命令终端，可进行操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   sudo -i // 进入root模式，需输入用户密码</span><br><span class="line">   mount   // 查看设备设备信息和挂载点， 例如：/dev/disk2s1, /Volumes/DEVICE_NAME</span><br><span class="line">   umount /Volumes/DEVICE_NAME   // 取消挂载(DEVICE_NAME为当前挂载目录)</span><br><span class="line">   mkdir /Volumes/NEW_POINT      // 新建挂载点</span><br><span class="line">mount_ntfs -o rw,nobrowse /dev/disk2s1 /Volumes/NEW_POINT</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>重新挂载后，新设备点 / Volumes/NEW_POINT 的目录可正常进行读写，打开命令终端，可进行操作。
+</code></pre><ol start="3">
+<li><p>执行命令时出现 dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib</p>
+<ul>
+<li><p>Mac 没有安装 <code>Homebrew</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br><span class="line">brew update &amp;&amp; brew upgrade</span><br><span class="line">brew uninstall openssl; brew uninstall openssl; brew install https://github.com/tebelorg/Tump/releases/download/v1.0.0/openssl.rb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>已安装 <code>Homebrew</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update &amp;&amp; brew upgrade</span><br><span class="line">brew uninstall openssl; brew uninstall openssl; brew install https://github.com/tebelorg/Tump/releases/download/v1.0.0/openssl.rb</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 </ol>
 
@@ -688,14 +708,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">5+App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -704,11 +716,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">5+App</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,11 +732,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,11 +748,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,11 +756,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,7 +780,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,11 +788,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -792,11 +804,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,11 +812,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,7 +828,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -828,10 +840,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
@@ -840,7 +848,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
