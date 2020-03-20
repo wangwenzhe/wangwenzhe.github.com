@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647853825.png">
 <meta property="og:image" content="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647878429.png">
 <meta property="og:image" content="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647895201.png">
-<meta property="og:updated_time" content="2020-03-11T14:28:29.715Z">
+<meta property="og:updated_time" content="2020-03-18T03:37:33.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
 <meta name="twitter:description" content="参考资料 官方网站：https://www.runoob.com/redis/redis-install.html 命令行参考手册： https://redis.io/commands  Windows 下载地址 https://github.com/microsoftarchive/redis/releases  安装  添加到 Path 路径  配置端口，添加到防火墙白名单  设置最大内存大小">
@@ -97,8 +97,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 54</p>
-			<p>总字数 <span class="post-count">59.4k</span></p>
+			<p>总文章数 55</p>
+			<p>总字数 <span class="post-count">60.4k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -181,7 +181,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.7k字 | 阅读本文大概需要 ：14分钟
+					字数：2.9k字 | 阅读本文大概需要 ：15分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -245,7 +245,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd src</span><br><span class="line">$ ./redis-cli</span><br><span class="line">redis&gt; set foo bar</span><br><span class="line">OK</span><br><span class="line">redis&gt; get foo</span><br><span class="line">&quot;bar&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><p><a href="https://www.jianshu.com/p/035be70daf2d" target="_blank" rel="noopener">https://www.jianshu.com/p/035be70daf2d</a></p>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><h3 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h3><p><a href="https://www.jianshu.com/p/035be70daf2d" target="_blank" rel="noopener">https://www.jianshu.com/p/035be70daf2d</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$ brew install redis</span><br><span class="line"></span><br><span class="line">redis 配置文件的位置</span><br><span class="line">/usr/local/etc/redis.conf</span><br><span class="line"></span><br><span class="line">启动 redis</span><br><span class="line">$ redis-server</span><br><span class="line"></span><br><span class="line">使用配置文件启动 redis server</span><br><span class="line">$ redis-server /usr/local/etc/redis.conf</span><br><span class="line"></span><br><span class="line">本地测试 redis server 是否启动</span><br><span class="line">$ redis-cli ping</span><br><span class="line"></span><br><span class="line">本地连接</span><br><span class="line">$ redis-cli</span><br><span class="line"></span><br><span class="line">关闭 redis 服务</span><br><span class="line">redis 127.0.0.1:6379&gt; shutdown</span><br><span class="line"></span><br><span class="line">远程连接 redis 服务</span><br><span class="line">$ redis-cli -h ip -p 端口</span><br><span class="line">示例：$ redis-cli -h 127.0.0.1 -p 6379</span><br><span class="line"></span><br><span class="line">键入授权登录密码</span><br><span class="line">127.0.0.1:6379&gt; auth 123456（密码）</span><br><span class="line"></span><br><span class="line">退出本次会话</span><br><span class="line">127.0.0.1:6379&gt; quit</span><br></pre></td></tr></table></figure>
+<h3 id="配置认证密码"><a href="#配置认证密码" class="headerlink" title="配置认证密码"></a>配置认证密码</h3><ol>
+<li><p>通过文件配置</p>
+<p>/usr/local/etc/redis.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">默认密码配置</span><br><span class="line">#requirepass foobared  </span><br><span class="line"></span><br><span class="line">//修改配置，去掉前面#，并把 foobared 修改想要设置的密码，比如：123456</span><br><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过命令配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379[1]&gt; config set requirepass 123456</span><br><span class="line">OK</span><br><span class="line">redis 127.0.0.1:6379[1]&gt; config get requirepass</span><br><span class="line">1) &quot;requirepass&quot;</span><br><span class="line">2) &quot;123456&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <h3 id="可视化客户端工具"><a href="#可视化客户端工具" class="headerlink" title="可视化客户端工具"></a>可视化客户端工具</h3><p>Medis</p>
 <h2 id="Spring-Redis"><a href="#Spring-Redis" class="headerlink" title="Spring Redis"></a>Spring Redis</h2><h3 id="redis-properties"><a href="#redis-properties" class="headerlink" title="redis.properties"></a>redis.properties</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">redis.host=192.168.0.99</span><br><span class="line">redis.port=6379</span><br><span class="line">redis.password=123456</span><br><span class="line">redis.maxIdle=400</span><br><span class="line">redis.maxTotal=6000</span><br><span class="line">redis.maxWaitMillis=1000</span><br><span class="line">redis.blockWhenExhausted=true</span><br><span class="line">redis.testOnBorrow=true</span><br><span class="line">redis.timeout=100000</span><br><span class="line">defaultCacheExpireTime=60</span><br></pre></td></tr></table></figure>
 <h3 id="Spring-配置"><a href="#Spring-配置" class="headerlink" title="Spring 配置"></a>Spring 配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 加载配置文件 --&gt;  </span><br><span class="line">    &lt;context:property-placeholder location=&quot;classpath:redis.properties&quot; /&gt;  </span><br><span class="line">    &lt;!-- redis 配置 --&gt;</span><br><span class="line">    &lt;bean id=&quot;poolConfig&quot; class=&quot;redis.clients.jedis.JedisPoolConfig&quot;&gt;</span><br><span class="line">        &lt;!-- 最大空闲数 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxIdle&quot; value=&quot;$&#123;redis.maxIdle&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 最大空连接数 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxTotal&quot; value=&quot;$&#123;redis.maxTotal&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 最大等待时间 --&gt;</span><br><span class="line">        &lt;property name=&quot;maxWaitMillis&quot; value=&quot;$&#123;redis.maxWaitMillis&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 连接超时时是否阻塞，false时报异常,ture阻塞直到超时, 默认true --&gt;</span><br><span class="line">         &lt;property name=&quot;blockWhenExhausted&quot; value=&quot;$&#123;redis.blockWhenExhausted&#125;&quot; /&gt; </span><br><span class="line">        &lt;!-- 返回连接时，检测连接是否成功 --&gt;</span><br><span class="line">        &lt;property name=&quot;testOnBorrow&quot; value=&quot;$&#123;redis.testOnBorrow&#125;&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Spring-redis连接池管理工厂 --&gt;</span><br><span class="line">    &lt;bean id=&quot;jedisConnectionFactory&quot; class=&quot;org.springframework.data.redis.connection.jedis.JedisConnectionFactory&quot; destroy-method=&quot;destroy&quot;&gt;</span><br><span class="line">        &lt;!-- IP地址 --&gt;</span><br><span class="line">        &lt;property name=&quot;hostName&quot; value=&quot;$&#123;redis.host&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 端口号 --&gt;</span><br><span class="line">        &lt;property name=&quot;port&quot; value=&quot;$&#123;redis.port&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 密码 --&gt;</span><br><span class="line">        &lt;property name=&quot;password&quot; value=&quot;$&#123;redis.password&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 超时时间 默认2000--&gt;</span><br><span class="line">        &lt;property name=&quot;timeout&quot; value=&quot;$&#123;redis.timeout&#125;&quot; /&gt;</span><br><span class="line">        &lt;!-- 连接池配置引用 --&gt;</span><br><span class="line">        &lt;property name=&quot;poolConfig&quot; ref=&quot;poolConfig&quot; /&gt;</span><br><span class="line">        &lt;!-- usePool：是否使用连接池 --&gt;</span><br><span class="line">        &lt;property name=&quot;usePool&quot; value=&quot;true&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;bean id=&quot;redisHttpSessionConfiguration&quot;</span><br><span class="line">	      class=&quot;org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration&quot;&gt;</span><br><span class="line">	    &lt;property name=&quot;maxInactiveIntervalInSeconds&quot; value=&quot;1800&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- redis template definition --&gt;</span><br><span class="line">    &lt;bean id=&quot;redisTemplate&quot; class=&quot;org.springframework.data.redis.core.RedisTemplate&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;connectionFactory&quot; ref=&quot;jedisConnectionFactory&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;keySerializer&quot;&gt;</span><br><span class="line">            &lt;bean class=&quot;org.springframework.data.redis.serializer.StringRedisSerializer&quot; /&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;property name=&quot;valueSerializer&quot;&gt;</span><br><span class="line">            &lt;bean class=&quot;org.springframework.data.redis.serializer.JdkSerializationRedisSerializer&quot; /&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;property name=&quot;hashKeySerializer&quot;&gt;</span><br><span class="line">            &lt;bean class=&quot;org.springframework.data.redis.serializer.StringRedisSerializer&quot; /&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;property name=&quot;hashValueSerializer&quot;&gt;</span><br><span class="line">            &lt;bean class=&quot;org.springframework.data.redis.serializer.JdkSerializationRedisSerializer&quot; /&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">         &lt;!--开启事务  --&gt;  </span><br><span class="line">        &lt;property name=&quot;enableTransactionSupport&quot; value=&quot;true&quot;&gt;&lt;/property&gt;  </span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;!--自定义redis工具类,在需要缓存的地方注入此类  --&gt;  </span><br><span class="line">    &lt;bean id=&quot;redisrCacheManager&quot; class=&quot;com.bjtcrj.gms.common.utils.RedisCacheManager&quot;&gt;  </span><br><span class="line">        &lt;property name=&quot;redisTemplate&quot; ref=&quot;redisTemplate&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
@@ -507,11 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,11 +525,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +537,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,15 +561,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,6 +589,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
@@ -591,23 +605,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,7 +613,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,27 +629,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,15 +645,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,6 +670,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">

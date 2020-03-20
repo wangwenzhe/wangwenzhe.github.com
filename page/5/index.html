@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 54</p>
-			<p>总字数 <span class="post-count">59.4k</span></p>
+			<p>总文章数 55</p>
+			<p>总字数 <span class="post-count">60.4k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,117 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/05/Tomcat/">Tomcat</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/05/Tomcat/" class="archive-article-date">
+  	<time datetime="2019-07-05T03:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：320字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
+<li><p>JVM 内存配置「提高内存利用率」</p>
+</li>
+<li><p>连接数配置「提高 CPU 利用率」</p>
+</li>
+<li><p>CATALINA_HOME 与 CATALINA_BASE</p>
+<p><strong>注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误</strong></p>
+<ul>
+<li>CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录</li>
+<li>使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。</li>
+<li>参考 <a href="https://blog.csdn.net/jiaotuwoaini/article/details/51455829" target="_blank" rel="noopener">https://blog.csdn.net/jiaotuwoaini/article/details/51455829</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="Tomcat-日志排查问题"><a href="#Tomcat-日志排查问题" class="headerlink" title="Tomcat 日志排查问题"></a>Tomcat 日志排查问题</h2><ol>
+<li><p>项目日志文件: tomcat/bin/XXX.log  XXX.log 日志文件名称在项目 log4j.properties 中配置</p>
+<blockquote>
+<p>项目运行过程中报 500 错误时，从该日志文件查找原因</p>
+</blockquote>
+</li>
+<li><p>Tomcat 日志文件: tomcat/logs/catalina.out tomcat/logs/catalina.yyyy-mm-dd.log</p>
+<blockquote>
+<p>Tomcat 报错问题</p>
+</blockquote>
+</li>
+<li><p>查看方法 </p>
+<ul>
+<li>日志文件较小时，10Mb 以内。windows 平台中直接打开查看，例如使用 notepad++等。Linux 平台中可以将文件拷贝至 windows 中查看，也可通过命令 <code>less 文件名</code> 查看文件，大写字母 <code>G</code> 快速跳转至文件尾部，<code>Ctrl u</code> 向上翻页，<code>Ctrl d</code> 向下翻页</li>
+<li>日志文件较大时，10Mb 以上。windows 平台中借助 LogViewer 工具查看。Linux 平台通过上述 <code>less</code> 等命令查看</li>
+</ul>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/05/Tomcat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-爱上读书2019-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -2119,409 +2230,6 @@
 
 
   
-    <article id="post-Oracle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/03/Oracle/">Oracle</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/03/Oracle/" class="archive-article-date">
-  	<time datetime="2019-06-03T12:06:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：6.3k字 | 阅读本文大概需要 ：29分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>99数据库管理员账号 admin admin123</p>
-<h3 id="大小写问题"><a href="#大小写问题" class="headerlink" title="大小写问题"></a>大小写问题</h3><ol>
-<li>用户名不区分大小写「大写或小写不影响连接使用」</li>
-<li>11g 开始，密码默认区分大小写</li>
-</ol>
-<h3 id="数据库字符集"><a href="#数据库字符集" class="headerlink" title="数据库字符集"></a>数据库字符集</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">服务器</th>
-<th style="text-align:center">编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">99</td>
-<td style="text-align:center">ZHS16GBK</td>
-</tr>
-<tr>
-<td style="text-align:center">67</td>
-<td style="text-align:center">AL32UTF8</td>
-</tr>
-<tr>
-<td style="text-align:center">客户数据库</td>
-<td style="text-align:center">AL32UTF8</td>
-</tr>
-<tr>
-<td style="text-align:center">本机</td>
-<td style="text-align:center">AL32UTF8</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避免导入到 zhs16gbk「一个汉字占 2 个字符长度」 字符集数据库时长度不够。</li>
-<li>zhs16gbk是中文字符集，也就是适合在中国用，只能存储中文和英文字符，如果你存储韩文则显示为乱码（没有编码），而al32utf8是utf8字符集，u是unicode的意思，适合中文、韩语、日语等等不同的语言使用。那么为什么我们要在中国使用zhs16gbk存储中文呢？这是因为utf8存储中文的效率不如zhs16gbk，比如一个字“懂”，zhs16gbk采用2个字符存储，而al32utf8采用3-4个字符存储，这样效率就有了高低之分。</li>
-</ol>
-<h3 id="服务器端字符集设置（修改为zhs16gbk）"><a href="#服务器端字符集设置（修改为zhs16gbk）" class="headerlink" title="服务器端字符集设置（修改为zhs16gbk）"></a>服务器端字符集设置（修改为zhs16gbk）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$sqlplus /nolog</span><br><span class="line">$conn /as sysdba </span><br><span class="line">SQL&gt;select * from v$nls_parameters where parameter=&apos;NLS_CHARACTERSET&apos;;               </span><br><span class="line"></span><br><span class="line">若此时数据库服务器已启动，</span><br><span class="line">则先关闭数据库：  </span><br><span class="line">SQL&gt;shutdown immediate;</span><br><span class="line">SQL&gt;STARTUP MOUNT;</span><br><span class="line">SQL&gt;ALTER SYSTEM ENABLE RESTRICTED SESSION;</span><br><span class="line">SQL&gt;ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0;</span><br><span class="line">SQL&gt;ALTER SYSTEM SET AQ_TM_PROCESSES=0;</span><br><span class="line">SQL&gt;ALTER DATABASE OPEN;</span><br><span class="line">SQL&gt;ALTER DATABASE character set INTERNAL_USE zhs16gbk;</span><br><span class="line">数据库重启：</span><br><span class="line">SQL&gt;shutdown immediate;</span><br><span class="line">SQL&gt; startup</span><br></pre></td></tr></table></figure>
-<h3 id="客户端字符集设置"><a href="#客户端字符集设置" class="headerlink" title="客户端字符集设置"></a>客户端字符集设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows:（cmd命令行下）</span><br><span class="line">//常用中文字符集</span><br><span class="line">set NLS_LANG=SIMPLIFIED CHINESE_CHINA.ZHS16GBK</span><br><span class="line">//常用unicode字符集</span><br><span class="line">set NLS_LANG=american_america.AL32UTF8</span><br></pre></td></tr></table></figure>
-<h3 id="导入-导出数据"><a href="#导入-导出数据" class="headerlink" title="导入/导出数据"></a>导入/导出数据</h3><blockquote>
-<p>导入/导出过程中可能会有错误或警告，如果导入或导出过程比较长，无法一直观测过程，则有必要将该过程输出信息输出至日志文件一份，以便后续查看</p>
-</blockquote>
-<h4 id="导出用户所有数据"><a href="#导出用户所有数据" class="headerlink" title="导出用户所有数据"></a>导出用户所有数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp sgp/sgp@192.168.0.99:1521/orcl file=sgp_99_20170726.dmp owner=sgp log=explog.log</span><br></pre></td></tr></table></figure>
-<h4 id="导出指定表数据-表结构和数据"><a href="#导出指定表数据-表结构和数据" class="headerlink" title="导出指定表数据(表结构和数据)"></a>导出指定表数据(表结构和数据)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp sgp/sgp@192.168.0.107:1521/orcl file=20160921sgp_table_sysmodule_sysdict.dmp tables=(sgp_sysmodule, sgp_sysdict)</span><br></pre></td></tr></table></figure>
-<h4 id="导入数据到指定用户"><a href="#导入数据到指定用户" class="headerlink" title="导入数据到指定用户"></a>导入数据到指定用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp sgp/sgp@192.168.0.99:1521/orcl file=sgp20161025.dmp full=y log=implog.log</span><br></pre></td></tr></table></figure>
-<h4 id="导入指定表数据-表结构和数据"><a href="#导入指定表数据-表结构和数据" class="headerlink" title="导入指定表数据(表结构和数据)"></a>导入指定表数据(表结构和数据)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp sgp/sgp@192.168.0.99:1521/orcl file=20160921sgp_table_sysmodule_sysdict.dmp tables=(sgp_sysmodule, sgp_sysdict)</span><br></pre></td></tr></table></figure>
-<h4 id="导入数据（不附带创建表和表空间限制-前提条件是表名称一致）"><a href="#导入数据（不附带创建表和表空间限制-前提条件是表名称一致）" class="headerlink" title="导入数据（不附带创建表和表空间限制,前提条件是表名称一致）"></a>导入数据（不附带创建表和表空间限制,前提条件是表名称一致）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp scm/scm@192.168.0.99:1521/orcl file=sgp99dept.dmp tables=scm_dept ignore=y</span><br></pre></td></tr></table></figure>
-<h3 id="Linux环境下（已安装好oracle数据库和客户端）"><a href="#Linux环境下（已安装好oracle数据库和客户端）" class="headerlink" title="Linux环境下（已安装好oracle数据库和客户端）"></a>Linux环境下（已安装好oracle数据库和客户端）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//登陆linux服务器，切换到oracle用户下</span><br><span class="line">su - oracle  </span><br><span class="line"></span><br><span class="line">//不在cmd或者terminal当中暴露密码的登陆方式</span><br><span class="line">sqlplus /nolog    </span><br><span class="line"></span><br><span class="line">//以 sys 管理员登录</span><br><span class="line">SQL&gt;connect sys/sys123456@NMGDB2 as sysdba </span><br><span class="line"></span><br><span class="line">//以 dba 管理员登录（常用）</span><br><span class="line">SQL&gt;connect /as sysdba;</span><br><span class="line"></span><br><span class="line">1. 创建表空间</span><br><span class="line">（ASM模式）SQL&gt;</span><br><span class="line">create tablespace sgp datafile &apos;+data&apos; size 500m  AUTOEXTEND ON next 64m maxsize unlimited;</span><br><span class="line"></span><br><span class="line">（非ASM模式）SQL&gt;</span><br><span class="line">create tablespace sgp datafile &apos;/home/oracle/sgp.dbf&apos; size 256m uniform size 128k;</span><br><span class="line"></span><br><span class="line">2. 把表空间改为自动扩展存储空间大小（非ASM模式）</span><br><span class="line">SQL&gt; alter database datafile &apos;/home/oracle/sgp.dbf&apos; autoextend on;</span><br><span class="line"></span><br><span class="line">3. 创建用户，并指定表空间</span><br><span class="line">SQL&gt; create user sgp identified by sgp default tablespace sgp;</span><br><span class="line"></span><br><span class="line">4. 给用户授予权限</span><br><span class="line">SQL&gt; grant connect,resource, dba to sgp;</span><br><span class="line"></span><br><span class="line">5. 撤销权限</span><br><span class="line">SQL&gt; revoke dba from sgp;  #把 sgp 用户撤销 dba（系统管理员）权限</span><br></pre></td></tr></table></figure>
-<p><strong>注意：只有 DBA 才能导入由其他 DBA 导出的文件</strong></p>
-<h3 id="window环境下（已经安装好oracle数据库和客户端）"><a href="#window环境下（已经安装好oracle数据库和客户端）" class="headerlink" title="window环境下（已经安装好oracle数据库和客户端）"></a>window环境下（已经安装好oracle数据库和客户端）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">1：首先运行SQLPLUS</span><br><span class="line"></span><br><span class="line">C:\Documents and Settings\Administrator&gt;sqlplus /nolog（运行cmd后可直接运行SQLPLUS）</span><br><span class="line"></span><br><span class="line">SQL*Plus: Release 10.1.0.2.0 - Production on 星期一 9月 3 15:15:27 2007</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2004, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line">2：以 dba 的权限连接数据库</span><br><span class="line"></span><br><span class="line">SQL&gt; connect /as sysdba;</span><br><span class="line"></span><br><span class="line">3：创建表空间</span><br><span class="line"></span><br><span class="line">SQL&gt; create tablespace cms datafile &apos;G:\Oracle\Administrator\oradata\orcl\sgp.dbf&apos; size 256m uniform size 128k;</span><br><span class="line"></span><br><span class="line">表空间名为cms，数据库文件目录D:\oracle\10.1.0\oradata\orcl\cms.dbf</span><br><span class="line"></span><br><span class="line">4：把表空间改为自动扩展存储空间大小</span><br><span class="line"></span><br><span class="line">SQL&gt; alter database datafile &apos;G:\Oracle\Administrator\oradata\orcl\sgp.dbf&apos; autoextend on;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">5：创建用户</span><br><span class="line"></span><br><span class="line">SQL&gt; create user cms identified by cms default tablespace cms;</span><br><span class="line"></span><br><span class="line">注：用户名cms 密码cms 默认表空间cms;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">6：为用户授权</span><br><span class="line"></span><br><span class="line">SQL&gt; grant connect ,resource,dba to cms;</span><br><span class="line"></span><br><span class="line">把连接管理以dba的权限授权给cms;</span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="查看-Oracle-版本"><a href="#查看-Oracle-版本" class="headerlink" title="查看 Oracle 版本"></a>查看 Oracle 版本</h4><blockquote>
-<p><strong>select * from v$version;</strong></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;sqlplus /nolog</span><br><span class="line"></span><br><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on 星期六 5月 18 11:40:31 2019</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2010, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line">SQL&gt; conn admin/admin123@192.168.0.99:1521/orcl</span><br><span class="line">已连接。</span><br><span class="line">SQL&gt; select * from v$version;</span><br><span class="line"></span><br><span class="line">BANNER</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production</span><br><span class="line">PL/SQL Release 11.2.0.1.0 - Production</span><br><span class="line">CORE    11.2.0.1.0      Production</span><br><span class="line">TNS for 64-bit Windows: Version 11.2.0.1.0 - Production</span><br><span class="line">NLSRTL Version 11.2.0.1.0 - Production</span><br></pre></td></tr></table></figure>
-<h4 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">直接修改：</span><br><span class="line">alter user username identified by userpassword;</span><br><span class="line"></span><br><span class="line">修改oracle用户密码永不过期</span><br><span class="line">1、查看用户的proifle是哪个，一般是default：</span><br><span class="line"></span><br><span class="line">sql&gt;SELECT username,PROFILE FROM dba_users;</span><br><span class="line"></span><br><span class="line">2、查看指定概要文件（如default）的密码有效期设置：</span><br><span class="line"></span><br><span class="line">sql&gt;SELECT * FROM dba_profiles s WHERE s.profile=&apos;DEFAULT&apos; AND resource_name=&apos;PASSWORD_LIFE_TIME&apos;;</span><br><span class="line"></span><br><span class="line">3、将密码有效期由默认的180天修改成“无限制”：</span><br><span class="line"></span><br><span class="line">sql&gt;ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</span><br><span class="line">   修改之后不需要重启动数据库，会立即生效。</span><br><span class="line"></span><br><span class="line">4、修改后，还没有被提示ORA-28002警告的帐户不会再碰到同样的提示；</span><br><span class="line"></span><br><span class="line">已经被提示的帐户必须再改一次密码</span><br><span class="line"></span><br><span class="line">$ sqlplus /nolog</span><br><span class="line">&gt; conn /as sysdba</span><br><span class="line">&gt; alter user sgp identified by sgp; &lt;原来的密码&gt; ----不用换新密码</span><br></pre></td></tr></table></figure>
-<h4 id="账户锁定解锁"><a href="#账户锁定解锁" class="headerlink" title="账户锁定解锁"></a>账户锁定解锁</h4><blockquote>
-<p>问题：ORA-28000: the account is locked<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER username ACCOUNT UNLOCK;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="分配给一个表的物理空间数量，而不管空间是否被使用"><a href="#分配给一个表的物理空间数量，而不管空间是否被使用" class="headerlink" title="分配给一个表的物理空间数量，而不管空间是否被使用"></a>分配给一个表的物理空间数量，而不管空间是否被使用</h4><ol>
-<li><p>select segment_name, bytes from user_segments where segment_type = ‘TABLE’;</p>
-</li>
-<li><p>Select Segment_Name,Sum(bytes)/1024/1024 From User_Extents Group By Segment_Name</p>
-</li>
-</ol>
-<h4 id="添加字段的语法「增加列」"><a href="#添加字段的语法「增加列」" class="headerlink" title="添加字段的语法「增加列」"></a>添加字段的语法「增加列」</h4><blockquote>
-<p>alter table tablename add (column datatype [default value][null/not null],….);</p>
-</blockquote>
-<h4 id="修改字段的语法「修改列」"><a href="#修改字段的语法「修改列」" class="headerlink" title="修改字段的语法「修改列」"></a>修改字段的语法「修改列」</h4><blockquote>
-<p>alter table tablename modify (column datatype [default value][null/not null],….);</p>
-</blockquote>
-<h4 id="修改表字段类型（有数据情况）"><a href="#修改表字段类型（有数据情况）" class="headerlink" title="修改表字段类型（有数据情况）"></a>修改表字段类型（有数据情况）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 原字段改名</span><br><span class="line">alter table SGP_PREGNANCY rename column  PLASTDATE to PLASTDATE1;</span><br><span class="line"></span><br><span class="line">2. 新增字段（原字段名）</span><br><span class="line">alter table SGP_PREGNANCY add PLASTDATE date;</span><br><span class="line"></span><br><span class="line">3. 给新增字段赋值（从原字段值提取）</span><br><span class="line">update SGP_PREGNANCY set PLASTDATE=to_date(PLASTDATE1, &apos;yyyy-mm-dd&apos;);</span><br><span class="line"></span><br><span class="line">4. 删除改名后的原字段</span><br><span class="line">alter table SGP_PREGNANCY drop column PLASTDATE1;</span><br></pre></td></tr></table></figure>
-<h4 id="删除表字段的语法「删除列」"><a href="#删除表字段的语法「删除列」" class="headerlink" title="删除表字段的语法「删除列」"></a>删除表字段的语法「删除列」</h4><blockquote>
-<p>alter table tablename drop column columnname;</p>
-</blockquote>
-<h4 id="获取表的列信息"><a href="#获取表的列信息" class="headerlink" title="获取表的列信息"></a>获取表的列信息</h4><p>摘要：表结构、表字段、表列信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select  *  from user_tab_columns  where table_name = &apos;CMS_T_VIEW_RECORD&apos;</span><br></pre></td></tr></table></figure>
-<h4 id="修改用户名"><a href="#修改用户名" class="headerlink" title="修改用户名"></a>修改用户名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 查找 SGP 用户，找到用户标识 user_id「以 sysdba 登录，用户名区分大小写」</span><br><span class="line">conn /as sysdba;</span><br><span class="line">select username, user_id from dba_users where username=&apos;SGP&apos;;</span><br><span class="line">2. 修改用户名为 scm 并提交「下行命令中 158 为上行命令结果中 user_id」</span><br><span class="line">UPDATE USER$ SET NAME=&apos;scm&apos; WHERE user#=158;  </span><br><span class="line">COMMIT;</span><br><span class="line">3. 强制刷新</span><br><span class="line">ALTER SYSTEM CHECKPOINT;</span><br><span class="line">ALTER SYSTEM FLUSH SHARED_POOL;</span><br><span class="line">4. 修改用户密码</span><br><span class="line">ALTER USER SCM IDENTIFIED BY scm;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前用户的缺省表空间"><a href="#查看当前用户的缺省表空间" class="headerlink" title="查看当前用户的缺省表空间"></a>查看当前用户的缺省表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select username,default_tablespace from user_users;</span><br></pre></td></tr></table></figure>
-<h4 id="查看已建好的表空间"><a href="#查看已建好的表空间" class="headerlink" title="查看已建好的表空间"></a>查看已建好的表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select file_name,tablespace_name from dba_data_files;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前用户的表空间和有哪些表"><a href="#查看当前用户的表空间和有哪些表" class="headerlink" title="查看当前用户的表空间和有哪些表"></a>查看当前用户的表空间和有哪些表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select table_name,tablespace_name from user_tables;</span><br></pre></td></tr></table></figure>
-<h4 id="查看某个表空间下有哪些表"><a href="#查看某个表空间下有哪些表" class="headerlink" title="查看某个表空间下有哪些表"></a>查看某个表空间下有哪些表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from all_tables where tablespace_name=&apos;sde&apos;;</span><br></pre></td></tr></table></figure>
-<h4 id="表空间的数据文件属性改为自动扩展"><a href="#表空间的数据文件属性改为自动扩展" class="headerlink" title="表空间的数据文件属性改为自动扩展"></a>表空间的数据文件属性改为自动扩展</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace system autoextend on;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前连接的数据库IP地址"><a href="#查看当前连接的数据库IP地址" class="headerlink" title="查看当前连接的数据库IP地址"></a>查看当前连接的数据库IP地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select utl_inaddr.get_host_address from dual;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前数据库"><a href="#查看当前数据库" class="headerlink" title="查看当前数据库"></a>查看当前数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name from V$DATABASE;</span><br></pre></td></tr></table></figure>
-<h4 id="查看数据库实例名称"><a href="#查看数据库实例名称" class="headerlink" title="查看数据库实例名称"></a>查看数据库实例名称</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select instance_name from v$instance;</span><br></pre></td></tr></table></figure>
-<h4 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe 表名;</span><br></pre></td></tr></table></figure>
-<h4 id="删除用户和表数据"><a href="#删除用户和表数据" class="headerlink" title="删除用户和表数据"></a>删除用户和表数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user username cascade;</span><br></pre></td></tr></table></figure>
-<h4 id="删除表空间"><a href="#删除表空间" class="headerlink" title="删除表空间"></a>删除表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop tablespace tablespace_name including contents and datafiles;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前登录的用户名"><a href="#查看当前登录的用户名" class="headerlink" title="查看当前登录的用户名"></a>查看当前登录的用户名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select user from dual;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前用户拥有的角色和权限"><a href="#查看当前用户拥有的角色和权限" class="headerlink" title="查看当前用户拥有的角色和权限"></a>查看当前用户拥有的角色和权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from user_role_privs;</span><br><span class="line">select * from session_privs;</span><br></pre></td></tr></table></figure>
-<h4 id="查看所有的默认表空间"><a href="#查看所有的默认表空间" class="headerlink" title="查看所有的默认表空间"></a>查看所有的默认表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select tablespace_name from dba_tablespaces;</span><br></pre></td></tr></table></figure>
-<h4 id="查看指定用户的默认表空间"><a href="#查看指定用户的默认表空间" class="headerlink" title="查看指定用户的默认表空间"></a>查看指定用户的默认表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select default_tablespace.username from dba_users;</span><br></pre></td></tr></table></figure>
-<h4 id="重命名表空间名称"><a href="#重命名表空间名称" class="headerlink" title="重命名表空间名称"></a>重命名表空间名称</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace oldname rename to newname;</span><br></pre></td></tr></table></figure>
-<h4 id="修改表空间的读写状态"><a href="#修改表空间的读写状态" class="headerlink" title="修改表空间的读写状态"></a>修改表空间的读写状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace tablespace_name read &#123;only|write&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="设置表空间的可用状态"><a href="#设置表空间的可用状态" class="headerlink" title="设置表空间的可用状态"></a>设置表空间的可用状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace tablespace_name &#123; online|offline[normal|temporary|immediate];</span><br></pre></td></tr></table></figure>
-<h4 id="创建大文件表空间"><a href="#创建大文件表空间" class="headerlink" title="创建大文件表空间"></a>创建大文件表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE BIGFILE TABLESPACE tablespacename DATAFILE filename SIZE size;</span><br></pre></td></tr></table></figure>
-<h4 id="查看表中多余的重复记录，重复记录是根据单个字段（pid）来判断"><a href="#查看表中多余的重复记录，重复记录是根据单个字段（pid）来判断" class="headerlink" title="查看表中多余的重复记录，重复记录是根据单个字段（pid）来判断"></a>查看表中多余的重复记录，重复记录是根据单个字段（pid）来判断</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from SGP_PREGNANCY where pid in (select pid from SGP_PREGNANCY group by pid having count(pid) &gt; 1)</span><br></pre></td></tr></table></figure>
-<h4 id="删除表中多余的重复记录，重复记录是根据单个字段（Id）来判断"><a href="#删除表中多余的重复记录，重复记录是根据单个字段（Id）来判断" class="headerlink" title="删除表中多余的重复记录，重复记录是根据单个字段（Id）来判断"></a>删除表中多余的重复记录，重复记录是根据单个字段（Id）来判断</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE from 表 WHERE (id) IN ( SELECT id FROM 表 GROUP BY id HAVING COUNT(id) &gt; 1) AND ROWID NOT IN (SELECT MIN(ROWID) FROM 表 GROUP BY id HAVING COUNT(*) &gt; 1);</span><br></pre></td></tr></table></figure>
-<h4 id="查看所有用户名"><a href="#查看所有用户名" class="headerlink" title="查看所有用户名"></a>查看所有用户名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select username from dba_users;</span><br><span class="line">select * from all_users;</span><br><span class="line">select * from user_users;</span><br></pre></td></tr></table></figure>
-<h4 id="查看用户或角色系统权限-直接赋值给用户或角色的系统权限"><a href="#查看用户或角色系统权限-直接赋值给用户或角色的系统权限" class="headerlink" title="查看用户或角色系统权限(直接赋值给用户或角色的系统权限)"></a>查看用户或角色系统权限(直接赋值给用户或角色的系统权限)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from dba_sys_privs;</span><br><span class="line">select * from user_sys_privs;</span><br></pre></td></tr></table></figure>
-<h4 id="查看角色-只能查看登陆用户拥有的角色-所包含的权限"><a href="#查看角色-只能查看登陆用户拥有的角色-所包含的权限" class="headerlink" title="查看角色(只能查看登陆用户拥有的角色)所包含的权限"></a>查看角色(只能查看登陆用户拥有的角色)所包含的权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from role_sys_privs;</span><br></pre></td></tr></table></figure>
-<h4 id="查看用户对象权限"><a href="#查看用户对象权限" class="headerlink" title="查看用户对象权限"></a>查看用户对象权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from dba_tab_privs;</span><br><span class="line">select * from all_tab_privs;</span><br><span class="line">select * from user_tab_privs; //返回当前用户所有的对象权限</span><br></pre></td></tr></table></figure>
-<h4 id="查看所有角色"><a href="#查看所有角色" class="headerlink" title="查看所有角色"></a>查看所有角色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from dba_roles;</span><br></pre></td></tr></table></figure>
-<h4 id="查看用户或角色所拥有的角色"><a href="#查看用户或角色所拥有的角色" class="headerlink" title="查看用户或角色所拥有的角色"></a>查看用户或角色所拥有的角色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from dba_role_privs;</span><br><span class="line">select * from user_role_privs;</span><br></pre></td></tr></table></figure>
-<h4 id="查看哪些用户有sysdba或sysoper系统权限-查询时需要相应权限"><a href="#查看哪些用户有sysdba或sysoper系统权限-查询时需要相应权限" class="headerlink" title="查看哪些用户有sysdba或sysoper系统权限(查询时需要相应权限)"></a>查看哪些用户有sysdba或sysoper系统权限(查询时需要相应权限)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from V$PWFILE_USERS</span><br></pre></td></tr></table></figure>
-<h4 id="把某个表mytab的所有权限都赋予给用户test："><a href="#把某个表mytab的所有权限都赋予给用户test：" class="headerlink" title="把某个表mytab的所有权限都赋予给用户test："></a>把某个表mytab的所有权限都赋予给用户test：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant all on mytab to test；</span><br><span class="line">撤销所有权限</span><br><span class="line">revoke all on mytab to test；</span><br></pre></td></tr></table></figure>
-<h4 id="对象权限可以控制到列（查询和删除不能控制到列）"><a href="#对象权限可以控制到列（查询和删除不能控制到列）" class="headerlink" title="对象权限可以控制到列（查询和删除不能控制到列）"></a>对象权限可以控制到列（查询和删除不能控制到列）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant update(name) on mytab to test;</span><br><span class="line">grant insert(id) on mytab to test;</span><br></pre></td></tr></table></figure>
-<h4 id="删除审计表"><a href="#删除审计表" class="headerlink" title="删除审计表"></a>删除审计表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE TABLE SYS.AUD$;</span><br></pre></td></tr></table></figure>
-<h4 id="查看用户与用户对应的标空间"><a href="#查看用户与用户对应的标空间" class="headerlink" title="查看用户与用户对应的标空间"></a>查看用户与用户对应的标空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select username,default_tablespace from dba_users;</span><br></pre></td></tr></table></figure>
-<h4 id="查看表空间与数据文件的对应关系"><a href="#查看表空间与数据文件的对应关系" class="headerlink" title="查看表空间与数据文件的对应关系"></a>查看表空间与数据文件的对应关系</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select t1.name,t2.name from v$tablespace t1, v$datafile t2 where t1.ts#=t2.ts#;</span><br></pre></td></tr></table></figure>
-<h4 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h4><p>select to_char(sysdate,’yyyy-mm-dd hh24:mi:ss’) from dual;</p>
-<h4 id="11g-oracle导出表时会默认不导出数据为空"><a href="#11g-oracle导出表时会默认不导出数据为空" class="headerlink" title="11g oracle导出表时会默认不导出数据为空"></a>11g oracle导出表时会默认不导出数据为空</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、Oracle11g默认对空表不分配segment，故使用exp导出Oracle11g数据库时，空表不会导出。 </span><br><span class="line">2、设置deferred_segment_creation 参数为FALSE后，无论是空表还是非空表，都分配segment。</span><br><span class="line">SQL&gt;show parameter deferred_segment_creation; </span><br><span class="line">SQL&gt;alter system set deferred_segment_creation=false;</span><br></pre></td></tr></table></figure>
-<h4 id="利用存储过程：删除审计表"><a href="#利用存储过程：删除审计表" class="headerlink" title="利用存储过程：删除审计表"></a>利用存储过程：删除审计表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">create or replace procedure dele_trunc as</span><br><span class="line">begin</span><br><span class="line">  execute immediate &apos;TRUNCATE TABLE SYS.AUD$&apos;;</span><br><span class="line">end dele_trunc;</span><br><span class="line"></span><br><span class="line">加入定时任务：</span><br><span class="line">在SQL&gt;</span><br><span class="line">VARIABLE jobno number;</span><br><span class="line">begin</span><br><span class="line">DBMS_JOB.SUBMIT(:jobno,</span><br><span class="line">    &apos;dele_trunc;&apos;,</span><br><span class="line">    SYSDATE,&apos;sysdate+3&apos;);  #每隔三天执行一次, 1/24/12表示每隔5分钟</span><br><span class="line">    commit;</span><br><span class="line">    end;</span><br><span class="line">    /</span><br><span class="line">提交后提示：</span><br><span class="line">PL/SQL procedure successfully completed</span><br></pre></td></tr></table></figure>
-<h4 id="查看任务信息：select-from-user-jobs"><a href="#查看任务信息：select-from-user-jobs" class="headerlink" title="查看任务信息：select * from user_jobs"></a>查看任务信息：select * from user_jobs</h4><ol>
-<li>启动：BEGIN DBMS_JOB.run(jobno); END; /</li>
-<li>停止：BEGIN DBMS_JOB.BROKEN(83, TRUE); END; /</li>
-<li>删除JOB<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; begin</span><br><span class="line">　　2 dbms_job.remove（:jobno）; :jobno可以用dba_jobs.job的值代替如：1198</span><br><span class="line">　　3 end;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="处理空表"><a href="#处理空表" class="headerlink" title="处理空表"></a>处理空表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; connect sgp/sgp</span><br><span class="line">SQL&gt; set echo off</span><br><span class="line">SQL&gt; set feedback off</span><br><span class="line">SQL&gt; set pagesize 0</span><br><span class="line">SQL&gt; set linesize 9000</span><br><span class="line">SQL&gt; set tab off</span><br><span class="line">SQL&gt; spool sgp_deal_tablenull_107.sql</span><br><span class="line">SQL&gt; select &apos;alter table &apos;||table_name||&apos; allocate extent;&apos; from user_tables where num_rows=0;</span><br><span class="line">SQL&gt; spool off</span><br><span class="line"></span><br><span class="line">执行完以后，你会得到一个文件：sgp_deal_tablenull_107.sql，</span><br><span class="line">把这个文件里面的非sql语句删掉，只保留alter table的那些sql，</span><br><span class="line">然后执行一下这些sql</span><br></pre></td></tr></table></figure>
-<h4 id="注释处理"><a href="#注释处理" class="headerlink" title="注释处理"></a>注释处理</h4><h5 id="获取表注释"><a href="#获取表注释" class="headerlink" title="获取表注释"></a>获取表注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &apos;comment on table &apos;||t.table_name||&apos; is &apos;&apos;&apos;||t.comments||&apos;&apos;&apos;;&apos; from user_tab_comments t;</span><br></pre></td></tr></table></figure>
-<h5 id="获取列注释"><a href="#获取列注释" class="headerlink" title="获取列注释"></a>获取列注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &apos;comment on column &apos;||c.table_name||&apos;.&apos;||c.column_name||&apos; is &apos;&apos;&apos;||c.comments||&apos;&apos;&apos;;&apos; from user_col_comments c;</span><br></pre></td></tr></table></figure>
-<h5 id="删除表注释"><a href="#删除表注释" class="headerlink" title="删除表注释"></a>删除表注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、select &apos;comment on table &apos;||t.table_name||&apos; is &apos;&apos;&apos;&apos;;&apos; from user_tab_comments t;   </span><br><span class="line">2、导出到cvs文件中，使用execl打开，（删除第一行）拷贝到plsql中执行即可删除</span><br></pre></td></tr></table></figure>
-<h5 id="删除列注释"><a href="#删除列注释" class="headerlink" title="删除列注释"></a>删除列注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、select &apos;comment on column &apos;||c.table_name||&apos;.&apos;||c.column_name||&apos; is &apos;&apos;&apos;&apos;;&apos; from user_col_comments c;   </span><br><span class="line">2、导出到cvs文件中，使用execl打开，（删除第一行）拷贝到plsql中执行即可删除</span><br></pre></td></tr></table></figure>
-<h4 id="创建临时表用来存放查询得到的数据"><a href="#创建临时表用来存放查询得到的数据" class="headerlink" title="创建临时表用来存放查询得到的数据:"></a>创建临时表用来存放查询得到的数据:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table temp as (select ......)</span><br></pre></td></tr></table></figure>
-<h4 id="解决PLSQL记录被另一个用户锁住的问题"><a href="#解决PLSQL记录被另一个用户锁住的问题" class="headerlink" title="解决PLSQL记录被另一个用户锁住的问题"></a>解决PLSQL记录被另一个用户锁住的问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1、查看数据库锁,诊断锁的来源及类型（忽略）：</span><br><span class="line">select object_id,session_id,locked_mode from v$locked_object;</span><br><span class="line">或者用以下命令： </span><br><span class="line">select b.owner,b.object_name,l.session_id,l.locked_mode from v$locked_object l, dba_objects b where b.object_id=l.object_id </span><br><span class="line"></span><br><span class="line">2、找出数据库的serial#,以备杀死：</span><br><span class="line">select t2.username,t2.sid,t2.serial#,t2.logon_time from v$locked_object t1,v$session t2 where t1.session_id=t2.sid order by t2.logon_time; </span><br><span class="line"></span><br><span class="line">3、杀死该session: 　　</span><br><span class="line">alter system kill session &apos;sid,serial#&apos;</span><br></pre></td></tr></table></figure>
-<h4 id="序列创建、修改、使用、删除"><a href="#序列创建、修改、使用、删除" class="headerlink" title="序列创建、修改、使用、删除"></a>序列创建、修改、使用、删除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">create sequence seq_dept </span><br><span class="line">       increment by 5 </span><br><span class="line">       start with 1 </span><br><span class="line">       maxvalue 100 </span><br><span class="line">       minvalue 1 </span><br><span class="line">       nocycle </span><br><span class="line">       nocache</span><br><span class="line"></span><br><span class="line">select seq_dept.currval, seq_dept.nextval from dual</span><br><span class="line"></span><br><span class="line">Alter sequence seq_dept maxvalue 200</span><br><span class="line"></span><br><span class="line">DROP SEQUENCE seq_dept</span><br></pre></td></tr></table></figure>
-<h4 id="查看oracle数据库连接数、用户连接数"><a href="#查看oracle数据库连接数、用户连接数" class="headerlink" title="查看oracle数据库连接数、用户连接数"></a>查看oracle数据库连接数、用户连接数</h4><h5 id="查询oracle的连接数"><a href="#查询oracle的连接数" class="headerlink" title="查询oracle的连接数"></a>查询oracle的连接数</h5><p>select count(*) from v$session;</p>
-<h5 id="查询oracle的并发连接数"><a href="#查询oracle的并发连接数" class="headerlink" title="查询oracle的并发连接数"></a>查询oracle的并发连接数</h5><p>select count(*) from v$session where status=’ACTIVE’;</p>
-<h5 id="查看不同用户的连接数"><a href="#查看不同用户的连接数" class="headerlink" title="查看不同用户的连接数"></a>查看不同用户的连接数</h5><p>select username,count(username) from v$session where username is not null group by username;</p>
-<h5 id="数据库允许的最大连接数"><a href="#数据库允许的最大连接数" class="headerlink" title="数据库允许的最大连接数"></a>数据库允许的最大连接数</h5><p>select value from v$parameter where name = ‘processes’</p>
-<h5 id="修改最大连接数"><a href="#修改最大连接数" class="headerlink" title="修改最大连接数:"></a>修改最大连接数:</h5><p>alter system set processes = 300 scope = spfile;</p>
-<h5 id="重启数据库"><a href="#重启数据库" class="headerlink" title="重启数据库:"></a>重启数据库:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shutdown immediate;</span><br><span class="line">startup;</span><br></pre></td></tr></table></figure>
-<h4 id="查看当前有哪些用户正在使用数据"><a href="#查看当前有哪些用户正在使用数据" class="headerlink" title="查看当前有哪些用户正在使用数据"></a>查看当前有哪些用户正在使用数据</h4><p>SELECT osuser, a.username,cpu_time/executions/1000000||’s’, sql_fulltext,machine<br>from v$session a, v$sqlarea b<br>where a.sql_address =b.address order by cpu_time/executions desc;</p>
-<h4 id="获取数据表中指定字段的值重复次数超过n的记录：举例-sgp-user-表中相同-roleid-的值出现超过2次的-roleid"><a href="#获取数据表中指定字段的值重复次数超过n的记录：举例-sgp-user-表中相同-roleid-的值出现超过2次的-roleid" class="headerlink" title="获取数据表中指定字段的值重复次数超过n的记录：举例 sgp_user 表中相同 roleid 的值出现超过2次的 roleid"></a>获取数据表中指定字段的值重复次数超过n的记录：举例 sgp_user 表中相同 roleid 的值出现超过2次的 roleid</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select t.roleid from SGP_USER t group by t.roleid having count(t.roleid) &gt; 2</span><br></pre></td></tr></table></figure>
-<h4 id="根据某些字段分组，根据某些字段排序，获取每组第一条数据："><a href="#根据某些字段分组，根据某些字段排序，获取每组第一条数据：" class="headerlink" title="根据某些字段分组，根据某些字段排序，获取每组第一条数据："></a>根据某些字段分组，根据某些字段排序，获取每组第一条数据：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select  nodeoid,sensortype,inputtime from (select rowid,nodeoid,sensortype,inputtime,row_number() over(partition by nodeoid, sensortype order by inputtime desc) rn  from SCM_SMARTDEVICESENSORWARN)t1 where rn=1;</span><br></pre></td></tr></table></figure>
-<h4 id="事件主表状态字段更新为操作结果最新状态："><a href="#事件主表状态字段更新为操作结果最新状态：" class="headerlink" title="事件主表状态字段更新为操作结果最新状态："></a>事件主表状态字段更新为操作结果最新状态：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE scm_event e set e.STATE=(select STATE from (select eventcode, state from (select rowid, eventcode, state,row_number() over(partition by EVENTCODE order by stagestart desc) rn  from SCM_EVENTOPERATESUB) t1 where rn=1 and t1.eventcode is not null) t where e.eventcode=t.eventcode)</span><br></pre></td></tr></table></figure>
-<h4 id="dblink"><a href="#dblink" class="headerlink" title="dblink"></a>dblink</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//如果创建全局 dblink，必须使用 systm 或 sys 用户，在 database 前加 public。  </span><br><span class="line">create public database link dblink1  </span><br><span class="line">　　connect to dbusername identified by dbpassword  </span><br><span class="line">using &apos;(DESCRIPTION =(ADDRESS_LIST =(ADDRESS =(PROTOCOL = TCP)(HOST = 192.168.1.1)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = orcl)))&apos;;  </span><br><span class="line">//删除dblink</span><br><span class="line">DROP public  DATABASE LINK dblink1;</span><br><span class="line">//查询现有DBLINK</span><br><span class="line">select * from ALL_DB_LINKS;</span><br><span class="line"></span><br><span class="line">//使用</span><br><span class="line">select * from scm_user@dblink1;</span><br></pre></td></tr></table></figure>
-<h3 id="同义词"><a href="#同义词" class="headerlink" title="同义词"></a>同义词</h3><h5 id="创建同义词"><a href="#创建同义词" class="headerlink" title="创建同义词"></a>创建同义词</h5><p>create or replace synonym 同义词名 for 表名;<br>create or replace synonym 同义词名 for 用户.表名;<br>create or replace synonym 同义词名 for 表名@数据库链接名; </p>
-<h5 id="删除同义词"><a href="#删除同义词" class="headerlink" title="删除同义词"></a>删除同义词</h5><p>drop synonym 同义词名;</p>
-<h4 id="查询现有同义词"><a href="#查询现有同义词" class="headerlink" title="查询现有同义词"></a>查询现有同义词</h4><p>select * from user_synonyms;</p>
-<h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><h4 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h4><p>create or replace view 视图名 as (select 字段 from 表名);<br>create or replace view 视图名 as (select 字段 from 用户.表名);<br>create or replace view 视图名 as (select 字段 from 表名@数据库链接名);</p>
-<h4 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h4><p>drop view 视图名;  </p>
-<h4 id="查询现有视图"><a href="#查询现有视图" class="headerlink" title="查询现有视图"></a>查询现有视图</h4><p>select * from user_views;</p>
-<h3 id="获取随机时间（指定时间范围-2018年10月15日至22日）"><a href="#获取随机时间（指定时间范围-2018年10月15日至22日）" class="headerlink" title="获取随机时间（指定时间范围 2018年10月15日至22日）"></a>获取随机时间（指定时间范围 2018年10月15日至22日）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select to_date(&apos;2018&apos;||&apos;/&apos;||&apos;10&apos;||&apos;/&apos;||trunc(15+7*dbms_random.value)||&apos; &apos;||trunc(0+23*dbms_random.value)||&apos;:&apos;||trunc(0+59*dbms_random.value)||&apos;:&apos;||trunc(0+59*dbms_random.value), &apos;YYYY/MM/DD HH24:MI:SS&apos;) from dual</span><br></pre></td></tr></table></figure>
-<h3 id="Oracle取查询结果数据的第一条记录SQL"><a href="#Oracle取查询结果数据的第一条记录SQL" class="headerlink" title="Oracle取查询结果数据的第一条记录SQL"></a>Oracle取查询结果数据的第一条记录SQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from (select * from &lt;table&gt; order by &lt;key&gt;) where rownum=1;</span><br><span class="line">select * from (select * from &lt;table&gt; order by &lt;key&gt; desc) where rownum=1;</span><br></pre></td></tr></table></figure>
-<p>截取字符(substr)，检索字符位置(instr)</p>
-<h3 id="Oracle查询重复数据并删除，只保留一条记录"><a href="#Oracle查询重复数据并删除，只保留一条记录" class="headerlink" title="Oracle查询重复数据并删除，只保留一条记录"></a>Oracle查询重复数据并删除，只保留一条记录</h3><ol>
-<li><p>重复记录根据单个字段来判断</p>
-<ol>
-<li><p>首先，查找表中多余的重复记录，重复记录是根据单个字段（FIELD_CODE）来判断</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from R_RESOURCE_DETAILS where FIELD_CODE in(select FIELD_CODE from R_RESOURCE_DETAILS group by FIELD_CODE having count(FIELD_CODE) &gt;1)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除表中多余的重复记录，重复记录是根据单个字段（FIELD_CODE）来判断，只留有rowid最小的记录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from R_RESOURCE_DETAILS where (FIELD_CODE) in (select FIELD_CODE from R_RESOURCE_DETAILS group by FIELD_CODE having count(FIELD_CODE) &gt;1) and rowid not in (select min(rowid) from R_RESOURCE_DETAILS group by FIELD_CODE having count(*)&gt;1)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>重复记录根据多个字段来判断</p>
-<ol>
-<li><p>查找表中多余的重复记录（多个字段）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from R_RESOURCE_DETAILS a where (a.FIELD_CODE,a.DTA_ITEM_NAME) in(select FIELD_CODE,DTA_ITEM_NAME from R_RESOURCE_DETAILS group by FIELD_CODE,DTA_ITEM_NAME having count(*) &gt; 1)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除表中多余的重复记录（多个字段），只留有rowid最小的记录</p>
-</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from R_RESOURCE_DETAILS a where (a.FIELD_CODE,a.DTA_ITEM_NAME) in (select FIELD_CODE,DTA_ITEM_NAME from R_RESOURCE_DETAILS group by FIELD_CODE,DTA_ITEM_NAME having count(*) &gt; 1) and rowid not in (select min(rowid) from R_RESOURCE_DETAILS group by FIELD_CODE,DTA_ITEM_NAME having count(*)&gt;1)</span><br></pre></td></tr></table></figure>
-<pre><code>3. 查找表中多余的重复记录（多个字段），不包含rowid最小的记录
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from R_RESOURCE_DETAILS a where (a.FIELD_CODE,a.DTA_ITEM_NAME) in (select FIELD_CODE,DTA_ITEM_NAME from R_RESOURCE_DETAILS group by FIELD_CODE,DTA_ITEM_NAME having count(*) &gt; 1) and rowid not in (select min(rowid) from R_RESOURCE_DETAILS group by FIELD_CODE,DTA_ITEM_NAME having count(*)&gt;1)</span><br></pre></td></tr></table></figure>
-<h3 id="两个表关联更新update"><a href="#两个表关联更新update" class="headerlink" title="两个表关联更新update"></a>两个表关联更新update</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE  T1 SET T1.C  =  (SELECT  B  FROM  T2  WHERE   T2.A = T1.A)</span><br><span class="line">WHERE  EXISTS ( SELECT 1 FROM   T2  WHERE   T2.A = T1.A)</span><br></pre></td></tr></table></figure>
-<h3 id="创建、删除索引"><a href="#创建、删除索引" class="headerlink" title="创建、删除索引"></a>创建、删除索引</h3><ol>
-<li><p>create index 索引名 on 表名(列名);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index personindex on SGP_PERSON(&apos;personid&apos;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除索引 drop index 索引名;</p>
-</li>
-<li>创建组合索引<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index 组合索引名 on 表名(列名1,列名2);  //列名1 列名2 加引号</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="连接linux数据库Oracle时报错ORA-12541-TNS-无监听程序"><a href="#连接linux数据库Oracle时报错ORA-12541-TNS-无监听程序" class="headerlink" title="连接linux数据库Oracle时报错ORA-12541: TNS: 无监听程序"></a>连接linux数据库Oracle时报错ORA-12541: TNS: 无监听程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1、连接oracle</span><br><span class="line">su - oracle</span><br><span class="line">sqlplus /nolog</span><br><span class="line">conn /as sysdba</span><br><span class="line">提示：Connected to an idle instance.</span><br><span class="line">2、启动服务，startup</span><br><span class="line">3、启动监听</span><br><span class="line">切换到oracle /bin 目录，cd $ORACLE_HOME/bin</span><br><span class="line">cd /home/oracle/app/oracle/product/11.2.0/dbhome_1/bin/</span><br><span class="line"> lsnrctl start</span><br></pre></td></tr></table></figure>
-<h3 id="按照某字段排序，为空则放到开始或最后"><a href="#按照某字段排序，为空则放到开始或最后" class="headerlink" title="按照某字段排序，为空则放到开始或最后"></a>按照某字段排序，为空则放到开始或最后</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">order by g.tracktime desc nulls first</span><br><span class="line"></span><br><span class="line">order by g.tracktime desc nulls last</span><br></pre></td></tr></table></figure>
-<h3 id="oracle导入时提示IMP-00010：不是有效的导出文件，头部验证失败"><a href="#oracle导入时提示IMP-00010：不是有效的导出文件，头部验证失败" class="headerlink" title="oracle导入时提示IMP-00010：不是有效的导出文件，头部验证失败"></a>oracle导入时提示IMP-00010：不是有效的导出文件，头部验证失败</h3><ol>
-<li>直接将dmp文件用notepad++打开修改版本号为被导入版本的版本号</li>
-</ol>
-<blockquote>
-<p>第一行：TEXPORT:V11.02.00</p>
-</blockquote>
-<ol start="2">
-<li>文件过大，无法打开，可使用工具修改<br><img src="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg" alt></li>
-</ol>
-<p>版本格式为 <strong>xx.xx.xx</strong></p>
-<p>查看 Oracle 版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;sqlplus /nolog</span><br><span class="line"></span><br><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on 星期二 6月 18 11:16:37 2019</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2010, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line">SQL&gt; conn /as sysdba;</span><br><span class="line">已连接。</span><br><span class="line">SQL&gt; select * from v$version;</span><br><span class="line"></span><br><span class="line">BANNER</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">Oracle Database 11g Release 11.2.0.1.0 - 64bit Production</span><br><span class="line">PL/SQL Release 11.2.0.1.0 - Production</span><br><span class="line">CORE    11.2.0.1.0      Production</span><br><span class="line">TNS for 64-bit Windows: Version 11.2.0.1.0 - Production</span><br><span class="line">NLSRTL Version 11.2.0.1.0 - Production</span><br><span class="line"></span><br><span class="line">SQL&gt;</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p><a href="https://www.cnblogs.com/yx007/p/6723522.html" target="_blank" rel="noopener">https://www.cnblogs.com/yx007/p/6723522.html</a></p>
-</blockquote>
-<h3 id="分组后返回非分组字段组合"><a href="#分组后返回非分组字段组合" class="headerlink" title="分组后返回非分组字段组合"></a>分组后返回非分组字段组合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, wm_concat(name), COUNT(*) num FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
-<h3 id="分隔字符串成多列"><a href="#分隔字符串成多列" class="headerlink" title="分隔字符串成多列"></a>分隔字符串成多列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">REGEXP_SUBSTR(&apos;123,456,789&apos;, &apos;[^,]+&apos;, 1, 1) d1,</span><br><span class="line">REGEXP_SUBSTR(&apos;123,456,789&apos;, &apos;[^,]+&apos;, 1, 2) d2,</span><br><span class="line">REGEXP_SUBSTR(&apos;123,456,789&apos;, &apos;[^,]+&apos;, 1, 3) d3 from dual;</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">D1</th>
-<th style="text-align:center">D2</th>
-<th style="text-align:center">D3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">123</td>
-<td style="text-align:center">456</td>
-<td style="text-align:center">789</td>
-</tr>
-</tbody>
-</table>
-<h3 id="oracle-分组后取每组第一条数据"><a href="#oracle-分组后取每组第一条数据" class="headerlink" title="oracle 分组后取每组第一条数据"></a>oracle 分组后取每组第一条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//根据 x 列分组，y 列倒序，取每组第一条</span><br><span class="line">SELECT * FROM (SELECT ROW_NUMBER() OVER(PARTITION BY t.x ORDER BY t.y DESC) rn,       </span><br><span class="line">          t.* FROM test t) WHERE rn = 1;</span><br></pre></td></tr></table></figure>
-<h3 id="本地oracle可以通过localhost连接-无法通过ip地址连接解决方法"><a href="#本地oracle可以通过localhost连接-无法通过ip地址连接解决方法" class="headerlink" title="本地oracle可以通过localhost连接,无法通过ip地址连接解决方法"></a>本地oracle可以通过localhost连接,无法通过ip地址连接解决方法</h3><ol>
-<li>打开 Net Manager</li>
-<li>添加地址，输入 ip 端口 1521</li>
-<li>关闭，保存</li>
-<li>稍等 3 分钟，如果不行，可以重启监听服务</li>
-</ol>
-<h3 id="获取结果集中前N条数据"><a href="#获取结果集中前N条数据" class="headerlink" title="获取结果集中前N条数据"></a>获取结果集中前N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum &lt;= N;</span><br></pre></td></tr></table></figure>
-<h3 id="获取结果集中第N条数据"><a href="#获取结果集中第N条数据" class="headerlink" title="获取结果集中第N条数据"></a>获取结果集中第N条数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user where rownum = N;</span><br></pre></td></tr></table></figure>
-<h3 id="union-与-union-all"><a href="#union-与-union-all" class="headerlink" title="union 与 union all"></a>union 与 union all</h3><ol>
-<li>union all 仅仅是简单的合并查询结果, 并不会做去重操作, 也不会排序, 所以 union all 效率要比 union 高，在确定没有重复记录的情况下, 尽量使用union all</li>
-<li>根据索引查询时，union 比 or 效率更高。or 不会使用索引</li>
-</ol>
-<h3 id="NUMBER-（-precision，-scale）"><a href="#NUMBER-（-precision，-scale）" class="headerlink" title="NUMBER （ precision， scale）"></a><strong>NUMBER</strong> <strong>（ precision， scale）</strong></h3><blockquote>
-<p>参考 <a href="https://www.cnblogs.com/oumyye/p/4448656.html" target="_blank" rel="noopener">https://www.cnblogs.com/oumyye/p/4448656.html</a></p>
-</blockquote>
-<ol>
-<li>precision 有效位数，包括整数位+小数位</li>
-<li>scale 小数点后精确位数</li>
-<li>precision-scale 整数部分最大位数</li>
-<li>precision 与 scale 相等，则表示整数部分为0</li>
-</ol>
-<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>group by 两个或以上条件的分析</p>
-<p><a href="https://www.iteye.com/blog/uule-1569262" target="_blank" rel="noopener">https://www.iteye.com/blog/uule-1569262</a></p>
-<ul>
-<li>GBK 编码下，一个中文占两个字节<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1) from dual;的值就是5</span><br><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,2) from dual;的值就是9</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h2><h3 id="dbms-random-value"><a href="#dbms-random-value" class="headerlink" title="dbms_random.value"></a>dbms_random.value</h3><blockquote>
-<p>获取 0-1 之间随机值</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 获取 80 到 100之间随机小数,小数点后保留两位</span><br><span class="line">SELECT TRUNC(80+20*dbms_random.value, 2) FROM dual</span><br></pre></td></tr></table></figure>
-<h3 id="trunc"><a href="#trunc" class="headerlink" title="trunc"></a>trunc</h3><h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select trunc (sysdate) from dual --2013-01-06 今天的日期为 2013-01-06</span><br><span class="line">select trunc (sysdate, &apos;mm&apos;) from dual --2013-01-01 返回当月第一天.</span><br><span class="line">select trunc (sysdate,&apos;yy&apos;) from dual --2013-01-01 返回当年第一天</span><br><span class="line">select trunc (sysdate,&apos;dd&apos;) from dual --2013-01-06 返回当前年月日</span><br><span class="line">select trunc (sysdate,&apos;yyyy&apos;) from dual --2013-01-01 返回当年第一天</span><br><span class="line">select trunc (sysdate,&apos;d&apos;) from dual --2013-01-06 (星期天) 返回当前星期的第一天</span><br><span class="line">select trunc (sysdate, &apos;hh&apos;) from dual --2013-01-06 17:00:00 当前时间为 17:35</span><br><span class="line">select trunc (sysdate, &apos;mi&apos;) from dual --2013-01-06 17:35:00 TRUNC () 函数没有秒的精确</span><br></pre></td></tr></table></figure>
-<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><blockquote>
-<p>TRUNC（number,num_digits）<br>Number 需要截尾取整的数字。<br>Num_digits 用于指定取整精度的数字。Num_digits 的默认值为 0。<br>TRUNC () 函数截取时不进行四舍五入</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select trunc(123.458) from dual --123</span><br><span class="line">select trunc(123.458,0) from dual --123</span><br><span class="line">select trunc(123.458,1) from dual --123.4</span><br><span class="line">select trunc(123.458,-1) from dual --120</span><br><span class="line">select trunc(123.458,-4) from dual --0</span><br><span class="line">select trunc(123.458,4) from dual --123.458</span><br><span class="line">select trunc(123) from dual --123</span><br><span class="line">select trunc(123,1) from dual --123</span><br><span class="line">select trunc(123,-1) from dual --120</span><br></pre></td></tr></table></figure>
-<h3 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h3><blockquote>
-<p>substr(字符串，截取开始位置，截取长度) // 返回截取的字</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">substr (&apos;Hello World&apos;,0,1) // 返回结果为 &apos;H&apos;  * 从字符串第一个字符开始截取长度为 1 的字符串</span><br><span class="line"></span><br><span class="line">substr (&apos;Hello World&apos;,1,1) // 返回结果为 &apos;H&apos;  *0 和 1 都是表示截取的开始位置为第一个字符</span><br><span class="line"></span><br><span class="line">substr (&apos;Hello World&apos;,2,4) // 返回结果为 &apos;ello&apos;</span><br><span class="line"></span><br><span class="line">substr (&apos;Hello World&apos;,-3,3)// 返回结果为 &apos;rld&apos; * 负数 (-i) 表示截取的开始位置为字符串右端向左数第 i 个字符</span><br><span class="line"></span><br><span class="line">测试：</span><br><span class="line"></span><br><span class="line">select substr(&apos;Hello World&apos;,-3,3) value from dual;</span><br></pre></td></tr></table></figure>
-<h3 id="instr"><a href="#instr" class="headerlink" title="instr"></a>instr</h3><blockquote>
-<p>类似 indexof</p>
-</blockquote>
-<ul>
-<li>UTF8 编码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1)-1 from dual;</span><br><span class="line">解释：1. &apos;保定市南市区&apos; =&gt;可以是表达式，也可以是具体数据</span><br><span class="line">          2. &apos;市&apos;=&gt;为分离的标志，这里为两组数据中的“市”这个字</span><br><span class="line">          3. 第一个1为从左边开始，如果为-1，则从右边开始。</span><br><span class="line">          4. 第二个1为“市”出现的第几次。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="nvl-p1-p2"><a href="#nvl-p1-p2" class="headerlink" title="nvl(p1, p2)"></a>nvl(p1, p2)</h3><blockquote>
-<p>p1 为空，则返回 p2，不为空，则返回p1</p>
-</blockquote>
-<h3 id="nvl2-expre1-expre2-expre3"><a href="#nvl2-expre1-expre2-expre3" class="headerlink" title="nvl2(expre1,expre2,expre3)"></a>nvl2(expre1,expre2,expre3)</h3><blockquote>
-<p>如果 expre1 不为空，则返回 expre2，如果为空，返回expre3</p>
-</blockquote>
-<h3 id="nullif-expre1-expre2"><a href="#nullif-expre1-expre2" class="headerlink" title="nullif (expre1,expre2)"></a>nullif (expre1,expre2)</h3><blockquote>
-<p>比较两个参数，如果参数 1 和参数 2 相等，返回 null<br>如果不相等，返回第一个参数</p>
-</blockquote>
-<h3 id="coalesce-expre1-expre2-expre3"><a href="#coalesce-expre1-expre2-expre3" class="headerlink" title="coalesce(expre1,expre2,expre3)"></a>coalesce(expre1,expre2,expre3)</h3><blockquote>
-<p>参数 1：如果第一参数不为空，返回第一个参数。<br>参数 2：如果参数 1 为空，则返回第二个参数。<br>参数 3：如果参数 1 和参赛 2 都为空，返回第三个参数。</p>
-</blockquote>
-<h3 id="case-when-then"><a href="#case-when-then" class="headerlink" title="case when then"></a>case when then</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT ENAME,SAL,JOB, </span><br><span class="line">CASE JOB </span><br><span class="line">  WHEN &apos;MANAGER&apos; THEN SAL+100</span><br><span class="line">  WHEN &apos;ANALYSIS&apos; THEN SAL+200</span><br><span class="line">  WHEN &apos;SALESMAN&apos; THEN SAL+300</span><br><span class="line">  ELSE SAL+400</span><br><span class="line">  END &quot;RESULTS&quot;</span><br><span class="line">  FROM EMP;</span><br></pre></td></tr></table></figure>
-<h3 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h3><blockquote>
-<p>DECODE(col|expression ,search1,result1<br>   [,search2,result2]<br>   [,default])<br>如果 default 值被省略了，那么当 search 值没有与任何的 math 值匹配，将返回 null 值。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT ENAME,JOB,SAL,</span><br><span class="line">  DECODE(JOB, &apos;MANAGER&apos;, SAL+100, &apos;SALESMAN&apos;,SAL+200, SAL) REVISED_SAL</span><br><span class="line">  FROM EMP;</span><br></pre></td></tr></table></figure>
-<h3 id="行转列-pivot-、列转行-unpivot"><a href="#行转列-pivot-、列转行-unpivot" class="headerlink" title="行转列 pivot 、列转行 unpivot"></a>行转列 pivot 、列转行 unpivot</h3><p><a href="https://blog.csdn.net/xiaokui_wingfly/article/details/42419207" target="_blank" rel="noopener">https://blog.csdn.net/xiaokui_wingfly/article/details/42419207</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="运维问题"><a href="#运维问题" class="headerlink" title="运维问题"></a>运维问题</h2><h3 id="oracle-从-11g-开始，默认情况下，密码是有大小写区分的"><a href="#oracle-从-11g-开始，默认情况下，密码是有大小写区分的" class="headerlink" title="oracle 从 11g 开始，默认情况下，密码是有大小写区分的"></a>oracle 从 11g 开始，默认情况下，密码是有大小写区分的</h3><p>可通过 SEC_CASE_SENSITIVE_LOGON 参数设置 ，默认情况下该参数的值为 true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter sec_case_sensitive_logon;</span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- ------------------------------</span><br><span class="line">sec_case_sensitive_logon             boolean     TRUE</span><br><span class="line"></span><br><span class="line">SQL&gt; alter system set sec_case_sensitive_logon=false scope=both;</span><br><span class="line">System altered.</span><br></pre></td></tr></table></figure>
-<h3 id="ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务"><a href="#ORA-12514-TNS-监听程序当前无法识别连接描述符中请求的服务" class="headerlink" title="ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务"></a>ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务</h3><ol>
-<li><p>查看并修改 <code>listener.ora</code>，正确格式如下</p>
-<p><em>F:\app\Administrator\product\11.2.0\dbhome_1\NETWORK\ADMIN</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">SID_LIST_LISTENER =</span><br><span class="line">  (SID_LIST =</span><br><span class="line">    (SID_DESC =</span><br><span class="line">      (SID_NAME = CLRExtProc)</span><br><span class="line">      (ORACLE_HOME = F:\app\Administrator\product\11.2.0\dbhome_1)</span><br><span class="line">      (PROGRAM = extproc)</span><br><span class="line">      (ENVS = &quot;EXTPROC_DLLS=ONLY:F:\app\Administrator\product\11.2.0\dbhome_1\bin\oraclr11.dll&quot;)</span><br><span class="line">    )</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line"># wangqinpei 为计算机名</span><br><span class="line">LISTENER =</span><br><span class="line">  (DESCRIPTION_LIST =</span><br><span class="line">    (DESCRIPTION =</span><br><span class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = wangqinpei)(PORT = 1521))</span><br><span class="line">    )</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">ADR_BASE_LISTENER = F:\app\Administrator</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启监听 OracleOraDb11g_home1TNSListener</p>
-</li>
-<li>等待一会儿，重新连接</li>
-</ol>
-<h3 id="ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法"><a href="#ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法" class="headerlink" title="ORA-00020:maximum number of processes (150) exceeded 错误解决方法"></a>ORA-00020:maximum number of processes (150) exceeded 错误解决方法</h3><blockquote>
-<p>processes 进程，可以认为是数据库物理连接数</p>
-<ol>
-<li>查看进程数 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- --------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     150</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<ol start="2">
-<li><p>修改 processes 「没有立即生效」</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; alter system set processes=300 scope=spfile;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- -------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     150</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭服务</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; shutdown immediate</span><br><span class="line">数据库已经关闭。</span><br><span class="line">已经卸载数据库。</span><br><span class="line">ORACLE 例程已经关闭。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动服务</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; startup</span><br><span class="line">ORACLE 例程已经启动。</span><br><span class="line"></span><br><span class="line">Total System Global Area  530128356 bytes</span><br><span class="line">Fixed Size                   454116 bytes</span><br><span class="line">Variable Size             503316480 bytes</span><br><span class="line">Database Buffers           25165824 bytes</span><br><span class="line">Redo Buffers                1191936 bytes</span><br><span class="line">数据库装载完毕。</span><br><span class="line">数据库已经打开。</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="5">
-<li>查看 processes 「已生效」 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- -------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     300</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"><a href="#本地计算机上的OracleOraDb11g-home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。" class="headerlink" title="本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。"></a>本地计算机上的OracleOraDb11g_home1TNSListener服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止。</h3><h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h4><p>本机ip发生了变化(本机ip变化后与监听器配置中的ip不一致)</p>
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>打开Oracle的NetManager，保证本机ip与配置远程访问设置的ip一致即可启动监听(修改本机ip或修改远程访问ip)</p>
-<h3 id="连接本机Oracle报：ORA-12170-TNS-连接超时"><a href="#连接本机Oracle报：ORA-12170-TNS-连接超时" class="headerlink" title="连接本机Oracle报：ORA-12170: TNS: 连接超时"></a>连接本机Oracle报：ORA-12170: TNS: 连接超时</h3><blockquote>
-<p>本机公网 ip 是防火墙映射地址，需要在防火墙中添加入站规则，将 1521 添加进去。</p>
-</blockquote>
-<h3 id="Oracle-数据表转换为-Shapefile"><a href="#Oracle-数据表转换为-Shapefile" class="headerlink" title="Oracle 数据表转换为 Shapefile"></a>Oracle 数据表转换为 Shapefile</h3><p><a href="https://www.cnblogs.com/hans_gis/p/3482986.html" target="_blank" rel="noopener">https://www.cnblogs.com/hans_gis/p/3482986.html</a></p>
-<h3 id="ORA-12560-TNS-协议适配器错误"><a href="#ORA-12560-TNS-协议适配器错误" class="headerlink" title="ORA-12560: TNS: 协议适配器错误"></a>ORA-12560: TNS: 协议适配器错误</h3><p>参考 <a href="https://blog.csdn.net/Hello_World_QWP/article/details/78392855" target="_blank" rel="noopener">https://blog.csdn.net/Hello_World_QWP/article/details/78392855</a></p>
-<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>系统有效：Ctrl + R 输入<code>regedit</code> 查找路径 “HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Oracle -&gt; KEY_OraDb11g_home1”<br>找到 ORACLE_SID 右键，修改为 <code>orcl</code></p>
-<p><img src="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/XFumb5.png" alt="XFumb5" style="zoom:50%;"></p>
-<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>终端有效：Ctrl + R 输入 <code>cmd</code> 进入到 DOS 界面，输入 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set oracle_sid=orcl</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/03/Oracle/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -2623,11 +2331,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2635,11 +2339,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2647,11 +2351,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2667,15 +2375,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2695,6 +2403,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
@@ -2707,23 +2419,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2731,7 +2427,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2739,27 +2443,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2767,15 +2459,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2784,6 +2484,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">

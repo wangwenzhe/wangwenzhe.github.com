@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 54</p>
-			<p>总字数 <span class="post-count">59.4k</span></p>
+			<p>总文章数 55</p>
+			<p>总字数 <span class="post-count">60.4k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,561 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/17/MySQL/">MySQL</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/17/MySQL/" class="archive-article-date">
+  	<time datetime="2019-07-17T07:21:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：4.1k字 | 阅读本文大概需要 ：17分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ol>
+<li>廖雪峰：<a href="https://www.liaoxuefeng.com/wiki/1177760294764384" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1177760294764384</a></li>
+</ol>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><h5 id="必知"><a href="#必知" class="headerlink" title="必知"></a>必知</h5><ol>
+<li><p>MySQL本身实际上只是一个SQL接口，它的内部还包含了多种存储引擎，常用的包括</p>
+<ul>
+<li>InnoDB：支持事务，行级别锁，外键</li>
+<li>MyISAM：MySQL早期集成的默认数据库引擎，不支持事务</li>
+</ul>
+</li>
+<li><p>安装 MySQL 过程中，创建了默认的 4 个数据库：，创建了 root 账号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| test							 |</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在MySQL 8下,认证加密方式默认变成了default_authentication_plugin=caching_sha2_password，包括你刚初始化的root用户也是这个认证加密方式。除非用新的协议驱动，例如 8 自带的 MySQL  客户端,否则连接不上数据库</p>
+</li>
+<li><p>修改认证加密方式</p>
+<ul>
+<li><p>Windows</p>
+<blockquote>
+<p>默认路径 C:\ProgramData\MySQL\MySQL Server 8.0\my.ini</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修改后</span><br><span class="line">#default_authentication_plugin=caching_sha2_password</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim my.cnf</span><br><span class="line">[mysqld]</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br></pre></td></tr></table></figure>
+<p>重启 MySQL 即可生效，新创建的用户，就会使用修改后的认证密码方式</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h5><ol>
+<li><p>查看 MySQL 服务器版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前 MySQL  提供什么存储引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show engines;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前默认的存储引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;%storage_engine%&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看表用了什么引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表引擎方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students engine=innodb;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ol>
+<li><p>连接数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql -u 用户名 -p 用户密码 -h IP地址 -P 端口</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">mysql -u root -p 123456 -h 192.168.0.99 -P 3306</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出所有数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE test;</span><br><span class="line"></span><br><span class="line">//如果test数据库不存在，就创建</span><br><span class="line">CREATE DATABASE IF NOT EXISTS test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//该数据库的所有表全部被删除</span><br><span class="line">DROP DATABASE test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换到数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//操作数据库前先切换到数据库</span><br><span class="line">USE test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前使用的数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br><span class="line"></span><br><span class="line">show tables;</span><br><span class="line">+----------------+</span><br><span class="line">| Tables_in_test |</span><br><span class="line">+----------------+</span><br><span class="line">| students       |</span><br><span class="line">+----------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>状态信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">status</span><br><span class="line"></span><br><span class="line">--------------</span><br><span class="line">mysql  Ver 8.0.15 for Win64 on x86_64 (MySQL Community Server - GPL)</span><br><span class="line"></span><br><span class="line">Connection id:          32</span><br><span class="line">Current database:       test</span><br><span class="line">Current user:           root@localhost</span><br><span class="line">SSL:                    Cipher in use is DHE-RSA-AES128-GCM-SHA256</span><br><span class="line">Using delimiter:        ;</span><br><span class="line">Server version:         8.0.15 MySQL Community Server - GPL</span><br><span class="line">Protocol version:       10</span><br><span class="line">Connection:             localhost via TCP/IP</span><br><span class="line">Server characterset:    utf8mb4</span><br><span class="line">Db     characterset:    utf8mb4</span><br><span class="line">Client characterset:    gbk</span><br><span class="line">Conn.  characterset:    gbk</span><br><span class="line">TCP port:               3306</span><br><span class="line">Uptime:                 21 hours 19 min 24 sec</span><br><span class="line"></span><br><span class="line">Threads: 2  Questions: 91  Slow queries: 0  Opens: 195  Flush tables: 2  Open tables: 169  Queries per second avg: 0.001</span><br><span class="line">--------------</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看各用户认证密码方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select Host,User,plugin,authentication_string from mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断当前到数据库的连接是否有效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 1;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><ol>
+<li><p>创建用户</p>
+<ul>
+<li><p>创建 test 用户，只允许本地 localhost 访问 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;test&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 demo 用户，只允许指定的 ip 主机访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;demo&apos;@&apos;192.168.0.109&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 admin 用户，允许任何主机访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;admin&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>用户授权</p>
+<ul>
+<li><p>允许用户 test 拥有数据库 mydb 的所有权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户并分配适当的权限后，请确保重新加载权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>撤消用户权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE DELETE ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;; //撤销 delete 权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &apos;test&apos;@&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改用户密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从「数据库-8」查看各用户认证密码方式</span><br><span class="line"></span><br><span class="line">alter user &apos;test&apos;@&apos;localhost&apos; identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改用户名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">use mysql;</span><br><span class="line">update user set user=&quot;test1&quot; where user=&quot;test&quot;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加admin并提升为超级管理员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all on *.* to &apos;admin&apos;@&apos;localhost&apos; identified by &apos;123456&apos; with grant option;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除所有用户,包括root超级用户「<strong>禁用</strong>」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><ol>
+<li>ALL [PRIVILEGES] -授予用户所有权限</li>
+<li>CREATE -授予用户创建新数据库和表的权限</li>
+<li>DROP -授予用户删除（drop）数据库和表的权限</li>
+<li>DELETE -授予用户删除表中的行的权限</li>
+<li>ALTER -授予用户修改表结构的权限</li>
+<li>INSERT -授予用户在表中插入（add）行的权限</li>
+<li>SELECT -授予用户运行select命令以从表中读取数据的权限</li>
+<li>UPDATE -授予用户更新表中的数据的权限</li>
+<li>EXECUTE -授予用户执行存储的例程的权限</li>
+<li>FILE -授予用户访问服务器主机上的文件的权限</li>
+<li><p>GRANT OPTION -授予用户授予或删除其他用户权限的权限</p>
+</li>
+<li><p>允许对数据库mydb上的‘test‘@’localhost’进行CREATE，DELETE，INSERT，UPDATE访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT CREATE,DELETE,INSERT,UPDATE ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="表管理"><a href="#表管理" class="headerlink" title="表管理"></a>表管理</h4><ol>
+<li><p>列出当前数据库的所有表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students(</span><br><span class="line">id bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">class_id bigint(20) NOT NULL, </span><br><span class="line">name varchar(100) NOT NULL,</span><br><span class="line">gender varchar(1) NOT NULL,</span><br><span class="line">score int(11) NOT NULL,</span><br><span class="line">PRIMARY KEY (id) </span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表是先判断表是否存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists students(id bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">class_id bigint(20) NOT NULL, </span><br><span class="line">name varchar(100) NOT NULL,</span><br><span class="line">gender varchar(1) NOT NULL,</span><br><span class="line">score int(11) NOT NULL,</span><br><span class="line">PRIMARY KEY (id) </span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看一个表的结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看创建表的 SQL 语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students rename to stu;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="7">
+<li><p>删除表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE students;</span><br><span class="line"></span><br><span class="line">//存在即删除</span><br><span class="line">DROP TABLE IF EXISTS students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给<code>students</code>表新增一列<code>birth</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把<code>birth</code>列名改为<code>birthday</code>，类型改为<code>VARCHAR(20)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除列<code>birthday</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students DROP COLUMN birthday;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="表和字段注释"><a href="#表和字段注释" class="headerlink" title="表和字段注释"></a>表和字段注释</h4><ol>
+<li><p>创建带注释的表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students( </span><br><span class="line">  sid INT PRIMARY KEY AUTO_INCREMENT COMMENT &apos;设置主键自增&apos;,</span><br><span class="line">  sname VARCHAR(200) COMMENT &apos;列注释&apos;</span><br><span class="line"> ) COMMENT=&apos;表注释&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改现有表，加上注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students COMMENT=&apos;学生表&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改现有列，加上注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students modify column sname VARCHAR(200) comment &apos;xxxx&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看表注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT table_name,table_comment FROM information_schema.tables  WHERE table_schema = &apos;test&apos; AND table_name =&apos;students&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看列的注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT  column_name, column_comment FROM information_schema.columns WHERE table_schema =&apos;test&apos;  AND table_name = &apos;students&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="表查询"><a href="#表查询" class="headerlink" title="表查询"></a>表查询</h4><h5 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h5><ol>
+<li><p>多个条件中有 not、and、or 等，则尽量使用小括号 () </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students WHERE (score &lt; 80 OR score &gt; 90) AND gender = &apos;M&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果不加括号，条件运算按照<code>NOT</code>、<code>AND</code>、<code>OR</code>的优先级进行，即<code>NOT</code>优先级最高，其次是<code>AND</code>，最后是<code>OR</code>。加上括号可以改变优先级</p>
+</li>
+</ol>
+<h5 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h5><ol>
+<li>使用<code>SELECT *</code>查询表的所有列，使用<code>SELECT 列1, 列2, 列3</code>返回指定列，这种操作称为投影</li>
+<li><code>SELECT</code>语句可以对结果集的列进行重命名</li>
+</ol>
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><ol>
+<li>使用<code>ORDER BY</code>可以对结果集进行排序</li>
+<li>默认的排序规则是<code>ASC</code>：“升序”，即从小到大</li>
+<li>可以对多列进行升序、倒序排序</li>
+</ol>
+<h5 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h5><ol>
+<li><p>通过<code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students ORDER BY score DESC LIMIT 3 OFFSET 0;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>LIMIT</code>和<code>OFFSET</code>应该设定的值</p>
+<ol>
+<li><code>LIMIT</code>总是设定为 <code>pageSize</code></li>
+<li><code>OFFSET</code>计算公式为<code>pageSize * (pageIndex - 1)</code></li>
+</ol>
+</li>
+<li><p><code>OFFSET</code>是可选的，如果只写<code>LIMIT 15</code>，那么相当于<code>LIMIT 15 OFFSET 0</code></p>
+</li>
+<li><code>LIMIT 15 OFFSET 30</code>还可以简写成<code>LIMIT 30, 15</code></li>
+</ol>
+<h5 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">COUNT</td>
+<td style="text-align:left">计算结果集行数</td>
+</tr>
+<tr>
+<td style="text-align:left">SUM</td>
+<td style="text-align:left">计算某一列的合计值，该列必须为数值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">AVG</td>
+<td style="text-align:left">计算某一列的平均值，该列必须为数值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">MAX</td>
+<td style="text-align:left">计算某一列的最大值</td>
+</tr>
+<tr>
+<td style="text-align:left">MIN</td>
+<td style="text-align:left">计算某一列的最小值</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>COUNT(*)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(*) num FROM students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果聚合查询的<code>WHERE</code>条件没有匹配到任何行，<code>COUNT()</code>会返回0，而<code>SUM()</code>、<code>AVG()</code>、<code>MAX()</code>和<code>MIN()</code>会返回<code>NULL</code></p>
+</li>
+</ol>
+<h5 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h5><ol>
+<li><p>聚合查询返回列中，只能放入分组的列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, COUNT(*) num FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用多个列进行分组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非分组列拼接后返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, group_concat(name), COUNT(*) num FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="多表"><a href="#多表" class="headerlink" title="多表"></a>多表</h5><ol>
+<li><p>查询多张表的语法是：<code>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;</code></p>
+<ol>
+<li>使用多表查询可以获取M x N行记录</li>
+<li>多表查询的结果集可能非常巨大，要小心使用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students, classes;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h5><ol>
+<li><p>INNER JOIN「<strong>交集</strong>」</p>
+<p>只返回同时存在于两张表的行数据</p>
+</li>
+<li><p>LEFT OUTER JOIN</p>
+<p>以左表为基准，匹配返回，右表匹配不到的字段返回null</p>
+</li>
+<li><p>RIGHT OUTER JOIN</p>
+<p>以右表为基准，匹配返回，左表匹配不到的字段返回null</p>
+</li>
+<li><p>FULL OUTER JOIN「<strong>并集</strong>」</p>
+<p>把两张表的所有记录全部选择出来，并且，自动把对方不存在的列填充为NULL</p>
+</li>
+</ol>
+<h4 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h4><ol>
+<li><p>INSERT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);</span><br><span class="line"></span><br><span class="line">//多条</span><br><span class="line">INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...),(值1, 值2, ...);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>UPDATE</p>
+<ul>
+<li><p>在执行<code>UPDATE</code>语句前，最好先用<code>SELECT</code>语句来测试<code>WHERE</code>条件是否筛选出了期望的记录集，然后再用<code>UPDATE</code>更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students WHERE id=1;</span><br><span class="line"></span><br><span class="line">UPDATE students SET name=&apos;大牛&apos;, score=66 WHERE id=1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>UPDATE</code>语句会返回<code>更新的行数</code>以及<code>WHERE</code>条件<code>匹配的行数</code>，匹配不到时，返回0</p>
+</li>
+</ul>
+</li>
+<li><p>DELETE</p>
+<ul>
+<li><p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM &lt;表名&gt; WHERE ...;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果<code>WHERE</code>条件没有匹配到任何记录，<code>DELETE</code>语句不会报错，也不会有任何记录被删除</p>
+</li>
+<li><p>在执行<code>delete</code>语句前，最好先用<code>SELECT</code>语句来测试<code>WHERE</code>条件是否筛选出了期望的记录集，然后再用<code>delete</code>删除</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><h5 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h5><ol>
+<li>索引的效率取决于索引列的值是否散列，即该列的值如果越互不相同，那么索引效率越高。反过来，如果记录的列存在大量相同的值，例如<code>gender</code>列，大约一半的记录值是<code>M</code>，另一半是<code>F</code>，因此，对该列创建索引就没有意义</li>
+<li>可以对一张表创建多个索引。索引的优点是提高了查询效率，缺点是在插入、更新和删除记录时，需要同时修改索引，因此，索引越多，插入、更新和删除记录的速度就越慢</li>
+<li>对于主键，关系数据库会自动对其创建主键索引。使用主键索引的效率是最高的，因为主键会保证绝对唯一</li>
+<li>索引对于用户和应用程序来说都是透明的</li>
+</ol>
+<h5 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h5><ol>
+<li><p>对<code>score</code>列创建索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD INDEX idx_score (score);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对<code>name、score</code> 创建复合索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD INDEX idx_name_score (name, score);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>唯一索引</p>
+<ul>
+<li><p>通过创建唯一索引，可以保证某一列的值具有唯一性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD UNIQUE INDEX uni_name (name);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>对某一列添加一个<strong>唯一约束而不创建唯一索引</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD CONSTRAINT uni_name UNIQUE (name);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="实用SQL语句"><a href="#实用SQL语句" class="headerlink" title="实用SQL语句"></a>实用SQL语句</h4><ol>
+<li><p>插入或替换</p>
+<blockquote>
+<p>若<code>id=1</code>的记录不存在，<code>REPLACE</code>语句将插入新记录，否则，当前<code>id=1</code>的记录将被删除，然后再插入新记录</p>
+<p><strong>不存在则插入，存在则先删除后插入</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入或更新</p>
+<blockquote>
+<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，当前<code>id=1</code>的记录将被更新，更新的字段由<code>UPDATE</code>指定</p>
+<p><strong>不存在则插入，存在则更新指定字段数据</strong>「<em>非指定字段数据不变</em>」</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99) ON DUPLICATE KEY UPDATE name=&apos;小明&apos;, gender=&apos;F&apos;, score=99;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入或忽略</p>
+<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，不执行任何操作。</p>
+<p><strong>即不存在则插入，存在则不执行任何操作</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表快照</p>
+<p>新创建的表结构和<code>SELECT</code>使用的表结构完全一致</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询结果集写入表中</p>
+<p>确保<code>INSERT</code>语句的列和<code>SELECT</code>语句的列能对应，数量和类型一致</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><ol>
+<li>数据库事务具有<code>ACID</code>这4个特性<ul>
+<li>A：Atomic，原子性，将所有SQL作为原子工作单元执行，要么全部执行，要么全部不执行；</li>
+<li>C：Consistent，一致性，事务完成后，所有数据的状态都是一致的，即A账户只要减去了100，B账户则必定加上了100；</li>
+<li>I：Isolation，隔离性，如果有多个事务并发执行，每个事务作出的修改必须与其他事务隔离；</li>
+<li>D：Duration，持久性，即事务完成后，对数据库数据的修改被持久化存储。</li>
+</ul>
+</li>
+<li><p>对于单条SQL语句，数据库系统自动将其作为一个事务执行，这种事务被称为<em>隐式事务</em></p>
+</li>
+<li><p>多条SQL语句作为一个事务执行，使用<code>BEGIN</code>开启一个事务，使用<code>COMMIT</code>提交一个事务，这种事务被称为<em>显式事务</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BEGIN;</span><br><span class="line">UPDATE accounts SET balance = balance - 100 WHERE id = 1;</span><br><span class="line">UPDATE accounts SET balance = balance + 100 WHERE id = 2;</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h4><p>对于两个并发执行的事务，如果涉及到操作同一条记录的时候，可能会发生问题。因为并发操作会带来数据的不一致性，包括脏读、不可重复读、幻读等。数据库系统提供了隔离级别来让我们有针对性地选择事务的隔离级别，避免数据不一致的问题</p>
+<p>SQL标准定义了4种<strong>事件之间的隔离级别</strong>，分别对应可能出现的数据不一致的情况</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Isolation Level</th>
+<th style="text-align:left">脏读（Dirty Read）</th>
+<th style="text-align:left">不可重复读（Non Repeatable Read）</th>
+<th style="text-align:left">幻读（Phantom Read）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Read Uncommitted</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Read Committed</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Repeatable Read</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Serializable</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p><code>Read Uncommitted</code>是隔离级别最低的一种事务级别。在这种隔离级别下，一个事务会<strong>读到另一个事务更新后但未提交的数据</strong>，如果另一个事务回滚，那么当前事务读到的数据就是脏数据，这就是<strong>脏读</strong>（Dirty Read）</p>
+</li>
+<li><p>在<code>Read Committed</code>隔离级别下，一个事务可能会遇到<strong>不可重复读</strong>（Non Repeatable Read）的问题</p>
+<p>不可重复读是指，在一个事务内，多次读同一数据，在这个事务还没有结束时，如果<strong>另一个事务恰好修改了这个数据并且提交</strong>，那么，在第一个事务中，两次读取的数据就可能不一致</p>
+</li>
+<li><p>在<code>Repeatable Read</code>隔离级别下，一个事务可能会遇到<strong>幻读</strong>（Phantom Read）的问题</p>
+<p>幻读是指，在一个事务中，第一次查询某条记录，发现没有，但是，当试图更新这条不存在的记录时，竟然能成功，并且，再次读取同一条记录，它就神奇地出现了</p>
+</li>
+<li><p><code>Serializable</code>是最严格的隔离级别。在Serializable隔离级别下，所有事务按照次序依次执行，因此，脏读、不可重复读、幻读都不会出现</p>
+<p>虽然Serializable隔离级别下的事务具有最高的安全性，但是，由于事务是串行执行，所以效率会大大下降，应用程序的性能会急剧降低。如果没有特别重要的情景，一般都不会使用Serializable隔离级别</p>
+<p>如果没有指定隔离级别，数据库就会使用默认的隔离级别。在MySQL中，如果使用InnoDB，默认的隔离级别是<code>Repeatable Read</code></p>
+</li>
+</ol>
+<h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><p>​    <a href="https://zhuanlan.zhihu.com/p/27960044" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27960044</a></p>
+<ol>
+<li><p>下载、安装</p>
+</li>
+<li><p>启动、停止</p>
+</li>
+</ol>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647620108.png" alt="UTOOLS1576647620108.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647722226.jpg" alt="UTOOLS1576647722226.jpg"></p>
+<ol start="3">
+<li><p>连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p </span><br><span class="line">输入 123456</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ol>
+<li><p>对实体 “useSSL” 的引用必须以 ‘;’ 分隔符结尾</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&amp; 替换为 &amp;amp;</span><br><span class="line"></span><br><span class="line">&lt;bean id=&quot;dataSource_mid&quot;</span><br><span class="line">		  class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/test?characterEncoding=utf8&amp;amp;useSSL=true&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;password&quot; value=&quot;123456&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.cnblogs.com/linjiqin/p/5270938.html" target="_blank" rel="noopener">配置 mysql 允许远程连接的方法</a></p>
+<ol>
+<li><p>修改 <code>/etc/mysql/my.conf</code> 或  <code>my.ini</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">把</span><br><span class="line">bind-address = 127.0.0.1</span><br><span class="line">改成</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line">重启 MySQL 服务</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为需要远程登录的用户赋予权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grant all on *.* to &apos;admin&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line">允许任何 ip 地址 (% 表示允许任何 ip 地址) 的电脑用 admin 帐户和密码 (123456) 来访问这个 mysql server。</span><br><span class="line">注意 admin 账户不一定要存在</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>支持 root 用户允许远程连接 mysql 数据库</p>
+<ol>
+<li><p>方法一「优选」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user set host=&apos;%&apos; where user=&apos;root&apos; AND host=&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; [identified by &apos;123456&apos;] with grant option;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>查看系统用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">select user, host from user;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>DataGrip 连接 mysql 报错 Server returns invalid timezone. Go to ‘Advanced’ tab and set’serverTimezone’ property</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置界面-Advanced 选项中搜索到 Name 为 serverTimezone 其 Value设置为 GMT</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/17/MySQL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1434,9 +1989,7 @@
 <blockquote>
 <p>JRebel 是一种热部署生产力工具，修改代码后不用重新启动程序，所有的更改便可以生效。它跳过了Java开发中常见的重建、重新启动和重新部署周期</p>
 </blockquote>
-<ul>
-<li>参考配置：<a href="https://blog.csdn.net/weixin_42831477/article/details/82229436" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42831477/article/details/82229436</a></li>
-</ul>
+<p><a href="https://blog.csdn.net/weixin_42831477/article/details/82229436" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42831477/article/details/82229436</a></p>
 </li>
 <li><p><strong>FindBugs-IDEA</strong></p>
 </li>
@@ -1631,117 +2184,6 @@
 
 
   
-    <article id="post-Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/Tomcat/">Tomcat</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/Tomcat/" class="archive-article-date">
-  	<time datetime="2019-07-05T03:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：320字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
-<li><p>JVM 内存配置「提高内存利用率」</p>
-</li>
-<li><p>连接数配置「提高 CPU 利用率」</p>
-</li>
-<li><p>CATALINA_HOME 与 CATALINA_BASE</p>
-<p><strong>注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误</strong></p>
-<ul>
-<li>CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录</li>
-<li>使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。</li>
-<li>参考 <a href="https://blog.csdn.net/jiaotuwoaini/article/details/51455829" target="_blank" rel="noopener">https://blog.csdn.net/jiaotuwoaini/article/details/51455829</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="Tomcat-日志排查问题"><a href="#Tomcat-日志排查问题" class="headerlink" title="Tomcat 日志排查问题"></a>Tomcat 日志排查问题</h2><ol>
-<li><p>项目日志文件: tomcat/bin/XXX.log  XXX.log 日志文件名称在项目 log4j.properties 中配置</p>
-<blockquote>
-<p>项目运行过程中报 500 错误时，从该日志文件查找原因</p>
-</blockquote>
-</li>
-<li><p>Tomcat 日志文件: tomcat/logs/catalina.out tomcat/logs/catalina.yyyy-mm-dd.log</p>
-<blockquote>
-<p>Tomcat 报错问题</p>
-</blockquote>
-</li>
-<li><p>查看方法 </p>
-<ul>
-<li>日志文件较小时，10Mb 以内。windows 平台中直接打开查看，例如使用 notepad++等。Linux 平台中可以将文件拷贝至 windows 中查看，也可通过命令 <code>less 文件名</code> 查看文件，大写字母 <code>G</code> 快速跳转至文件尾部，<code>Ctrl u</code> 向上翻页，<code>Ctrl d</code> 向下翻页</li>
-<li>日志文件较大时，10Mb 以上。windows 平台中借助 LogViewer 工具查看。Linux 平台通过上述 <code>less</code> 等命令查看</li>
-</ul>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/Tomcat/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1843,11 +2285,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1855,11 +2293,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1867,11 +2305,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1887,15 +2329,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1915,6 +2357,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
@@ -1927,23 +2373,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1951,7 +2381,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1959,27 +2397,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1987,15 +2413,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2004,6 +2438,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
