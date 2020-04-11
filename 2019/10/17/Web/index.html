@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-14T15:48:00.117Z">
+<meta property="og:updated_time" content="2020-03-31T10:03:10.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web">
 <meta name="twitter:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 55</p>
-			<p>总字数 <span class="post-count">60.4k</span></p>
+			<p>总文章数 59</p>
+			<p>总字数 <span class="post-count">62.6k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：999字 | 阅读本文大概需要 ：5分钟
+					字数：1.1k字 | 阅读本文大概需要 ：5分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -251,6 +251,9 @@
 <li><p>H5 软键盘监听</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> // ios &amp; android 键盘弹出：</span><br><span class="line"> $(&quot;#inputid&quot;).on(&apos;focus&apos;, function () &#123;</span><br><span class="line"> 	//键盘弹出的事件处理</span><br><span class="line"> &#125;);</span><br><span class="line"></span><br><span class="line">const ua = window.navigator.userAgent.toLocaleLowerCase();</span><br><span class="line">const isIOS = /iphone|ipad|ipod/.test(ua);</span><br><span class="line">const isAndroid = /android/.test(ua);</span><br><span class="line"></span><br><span class="line">if(isAndroid) &#123;</span><br><span class="line">	var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">    $(window).on(&apos;resize&apos;, function () &#123;</span><br><span class="line">      var nowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">      if (clientHeight &gt; nowClientHeight) &#123;</span><br><span class="line">			//键盘弹出的事件处理</span><br><span class="line">      &#125;</span><br><span class="line">      else &#123;</span><br><span class="line">        //键盘收起的事件处理</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(isIOS) &#123;</span><br><span class="line">  $(&quot;#inputid&quot;).on(&apos;blue&apos;, function () &#123;</span><br><span class="line">  	//键盘收起的事件处理</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>自定义监听事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 触发</span><br><span class="line">$(&apos;.input&apos;).val(3);</span><br><span class="line">$(document).trigger(&apos;input:changed&apos;, 3);</span><br><span class="line"></span><br><span class="line">// 监听</span><br><span class="line">$(document).on(&apos;input:changed&apos;, function (e, val) &#123;</span><br><span class="line">    console.log(val);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <h2 id="Jquery-Ajax"><a href="#Jquery-Ajax" class="headerlink" title="Jquery Ajax"></a>Jquery Ajax</h2><ol>
 <li>发送数据的内容编码类型<code>contentType</code> 默认值为 <code>application/x-www-form-urlencoded</code>，也可以指定其它类型，例如 <code>application/json</code></li>
@@ -270,6 +273,17 @@
 <li>word-wrap（overflow-wrap）控制长度超过一行的单词是否被拆分换行，是 word-break 的补充，它有两个值：normal | break-word</li>
 </ul>
 </li>
+</ol>
+<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><ol>
+<li><p>已知文件路径「项目中相对路径」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function downFile(filepath) &#123;</span><br><span class="line">		//项目路径+相对路径</span><br><span class="line">		window.open(rootPath + filepath, &quot;downfile&quot;);</span><br><span class="line">		return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ol>
+<li><p>点击 button 按钮后页面引起刷新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button 缺少 type=button 属性</span><br><span class="line"></span><br><span class="line">&lt;button type=&quot;button&quot;&gt;xxx&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
 </ol>
 
       
@@ -531,7 +545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,11 +553,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">ES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +565,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,11 +577,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,11 +589,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,11 +609,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,15 +625,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,7 +653,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,11 +661,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,11 +669,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,7 +677,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,11 +693,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -675,11 +705,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">

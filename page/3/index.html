@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 55</p>
-			<p>总字数 <span class="post-count">60.4k</span></p>
+			<p>总文章数 59</p>
+			<p>总字数 <span class="post-count">62.6k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,387 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Java爬坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/26/Java爬坑/">Java爬坑</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/26/Java爬坑/" class="archive-article-date">
+  	<time datetime="2019-09-26T06:04:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-26</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：185字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>数据库分页操作时，如果有排序字段，但该字段值不唯一，则翻页时会出现混乱情况</li>
+<li>多表联合查询时，如果连接表超过3个且连接表中数据量较大时，应考虑换种方式</li>
+<li>Mybatis 中 DRUD SQL 语句结尾不能有分号 ; </li>
+<li>后台计算的对象「非全局」如果后续马上还要使用，则可以暂时存放于 session 域中，session 域支持存储对象。如果页面需要使用，则放到 request 域中，jsp 中 EL 表达式解析对象即可；如果 js 代码需要使用，则后台先使用 <code>JSON.toJSON(obj)</code> 转换，js 代码<code>${obj}</code>获取对象，然后当做<code>Json</code> 变量进行操作</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java爬坑</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/26/Java爬坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/25/Android/">Android</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/25/Android/" class="archive-article-date">
+  	<time datetime="2019-09-25T10:24:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：137字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="申请相机权限"><a href="#申请相机权限" class="headerlink" title="申请相机权限"></a>申请相机权限</h2><h3 id="app-build-gradle"><a href="#app-build-gradle" class="headerlink" title="app/build.gradle"></a>app/build.gradle</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation &apos;com.github.tbruyelle:rxpermissions:0.10.2&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="java-文件"><a href="#java-文件" class="headerlink" title="java 文件"></a>java 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Android 6.0的版本以上</span><br><span class="line">if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M) &#123;</span><br><span class="line">            rxPermissions.request(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)</span><br><span class="line">                    .subscribe(granted -&gt; &#123;</span><br><span class="line">                        if (granted) &#123;</span><br><span class="line">                            // All requested permissions are granted</span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            // At least one permission is denied</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p><code>Cannot resolve method &#39;subscribe(&lt;lambda expression&gt;)&#39;</code></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576652496797.png" alt="UTOOLS1576652496797.png"></p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p><code>app build.gradle</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//新增代码</span><br><span class="line">//RxJava的依赖包</span><br><span class="line">implementation &apos;io.reactivex.rxjava2:rxjava:2.0.3&apos;</span><br><span class="line">//RxAndroid的依赖包</span><br><span class="line">implementation &apos;io.reactivex.rxjava2:rxandroid:2.0.1&apos;</span><br><span class="line"></span><br><span class="line">//已有代码</span><br><span class="line">implementation &apos;com.github.tbruyelle:rxpermissions:0.10.2&apos;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/25/Android/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Windows环境中实现Oracle远程数据自动备份" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/Windows环境中实现Oracle远程数据自动备份/">Windows环境中实现 Oracle远程数据自动备份</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/09/Windows环境中实现Oracle远程数据自动备份/" class="archive-article-date">
+  	<time datetime="2019-09-09T09:06:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：245字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Oracle-数据备份"><a href="#Oracle-数据备份" class="headerlink" title="Oracle 数据备份"></a>Oracle 数据备份</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><blockquote>
+<p>Windows 环境下备份远程 Oracle 数据库数据</p>
+</blockquote>
+<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ol>
+<li><p>windows 备份服务器</p>
+</li>
+<li><p>Oracle 客户端程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1Ok6-HEBi2eVMhDS75Me5cQ </span><br><span class="line">提取码：a46n</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>visual c++ 2013运行库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1vlf2Bbvf4vuVHmjt2B1p2A </span><br><span class="line">提取码：f1cx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>远程 Oracle  IP地址、端口、SID、账号、密码</p>
+</li>
+</ol>
+<h2 id="安装Oracle-客户端程序"><a href="#安装Oracle-客户端程序" class="headerlink" title="安装Oracle 客户端程序"></a>安装Oracle 客户端程序</h2><ol>
+<li><p>拷贝 instantclient_12_2_basic.zip 客户端文件至备数据库服务器 134主机D盘并解压<br> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576649753375.png" alt="UTOOLS1576649753375.png"></p>
+</li>
+<li><p>将解压后的目录 D:\instantclient_12_2_basic 加入到系统环境变量Path中<br> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576649789511.png" alt="UTOOLS1576649789511.png"></p>
+</li>
+<li><p>检测是否支持exp 命令<br> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576649826488.png" alt="UTOOLS1576649826488.png"></p>
+</li>
+<li><p>如果出现以下弹窗，则需要安装visual c++ 2013运行库<br> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576649859217.png" alt="UTOOLS1576649859217.png"><br> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576649879853.png" alt="UTOOLS1576649879853.png"></p>
+</li>
+<li><p>再测检测是否支持exp命令，出现如下说明Oracle客户端安装成功<br> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576649997383.png" alt="UTOOLS1576649997383.png"></p>
+</li>
+</ol>
+<h2 id="创建数据库备份脚本"><a href="#创建数据库备份脚本" class="headerlink" title="创建数据库备份脚本"></a>创建数据库备份脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1x_ADNSmIBUZwc5XuQbZfqw </span><br><span class="line">提取码：ym1q</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650286131.png" alt="UTOOLS1576650286131.png"></p>
+<h2 id="创建定时备份任务"><a href="#创建定时备份任务" class="headerlink" title="创建定时备份任务"></a>创建定时备份任务</h2><p>开始-管理工具-任务计划程序，打开任务计划程序库，点击「创建基本任务」<br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650332585.png" alt="UTOOLS1576650332585.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650353838.png" alt="UTOOLS1576650353838.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650378471.png" alt="UTOOLS1576650378471.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650391253.png" alt="UTOOLS1576650391253.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650214527.png" alt="UTOOLS1576650214527.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650162721.png" alt="UTOOLS1576650162721.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576650214527.png" alt="UTOOLS1576650214527.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle 数据备份</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/09/Windows环境中实现Oracle远程数据自动备份/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-世界上最好的爸爸" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/07/世界上最好的爸爸/">世界上最好的爸爸</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/07/世界上最好的爸爸/" class="archive-article-date">
+  	<time datetime="2019-09-07T07:34:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：0字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576596762747.jpg" alt="UTOOLS1576596762747.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576596835999.jpeg" alt="UTOOLS1576596835999.jpeg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576596865762.jpeg" alt="UTOOLS1576596865762.jpeg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576596992892.jpeg" alt="UTOOLS1576596992892.jpeg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597116905.jpeg" alt="UTOOLS1576597116905.jpeg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597054925.jpeg" alt="UTOOLS1576597054925.jpeg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597186613.jpg" alt="UTOOLS1576597186613.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597244541.jpeg" alt="UTOOLS1576597244541.jpeg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597281281.jpg" alt="UTOOLS1576597281281.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597352454.jpg" alt="UTOOLS1576597352454.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597347188.jpg" alt="UTOOLS1576597347188.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597416612.jpg" alt="UTOOLS1576597416612.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597421697.jpg" alt="UTOOLS1576597421697.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597488794.jpg" alt="UTOOLS1576597488794.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597484440.jpg" alt="UTOOLS1576597484440.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597552890.jpg" alt="UTOOLS1576597552890.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597547877.jpg" alt="UTOOLS1576597547877.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597626105.jpg" alt="UTOOLS1576597626105.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597630687.jpg" alt="UTOOLS1576597630687.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597704177.jpg" alt="UTOOLS1576597704177.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597713596.jpg" alt="UTOOLS1576597713596.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597769080.jpg" alt="UTOOLS1576597769080.jpg"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576597774705.jpg" alt="UTOOLS1576597774705.jpg"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教育</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/07/世界上最好的爸爸/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Spring-Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -523,7 +904,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.9k字 | 阅读本文大概需要 ：15分钟
+					字数：3k字 | 阅读本文大概需要 ：15分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -590,11 +971,11 @@
 <h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><h3 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h3><p><a href="https://www.jianshu.com/p/035be70daf2d" target="_blank" rel="noopener">https://www.jianshu.com/p/035be70daf2d</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$ brew install redis</span><br><span class="line"></span><br><span class="line">redis 配置文件的位置</span><br><span class="line">/usr/local/etc/redis.conf</span><br><span class="line"></span><br><span class="line">启动 redis</span><br><span class="line">$ redis-server</span><br><span class="line"></span><br><span class="line">使用配置文件启动 redis server</span><br><span class="line">$ redis-server /usr/local/etc/redis.conf</span><br><span class="line"></span><br><span class="line">本地测试 redis server 是否启动</span><br><span class="line">$ redis-cli ping</span><br><span class="line"></span><br><span class="line">本地连接</span><br><span class="line">$ redis-cli</span><br><span class="line"></span><br><span class="line">关闭 redis 服务</span><br><span class="line">redis 127.0.0.1:6379&gt; shutdown</span><br><span class="line"></span><br><span class="line">远程连接 redis 服务</span><br><span class="line">$ redis-cli -h ip -p 端口</span><br><span class="line">示例：$ redis-cli -h 127.0.0.1 -p 6379</span><br><span class="line"></span><br><span class="line">键入授权登录密码</span><br><span class="line">127.0.0.1:6379&gt; auth 123456（密码）</span><br><span class="line"></span><br><span class="line">退出本次会话</span><br><span class="line">127.0.0.1:6379&gt; quit</span><br></pre></td></tr></table></figure>
 <h3 id="配置认证密码"><a href="#配置认证密码" class="headerlink" title="配置认证密码"></a>配置认证密码</h3><ol>
-<li><p>通过文件配置</p>
+<li><p>通过文件配置——<strong>重启生效</strong></p>
 <p>/usr/local/etc/redis.conf</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">默认密码配置</span><br><span class="line">#requirepass foobared  </span><br><span class="line"></span><br><span class="line">//修改配置，去掉前面#，并把 foobared 修改想要设置的密码，比如：123456</span><br><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>通过命令配置</p>
+<li><p>通过命令配置——<strong>即时生效，但重启服务后以文件中配置为准</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379[1]&gt; config set requirepass 123456</span><br><span class="line">OK</span><br><span class="line">redis 127.0.0.1:6379[1]&gt; config get requirepass</span><br><span class="line">1) &quot;requirepass&quot;</span><br><span class="line">2) &quot;123456&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -674,7 +1055,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：0字 | 阅读本文大概需要 ：1分钟
+					字数：235字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -682,7 +1063,30 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>阮一峰：<a href="https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html</a></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+<li>创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器</li>
+</ol>
+<h1 id="Windows-安装-ES"><a href="#Windows-安装-ES" class="headerlink" title="Windows 安装 ES"></a>Windows 安装 ES</h1><h1 id="Mac-安装-ES"><a href="#Mac-安装-ES" class="headerlink" title="Mac 安装 ES"></a>Mac 安装 ES</h1><h1 id="Docker-安装-ES"><a href="#Docker-安装-ES" class="headerlink" title="Docker 安装 ES"></a>Docker 安装 ES</h1><ol>
+<li><p>下载镜像：<code>docker pull elasticsearch:6.5.3</code></p>
+</li>
+<li><p>运行容器：<code>docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-6.5.3 elasticsearch:6.5.3</code></p>
+</li>
+<li><p>进入容器：<code>docker exec -it elasticsearch-6.5.3 /bin/bash</code> </p>
+</li>
+<li><p>安装 ik 分词器：<code>./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.5.3/elasticsearch-analysis-ik-6.5.3.zip</code></p>
+</li>
+<li><p>修改 es 配置文件：<code>vi ./config/elasticsearch.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cluster.name:</span> <span class="string">"docker-cluster"</span></span><br><span class="line"><span class="string">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># minimum_master_nodes need to be explicitly set when bound on a public IP</span></span><br><span class="line"><span class="comment"># set to 1 to allow single node clusters</span></span><br><span class="line"><span class="comment"># Details: https://github.com/elastic/elasticsearch/pull/17288</span></span><br><span class="line"><span class="string">discovery.zen.minimum_master_nodes:</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># just for elasticsearch-head plugin</span></span><br><span class="line"><span class="string">http.cors.enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">http.cors.allow-origin:</span> <span class="string">"*"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出容器：<code>exit</code></p>
+</li>
+<li><p>停止容器：<code>docker stop elasticsearch-6.5.3</code></p>
+</li>
+<li><p>启动容器：<code>docker start elasticsearch-6.5.3</code></p>
+</li>
+</ol>
+
       
 
       
@@ -774,381 +1178,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/25/Spring-Cloud/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring-Boot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/Spring-Boot/">Spring Boot</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/25/Spring-Boot/" class="archive-article-date">
-  	<time datetime="2019-07-25T14:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：55字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
-<li><p>修改端口为 <code>8088</code>，<code>application.properties</code> 文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=8088</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>The field file exceeds its maximum permitted size of 1048576 bytes. 「最大上传文件限制」</p>
-<p>修改 <code>application.properties</code>，末尾添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spring.servlet.multipart.max-file-size=100MB</span><br><span class="line">spring.servlet.multipart.max-request-size=1000MB</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/25/Spring-Boot/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/Vue/">Vue</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/25/Vue/" class="archive-article-date">
-  	<time datetime="2019-07-25T14:11:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：0字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/25/Vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/Docker/">Docker</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/25/Docker/" class="archive-article-date">
-  	<time datetime="2019-07-25T14:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：142字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>Docker 入门教程：<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p>
-<p>Ubuntu 18.04 上安装和使用 Docker：<a href="https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04" target="_blank" rel="noopener">https://www.howtoing.com/how-to-install-and-use-docker-on-ubuntu-18-04</a></p>
-<h3 id="Ubuntu-18-0-4"><a href="#Ubuntu-18-0-4" class="headerlink" title="Ubuntu 18.0.4"></a>Ubuntu 18.0.4</h3><h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><ol>
-<li><p>docker pull ubuntu </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Using default tag: latest</span><br><span class="line">Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>配置 DNS</p>
-<ul>
-<li><p>vi /etc/resolv.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 114.114.115.115</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启网络</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service networking restart</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>修改镜像仓库地址</p>
-<ul>
-<li><p>vim /etc/docker/daemon.json</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;:[&quot;https://docker.mirrors.ustc.edu.cn&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>重启守护进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/25/Docker/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JUnit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/JUnit/">JUnit</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/25/JUnit/" class="archive-article-date">
-  	<time datetime="2019-07-25T01:36:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：165字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="引入资源-jar-包"><a href="#引入资源-jar-包" class="headerlink" title="引入资源 jar 包"></a>引入资源 jar 包</h4><ul>
-<li><p>Spring boot 引入测试模块，包括 JUnit、Hamcrest、Mockito</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">  &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>单独引入 JUnit</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="Idea-JUnit-插件"><a href="#Idea-JUnit-插件" class="headerlink" title="Idea JUnit 插件"></a>Idea JUnit 插件</h4><ul>
-<li><p>安装 JUnitGenerator V2.0</p>
-</li>
-<li><p>配置</p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576595373491.png" alt="UTOOLS1576595373491.png"></p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576595320398.png" alt="UTOOLS1576595320398.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="生成基础测试代码"><a href="#生成基础测试代码" class="headerlink" title="生成基础测试代码"></a>生成基础测试代码</h4><p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576595586761.png" alt="UTOOLS1576595586761.png"></p>
-<h4 id="断言测试"><a href="#断言测试" class="headerlink" title="断言测试"></a>断言测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void select() &#123;</span><br><span class="line">List&lt;User&gt; users = userMapper.selectList(null);</span><br><span class="line">	Assert.assertEquals(users.size(), 17);</span><br><span class="line">	Assert.assertTrue(0==0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JUnit</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/25/JUnit/">展开全文 >></a>
         </p>
       
 
@@ -1283,7 +1312,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1291,11 +1320,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">ES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1303,7 +1332,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1315,11 +1344,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1327,11 +1356,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1343,11 +1376,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1355,15 +1392,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1375,7 +1420,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1383,11 +1428,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,11 +1436,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,7 +1444,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1415,11 +1460,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1427,11 +1472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">

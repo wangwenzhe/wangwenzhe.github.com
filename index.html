@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 55</p>
-			<p>总字数 <span class="post-count">60.4k</span></p>
+			<p>总文章数 59</p>
+			<p>总字数 <span class="post-count">62.6k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,521 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-内网穿透" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/11/内网穿透/">内网穿透</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/11/内网穿透/" class="archive-article-date">
+  	<time datetime="2020-04-11T10:41:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：689字 | 阅读本文大概需要 ：3分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="公网服务器准备"><a href="#公网服务器准备" class="headerlink" title="公网服务器准备"></a>公网服务器准备</h3><p>首先准备一台有公网IP的服务器，可以选用阿里云或者腾讯云，如果选用的是阿里云的，可以使用我的<a href="https://chuangke.aliyun.com/invite?userCode=r8z5amhr" target="_blank" rel="noopener">优惠链接</a>购买</p>
+<h3 id="内网穿透frp搭建"><a href="#内网穿透frp搭建" class="headerlink" title="内网穿透frp搭建"></a>内网穿透frp搭建</h3><blockquote>
+<p>frp 安装程序：<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a></p>
+</blockquote>
+<h4 id="frp服务端搭建"><a href="#frp服务端搭建" class="headerlink" title="frp服务端搭建"></a>frp服务端搭建</h4><p>服务端搭建在上一步准备的公网服务器上，因为服务器是centos7 x64的系统，因此，这里下载安装包版本为linux_amd64的 <a href="https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_linux_amd64.tar.gz" target="_blank" rel="noopener">frp_0.27.0_linux_amd64.tar.gz</a> 。</p>
+<ol>
+<li><p>下载安装包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压安装包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> tar -zxvf frp_0.27.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd frp_0.27.0_linux_amd64</span><br><span class="line"><span class="meta">$</span> vim frps.ini</span><br><span class="line"></span><br><span class="line">[common]                                                                                                                  </span><br><span class="line">bind_port = 7100                                                                                                          </span><br><span class="line">vhost_http_port = 7200</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动frp服务端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./frps -c frps.ini</span><br><span class="line">2019/06/15 16:42:02 [I] [service.go:139] frps tcp listen on 0.0.0.0:7100</span><br><span class="line">2019/06/15 16:42:02 [I] [service.go:181] http service listen on 0.0.0.0:7200</span><br><span class="line">2019/06/15 16:42:02 [I] [root.go:204] Start frps success</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="frp客户端搭建"><a href="#frp客户端搭建" class="headerlink" title="frp客户端搭建"></a>frp客户端搭建</h4><p>客户端搭建在本地的Mac上，因此下载安装包版本为darwin_amd64的 <a href="https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_darwin_amd64.tar.gz" target="_blank" rel="noopener">frp_0.27.0_darwin_amd64.tar.gz</a> 。</p>
+<ol>
+<li><p>下载安装包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_darwin_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压安装包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> tar -zxvf frp_0.27.0_darwin_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件，配置服务端ip端口及监听的域名信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd frp_0.27.0_darwin_amd64</span><br><span class="line"><span class="meta">$</span> vim frpc.ini</span><br><span class="line"></span><br><span class="line">[common]</span><br><span class="line">server_addr = 120.92.169.103</span><br><span class="line">server_port = 7100</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">type = http</span><br><span class="line">local_port = 8080</span><br><span class="line">custom_domains = oauth.xkcoding.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动frp客户端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./frpc -c frpc.ini</span><br><span class="line">2019/06/15 16:48:52 [I] [service.go:221] login to server success, get run id [8bb83bae5c58afe6], server udp port [0]</span><br><span class="line">2019/06/15 16:48:52 [I] [proxy_manager.go:137] [8bb83bae5c58afe6] proxy added: [web]</span><br><span class="line">2019/06/15 16:48:52 [I] [control.go:144] [web] start proxy success</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="配置域名解析"><a href="#配置域名解析" class="headerlink" title="配置域名解析"></a>配置域名解析</h3><p>前往阿里云DNS解析，将域名解析到我们的公网服务器上，比如我的就是将 <code>oauth.xkcoding.com -&gt; 120.92.169.103</code></p>
+<h3 id="nginx代理"><a href="#nginx代理" class="headerlink" title="nginx代理"></a>nginx代理</h3><p>nginx 的搭建就不在此赘述了，只说配置</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  oauth.xkcoding.com;         </span><br><span class="line">                                                                        </span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:7200;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span>   X-Real-IP        <span class="variable">$remote_addr</span>;                                                                 </span><br><span class="line">        <span class="attribute">proxy_buffering</span> <span class="literal">off</span>;                                                                                              </span><br><span class="line">        <span class="attribute">sendfile</span> <span class="literal">off</span>;                                                                                                     </span><br><span class="line">        <span class="attribute">proxy_max_temp_file_size</span> <span class="number">0</span>;                                                                                       </span><br><span class="line">        <span class="attribute">client_max_body_size</span>       <span class="number">10m</span>;                                                                                   </span><br><span class="line">        <span class="attribute">client_body_buffer_size</span>    <span class="number">128k</span>;                                                                                  </span><br><span class="line">        <span class="attribute">proxy_connect_timeout</span>      <span class="number">90</span>;                                                                                    </span><br><span class="line">        <span class="attribute">proxy_send_timeout</span>         <span class="number">90</span>;                                                                                    </span><br><span class="line">        <span class="attribute">proxy_read_timeout</span>         <span class="number">90</span>;                                                                                    </span><br><span class="line">        <span class="attribute">proxy_temp_file_write_size</span> <span class="number">64k</span>;                                                                                   </span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;                                                                                           </span><br><span class="line">        <span class="attribute">proxy_request_buffering</span> <span class="literal">off</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试配置文件是否有问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> nginx -t</span><br><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf test is successful</span><br></pre></td></tr></table></figure>
+<p>重新加载配置文件，使其生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> nginx -s reload</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>现在当我们在浏览器输入 <code>oauth.xkcoding.com</code> 的时候，网络流量其实会经历以下几个步骤：</p>
+<ol>
+<li>通过之前配的DNS域名解析会访问到我们的公网服务器 <code>120.92.169.103</code> 的 80 端口</li>
+<li>再经过 nginx，代理到本地的 7200 端口</li>
+<li>再经过 frp 穿透到我们的 Mac 电脑的 8080 端口</li>
+<li>此时 8080 就是我们的应用程序端口</li>
+</ol>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内网穿透</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/11/内网穿透/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Sublime" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/07/Sublime/">Sublime </a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/07/Sublime/" class="archive-article-date">
+  	<time datetime="2020-04-07T15:57:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：99字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="http://www.sublimetext.cn/" target="_blank" rel="noopener">http://www.sublimetext.cn/</a></p>
+<h2 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h2><ol>
+<li><p>终端中打开文件 /etc/hosts，插入如下语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 www.sublimetext.com</span><br><span class="line">127.0.0.1 license.sublimehq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 sublime 中输入如下 license，即可激活</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">----- BEGIN LICENSE -----</span><br><span class="line">Member J2TeaM</span><br><span class="line">Single User License</span><br><span class="line">EA7E-1011316</span><br><span class="line">D7DA350E 1B8B0760 972F8B60 F3E64036</span><br><span class="line">B9B4E234 F356F38F 0AD1E3B7 0E9C5FAD</span><br><span class="line">FA0A2ABE 25F65BD8 D51458E5 3923CE80</span><br><span class="line">87428428 79079A01 AA69F319 A1AF29A4</span><br><span class="line">A684C2DC 0B1583D4 19CBD290 217618CD</span><br><span class="line">5653E0A0 BACE3948 BB2EE45E 422D2C87</span><br><span class="line">DD9AF44B 99C49590 D2DBDEE1 75860FD2</span><br><span class="line">8C8BB2AD B2ECE5A4 EFC08AF2 25A9B864</span><br><span class="line">------ END LICENSE ------</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p><a href="https://github.com/jaywcjlove/awesome-mac/blob/master/editor-plugin-zh.md#sublime-text-plugin" target="_blank" rel="noopener">https://github.com/jaywcjlove/awesome-mac/blob/master/editor-plugin-zh.md#sublime-text-plugin</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Sublime </a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/07/Sublime/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/02/Python/">Python</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/02/Python/" class="archive-article-date">
+  	<time datetime="2020-04-02T01:03:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：142字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li>菜鸟教程<a href="https://www.runoob.com/python/python-install.html" target="_blank" rel="noopener">https://www.runoob.com/python/python-install.html</a></li>
+<li>廖雪峰教程 <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1016959735620448" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1016959663602400/1016959735620448</a></li>
+</ol>
+<h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><p><a href="https://www.cnblogs.com/it-tsz/p/10099276.html" target="_blank" rel="noopener">https://www.cnblogs.com/it-tsz/p/10099276.html</a></p>
+<h2 id="破解码"><a href="#破解码" class="headerlink" title="破解码"></a>破解码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E70JHCOV2H-eyJsaWNlbnNlSWQiOiJFNzBKSENPVjJIIiwibGljZW5zZWVOYW1lIjoi5bGx5Lic55CG5bel5aSn5a2mIiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMjEtMDItMTgifSx7ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjAyMS0wMi0xOCJ9LHsiY29kZSI6IkRQTiIsInBhaWRVcFRvIjoiMjAyMS0wMi0xOCJ9LHsiY29kZSI6IlBTIiwicGFpZFVwVG8iOiIyMDIxLTAyLTE4In0seyJjb2RlIjoiR08iLCJwYWlkVXBUbyI6IjIwMjEtMDItMTgifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAyMS0wMi0xOCJ9LHsiY29kZSI6IkNMIiwicGFpZFVwVG8iOiIyMDIxLTAyLTE4In0seyJjb2RlIjoiUlMwIiwicGFpZFVwVG8iOiIyMDIxLTAyLTE4In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMjEtMDItMTgifSx7ImNvZGUiOiJSRCIsInBhaWRVcFRvIjoiMjAyMS0wMi0xOCJ9LHsiY29kZSI6IlBDIiwicGFpZFVwVG8iOiIyMDIxLTAyLTE4In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMjEtMDItMTgifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAyMS0wMi0xOCJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDIxLTAyLTE4In0seyJjb2RlIjoiREMiLCJwYWlkVXBUbyI6IjIwMjEtMDItMTgifSx7ImNvZGUiOiJSU1UiLCJwYWlkVXBUbyI6IjIwMjEtMDItMTgifV0sImhhc2giOiIxNjc5MTgwMy8wIiwiZ3JhY2VQZXJpb2REYXlzIjo3LCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-qlgtO4xVGHX/r45fIKMaR6B9pWQtucrCYVsz0o00crcAiYN1k/kSMygggYl187B0u0jeXQCe4BmQIItKL79x6NwoPn43inreVhZ88f4+Cbl+V/KGeAYeybon+7YoTs8FY4+31ANW/LwBPxkPnlErxYdQ6oc/k6mnxIOm5Nf8WjKRfYYIl5Bhmdt1gHMGgFsocCcTLLiqDUGEcPj5tUIJXwwYaeKAR3YGXm/P73QpnYR/BcGaodBN3jprQRxsS5Ia5y06rrDAJcPSZuttAFpAit/4o/gq2XzhrjaBCtOMxNzk3XEAT82glTlWQOQx6KnRq6D7WUXzd81g44aP+Dca5Q==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">K6IXATEF43-eyJsaWNlbnNlSWQiOiJLNklYQVRFRjQzIiwibGljZW5zZWVOYW1lIjoi5o6I5p2D5Luj55CG5ZWGOiBodHRwOi8vaWRlYS5oay5jbiIsImFzc2lnbmVlTmFtZSI6IiIsImFzc2lnbmVlRW1haWwiOiIiLCJsaWNlbnNlUmVzdHJpY3Rpb24iOiIiLCJjaGVja0NvbmN1cnJlbnRVc2UiOmZhbHNlLCJwcm9kdWN0cyI6W3siY29kZSI6IklJIiwiZmFsbGJhY2tEYXRlIjoiMjAxOS0wNi0wNSIsInBhaWRVcFRvIjoiMjAyMC0wNi0wNCJ9LHsiY29kZSI6IkFDIiwiZmFsbGJhY2tEYXRlIjoiMjAxOS0wNi0wNSIsInBhaWRVcFRvIjoiMjAyMC0wNi0wNCJ9LHsiY29kZSI6IkRQTiIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMDUiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMDQifSx7ImNvZGUiOiJQUyIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMDUiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMDQifSx7ImNvZGUiOiJHTyIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMDUiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMDQifSx7ImNvZGUiOiJETSIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMDUiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMDQifSx7ImNvZGUiOiJDTCIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMDUiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMDQifSx7ImNvZGUiOiJSUzAiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiUkMiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiUkQiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiUEMiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiUk0iLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiV1MiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiREIiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiREMiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTA1IiwicGFpZFVwVG8iOiIyMDIwLTA2LTA0In0seyJjb2RlIjoiUlNVIiwiZmFsbGJhY2tEYXRlIjoiMjAxOS0wNi0wNSIsInBhaWRVcFRvIjoiMjAyMC0wNi0wNCJ9XSwiaGFzaCI6IjEzMjkyMzI4LzAiLCJncmFjZVBlcmlvZERheXMiOjcsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-KUaQi549fH96M/qU7jTvuMeq2GuedA+WppV3irI0JHlfDuhJlidK2m3yoRxitGNmimPFVUA8Dk38OzXnP29I39QDXH5VAF8VjOP0XrqdfrpaZUKpdhRaYz8r1NAwID75U4LqYCvFbazka1dCMJBFqJ2wum1+CSQhJ1O7CSchAJAbjcCRQjbU2sXOofAA2sPLi7nlJw2wrjOHzH9cOczUn11n24PE9BQ/oYGITHkzsu94i4Q90Z1jQysMtXLgM/HoLSHY2T9rKULLoh+tdMwBp9+m0VLF/R5gdkVDV/dlorrA9OEZIsSOaG+oWSen/AulKH6OXllZJoR+b/T6YYfGWg==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==</span><br></pre></td></tr></table></figure>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="UTF8-编码"><a href="#UTF8-编码" class="headerlink" title="UTF8 编码"></a>UTF8 编码</h2><p><img src="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/8qsKW1.png" alt="8qsKW1"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/02/Python/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/21/ES/">ES</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/21/ES/" class="archive-article-date">
+  	<time datetime="2020-03-21T09:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-21</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：258字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html</a></li>
+</ol>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ol>
+<li>Elastic 6.x 版只允许每个 Index 包含一个 Type，7.x 版将会彻底移除 Type</li>
+<li></li>
+</ol>
+<h1 id="Windows-安装-Elasticsearch"><a href="#Windows-安装-Elasticsearch" class="headerlink" title="Windows 安装 Elasticsearch"></a>Windows 安装 Elasticsearch</h1><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><h2 id="Linux-安装-Elasticsearch"><a href="#Linux-安装-Elasticsearch" class="headerlink" title="Linux 安装 Elasticsearch"></a>Linux 安装 Elasticsearch</h2></li>
+</ol>
+<h3 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="https://juejin.im/post/5bc69e2ce51d450e6548ce77" target="_blank" rel="noopener">https://juejin.im/post/5bc69e2ce51d450e6548ce77</a></li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li><p>不能使用 root 启动</p>
+<p><a href="https://www.cnblogs.com/gcgc/p/10297563.html" target="_blank" rel="noopener">https://www.cnblogs.com/gcgc/p/10297563.html</a></p>
+</li>
+</ol>
+<h1 id="Mac-安装-Elasticsearch"><a href="#Mac-安装-Elasticsearch" class="headerlink" title="Mac 安装 Elasticsearch"></a>Mac 安装 Elasticsearch</h1><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html</a></p>
+<h1 id="Docker-安装-Elasticsearch"><a href="#Docker-安装-Elasticsearch" class="headerlink" title="Docker 安装 Elasticsearch"></a>Docker 安装 Elasticsearch</h1><ol>
+<li><p>下载镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:6.5.3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-6.5.3 elasticsearch:6.5.3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it elasticsearch-6.5.3 /bin/bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 ik 分词器</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.5.1/elasticsearch-analysis-ik-5.5.1.zip</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><p>修改 es 配置文件</p>
+<p>vi ./config/elasticsearch.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">v=cluster.name: &quot;docker-cluster&quot;</span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"></span><br><span class="line"># minimum_master_nodes need to be explicitly set when bound on a public IP</span><br><span class="line"># set to 1 to allow single node clusters</span><br><span class="line"># Details: https://github.com/elastic/elasticsearch/pull/17288</span><br><span class="line">discovery.zen.minimum_master_nodes: 1</span><br><span class="line"></span><br><span class="line"># just for elasticsearch-head plugin</span><br><span class="line">http.cors.enabled: true</span><br><span class="line">http.cors.allow-origin: &quot;*&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop elasticsearch-6.5.3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start elasticsearch-6.5.3</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ES</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/21/ES/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux-Nginx流媒体服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/20/Linux-Nginx流媒体服务器/">Linux-Nginx流媒体服务器</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/20/Linux-Nginx流媒体服务器/" class="archive-article-date">
+  	<time datetime="2020-03-20T03:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：20字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://blog.csdn.net/heng615975867/article/details/80519274[" target="_blank" rel="noopener">https://blog.csdn.net/heng615975867/article/details/80519274[</a></li>
+<li><a href="https://github.com/arut/nginx-rtmp-module" target="_blank" rel="noopener">https://github.com/arut/nginx-rtmp-module</a></li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Linux-Nginx流媒体服务器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/20/Linux-Nginx流媒体服务器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Yarn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -594,535 +1109,6 @@
 
 
   
-    <article id="post-IDEA-远程调试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/25/IDEA-远程调试/">IDEA 远程调试</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/25/IDEA-远程调试/" class="archive-article-date">
-  	<time datetime="2019-12-25T04:09:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-25</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：240字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Spring-Boot-项目"><a href="#Spring-Boot-项目" class="headerlink" title="Spring Boot 项目"></a>Spring Boot 项目</h2><ol>
-<li><p>启动时添加调试参数，示例调试端口 9000</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xdebug -Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=9000 -jar xxx.jar</span><br></pre></td></tr></table></figure>
-<p><code>Windows</code> 环境中启动脚本 <code>start_debug.bat</code></p>
-<p><code>Linux</code>     环境中启动脚本为 <code>start_debug.sh</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xdebug -Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=9000 -jar xxx.jar</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>IDEA Remote 调试</p>
-<p>Host ： 远程服务器 IP 地址</p>
-<p>Port ： 远程服务器调试端口</p>
-<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577248189148.gif" alt="UTOOLS1577248189148.gif"></p>
-</li>
-<li><p>IDEA 启动 <code>Remote_debug</code> 后，在代码中设置断点，等待远程访问触发断点即可 </p>
-</li>
-</ol>
-<h2 id="Tomcat-项目"><a href="#Tomcat-项目" class="headerlink" title="Tomcat 项目"></a>Tomcat 项目</h2><h3 id="远程服务器"><a href="#远程服务器" class="headerlink" title="远程服务器"></a>远程服务器</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><ol>
-<li><p>修改  <code>tomcat/bin</code> 目录中 <code>catalina.bat</code> 配置调试信息「还有 JVM 内存配置」，调试端口为 <code>9000</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set &quot;JAVA_OPTS=-server -Xms2048m -Xmx2048m -Xdebug -Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=9000&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证配置是否有效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catalina.bat configtest</span><br></pre></td></tr></table></figure>
-<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577251455988.png" alt="UTOOLS1577251455988.png"></p>
-</li>
-<li><p>启动 <code>tomcat/bin</code> 目录中 <code>startup.bat</code></p>
-</li>
-</ol>
-<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>修改  <code>tomcat/bin</code> 目录中 <code>catalina.sh</code> 配置调试信息「还有 JVM 内存配置」，调试端口为 <code>9000</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_OPTS=&quot;-server -Xms1024m -Xmx2048m -Xdebug -Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=9000&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="IDEA-Remote-调试"><a href="#IDEA-Remote-调试" class="headerlink" title="IDEA Remote 调试"></a>IDEA Remote 调试</h3><p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577252187872.gif" alt="UTOOLS1577252187872.gif"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA 远程调试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/25/IDEA-远程调试/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-WebStorm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/18/WebStorm/">WebStorm</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/18/WebStorm/" class="archive-article-date">
-  	<time datetime="2019-12-18T02:46:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-18</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：50字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p> 参考 IDEA</p>
-<h2 id="效率"><a href="#效率" class="headerlink" title="效率"></a>效率</h2><ol>
-<li><p>Debug 调试 JS 代码</p>
-<p><a href="https://blog.csdn.net/sujun10/article/details/54139560" target="_blank" rel="noopener">https://blog.csdn.net/sujun10/article/details/54139560</a></p>
-</li>
-</ol>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
-<li><p>允许外部通过 IP 访问 WebStorm 发布的 Web 页面「<strong>Mac</strong>」</p>
-<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577761447140.png" alt="UTOOLS1577761447140.png"></p>
-</li>
-<li><p>Open Recent</p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576637586789.png" alt="UTOOLS1576637586789.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G:\JavaDevelop\WebStormConfig\config\options\recentProjectDirectories.xml</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">WebStorm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/18/WebStorm/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Windows中Oracle11g安装使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/16/Windows中Oracle11g安装使用/">Windows中Oracle11g安装</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/16/Windows中Oracle11g安装使用/" class="archive-article-date">
-  	<time datetime="2019-12-16T09:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：608字 | 阅读本文大概需要 ：2分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="如果之前安装过Oracle，则先卸载干净，如下；否则跳过"><a href="#如果之前安装过Oracle，则先卸载干净，如下；否则跳过" class="headerlink" title="如果之前安装过Oracle，则先卸载干净，如下；否则跳过"></a>如果之前安装过Oracle，则先卸载干净，如下；否则跳过</h2><ol>
-<li><p>停止所有 <code>Oracle 服务</code></p>
-<p>任务管理器 - 服务 - 打开服务 - 停止 Oracle 开头的服务</p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576654422207.gif" alt="UTOOLS1576654422207.gif"></p>
-</li>
-</ol>
-<ol start="2">
-<li><p>开始－＞程序－＞Universal Installer，单击 “卸载产品”-“全部展开”，选中除 “OraDb11g_home1” 外的全部目录，删除</p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576654731392.gif" alt="UTOOLS1576654731392.gif"></p>
-</li>
-</ol>
-<ol start="3">
-<li><p>删除注册表相关量</p>
-<ol>
-<li>运行 regedit，选择 HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE，按 del 键删除</li>
-<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services，滚动这个列表，删除所有 Oracle 入口 (以 oracle 或 OraWeb 开头的键)</li>
-<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application，删除所有 Oracle 入口</li>
-<li>HKEY_CLASSES_ROOT 目录下所有以 Ora、Oracle、Orcl 或 EnumOra 为前缀的键</li>
-<li>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\Start Menu\Programs 中所有以 oracle 开头的键</li>
-<li>HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI 中除 Microsoft ODBC for Oracle 注册表键以外的所有含有 Oracle 的键</li>
-</ol>
-</li>
-<li><p>删除环境变量 CLASSPATH 和 PATH 中有关 Oracle 的设定</p>
-</li>
-<li><p>删除目录</p>
-<ol>
-<li>C:\Program file\Oracle</li>
-<li>oracle 的安装目录，例如 <code>F:\app</code></li>
-<li>C:\WINDOWS\system32\config\systemprofile\Oracle</li>
-<li>C:\Users\Administrator\Oracle </li>
-<li>C:\WINDOWS 下删除以下文件 ORACLE.INI、oradim73.INI、oradim80.INI、oraodbc.ini 等等</li>
-<li>C:\WINDOWS 下的 WIN.INI 文件中若有 [ORACLE] 的标记段，删除该段。</li>
-</ol>
-</li>
-<li><p>重启电脑</p>
-</li>
-</ol>
-<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><ol>
-<li><p>下载</p>
-<ol>
-<li><p>下载并安装 <code>fdm</code> 工具</p>
-<p><a href="http://115.28.211.10/admin/fdm5_x64_setup.exe" target="_blank" rel="noopener">http://115.28.211.10/admin/fdm5_x64_setup.exe</a></p>
-</li>
-<li><p>使用 <code>fdm</code> 下载 Oracle 安装文件「2 个」</p>
-<p><a href="http://115.28.211.10/admin/win64_11gR2_database_1of2.zip" target="_blank" rel="noopener">http://115.28.211.10/admin/win64_11gR2_database_1of2.zip</a></p>
-<p><a href="http://115.28.211.10/admin/win64_11gR2_database_2of2.zip" target="_blank" rel="noopener">http://115.28.211.10/admin/win64_11gR2_database_2of2.zip</a></p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576654924594.gif" alt="UTOOLS1576654924594.gif"></p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
-<li><p>解压</p>
-<ol>
-<li><p>将文件 <code>win64_11gR2_database_1of2.zip</code> 和 <code>win64_11gR2_database_2of2.zip</code> 移动到<strong>不包含中文</strong>路径的文件夹中</p>
-</li>
-<li><p><code>依次</code>点击上述文件，右键<code>解压到当前文件夹</code></p>
-<p><em>依次：解压完一个再解压另一个，不可同时进行</em></p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576655975903.gif" alt="UTOOLS1576655975903.gif"></p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="3">
-<li><p>安装</p>
-<p><em>下图第 4 步中 管理口令和确认口令 为 <code>123456</code>即可</em></p>
-<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1576739873714.gif" alt="UTOOLS1576739873714.gif"></p>
-</li>
-</ol>
-<ol start="4">
-<li><p>创建表空间、用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1：首先运行SQLPLUS</span><br><span class="line">C:\Documents and Settings\Administrator&gt;sqlplus /nolog</span><br><span class="line"></span><br><span class="line">2：以 dba 的权限连接数据库</span><br><span class="line">SQL&gt; connect /as sysdba;</span><br><span class="line"></span><br><span class="line">3：创建表空间 scm，路径为 F:\app\Administrator\oradata\orcl\scm.dbf</span><br><span class="line">SQL&gt; create tablespace scm datafile &apos;F:\app\Administrator\oradata\orcl\scm.dbf&apos; size 256m uniform size 128k;</span><br><span class="line"></span><br><span class="line">4：把表空间改为自动扩展存储空间大小</span><br><span class="line">SQL&gt; alter database datafile &apos;F:\app\Administrator\oradata\orcl\scm.dbf&apos; autoextend on;</span><br><span class="line"></span><br><span class="line">5：创建用户 scmtl, 密码 scmtl, 默认表空间 scm</span><br><span class="line">SQL&gt; create user scmtl identified by scmtl default tablespace scm;</span><br><span class="line"></span><br><span class="line">6：为用户授权,把连接管理以dba的权限授权给用户 scmtl</span><br><span class="line">SQL&gt; grant connect,resource,dba to scmtl;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>导入数据, 数据文件为 scmtl.dmp，用户名 scmtl 密码 scmtl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Documents and Settings\Administrator&gt;imp scmtl/scmtl file=scmtl.dmp full=y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>PLSQL Developer 连接<br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576656194465.png" alt="UTOOLS1576656194465.png"></p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Oracle 安装</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/16/Windows中Oracle11g安装使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java编程规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/03/Java编程规范/">Java编程规范</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/03/Java编程规范/" class="archive-article-date">
-  	<time datetime="2019-12-03T01:58:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：39字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><p>Java API 设计清单</p>
-<p><a href="https://mp.weixin.qq.com/s/mVNs49RMa4pFhvmDiCaaWQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/mVNs49RMa4pFhvmDiCaaWQ</a></p>
-</li>
-</ol>
-<h2 id="自己整理"><a href="#自己整理" class="headerlink" title="自己整理"></a>自己整理</h2><ol>
-<li>接口实现类或者子类中重写方法应使用 <code>@Override</code> 修饰</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java编程规范</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/03/Java编程规范/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Postgresql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/12/Postgresql/">Postgresql</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/12/Postgresql/" class="archive-article-date">
-  	<time datetime="2019-11-12T06:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：40字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="教程参考"><a href="#教程参考" class="headerlink" title="教程参考"></a>教程参考</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p><a href="https://www.yiibai.com/postgresql/install-postgresql.html" target="_blank" rel="noopener">https://www.yiibai.com/postgresql/install-postgresql.html</a></p>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p><a href="https://www.jianshu.com/p/ed54b8c180c6" target="_blank" rel="noopener">https://www.jianshu.com/p/ed54b8c180c6</a></p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="允许远程访问的设置方法「Windows」"><a href="#允许远程访问的设置方法「Windows」" class="headerlink" title="允许远程访问的设置方法「Windows」"></a>允许远程访问的设置方法「Windows」</h3><p><a href="https://blog.csdn.net/lewky_liu/article/details/81349029" target="_blank" rel="noopener">https://blog.csdn.net/lewky_liu/article/details/81349029</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Postgresql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/12/Postgresql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1228,7 +1214,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1236,11 +1222,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">ES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1248,7 +1234,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1260,11 +1246,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1272,11 +1258,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,11 +1278,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1300,15 +1294,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1320,7 +1322,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,11 +1330,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1340,11 +1338,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,7 +1346,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1360,11 +1362,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1372,11 +1374,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">

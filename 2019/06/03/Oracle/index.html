@@ -16,13 +16,14 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/y9t2uR.png">
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
 <meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/XFumb5.png">
-<meta property="og:updated_time" content="2020-03-05T08:58:18.638Z">
+<meta property="og:updated_time" content="2020-03-27T08:49:30.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle">
 <meta name="twitter:description" content="99数据库管理员账号 admin admin123 大小写问题 用户名不区分大小写「大写或小写不影响连接使用」 11g 开始，密码默认区分大小写  数据库字符集   服务器 编码     99 ZHS16GBK   67 AL32UTF8   客户数据库 AL32UTF8   本机 AL32UTF8     安装 Oracle 时字符集一定要使用 AL32UTF8「一个汉字占 3 个字符长度」，避">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/mw690/ade42695ly1g3xh9mri5uj20ks0d674q.jpg">
+<meta name="twitter:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/y9t2uR.png">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -96,8 +97,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 55</p>
-			<p>总字数 <span class="post-count">60.4k</span></p>
+			<p>总文章数 59</p>
+			<p>总字数 <span class="post-count">62.6k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -180,7 +181,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：6.3k字 | 阅读本文大概需要 ：29分钟
+					字数：6.4k字 | 阅读本文大概需要 ：29分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -229,6 +230,7 @@
 <p>导入/导出过程中可能会有错误或警告，如果导入或导出过程比较长，无法一直观测过程，则有必要将该过程输出信息输出至日志文件一份，以便后续查看</p>
 </blockquote>
 <h4 id="导出用户所有数据"><a href="#导出用户所有数据" class="headerlink" title="导出用户所有数据"></a>导出用户所有数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp sgp/sgp@192.168.0.99:1521/orcl file=sgp_99_20170726.dmp owner=sgp log=explog.log</span><br></pre></td></tr></table></figure>
+<p><img src="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/y9t2uR.png" alt="y9t2uR" style="zoom:50%;"></p>
 <h4 id="导出指定表数据-表结构和数据"><a href="#导出指定表数据-表结构和数据" class="headerlink" title="导出指定表数据(表结构和数据)"></a>导出指定表数据(表结构和数据)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp sgp/sgp@192.168.0.107:1521/orcl file=20160921sgp_table_sysmodule_sysdict.dmp tables=(sgp_sysmodule, sgp_sysdict)</span><br></pre></td></tr></table></figure>
 <h4 id="导入数据到指定用户"><a href="#导入数据到指定用户" class="headerlink" title="导入数据到指定用户"></a>导入数据到指定用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp sgp/sgp@192.168.0.99:1521/orcl file=sgp20161025.dmp full=y log=implog.log</span><br></pre></td></tr></table></figure>
 <h4 id="导入指定表数据-表结构和数据"><a href="#导入指定表数据-表结构和数据" class="headerlink" title="导入指定表数据(表结构和数据)"></a>导入指定表数据(表结构和数据)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp sgp/sgp@192.168.0.99:1521/orcl file=20160921sgp_table_sysmodule_sysdict.dmp tables=(sgp_sysmodule, sgp_sysdict)</span><br></pre></td></tr></table></figure>
@@ -429,6 +431,7 @@
 <li>GBK 编码下，一个中文占两个字节<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,1) from dual;的值就是5</span><br><span class="line">select instr(&apos;保定市南市区&apos;,&apos;市&apos;,1,2) from dual;的值就是9</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="获取表字段及注释"><a href="#获取表字段及注释" class="headerlink" title="获取表字段及注释"></a>获取表字段及注释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select ut.TABLE_NAME, ut.COLUMN_NAME, uc.COMMENTS from user_tab_columns ut inner JOIN user_col_comments uc</span><br><span class="line">on ut.TABLE_NAME  = uc.table_name and ut.COLUMN_NAME = uc.column_name</span><br><span class="line">where ut.TABLE_NAME =&apos;ZF_EVENT&apos;</span><br><span class="line"></span><br><span class="line">//创建成表</span><br><span class="line">create table TABLECOLUMNS as (select ut.TABLE_NAME, ut.COLUMN_NAME, uc.COMMENTS from user_tab_columns ut inner JOIN user_col_comments uc</span><br><span class="line">on ut.TABLE_NAME  = uc.table_name and ut.COLUMN_NAME = uc.column_name</span><br><span class="line">where ut.TABLE_NAME =&apos;ZF_EVENT&apos;)</span><br></pre></td></tr></table></figure>
 <h2 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h2><h3 id="dbms-random-value"><a href="#dbms-random-value" class="headerlink" title="dbms_random.value"></a>dbms_random.value</h3><blockquote>
 <p>获取 0-1 之间随机值</p>
 </blockquote>
@@ -482,7 +485,7 @@
 <h3 id="ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法"><a href="#ORA-00020-maximum-number-of-processes-150-exceeded-错误解决方法" class="headerlink" title="ORA-00020:maximum number of processes (150) exceeded 错误解决方法"></a>ORA-00020:maximum number of processes (150) exceeded 错误解决方法</h3><blockquote>
 <p>processes 进程，可以认为是数据库物理连接数</p>
 <ol>
-<li>查看进程数 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- --------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     150</span><br></pre></td></tr></table></figure>
+<li>查看进程数「processes」，默认 150 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter proce</span><br><span class="line"></span><br><span class="line">NAME                                 TYPE        VALUE</span><br><span class="line">------------------------------------ ----------- --------------</span><br><span class="line">aq_tm_processes                      integer     1</span><br><span class="line">db_writer_processes                  integer     1</span><br><span class="line">job_queue_processes                  integer     10</span><br><span class="line">log_archive_max_processes            integer     2</span><br><span class="line">processes                            integer     150</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </blockquote>
@@ -772,7 +775,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,11 +783,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">ES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -792,7 +795,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,11 +807,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,11 +819,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -832,11 +839,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,15 +855,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -864,7 +883,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,11 +891,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -884,11 +899,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -896,7 +907,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,11 +923,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">开发工具爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -916,11 +935,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
