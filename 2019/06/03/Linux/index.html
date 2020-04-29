@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>Linux | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用命令参考 https://wangchujiang.com/linux-command/ 获取内存总大小1grep MemTotal /proc/meminfo 获取交换分区大小1grep SwapTotal /proc/meminfo 查看 tomcat 进程打开文件数量12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|w">
+  <meta name="description" content="常用命令参考 https://wangchujiang.com/linux-command/ 查询网络端口占用情况 netstat 命令 1netstat -an | grep 3306 3306 替换成需要 grep 的端口号  lsof 命令 123lsof -i:80lsof -i tcp:80 -i 参数表示网络链接，:80 指明端口号  查看所有进程监听的端口 1sudo lsof -i">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="https://championwang.gitee.io/2019/06/03/Linux/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="常用命令参考 https://wangchujiang.com/linux-command/ 获取内存总大小1grep MemTotal /proc/meminfo 获取交换分区大小1grep SwapTotal /proc/meminfo 查看 tomcat 进程打开文件数量12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|w">
+<meta property="og:description" content="常用命令参考 https://wangchujiang.com/linux-command/ 查询网络端口占用情况 netstat 命令 1netstat -an | grep 3306 3306 替换成需要 grep 的端口号  lsof 命令 123lsof -i:80lsof -i tcp:80 -i 参数表示网络链接，:80 指明端口号  查看所有进程监听的端口 1sudo lsof -i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-02-27T01:56:18.285Z">
+<meta property="og:updated_time" content="2020-04-12T08:54:31.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
-<meta name="twitter:description" content="常用命令参考 https://wangchujiang.com/linux-command/ 获取内存总大小1grep MemTotal /proc/meminfo 获取交换分区大小1grep SwapTotal /proc/meminfo 查看 tomcat 进程打开文件数量12345查看进程 pid：ps aux|grep tomcat根据 pid 查看打开文件数量：lsof -p pid|w">
+<meta name="twitter:description" content="常用命令参考 https://wangchujiang.com/linux-command/ 查询网络端口占用情况 netstat 命令 1netstat -an | grep 3306 3306 替换成需要 grep 的端口号  lsof 命令 123lsof -i:80lsof -i tcp:80 -i 参数表示网络链接，:80 指明端口号  查看所有进程监听的端口 1sudo lsof -i">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 59</p>
-			<p>总字数 <span class="post-count">62.6k</span></p>
+			<p>总文章数 66</p>
+			<p>总字数 <span class="post-count">69.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：1.1k字 | 阅读本文大概需要 ：5分钟
+					字数：1.2k字 | 阅读本文大概需要 ：5分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -186,6 +186,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>参考 <a href="https://wangchujiang.com/linux-command/" target="_blank" rel="noopener">https://wangchujiang.com/linux-command/</a></p>
+<h3 id="查询网络端口占用情况"><a href="#查询网络端口占用情况" class="headerlink" title="查询网络端口占用情况"></a>查询网络端口占用情况</h3><ul>
+<li><p>netstat 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -an | grep 3306</span><br></pre></td></tr></table></figure>
+<p>3306 替换成需要 grep 的端口号</p>
+</li>
+<li><p>lsof 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:80</span><br><span class="line"></span><br><span class="line">lsof -i tcp:80</span><br></pre></td></tr></table></figure>
+<p>-i 参数表示网络链接，:80 指明端口号</p>
+</li>
+<li><p>查看所有进程监听的端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i -P | grep -i listen</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h3 id="获取内存总大小"><a href="#获取内存总大小" class="headerlink" title="获取内存总大小"></a>获取内存总大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep MemTotal /proc/meminfo</span><br></pre></td></tr></table></figure>
 <h3 id="获取交换分区大小"><a href="#获取交换分区大小" class="headerlink" title="获取交换分区大小"></a>获取交换分区大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep SwapTotal /proc/meminfo</span><br></pre></td></tr></table></figure>
 <h3 id="查看-tomcat-进程打开文件数量"><a href="#查看-tomcat-进程打开文件数量" class="headerlink" title="查看 tomcat 进程打开文件数量"></a>查看 tomcat 进程打开文件数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查看进程 pid：</span><br><span class="line">ps aux|grep tomcat</span><br><span class="line"></span><br><span class="line">根据 pid 查看打开文件数量：</span><br><span class="line">lsof -p pid|wc -l</span><br></pre></td></tr></table></figure>
@@ -515,19 +528,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,11 +576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,7 +592,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,19 +612,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,15 +620,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,15 +640,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +656,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,7 +672,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +680,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,7 +704,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,11 +712,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,6 +745,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">

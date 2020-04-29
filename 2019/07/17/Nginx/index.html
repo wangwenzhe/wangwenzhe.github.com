@@ -8,20 +8,21 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>Nginx | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用 正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的 反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的">
+  <meta name="description" content="参考超实用的 Nginx 极简教程，覆盖了常用场景https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ  基础入门：http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应">
 <meta name="keywords" content="Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx">
 <meta property="og:url" content="https://championwang.gitee.io/2019/07/17/Nginx/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用 正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的 反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的">
+<meta property="og:description" content="参考超实用的 Nginx 极简教程，覆盖了常用场景https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ  基础入门：http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/2F60pt.png">
 <meta property="og:image" content="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647782397.jpg">
-<meta property="og:updated_time" content="2019-12-18T13:43:08.903Z">
+<meta property="og:updated_time" content="2020-04-28T15:02:25.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
-<meta name="twitter:description" content="http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用 正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的 反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的">
-<meta name="twitter:image" content="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647782397.jpg">
+<meta name="twitter:description" content="参考超实用的 Nginx 极简教程，覆盖了常用场景https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ  基础入门：http://wiki.jikexueyuan.com/project/nginx/overwise.html  Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应">
+<meta name="twitter:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/2F60pt.png">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -95,8 +96,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 59</p>
-			<p>总字数 <span class="post-count">62.6k</span></p>
+			<p>总文章数 66</p>
+			<p>总字数 <span class="post-count">69.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -179,7 +180,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：418字 | 阅读本文大概需要 ：1分钟
+					字数：694字 | 阅读本文大概需要 ：3分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -191,7 +192,7 @@
 				<div id="toc-article" class="toc-article">
 						<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 					<strong class="toc-title">文章目录</strong>
-								 <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-number">1.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac"><span class="toc-number">2.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#负责均衡"><span class="toc-number">3.</span> <span class="toc-text">负责均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考"><span class="toc-number">3.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改-nginx-conf-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">修改 nginx_conf 配置文件</span></a></li></ol></li></ol>
+								 <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker"><span class="toc-number">2.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows"><span class="toc-number">3.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mac"><span class="toc-number">4.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#负责均衡"><span class="toc-number">5.</span> <span class="toc-text">负责均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-1"><span class="toc-number">5.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-nginx-conf-配置文件"><span class="toc-number">5.2.</span> <span class="toc-text">修改 nginx_conf 配置文件</span></a></li></ol></li></ol>
 							 </div>
 				 <script type="text/javascript">
 				function showToc(){
@@ -211,13 +212,37 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://wiki.jikexueyuan.com/project/nginx/overwise.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/nginx/overwise.html</a></p>
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>超实用的 Nginx 极简教程，覆盖了常用场景</strong><a href="https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ</a></p>
+<p><img src="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/2F60pt.png" alt="2F60pt" style="zoom:50%;"></p>
+<p>基础入门：<a href="http://wiki.jikexueyuan.com/project/nginx/overwise.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/nginx/overwise.html</a></p>
 <ol>
 <li>Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用</li>
 <li>正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的</li>
 <li>反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的</li>
 </ol>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><ol>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ol>
+<li><p>拉取 nginx 镜像，采用网易云的镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull hub.c.163.com/library/nginx:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看本地镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line">REPOSITORY                          TAG                 IMAGE ID            CREATED				SIZE</span><br><span class="line">hub.c.163.com/library/nginx         latest              46102226f2fd        2 years ago       109MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>后台</strong>运行 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -d -p 8080:80 --name nginx -v /mac126/docker/www:/www -v /mac126/docker/conf/nginx.conf:/etc/nginx/nginx.conf -v /mac126/docker/logs:/wwwlogs  -d hub.c.163.com/library/nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>命令说明：</p>
+<p>-d 让 Docker 在后台运行而不是直接把执行命令的结果输出在当前宿主机下</p>
+<p> -p 8080:80 将容器的 80 端口映射到主机的 8080 端口<br> –name nginx：将容器命名为 nginx<br> -v /mac126/docker/www:/www：将主机中当前目录下的 www 挂载到容器的 /www<br> -v /mac126/docker/conf/nginx.conf:/etc/nginx/nginx.conf：将主机中当前目录下的 nginx.conf 挂载到容器的 /etc/nginx/nginx.conf<br> -v /mac126/docker/logs:/wwwlogs：将主机中当前目录下的 logs 挂载到容器的 /wwwlogs</p>
+</blockquote>
+</li>
+<li><p>查看运行的容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it nginx /bin/bash</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><ol>
 <li><p>下载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://nginx.org/en/download.html</span><br></pre></td></tr></table></figure>
 <p> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647782397.jpg" alt="UTOOLS1576647782397.jpg"><br><strong><em>下载 nginx/Windows-1.17.2</em></strong></p>
@@ -235,7 +260,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><ol>
+<h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><ol>
 <li><p>安装 brew「软件包管理工具」</p>
 <ul>
 <li><p>参考</p>
@@ -289,8 +314,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="负责均衡"><a href="#负责均衡" class="headerlink" title="负责均衡"></a>负责均衡</h4><h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><p><a href="https://blog.csdn.net/xyang81/article/details/51702900" target="_blank" rel="noopener">https://blog.csdn.net/xyang81/article/details/51702900</a></p>
-<h5 id="修改-nginx-conf-配置文件"><a href="#修改-nginx-conf-配置文件" class="headerlink" title="修改 nginx_conf 配置文件"></a>修改 nginx_conf 配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	#省略</span><br><span class="line">	</span><br><span class="line">    #负责均衡多台服务器</span><br><span class="line">    upstream tomcats &#123;</span><br><span class="line">        server 192.168.0.109:8080;</span><br><span class="line">        server 192.168.0.109:8081;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">			proxy_pass http://tomcats;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        #省略</span><br></pre></td></tr></table></figure>
+<h1 id="负责均衡"><a href="#负责均衡" class="headerlink" title="负责均衡"></a>负责均衡</h1><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/xyang81/article/details/51702900" target="_blank" rel="noopener">https://blog.csdn.net/xyang81/article/details/51702900</a></p>
+<h2 id="修改-nginx-conf-配置文件"><a href="#修改-nginx-conf-配置文件" class="headerlink" title="修改 nginx_conf 配置文件"></a>修改 nginx_conf 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	#省略</span><br><span class="line">	</span><br><span class="line">    #负责均衡多台服务器</span><br><span class="line">    upstream tomcats &#123;</span><br><span class="line">        server 192.168.0.109:8080;</span><br><span class="line">        server 192.168.0.109:8081;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">			proxy_pass http://tomcats;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        #省略</span><br></pre></td></tr></table></figure>
       
 
       
@@ -432,7 +457,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-number">1.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac"><span class="toc-number">2.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#负责均衡"><span class="toc-number">3.</span> <span class="toc-text">负责均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参考"><span class="toc-number">3.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改-nginx-conf-配置文件"><span class="toc-number">3.2.</span> <span class="toc-text">修改 nginx_conf 配置文件</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker"><span class="toc-number">2.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows"><span class="toc-number">3.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mac"><span class="toc-number">4.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#负责均衡"><span class="toc-number">5.</span> <span class="toc-text">负责均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-1"><span class="toc-number">5.1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-nginx-conf-配置文件"><span class="toc-number">5.2.</span> <span class="toc-text">修改 nginx_conf 配置文件</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -559,19 +584,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,11 +632,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,7 +648,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,19 +668,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,15 +676,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,15 +696,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,11 +712,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,7 +728,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,11 +736,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,7 +760,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -723,11 +768,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,6 +801,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">

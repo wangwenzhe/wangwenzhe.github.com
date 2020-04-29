@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>Web | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
+  <meta name="description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 检测 img src 变化 https://www.manongdao.com/article-1012985.ht">
 <meta name="keywords" content="Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web">
 <meta property="og:url" content="https://championwang.gitee.io/2019/10/17/Web/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
+<meta property="og:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 检测 img src 变化 https://www.manongdao.com/article-1012985.ht">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-31T10:03:10.493Z">
+<meta property="og:updated_time" content="2020-04-28T06:12:14.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web">
-<meta name="twitter:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等 12345678//创建 a">
+<meta name="twitter:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 检测 img src 变化 https://www.manongdao.com/article-1012985.ht">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 59</p>
-			<p>总字数 <span class="post-count">62.6k</span></p>
+			<p>总文章数 66</p>
+			<p>总字数 <span class="post-count">69.1k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：1.1k字 | 阅读本文大概需要 ：5分钟
+					字数：3k字 | 阅读本文大概需要 ：15分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -191,6 +191,26 @@
 </li>
 </ol>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ol>
+<li><p>检测 img src 变化</p>
+<p><a href="https://www.manongdao.com/article-1012985.html" target="_blank" rel="noopener">https://www.manongdao.com/article-1012985.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;img&apos;).load(function() &#123;</span><br><span class="line">       var imageObj = $(this);</span><br><span class="line">       if (!(imageObj.width() == 1 &amp;&amp; imageObj.height() == 1)) &#123;</span><br><span class="line">           console.log(&apos;Image source changed&apos;);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>实时监听 input 输入框值变化</p>
+<ul>
+<li><p>onchange 时间又往往是在输入框失去焦点（onblur）时候触发</p>
+</li>
+<li><p>jQuery「<strong>推荐使用</strong>」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#input1&quot;).bind(&quot;input propertychange&quot;,function(event)&#123;</span><br><span class="line">       console.log($(&quot;#input1&quot;).val());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    // Firefox, Google Chrome, Opera, Safari, Internet Explorer from version 9</span><br><span class="line">        function OnInput (event) &#123;</span><br><span class="line">            alert (&quot;The new content: &quot; + event.target.value);</span><br><span class="line">        &#125;</span><br><span class="line">    // Internet Explorer</span><br><span class="line">        function OnPropChanged (event) &#123;</span><br><span class="line">            if (event.propertyName.toLowerCase () == &quot;value&quot;) &#123;</span><br><span class="line">                alert (&quot;The new content: &quot; + event.srcElement.value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line"> //Input标签</span><br><span class="line"> &lt;input type=&quot;text&quot; oninput=&quot;OnInput (event)&quot; onpropertychange=&quot;OnPropChanged (event)&quot; value=&quot;Text field&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
 <li><p>资源下载，示例为 base64 图片数据，也可以为 txt,png,jpg,mp4 等</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//创建 a 标签元素</span><br><span class="line">var anchor = document.createElement(&quot;a&quot;);</span><br><span class="line">anchor.href = img_base64_data;</span><br><span class="line">anchor.download = &quot;webcam.png&quot;;</span><br><span class="line">anchor.innerHTML = &quot;下载&quot;;</span><br><span class="line"></span><br><span class="line">//把 a 标签元素添加到页面中</span><br><span class="line">dom.appendChild(anchor);</span><br></pre></td></tr></table></figure>
 </li>
@@ -221,6 +241,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.close();</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h3 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h3><ol>
+<li><p>某字符串是否以指定字符串结尾</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str.endsWith(&apos;sss&apos;)</span><br><span class="line"></span><br><span class="line">//str 是否以 sss 结尾，返回 true 或 false</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects</a></p>
 <ol>
 <li><p>Object.keys(obj)</p>
@@ -245,6 +270,11 @@
 </li>
 </ol>
 <h2 id="Jquery"><a href="#Jquery" class="headerlink" title="Jquery"></a>Jquery</h2><ol>
+<li><p>循环遍历所有子元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">divContent.children().each(function(i,n)&#123;</span><br><span class="line">     var obj = $(n)</span><br><span class="line">     alert (obj.html ());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
 <li><p>判断 <code>checkbox</code> 是否选中，设置选中与否</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//判断 checkbox 是否选中</span><br><span class="line">var bchecked = $(&quot;#xxx&quot;).prop(&quot;checked&quot;);</span><br><span class="line"></span><br><span class="line">//选中</span><br><span class="line">$(&quot;#xxx&quot;).prop(&quot;checked&quot;, true);</span><br><span class="line"></span><br><span class="line">//不选中</span><br><span class="line">$(&quot;#xxx&quot;).prop(&quot;checked&quot;, false);</span><br></pre></td></tr></table></figure>
 </li>
@@ -274,16 +304,36 @@
 </ul>
 </li>
 </ol>
-<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><ol>
-<li><p>已知文件路径「项目中相对路径」</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function downFile(filepath) &#123;</span><br><span class="line">		//项目路径+相对路径</span><br><span class="line">		window.open(rootPath + filepath, &quot;downfile&quot;);</span><br><span class="line">		return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p>文章来源<a href="https://juejin.im/post/5bdd58db51882517217fb36d" target="_blank" rel="noopener">https://juejin.im/post/5bdd58db51882517217fb36d</a></p>
+<ul>
+<li><p><code>window.open</code></p>
+<p>浏览器无法解析，它就会把该文件下载下来 。html、pdf、png 等则会打开打开新页签，不会自动下载。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function downFile(filepath) &#123;</span><br><span class="line">		//项目路径+相对路径</span><br><span class="line">		window.open(filepath, &quot;downfile&quot;);</span><br><span class="line">		return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><ol>
+<li><p><code>a 标签</code></p>
+<p>不需要打开一个新的窗口，在当前窗口下实现下载。代表性的解决案例是：<code>Github Docunload Zip</code>， <code>download</code> 属性为下载后生成的文件名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://xxx/file.zip&quot; download=&quot;blog&quot;&gt;</span><br><span class="line">  Download ZIP</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>动态创建 a 链接</code></p>
+<p>创建一个 <code>a</code> 标签，添加 <code>href</code> 、 <code>download</code> 属性，模拟用户点击，实现下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const downloadFile = (url, fileName = &apos;&apos;) =&gt; &#123;</span><br><span class="line">  let eleLink = document.createElement(&apos;a&apos;);</span><br><span class="line">  eleLink.download = fileName;</span><br><span class="line">  eleLink.style.display = &apos;none&apos;;</span><br><span class="line">  eleLink.href = url;</span><br><span class="line">  // 受浏览器安全策略的因素，动态创建的元素必须添加到浏览器后才能实施点击</span><br><span class="line">  document.body.appendChild(eleLink);</span><br><span class="line">  // 触发点击  </span><br><span class="line">  eleLink.click();</span><br><span class="line">  // 然后移除</span><br><span class="line">  document.body.removeChild(eleLink);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>下载 html 片段或者文本</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const debug = [&apos;&lt;a id=&quot;a&quot;&gt;&lt;b id=&quot;b&quot;&gt;hey!&lt;/b&gt;&lt;/a&gt;&apos;];</span><br><span class="line">const blob = new Blob(debug,&#123;</span><br><span class="line">    type: &apos;text/html&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const url = URL.createObjectURL(blob);</span><br><span class="line"></span><br><span class="line">//使用</span><br><span class="line">downloadFile(url, &apos;index.html&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>图片是 base64 下载</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const debug = [&apos;base:...&apos;];</span><br><span class="line">const blob = new Blob(debug,&#123;</span><br><span class="line">    type: &apos;text/html&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const url = URL.createObjectURL(blob);</span><br><span class="line"></span><br><span class="line">downloadFile(url, &apos;index.html&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>canvas 下载</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const canvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">const ctx = canvas.getContext(&apos;2d&apos;);</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">const src = canvas.toDataURL(&apos;image/png&apos;)</span><br><span class="line"></span><br><span class="line">downloadFile(src, &apos;canavs.png&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p><code>PC 浏览器选择本地图片</code> <a href="https://www.cnblogs.com/007sx/p/7583202.html" target="_blank" rel="noopener">https://www.cnblogs.com/007sx/p/7583202.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;XMLHttpRequest上传文件&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        /*</span><br><span class="line">        三个参数</span><br><span class="line">        file：一个是文件(类型是图片格式)，</span><br><span class="line">        w：一个是文件压缩的后宽度，宽度越小，字节越小</span><br><span class="line">        objDiv：一个是容器或者回调函数</span><br><span class="line">        photoCompress()</span><br><span class="line">         */</span><br><span class="line">        function photoCompress(file,w,objDiv)&#123;</span><br><span class="line">            var ready=new FileReader();</span><br><span class="line">            /*开始读取指定的Blob对象或File对象中的内容. 当读取操作完成时,readyState属性的值会成为DONE,如果设置了onloadend事件处理程序,则调用之.同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.*/</span><br><span class="line">            ready.readAsDataURL(file);</span><br><span class="line">            ready.onload=function()&#123;</span><br><span class="line">                var re=this.result;</span><br><span class="line">                canvasDataURL(re,w,objDiv)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        function canvasDataURL(path, obj, callback)&#123;</span><br><span class="line">            var img = new Image();</span><br><span class="line">            img.src = path;</span><br><span class="line">            img.onload = function()&#123;</span><br><span class="line">                var that = this;</span><br><span class="line">                // 默认按比例压缩</span><br><span class="line">                var w = that.width,</span><br><span class="line">                    h = that.height,</span><br><span class="line">                    scale = w / h;</span><br><span class="line">                w = obj.width || w;</span><br><span class="line">                h = obj.height || (w / scale);</span><br><span class="line">                var quality = 0.7;  // 默认图片质量为0.7</span><br><span class="line">                //生成canvas</span><br><span class="line">                var canvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">                var ctx = canvas.getContext(&apos;2d&apos;);</span><br><span class="line">                // 创建属性节点</span><br><span class="line">                var anw = document.createAttribute(&quot;width&quot;);</span><br><span class="line">                anw.nodeValue = w;</span><br><span class="line">                var anh = document.createAttribute(&quot;height&quot;);</span><br><span class="line">                anh.nodeValue = h;</span><br><span class="line">                canvas.setAttributeNode(anw);</span><br><span class="line">                canvas.setAttributeNode(anh);</span><br><span class="line">                ctx.drawImage(that, 0, 0, w, h);</span><br><span class="line">                // 图像质量</span><br><span class="line">                if(obj.quality &amp;&amp; obj.quality &lt;= 1 &amp;&amp; obj.quality &gt; 0)&#123;</span><br><span class="line">                    quality = obj.quality;</span><br><span class="line">                &#125;</span><br><span class="line">                // quality值越小，所绘制出的图像越模糊</span><br><span class="line">                var base64 = canvas.toDataURL(&apos;image/jpeg&apos;, quality);</span><br><span class="line">                // 回调函数返回base64的值</span><br><span class="line">                callback(base64);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        /**</span><br><span class="line">         * 将以base64的图片url数据转换为Blob</span><br><span class="line">         * @param urlData</span><br><span class="line">         *            用url方式表示的base64图片数据</span><br><span class="line">         */</span><br><span class="line">        function convertBase64UrlToBlob(urlData)&#123;</span><br><span class="line">            var arr = urlData.split(&apos;,&apos;), mime = arr[0].match(/:(.*?);/)[1],</span><br><span class="line">                bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);</span><br><span class="line">            while(n--)&#123;</span><br><span class="line">                u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">            &#125;</span><br><span class="line">            return new Blob([u8arr], &#123;type:mime&#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        var xhr;</span><br><span class="line">        //上传文件方法</span><br><span class="line">        function UpladFile() &#123;</span><br><span class="line">            var fileObj = document.getElementById(&quot;file&quot;).files[0]; // js 获取文件对象</span><br><span class="line">            var url = &quot;后台图片上传接口&quot;; // 接收上传文件的后台地址 </span><br><span class="line"></span><br><span class="line">            var form = new FormData(); // FormData 对象</span><br><span class="line"></span><br><span class="line">            if(fileObj.size/1024 &gt; 1025) &#123; //大于1M，进行压缩上传</span><br><span class="line">                photoCompress(fileObj, &#123;</span><br><span class="line">                    quality: 0.2</span><br><span class="line">                &#125;, function(base64Codes)&#123;</span><br><span class="line">                    //console.log(&quot;压缩后：&quot; + base.length / 1024 + &quot; &quot; + base);</span><br><span class="line">                    var bl = convertBase64UrlToBlob(base64Codes);</span><br><span class="line">                    form.append(&quot;file&quot;, bl, &quot;file_&quot;+Date.parse(new Date())+&quot;.jpg&quot;); // 文件对象</span><br><span class="line">                    xhr = new XMLHttpRequest();  // XMLHttpRequest 对象</span><br><span class="line">                    xhr.open(&quot;post&quot;, url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。</span><br><span class="line">                    xhr.onload = uploadComplete; //请求完成</span><br><span class="line">                    xhr.onerror =  uploadFailed; //请求失败</span><br><span class="line"></span><br><span class="line">                    xhr.upload.onprogress = progressFunction;//【上传进度调用方法实现】</span><br><span class="line">                    xhr.upload.onloadstart = function()&#123;//上传开始执行方法</span><br><span class="line">                        ot = new Date().getTime();   //设置上传开始时间</span><br><span class="line">                        oloaded = 0;//设置上传开始时，以上传的文件大小为0</span><br><span class="line">                    &#125;;</span><br><span class="line"></span><br><span class="line">                    xhr.send(form); //开始上传，发送form数据</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;else&#123; //小于等于1M 原图上传</span><br><span class="line">                form.append(&quot;file&quot;, fileObj); // 文件对象</span><br><span class="line">                xhr = new XMLHttpRequest();  // XMLHttpRequest 对象</span><br><span class="line">                xhr.open(&quot;post&quot;, url, true); //post方式，url为服务器请求地址，true 该参数规定请求是否异步处理。</span><br><span class="line">                xhr.onload = uploadComplete; //请求完成</span><br><span class="line">                xhr.onerror =  uploadFailed; //请求失败</span><br><span class="line"></span><br><span class="line">                xhr.upload.onprogress = progressFunction;//【上传进度调用方法实现】</span><br><span class="line">                xhr.upload.onloadstart = function()&#123;//上传开始执行方法</span><br><span class="line">                    ot = new Date().getTime();   //设置上传开始时间</span><br><span class="line">                    oloaded = 0;//设置上传开始时，以上传的文件大小为0</span><br><span class="line">                &#125;;</span><br><span class="line"></span><br><span class="line">                xhr.send(form); //开始上传，发送form数据</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //上传成功响应</span><br><span class="line">        function uploadComplete(evt) &#123;</span><br><span class="line">            //服务断接收完文件返回的结果</span><br><span class="line"></span><br><span class="line">            var data = JSON.parse(evt.target.responseText);</span><br><span class="line">            if(data.success) &#123;</span><br><span class="line">                alert(&quot;上传成功！&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                alert(&quot;上传失败！&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        //上传失败</span><br><span class="line">        function uploadFailed(evt) &#123;</span><br><span class="line">            alert(&quot;上传失败！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        //取消上传</span><br><span class="line">        function cancleUploadFile()&#123;</span><br><span class="line">            xhr.abort();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //上传进度实现方法，上传过程中会频繁调用该方法</span><br><span class="line">        function progressFunction(evt) &#123;</span><br><span class="line">            var progressBar = document.getElementById(&quot;progressBar&quot;);</span><br><span class="line">            var percentageDiv = document.getElementById(&quot;percentage&quot;);</span><br><span class="line">            // event.total是需要传输的总字节，event.loaded是已经传输的字节。如果event.lengthComputable不为真，则event.total等于0</span><br><span class="line">            if (evt.lengthComputable) &#123;//</span><br><span class="line">                progressBar.max = evt.total;</span><br><span class="line">                progressBar.value = evt.loaded;</span><br><span class="line">                percentageDiv.innerHTML = Math.round(evt.loaded / evt.total * 100) + &quot;%&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            var time = document.getElementById(&quot;time&quot;);</span><br><span class="line">            var nt = new Date().getTime();//获取当前时间</span><br><span class="line">            var pertime = (nt-ot)/1000; //计算出上次调用该方法时到现在的时间差，单位为s</span><br><span class="line">            ot = new Date().getTime(); //重新赋值时间，用于下次计算</span><br><span class="line">            var perload = evt.loaded - oloaded; //计算该分段上传的文件大小，单位b</span><br><span class="line">            oloaded = evt.loaded;//重新赋值已上传文件大小，用以下次计算</span><br><span class="line">            //上传速度计算</span><br><span class="line">            var speed = perload/pertime;//单位b/s</span><br><span class="line">            var bspeed = speed;</span><br><span class="line">            var units = &apos;b/s&apos;;//单位名称</span><br><span class="line">            if(speed/1024&gt;1)&#123;</span><br><span class="line">                speed = speed/1024;</span><br><span class="line">                units = &apos;k/s&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">            if(speed/1024&gt;1)&#123;</span><br><span class="line">                speed = speed/1024;</span><br><span class="line">                units = &apos;M/s&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">            speed = speed.toFixed(1);</span><br><span class="line">            //剩余时间</span><br><span class="line">            var resttime = ((evt.total-evt.loaded)/bspeed).toFixed(1);</span><br><span class="line">            time.innerHTML = &apos;，速度：&apos;+speed+units+&apos;，剩余时间：&apos;+resttime+&apos;s&apos;;</span><br><span class="line">            if(bspeed==0) time.innerHTML = &apos;上传已取消&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;progress id=&quot;progressBar&quot; value=&quot;0&quot; max=&quot;100&quot; style=&quot;width: 300px;&quot;&gt;&lt;/progress&gt;</span><br><span class="line">&lt;span id=&quot;percentage&quot;&gt;&lt;/span&gt;&lt;span id=&quot;time&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;br /&gt;&lt;br /&gt;</span><br><span class="line">&lt;input type=&quot;file&quot; id=&quot;file&quot; name=&quot;myfile&quot; accept=&quot;image/x-png, image/jpg, image/jpeg, image/gif&quot;/&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; onclick=&quot;UpladFile()&quot; value=&quot;上传&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; onclick=&quot;cancleUploadFile()&quot; value=&quot;取消&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
 <li><p>点击 button 按钮后页面引起刷新</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button 缺少 type=button 属性</span><br><span class="line"></span><br><span class="line">&lt;button type=&quot;button&quot;&gt;xxx&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li></li>
 </ol>
 
       
@@ -541,19 +591,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,11 +639,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,7 +655,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,19 +675,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,15 +683,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,15 +703,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,11 +719,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,7 +735,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,11 +743,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,7 +767,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,11 +775,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,6 +808,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
              
               <li class="article-tag-list-item">
