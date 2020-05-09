@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 66</p>
-			<p>总字数 <span class="post-count">69.1k</span></p>
+			<p>总文章数 70</p>
+			<p>总字数 <span class="post-count">71.5k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,1141 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-建立个人博客-hexo-yilia-目录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/建立个人博客-hexo-yilia-目录/">建立个人博客-hexo-yilia-目录</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/05/建立个人博客-hexo-yilia-目录/" class="archive-article-date">
+  	<time datetime="2019-06-05T11:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：1.3k字 | 阅读本文大概需要 ：7分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-配置支持生成目录"><a href="#1-配置支持生成目录" class="headerlink" title="1. 配置支持生成目录"></a>1. 配置支持生成目录</h3><ul>
+<li><h4 id="指定文章显示目录"><a href="#指定文章显示目录" class="headerlink" title="指定文章显示目录"></a>指定文章显示目录</h4><p>  1). 修改 <strong>themes/yilia/_config.yml</strong>  <code>toc: 1</code> <strong>「注意中间有空格」</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 目录</span><br><span class="line"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span><br><span class="line">toc: 1</span><br><span class="line"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span><br><span class="line">toc_hide_index: true</span><br><span class="line"># 目录为空时的提示</span><br><span class="line">toc_empty_wording: &apos;目录，不存在的…&apos;</span><br></pre></td></tr></table></figure>
+<p>  2). 文章 md 文件头部添加 toc: true <strong>「注意中间有空格」</strong></p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 建立个人博客-hexo-yilia-目录</span><br><span class="line">date: 2019-06-05 19:19:54</span><br><span class="line">tags: hexo-yilia目录</span><br><span class="line">toc: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</code></pre></li>
+</ul>
+<ul>
+<li><h4 id="所有文章显示目录"><a href="#所有文章显示目录" class="headerlink" title="所有文章显示目录"></a>所有文章显示目录</h4>  修改 <strong>themes/yilia/_config.yml</strong>  <code>toc: 2</code> <strong>「注意中间有空格」</strong>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 目录</span><br><span class="line"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span><br><span class="line">toc: 2</span><br><span class="line"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span><br><span class="line">toc_hide_index: true</span><br><span class="line"># 目录为空时的提示</span><br><span class="line">toc_empty_wording: &apos;目录，不存在的…&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-添加目录代码块"><a href="#2-添加目录代码块" class="headerlink" title="2. 添加目录代码块"></a>2. 添加目录代码块</h3><p><strong>打开 themes/yilia/layout/_partial/article.ejs, 在 <code>&lt;/header&gt;&lt;% } %&gt;</code> 下面添加代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (post.link || post.title)&#123; %&gt;</span><br><span class="line">      &lt;header class=&quot;article-header&quot;&gt;</span><br><span class="line">        &lt;%- partial(&apos;post/title&apos;, &#123;class_name: &apos;article-title&apos;&#125;) %&gt;</span><br><span class="line">        &lt;% if (!post.noDate)&#123; %&gt;</span><br><span class="line">        &lt;%- partial(&apos;post/date&apos;, &#123;class_name: &apos;archive-article-date&apos;, date_format: null&#125;) %&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">      &lt;/header&gt;</span><br><span class="line">		&lt;div align=&quot;center&quot; style=&quot;font-size: 12px; color: #1a5f14;&quot;&gt;</span><br><span class="line">				字数：&lt;%= wordcount(post.content) %&gt;字 | 阅读本文大概需要 ：&lt;%= min2read(post.content) %&gt;分钟</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 目录代码块开始 --&gt;</span><br><span class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</span><br><span class="line">    &lt;p class=&quot;show-toc-btn&quot; id=&quot;show-toc-btn&quot; onclick=&quot;showToc();&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">          &lt;span class=&quot;btn-bg&quot;&gt;&lt;/span&gt;</span><br><span class="line">          &lt;span class=&quot;btn-text&quot;&gt;文章导航&lt;/span&gt;</span><br><span class="line">          &lt;/p&gt;</span><br><span class="line">    &lt;div id=&quot;toc-article&quot; class=&quot;toc-article&quot;&gt;</span><br><span class="line">        &lt;span id=&quot;toc-close&quot; class=&quot;toc-close&quot; title=&quot;隐藏导航&quot; onclick=&quot;showBtn();&quot;&gt;×&lt;/span&gt;</span><br><span class="line">        &lt;strong class=&quot;toc-title&quot;&gt;文章目录&lt;/strong&gt;</span><br><span class="line">           &lt;%- toc(post.content) %&gt;</span><br><span class="line">         &lt;/div&gt;</span><br><span class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    function showToc()&#123;</span><br><span class="line">        var toc_article = document.getElementById(&quot;toc-article&quot;);</span><br><span class="line">        var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);</span><br><span class="line">        toc_article.setAttribute(&quot;style&quot;,&quot;display:block&quot;);</span><br><span class="line">        show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:none&quot;);</span><br><span class="line">        &#125;;</span><br><span class="line">    function showBtn()&#123;</span><br><span class="line">        var toc_article = document.getElementById(&quot;toc-article&quot;);</span><br><span class="line">        var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);</span><br><span class="line">        toc_article.setAttribute(&quot;style&quot;,&quot;display:none&quot;);</span><br><span class="line">        show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:block&quot;);</span><br><span class="line">        &#125;;</span><br><span class="line">   &lt;/script&gt;</span><br><span class="line">      &lt;% &#125; %&gt;</span><br><span class="line">&lt;!-- 目录代码块结束 --&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-添加目录-css-样式"><a href="#3-添加目录-css-样式" class="headerlink" title="3. 添加目录 css 样式"></a>3. 添加目录 css 样式</h3><p><strong>打开 themes/yilia/source/main.0cf68a.css, 最下面添加如下代码：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#container .show-toc-btn,#container .toc-article&#123;display:block&#125;</span><br><span class="line">.toc-article&#123;z-index:100;background:#fff;border:1px solid #ccc;max-width:250px;min-width:150px;max-height:500px;overflow-y:auto;-webkit-box-shadow:5px 5px 2px #ccc;box-shadow:5px 5px 2px #ccc;font-size:12px;padding:10px;position:fixed;right:35px;top:129px&#125;.toc-article .toc-close&#123;font-weight:700;font-size:20px;cursor:pointer;float:right;color:#ccc&#125;.toc-article .toc-close:hover&#123;color:#000&#125;.toc-article .toc&#123;font-size:12px;padding:0;line-height:20px&#125;.toc-article .toc .toc-number&#123;color:#333&#125;.toc-article .toc .toc-text:hover&#123;text-decoration:underline;color:#2a6496&#125;.toc-article li&#123;list-style-type:none&#125;.toc-article .toc-level-1&#123;margin:4px 0&#125;.toc-article .toc-child&#123;&#125;@-moz-keyframes cd-bounce-1&#123;0%&#123;opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;60%&#123;opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)&#125;100%&#123;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;&#125;@-webkit-keyframes cd-bounce-1&#123;0%&#123;opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;60%&#123;opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)&#125;100%&#123;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;&#125;@-o-keyframes cd-bounce-1&#123;0%&#123;opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;60%&#123;opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)&#125;100%&#123;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;&#125;@keyframes cd-bounce-1&#123;0%&#123;opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;60%&#123;opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)&#125;100%&#123;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)&#125;&#125;.show-toc-btn&#123;display:none;z-index:10;width:30px;min-height:14px;overflow:hidden;padding:4px 6px 8px 5px;border:1px solid #ddd;border-right:none;position:fixed;right:40px;text-align:center;background-color:#f9f9f9&#125;.show-toc-btn .btn-bg&#123;margin-top:2px;display:block;width:16px;height:14px;background:url(http://7xtawy.com1.z0.glb.clouddn.com/show.png) no-repeat;-webkit-background-size:100%;-moz-background-size:100%;background-size:100%&#125;.show-toc-btn .btn-text&#123;color:#999;font-size:12px&#125;.show-toc-btn:hover&#123;cursor:pointer&#125;.show-toc-btn:hover .btn-bg&#123;background-position:0 -16px&#125;.show-toc-btn:hover .btn-text&#123;font-size:12px;color:#ea8010&#125;</span><br><span class="line">.toc-article li ol, .toc-article li ul &#123;</span><br><span class="line">    margin-left: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.toc-article ol, .toc-article ul &#123;</span><br><span class="line">    margin: 10px 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">建立个人博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/05/建立个人博客-hexo-yilia-目录/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-爱上读书2018" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/爱上读书2018/">爱上读书2018</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/05/爱上读书2018/" class="archive-article-date">
+  	<time datetime="2019-06-05T06:13:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：9k字 | 阅读本文大概需要 ：30分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="学习技术的三个阶段"><a href="#学习技术的三个阶段" class="headerlink" title="学习技术的三个阶段"></a>学习技术的三个阶段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">what、how、why</span><br><span class="line"></span><br><span class="line">第一阶段，了解概念，是什么</span><br><span class="line"></span><br><span class="line">第二阶段，作为工具，怎么用</span><br><span class="line"></span><br><span class="line">第三阶段，了解原理，为什么</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>人可以笨，但不能蠢。笨是老天决定的，蠢是自己的。</p>
+</li>
+<li><p>书里藏著的是智慧，这要比钱或钻石贵重得多，而智慧是任何人都抢不走的。</p>
+</li>
+<li><p>生活不是用来熬的，生活是用来过得！有困难，必须主动跨过去！</p>
+</li>
+<li><p>时间从来不说谎，你的时间花在哪里，你就会成为什么样的人。</p>
+</li>
+<li><p>做一件事最好的机会是在昨天，然后就是现在。</p>
+</li>
+<li><p>如今我才顿悟，所谓“1万个小时”背后的专注理论，只能帮助你在原有的赛道里比周围人强，但不能帮助你在平行竞争中取得“裂变式成长”。</p>
+</li>
+<li><p>最近在天津和保利合作在北京和方兴合作在无锡和绿城合作。大家之所以能合作是因为互相都有合作精神。我理解合作精神一是合作一定要双赢，一方合适的合作长不了；二是合作一定要算大帐不算小帐，大小帐一起算算不清：三是不管多大问题全放桌面上直接说，一定能解决；四是求同存异，两口子也不能全一致。</p>
+</li>
+<li><p>去年12月31号参加完绿城年会，老宋送我上车去机场，我说他厚道，老宋说正因为厚道才可以对大家严厉要求。我脾气也不好，不时发火，越是离我近的人越容易挨骂，而且也总骂的不对。但因为厚道，大家愿意跟你干，态度不好说的不对大家也不跟你计较。不管你是什么性格什么秉性，厚道是大家都喜欢的品质。</p>
+</li>
+<li><p>有人说我变了有人说没变。有些骨子里的东西比如激情偏执义气，没有变也不能变，变了就不是我了。我最大的变化是学会平衡了，比如要坚守信念，也要变化调整；要信任尊重每一个人，也要监督管理；要做事坚决，也要控制风险；要确保大方向对，也要关注细节；要拼命努力，也要在意身体等。学会平衡就是成熟</p>
+</li>
+<li><p>我想说一是我的世界观是逐渐形成的，且这些观点经过挫折失败经受了检验；二是这世界本就没啥新观点，所有的观点都可以在两千年前的书里找到，主要是要用对时间地方，把握好分寸；三是对的观点都平实，精彩的观点都是极端的。别追求观点精彩，追求人生精彩。</p>
+</li>
+<li><p>我肯定是有理想的人。我常说我尊重所有有理想的人，不管你的理想是什么，也不管你的理想是不是总在变。但如果你有一远大理想，每天该干啥还干啥，那要理想有什么用？理想必须要改变你今天干什么；改变你做亊情的轻重缓急；改变你时间精力金钱的分配。能如此理想才有用。改变你的行动的理想才是真的理想。</p>
+</li>
+<li><p>一朋友抱怨说他的员工对企业缺乏忠诚感，我说应先从企业身上找原因。忠诚是人很重要的一个品质，尤其在关系亲密的人之间，但现在很少提了，可能是忠诚确实很难做到，因为忠诚是双向的，没有一个人对谁都忠诚，对他忠诚不一定对你忠诚，企业对员工不好他凭什么对企业忠诚？要想得到忠诚你要先值得忠诚。</p>
+</li>
+<li><p>有人在前面领着跑，还不时的督促你、鼓励你，没有那么难。每个人的潜力都是巨大的，需要有人挖掘，有亊让潜力释放。其实大多数时候难亊并没有你想的那么难。</p>
+</li>
+<li><p>承认很多亊不知不懂不喜欢，只干自己喜欢的亊，有幸福感。</p>
+</li>
+<li><p>我理解从容是指很忙的时候心里不急躁不担心很笃定；从容是指走的很快时还有心情看路边的风景；从容是指衣柜里有夏天的T恤冬天的棉袄。</p>
+</li>
+<li><p>吃饭员工问，你年初说看远点别光盯着眼前，现在又说看现在别扯那么远，这不是矛盾吗？我说一马平川可以看很远，羊肠小道只能看脚下。比如现在半年后的形势都看不清楚，就别扯五年规划了，先扛过年关，制定三个月计划就够了。该看远的时候别看眼前，该看眼前的时候别遥望远方。</p>
+</li>
+<li><p>强势的意思是你想干什么就能干成，不论疾风暴雨还是和风细雨。</p>
+</li>
+<li><p>年轻不能四平八稳，年纪大了不能不顾一切，什么年纪干什么亊，别活反了。</p>
+</li>
+<li><p>一直相信奖励的力量远大于于惩罚。一次开会，要求把销售提成比例提高，经理说，原来的比例员工已满意，我急了说你不是人还是员工不是人，是人一定提成多激励多。又一次，听汇报经理说必须罚款，因为员工年轻，我急了说你不是人还是员工𓎴是人，一直认为，是人就喜欢奖励不喜欢罚款。尽量多激励少惩罚吧!</p>
+</li>
+<li><p>和一重量级投行大佬吃饭，问我带队伍最重要的是什么？我说：除了书上说的那些素质，还有两点更重要：一是碰到难亊你一定要往一线冲，光躲在幕后指挥肯定不行，你要让所有人知道碰到任何难亊你都不会躲。二是要把成绩都归功于下属，把所有错误的责任都承担起来。不这样做，凭什么你是领导？</p>
+</li>
+<li><p>不管你是多小的领导，你必须给人们带来希望。</p>
+</li>
+<li><p>永远不要低估任何人的智商，永远不要高估任何人的心态。</p>
+</li>
+<li><p>其实所有的人都喜欢仗义的人，再操蛋的人也喜欢仗义的人。</p>
+</li>
+<li><p>你遇到过很多聪明人，你的大学同学，你的同事，你的朋友，有几个比你傻？很多年以后，你会看到成功的并不是最聪明的人。因为决定成功的更多是非智力因素：明确的目标，积极的心态，努力和坚持，承受挫折和压力的能力，成熟的接人待物等等。有一种人注定没戏：不努力和怨天尤人。</p>
+</li>
+<li><p>知道，做不到，等于不知道。</p>
+</li>
+<li><p>说到，没做到，等于没说。</p>
+</li>
+<li><p>人生不只有诗和远方，还有苟且。</p>
+</li>
+<li><p>控制不住情绪，做情绪对抗，愚蠢的人都这么干</p>
+</li>
+<li><p>人总是被生活中的鸡毛蒜皮，鸡零狗碎打乱节奏。你要花时间去应付，去整理生活，去重新开始。</p>
+</li>
+<li><p>脾气都控制不住的人，注定是无能的人。</p>
+</li>
+<li><p>勤奋，谦逊</p>
+</li>
+<li><p>少一点功利主义的追求，多一些不为什么的坚持。</p>
+</li>
+<li><p>君子以义合，小人以利交</p>
+</li>
+<li><p>努力付出，直到你配得上它。</p>
+</li>
+<li><p>人，每天都可以是重生，只要你愿意。</p>
+</li>
+<li><p>你想成为什么样的人，你就有什么样的命。</p>
+</li>
+<li><p>真正努力的人，都是不动声色的。</p>
+</li>
+<li><p>人不为己，天诛地灭。</p>
+</li>
+<li><p>做家事，是培养责任感，不能用金钱作为交易。</p>
+</li>
+<li><p>怕吃苦，吃苦一辈子</p>
+</li>
+<li><p>《认知突围》中有句话说：所有的懒惰、放纵、自制力不足，根源都在于认知能力受限。</p>
+</li>
+<li><p>康德说，所谓自由，不是随心所欲，而是自我主宰。</p>
+</li>
+<li><p>如若万事俱备你的价值何在</p>
+</li>
+<li><p>媒体舆论引导经济</p>
+</li>
+<li><p>你看到的资料越多，就越能知道偶然中蕴含着的必然。</p>
+</li>
+<li><p>人的一切痛苦，本质上都是对自己无能的愤怒。遇见痛苦，必须先反思自己，而非苛责别人。</p>
+</li>
+<li><p>能想到的困难不算困难，能说出的苦不算苦。人活着，要向上，必须先“渴望痛苦”。</p>
+</li>
+<li><p>生活从来都是智慧的较量，最富有的人是智者，最宝贵的财富是智慧。</p>
+</li>
+<li><p>做人的最高境界是：苦而不言，喜而不语。</p>
+</li>
+<li><p>人生如游戏，不打怪，如何升级！</p>
+</li>
+<li><p>刚才等红绿灯的时候，天开始下雨了。这时候旁边的程序员们首先开口说：。下雨了。。大概过了5秒钟，其他人：对哦，有点下雨了。</p>
+</li>
+<li><p>程序出问题不用担心，要是一切正常，你就该失业了。一一软件工程Mosher定律</p>
+</li>
+</ol>
+<h3 id="程序猿的对话"><a href="#程序猿的对话" class="headerlink" title="程序猿的对话"></a>程序猿的对话</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">—— 你们平时都是怎么解压的？</span><br><span class="line"></span><br><span class="line">—— windows 不是自带么</span><br></pre></td></tr></table></figure>
+<ol start="53">
+<li><p>程序猿简直是世界上最适合谈恋爱的人了，他们整天都在思考一个问题：我又哪里做错了</p>
+</li>
+<li><p>做事没有方向感，没有方法论，再能坚持，也不过是坚持而已，没有未来。</p>
+</li>
+<li><p>人有一种情绪，你让我不爽，我也让你不爽。</p>
+</li>
+<li><p>“公司在客户眼里就是一条狗，客户在公司眼里就是一堆屎，不管多臭，吃定了！”</p>
+</li>
+<li><p>工作越久，见过的人越多，越发现专业能力的稀缺。很多人的能力都是吹出来的。</p>
+</li>
+<li><p>情商意味着拥有克制冲动的能力、延迟满足的能力、激励自己的能力、读懂他人社交提示的能力和应对生活中高潮与低谷的能力</p>
+</li>
+<li><p>不要忘了脚下，更不要忘了远方。走过的路，再回首，就是回忆。</p>
+</li>
+<li><p>持续不断地重复给自己正向反馈，你的人生会由此慢慢变好。</p>
+</li>
+<li><p>所有的伟大，拆解下来，都是一点一滴地修正；所有更好的自己，拆接下来，都是由之前的自己，一点一点变换而成。</p>
+</li>
+<li><p>富兰克林认为，成功取决于好习惯，他为自己例举了必须要培养的几项好习惯，包括有：节制、寡言、秩序、果断、节俭、勤奋、勤恳、公正、适度、清洁、镇静、贞洁、谦逊。</p>
+</li>
+<li><p>人性的光辉</p>
+</li>
+<li><p>男人工作的首要原因是要赚钱养家，然后才是个人理想，社会责任等。很多人为了家庭就已经拼尽全力，还要指望他去奢谈什么理想么。</p>
+</li>
+<li><p>加班要么是你笨，要么是工作安排不合理</p>
+</li>
+<li><p>我不佩服有手艺的人，我佩服有方向感的人。Rudy Krolopp是MOTO当年发明第一部移动电话的人，我佩服。乔布斯是第一个发明smart phone的人，我佩服。他们给大家带来了新的生活方式，剩下的事真的就只是做个好工匠而已。”</p>
+</li>
+<li><p>我认为工程师必备的素质，是聪明。如果他聪明同时充满焦虑，我就会很喜欢。”钱晨说。</p>
+</li>
+<li><p>想起来全是问题，做起来才有答案。</p>
+</li>
+<li><p>如果产品的每件事都特别急，其实就意味着每件事都不急。</p>
+</li>
+<li><p>相比同情心，同理心才是更值得推崇的能力。</p>
+</li>
+<li><p>同情心是一种情感，同理心是一种能力。</p>
+</li>
+<li><p>有时候你觉得跟一个人交谈舒服顺畅开心，可能不是因为你们是一类人，而是因为对方比你聪明的多。</p>
+</li>
+<li><p>人这一生有两件事最难，一是不顺的时候接受自己，二是顺的时候突破自己。——窦文涛</p>
+</li>
+<li><p>以前，总喜欢寻求一题多解，并试图找出最优解。后来，遇到的题多了，发现背答案最有效，省时省力。现在觉得，寻求最优解的过程是必要的，哪怕最后没有得到最优解。</p>
+</li>
+<li><p>每个人的性格中，都有某些无法让人接受的部分，再美好的人也一样。所以不要苛求别人，不要埋怨自己。玫瑰有刺，因为是玫瑰。</p>
+</li>
+<li><p>想要举重若轻，先要举轻若重。</p>
+</li>
+<li><p>我坚信，人应该有力量，揪着自己的头发把自己从泥地里拔起来。</p>
+</li>
+<li><p>余华在《活着》里说：“活着，在我们中国的词语里充满了力量，他的力量不是来自于喊叫，也不是来自于进攻，而是忍受，去忍受生命赋予我们的责任，去忍受现实给予我们的苦难、无聊和平庸。”</p>
+</li>
+<li><p>人拼到最后，拼的不是运气和聪明，而是毅力。</p>
+</li>
+<li><p>话要说得更有道理，而不是提高音量。</p>
+</li>
+<li><p>你对上个时代适应的越好，就可能是下个时代最大的失败者</p>
+</li>
+<li><p>为什么人性化的管理能提高工作效率</p>
+</li>
+<li><p>团队永远比客户重要，因为创造价值的是团队，客户只是购买价值的用户。只要团队在，只要能创造出来价值，永远不缺客户。</p>
+</li>
+<li><p>正如狄更斯所说的：“世界上能为别人减轻负担的都不是庸庸碌碌之徒。”</p>
+</li>
+<li><p>每个人都有束缚自己的“茧”，未破之前，都过着虫一样的人生。</p>
+</li>
+<li><p>比克服困难的技能更重要的，是克服困难的动机。——尼采</p>
+</li>
+<li><p>作家阿尔贝·加缪说的：“对未来最大的慷慨，是把一切献给现在。”</p>
+</li>
+<li><p>如果一个人能在历史的迷雾中，穿透重重表象，透析世界、社会和人生的本质，看到了常人所不能看到的规律。</p>
+</li>
+<li><p>排除穿越、开天眼、以及一切无法验证的可能之后，只有一个答案：这个人成功的背后，一定是经历了更加艰苦卓绝的自我奋斗。</p>
+</li>
+<li><p>毛泽东的地位从来也不是天生的。那些坎坷的经历、那些人生的低谷和打压，每一步都是他走向领袖的坚实台阶。</p>
+</li>
+<li><p>权力看似来自于上级，实则来自于下级。或者可以这么说，虚职是上级赋予的，但真正的实权其实是下级撑起来的。没有下级的真心服从，再高的职位都是空中楼阁而已。</p>
+</li>
+<li><p>一只站在树上的鸟儿，从来不会害怕树枝断裂，因为它相信的不是树枝，而是它自己的翅膀。</p>
+</li>
+<li><p>精英大部分都会成长为组织者或领导，从事基层工作的人大部分不是精英。所以，在一个正常的社会，大部分决策都不会太离谱，但执行效率往往不如人意。但长远来看，决策决定方向，更容易决定生死。执行慢，大部分并不会影响太大，整体的效率低环境也会让人忽视它的存在。同样彼得原理也告诉我们，所有人都会被晋升到不称职的岗位上。</p>
+</li>
+<li><p>空谈、空规划，一点用处都没有，不如实际把它做出来，做出来后不断反思改进，实实在在最有说服力。</p>
+</li>
+<li><p>真正的成功者和专家，都是“最不怕学习”的人，啥东西不懂，拿过来学呗。</p>
+</li>
+<li><p>世界上永远有不完美的事情，永远有麻烦，唯一的解决之道是面对它，解决它。</p>
+</li>
+<li><p>普天之下莫非王土，率土之滨莫非王臣。</p>
+</li>
+<li><p>这世上，唯庸人无咎无誉——梁启超</p>
+</li>
+<li><p>不管做什么，去哪儿做，成长价值都是最大的价值。</p>
+</li>
+<li><p>愿意用近期成本的增加换取长期的成本减少。</p>
+</li>
+<li><p>注意力在哪儿。</p>
+</li>
+<li><p>成长即财富，这句话从来不是句空话。</p>
+</li>
+<li><p>质疑、对比、验证。</p>
+</li>
+<li><p>多阅读，阅读任何时候都是学习的最佳方式。经常阅读的人，对知识与文字的理解接受能力比不怎么阅读的人高的多，我自己也深有感触，以往不阅读的时候，学东西超慢，现在这么些年，坚持阅读，现在再学东西我都觉得很快。</p>
+</li>
+<li><p>产品四要素:用户、需求、场景、解决方案</p>
+</li>
+<li><p>可积累性</p>
+</li>
+<li><p>馒头效应</p>
+</li>
+<li><p>奇遇人生</p>
+</li>
+<li><p>《肖申克的救赎》说：世界上有一种鸟是关不住的，因为它们的每一片羽毛，都沾满了自由的光辉。希望是一种坚持，使灵魂深处保有一片自由的天空，为相同的生命做出不同的解释。</p>
+</li>
+<li><p>Talk is cheap，show me the code。</p>
+</li>
+<li><p>著名投资人查理·芒格说：“你想要得到某样东西，最好的办法就是让自己配得上它。”</p>
+</li>
+<li><p>要想产生变化，必须做出改变。</p>
+</li>
+<li><p>优秀的程序员第一反应不应该是马上就写代码，而是问问题。</p>
+</li>
+<li><p>事了拂衣去，深藏功与名。</p>
+</li>
+<li><p>未来社会最重要的资产是影响力</p>
+</li>
+<li><p>丹可磨而不可夺其色，玉可碎而不可改其白</p>
+</li>
+<li><p>雷军曾经说过一句话，不要试图用战术上的勤奋，掩饰战略上的懒惰。</p>
+</li>
+<li><p>气质是可以修炼的，如果说人生即是一场“向美而生”的修行，那么，与其不断武装自己的外表，倒不如不断革新自己的思想。</p>
+</li>
+<li><p>永远不要把希望寄托在别人身上。应该先对自己负责，为自己做好备份，留有余地。</p>
+</li>
+<li><p>《禅与摩托车维修艺术》这本书中，有一句话写得非常好：</p>
+</li>
+<li><p>当你想快速结束某件事情的时候，那往往意味着，你并不是很喜欢它。</p>
+</li>
+<li><p>历史只会眷顾坚定者、奋进者、搏击者，而不会等待犹豫者、懈怠者、畏难者。</p>
+</li>
+<li><p>千折百回，大志不改；不忘初心，方得始终。</p>
+</li>
+<li><p>相由心生，境由心转，命由己造。</p>
+</li>
+<li><p>《与神对话》说“每个人都是神的一个个体，通过你们来经验神的存在”。</p>
+</li>
+<li><p>有缺点的战士终竟是战士，完美的苍蝇也终竟不过是苍蝇。《战士和苍蝇》</p>
+</li>
+<li><p>最愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令荧火一般，也可以在黑暗里发一点光，不必等候炬火。——《热风·随感录四十一》</p>
+</li>
+<li><p>专注于明确的目标，并排除干扰，这是在任何领域取得成功的关键。——威斯康星大学心理中心戴维森</p>
+</li>
+<li><p>你难道不觉得，能长时间地保持勤奋状态且学得进去，这本身也是一种天赋吗？</p>
+</li>
+<li><p>先做起来，往前走，就会有解决方案出现。</p>
+</li>
+<li><p>世界三大民间通用语言：数字、手势、黄段子。</p>
+</li>
+<li><p>真正有能力的人，其实不在意你说过什么，而在意你做过什么。</p>
+</li>
+<li><p>最想给儿子说什么？</p>
+</li>
+<li><p>段永平：说什么都没有用，做什么才重要（最重要是做什么）。（这是老巴说的）</p>
+</li>
+<li><p>不肯尝试的本质是不敢面对所谓失败。但，这个失败的后果是什么？很少有人认真思考过。其实绝大部分失败是没有后果的。</p>
+</li>
+<li><p>不疯魔不成佛</p>
+</li>
+<li><p>定目标——做判断——找关键人执行</p>
+</li>
+<li><p>真正的超越机会，不是来自于在工作时间上把对手逼死，而是在认知深度上先把自己逼疯。</p>
+</li>
+<li><p>管理很大程度上，最终就变成“定目标”+“做判断”+“找关键人”。目标简单，判断是优质的，人能够挺身而出，则管理会很顺畅。</p>
+</li>
+<li><p>认知，几乎是人和人之间唯一的本质差别。技能的差别是可量化的，技能再多累加，也就是熟练工种。而认知的差别是本质的，是不可量化的。</p>
+</li>
+<li><p>什么是“IOE”？IBM是服务器提供商，Oracle是数据库软件提供商，EMC则是存储设备提供商，三者构成了一个从软件到硬件的企业数据库系统。</p>
+</li>
+<li><p>惜命的最好方式不是养生，而是管理好自己的情绪</p>
+</li>
+<li><p>所谓脾气越温，福报越深，人的一生，就是不断修行的过程。</p>
+</li>
+<li><p>别人的闲言碎语不要往心里去，世间的纷纷扰扰没必要掺和，活好自己就够了。</p>
+</li>
+<li><p>海纳百川，成其浩大。山聚土石，成其雄伟。</p>
+</li>
+<li><p>生活就是这样，只要别人一张嘴，就会有意见和批评。</p>
+</li>
+<li><p>真正见过世面的人，不会去评价别人没见过世面。</p>
+</li>
+<li><p>真正有修养的人，会体会别人的苦衷、尊重别人的不同。</p>
+</li>
+<li><p>俞敏洪说：斤斤计较的家庭走不出胸怀博大的孩子。</p>
+</li>
+<li><p>美国著名的心理学家拉泽洛斯有一个理论：挫折的大小不是关键，关键是人们如何看待挫折。</p>
+</li>
+<li><p>村上春树所说：“喜欢的事自然可以坚持，不喜欢的怎么也长久不了。”</p>
+</li>
+<li><p>要了解一个男人的三观，不要看他如何谈论政治，要看他如何谈论女人。一个男人对待女人的态度和看法，才是他最真实的世界观、价值观、人生观。</p>
+</li>
+<li><p>美亚说：“当你看过世界，见过众生，才发现你要见的世面，是你自己内心的勇敢和自信。”\n</p>
+</li>
+<li><p>提出问题，分析问题，解决问题</p>
+</li>
+<li><p>你永远无法确定已经找到的问题定义是正确的，但是永远不要停下寻找正确定义的脚步。</p>
+</li>
+<li><p>人们的期望会影响哪个结果更容易出现。你所期望的结果，就是得到的结果。</p>
+</li>
+<li><p>强大到让对手绝望</p>
+</li>
+<li><p>不是所有人都愿意花时间放在自我成长上。</p>
+</li>
+<li><p>这世界上从没有谁是全副武装好之后才迈入挑战的，而一个人生活的半径，其实并不是由他的能力或者意愿决定的，最重要的是他的世界观『心理韧性』。在遇到困难和挑战时，能够沉着应对，积极的寻找解决方案，而不是被沮丧所压倒。这种坚持可以让新鲜感在经受了时间考验之后，变成真正的热爱。赫拉利也曾在《人类简史》中写道：事实上，真正最知道当时情况的人（也就是活在当时的人），正是最看不出历史走向的人。</p>
+</li>
+<li><p>一个人保持短时间的自律很容易，但若是要长期坚持却不是一件容易的事，于是有人说，成功路上并不拥挤，因为不是每一个人，都能坚持到最后。自律到极致，便能将每一件小事做成功。但其实还有更深层次的含义，那就是当你开始自律，你便不会被周遭的诱惑绑架，比如美剧、比如小游戏、比如不必要的社交、比如并不是很健康的美食。当你做到自律，你便会真正开始享受那些美好、积极的事物。<br>犹太人的经典《塔木德》里有一句话叫做「难做的事情容易成」。正是因为这件事有难度，能够帮你吓退和筛掉很多同行，使你更有机会脱颖而出。</p>
+</li>
+<li><p>产品经理最重要的能力不是某一项技能，而是「让正确的事情相继发生」。</p>
+</li>
+<li><p>现在世界卫生组织已经把65度以上的饮品定义为致癌物。不管大家是爱喝茶还是咖啡，都很好，没问题，但就尽量稍微凉一凉再喝。</p>
+</li>
+<li><p>所谓道德，用来约束自己的，是好人，用来约束别人的，是流氓。你要做一个大爱无疆的人，你不计回报的帮助每个人，你是好人，我尊重并敬仰，真心的。你觉得别人帮助你就应该是不计回报的，这才是有道德的表现，那你就是流氓，妥妥的。</p>
+</li>
+<li><p>房间里的大象、皇帝的新装</p>
+</li>
+<li><p>沉默的螺旋</p>
+</li>
+<li><p>这个世界上没有难做的事情，之所以难，是因为没有找到正确的方法。</p>
+</li>
+<li><p>每天列任务清单，按照紧急程度、重要程度排序。依次完成任务。</p>
+</li>
+<li><p>用一句佛家的话说，就是「因上努力，果上随缘」。</p>
+</li>
+<li><p>人生在世，尽力而为。当你以最大的努力拥抱这个世界，世界也会给你最好的回报</p>
+</li>
+<li><p>就像木心说的：「真正的成熟由两部分组成，一半是对美好的追求，一半是对残缺的接纳。」</p>
+</li>
+<li><p>无论你处在什么时刻，一定不要让自己忙死，把自己全部的精力和意志力都耗费在无效重复之事上，也就是不要把所有精力都耗费在工作上。</p>
+</li>
+<li><p>德鲁克对优秀教育的定义很对：当一个人“陶醉于卓越”时，他就受到了优秀的教育。</p>
+</li>
+<li><p>卓越，即有领先他人的欲望，即有今天的我比昨天我更好的欲望，这样的人是停不下来的。</p>
+</li>
+<li><p>爱因斯坦所说：制造麻烦的思维肯定无法用来解决麻烦。</p>
+</li>
+<li><p>搭建知识库</p>
+</li>
+<li><p>投资，不懂的不要碰，不要碰，不要碰。</p>
+</li>
+<li><p>领导与被领导是人类的本能</p>
+</li>
+<li><p>重要的事比紧急的事更需要关注。</p>
+</li>
+<li><p>把小失败当做反馈</p>
+</li>
+<li><p>为自己的成长奔跑</p>
+</li>
+<li><p>做一个有投资“洁癖”的人。</p>
+</li>
+<li><p>只投资好的公司，经营不良或者信息不透明的公司不投。</p>
+</li>
+<li><p>研发支出资本化率</p>
+</li>
+<li><p>互联网时代是有记忆的，</p>
+</li>
+<li><p>每时每刻都可以通过搜索来回溯过去的细节。</p>
+</li>
+<li><p>互联网时代也是健忘的，</p>
+</li>
+<li><p>舆论热点一个淹没另一个。</p>
+</li>
+<li><p>人总不是完全理性的，稍微有一点不理性的空间，就很容易被话术趁虚而入，占据和侵夺你的心智，带你走向对方所期望的决策。</p>
+</li>
+<li><p>兵无常势，水无常形</p>
+</li>
+<li><p>善守者藏于九地之下，善攻者动于九天之上</p>
+</li>
+<li><p>这个世界上，聪明人很多，靠谱的人却是凤毛麟角。能与靠谱的人在一起，就是你最大的福气。</p>
+</li>
+<li><p>不要在冲动、刺激、诱惑的时候做任何决定，一定要在冷静的时候做决定。</p>
+</li>
+<li><p>只有不断修炼自己的核心竞争力，成为行业专家，获得业界认可，获得江湖地位，才能真正成为圈内人。</p>
+</li>
+<li><p>无畏</p>
+</li>
+<li><p>勇敢的人也会害怕，一个人虽然害怕却仍然敢于前进，这才叫勇敢。</p>
+</li>
+<li><p>幸运其实只是充分准备加上努力工作的结果。</p>
+</li>
+<li><p>在你展翅飞翔之前，你就必须相信自己能到达目的地。</p>
+</li>
+<li><p>如果你不花时间创造你想要的生活，那么你就要花更多的时间应付不想要的生活。</p>
+</li>
+<li><p>人的一生有两件事不能做：一是低估自己，二是高估困难。</p>
+</li>
+<li><p>不要熬夜！！！！！！！！！！！！！</p>
+</li>
+<li><p>先相信，后看见!机会来了，相信就会拥有!</p>
+</li>
+<li><p>人因梦想而伟大</p>
+</li>
+<li><p>看过世界、读懂生活的男人，他们会珍惜眼前所拥有的东西。</p>
+</li>
+<li><p>查理·芒格说：“我这辈子遇到的聪明人，没有一个不是每天读书的。”</p>
+</li>
+<li><p>宁学管鲍分金，休仿孙庞斗智。</p>
+</li>
+<li><p>干净整洁的外表，是一个人的尊严，也是好运气的来源。</p>
+</li>
+<li><p>叔本华说：“人的外表是表现内心的图画，相貌表达并揭示了人的整个性格特征”。</p>
+</li>
+<li><p>艺术品，内容不重要，重要的是背后的故事。</p>
+</li>
+<li><p>逆流而上，顺势而为</p>
+</li>
+</ol>
+<hr>
+<h3 id="投资理财"><a href="#投资理财" class="headerlink" title="投资理财"></a>投资理财</h3><blockquote>
+<p>小熊定理1</p>
+<p>连续两年应收账款增幅超过营收增幅（美化营收）</p>
+</blockquote>
+<blockquote>
+<p>小熊定理2</p>
+<p>连续两年存货增长金额大于营收增长，则这家公司存货很可能有问题（美化资产）</p>
+</blockquote>
+<blockquote>
+<p>小熊定理3</p>
+<p>如果一个公司流动负债远大于流动资产，则很可能破产（资产是否安全）</p>
+</blockquote>
+<blockquote>
+<p>构建便宜组合:</p>
+<p>市盈率PE（0—10）</p>
+<p>市净率PB（0—1.5）</p>
+<p>股息率&gt;3%（公司一年累积分红/市值）<br>闲钱投资</p>
+</blockquote>
+<ol>
+<li><p>长期——指数基金（定投）</p>
+</li>
+<li><p>中期——混合基金（收益高）</p>
+</li>
+<li><p>短期（随时取用）——货币基金</p>
+</li>
+<li><p>不买股票和股票基金，以目前能力来说只能靠运气，不懂的不要碰。</p>
+</li>
+<li><p>有人说，后天的所有努力，都是童年片段的回响。</p>
+</li>
+<li><p>稍微正常的人就能想明白的道理，在做韭菜的时候就会失效。比如，世界上不可能存在大家一起发财的机会，这是我办公室里的同事开始炒币的时候我给他们的劝告。接下来就是，如果你相信你不是韭菜，是那个可以发财的人，那你有没有问自己，凭什么？</p>
+</li>
+<li><p>让钱生钱，且慢慢大于支出</p>
+</li>
+<li><p>养鹅而不能杀死鹅</p>
+</li>
+<li><p>最重要的资产就是我们的头脑，这个世界稳赚不赔的生意就是不断投资自己的大脑。</p>
+</li>
+<li><p>真正的的奢侈品不是建立在入不敷出、债台高筑上的，而是对自己投资和积累真正资产的奖励。</p>
+</li>
+<li><p>找到基金投资这一章，我们来查看余额宝的投资范围。在这里，我们可以很清楚看到，余额宝投资的都是短期类的货币工具：比如现金啊、银行存款，还有1年期内的债券、银行票据。所以它的安全性很高，而且流动性也很高。</p>
+</li>
+<li><p>按投资对象分货币基金，债券基金，混合基金，股票基金</p>
+</li>
+<li><p>按交易渠道分为场内，场外</p>
+</li>
+<li><p>按运作方式开放式和封闭式</p>
+</li>
+<li><p>封闭式基金可以通过场内，与其他投资人进行交易。</p>
+</li>
+<li><p>基金名字:公司名称+投资方向or基金特点+基金类型</p>
+</li>
+<li><p>千万不要因为名字选择基金，应仔细查看合同书。</p>
+</li>
+<li><p>关键看你想不想学，想学的人，不管都忙多累，都会找到学习方法，不想学的人，就算所有的知识都摆在面前，也不会看一眼。</p>
+</li>
+<li><p>记得《兰迪教授的最后一课》有一句话：困难像堵砖墙，它的存在，不是为了挡住我们，而是要让我们认清自己的决心有多强。墙的存在，是为了把那些不坚定的人，挡在门外。</p>
+</li>
+<li><p>很多专家之所以成为专家，可能是写文章比较厉害。</p>
+</li>
+<li><p>在超市买东西拿排在货架后面的，因为货物是按生产日期排序的，保质期久的一般都在后面。</p>
+</li>
+<li><p>买酱油买“原味”就好，什么海鲜酱油、香菇酱油……不过是多加了一些食品添加剂。</p>
+</li>
+<li><p>催菜的时候说麻烦快点效果不好，可以试试说不要了。</p>
+</li>
+<li><p>鲦鱼效应说明的是领导力的重要性。</p>
+</li>
+<li><p>蓝斯登原则说明进退有度，才不至于进退维谷。</p>
+</li>
+<li><p>托利得定理，聪明的人能够同时接纳两种截然相反的观点。</p>
+</li>
+<li><p>刺猬理论，保持亲密的方法，重要的是保持适当的距离。</p>
+</li>
+<li><p>青春如同奔流的江河，一去不回来不及道别。</p>
+</li>
+<li><p>但凡是艺术作品，还没弄好就先喊为国家争口气、为民族争口气之类的，都是大概率的次品，坑的可能性非常大。如果你自认是一个有点审美水平的人，掏腰包之前千万小心。</p>
+</li>
+<li><p>其实，大多数的兄弟分别，都没有什么分手时刻，也都没有机会留什么话。都是在不知不觉中，忽然发现对方就远了。</p>
+</li>
+<li><p>永远不要低估任何人的智商，永远不要高估任何人的心态。</p>
+</li>
+<li><p>所有的人都喜欢仗义的人，再操蛋的人也喜欢仗义的人。</p>
+</li>
+<li><p>别人说的成功经验做成功不了。有梦想且脚踏实地的努力比什么都有用。</p>
+</li>
+<li><p>决定成功的更多是非智力因素：明确的目标，积极的心态，努力和坚持，承受挫折和压力的能力，成熟的接人待物等等。</p>
+</li>
+<li><p>强势的意思是你想干什么就能干成，不论疾风暴雨还是和风细雨。</p>
+</li>
+<li><p>尽可能的少花钱</p>
+</li>
+<li><p>优秀的业务员从来都不是在推销产品，而是在推销自己。</p>
+</li>
+<li><p>人无法成功的原因只有两个：懒惰和惧怕。真的，克服这两点你就能成功，如果不成功，就是你还不够勤奋，你还不够勇敢！</p>
+</li>
+<li><p>做投资要善于止盈</p>
+</li>
+<li><p>每年做一次投资再平衡，重新配比</p>
+</li>
+<li><p>一个人的认知水平越有限，其想法就越单一，越缺乏判断力，人就会表现地越固执。</p>
+</li>
+<li><p>一个真正优秀的人会保持其独特的个性，因为他们认识到，所谓的固执并不是独特的个性，某种程度上说是一种人格缺陷。</p>
+</li>
+<li><p>当你的认知能力很低时，脑海里的个人构念就会趋向于单一，缺乏弹性。</p>
+</li>
+<li><p>因此遇到问题时，你的个人构念所提供出来的对策就很狭窄，但却成为了你的全部，你误认为这就是所有的、最好的对策，没有其他的可能。</p>
+</li>
+<li><p>而当你的认知能力高，见识的多、读到的多、经历的多、有独立思考能力时，你就会获得越来越多的知识和经验，你的个人构念就会越丰富、越饱满，在同样的问题面前你便不会只是执着于一种答案，而是有几种可能的答案。</p>
+</li>
+<li><p>好制度远胜好管理</p>
+</li>
+<li><p>在消费者心中，认知比事实更重要。</p>
+</li>
+<li><p>任务驱动学习</p>
+</li>
+<li><p>“自由很宝贵，但同时也很昂贵。我追求的就是自由，我也为它付出了很多代价。我曾经觉得没有什么东西比自由更重要，但过了十年，我认为「独立比自由更重要」。独立是前提，没有独立就没有自由。「人格上的独立、经济上的独立，只有真正意义上独立，你才能享有自由」。”</p>
+</li>
+<li><p>定投最佳姿势——定期不定额</p>
+</li>
+<li><p>买指数基金就是买国运</p>
+</li>
+<li><p>从风险角度排序，货币基金＜债券基金＜混合基金＜股票基金；从潜在收益的角度来看，同样也是货币基金＜债券基金＜混合基金＜股票基金。</p>
+</li>
+<li><p>主要投资股票的基金是股票基金，主要投资债券的基金是债券基金，既投资股票又投资债券的叫混合型基金，进入低风险货币市场的是货币基金。</p>
+</li>
+<li><p>市盈率</p>
+</li>
+<li><p>动态平衡就强迫我们做到了一件平时大家很难做到的事情，就是——低买高卖！</p>
+</li>
+<li>股神巴菲特说过：“年轻人最好的投资就是自己的能力。”</li>
+<li><p>巴菲特另有一句名言: 在别人恐惧时贪婪,在别人贪婪时恐惧。</p>
+</li>
+<li><p>如果你不想持有一个股票十年，就不要持有10分钟。</p>
+</li>
+<li><p>黄金属于保值产品，长期来说不适合投资</p>
+</li>
+</ol>
+<h3 id="投资股票误区"><a href="#投资股票误区" class="headerlink" title="投资股票误区"></a>投资股票误区</h3><blockquote>
+<p>1.以名取人 概念股</p>
+<p>2.价格低的股票 应该选那些被低估的股票</p>
+<p>3.听人荐股 一定要自己判断</p>
+<p>4.追涨杀跌 跟风心理作用</p>
+</blockquote>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">爱上读书</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/05/爱上读书2018/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-爱上读书2019-04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/04/爱上读书2019-04/">爱上读书2019-04</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/04/爱上读书2019-04/" class="archive-article-date">
+  	<time datetime="2019-06-04T14:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：2.6k字 | 阅读本文大概需要 ：8分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>「比较优势」的核心理论就是，单独一个人或者单独一个国家机构，其精力和机会成本都是有限的，哪怕你各方面都是全球第一的人才，最聪明的做法也不是四处出击，事必躬亲，而是把有限的时间、精力和资源放在自己最擅长的地方，换句话说就是最赚钱的地方。</p>
+</li>
+<li><p>“简单的事情重复做，你就是专家。认真的事情全力做，你就是赢家”——任正非</p>
+</li>
+<li><p>一个人总要有一个鞭策你前进的人，他们可能是你的同学，你的父母，你的妻子，你的老板。他们的存在，对于你的成长来说就是至关重要的。他们给你了压力，让你感受到责任，你必须付出努力，学会忍受，强迫自己变得强大。<br>你应该感谢给你压力的人，他们打破了你固有的安逸稳定想法，让你不断尝试，不断打破自己能力边界。你的胸怀变得更为宽广，你的人格魅力变得更加醇厚。——写给自己</p>
+</li>
+<li><p>你所谓尽了的最大努力，只是尽可能使用自身体力，却不是尽可能使用你能借助的所有资源。</p>
+</li>
+<li><p>英特尔前CEO格鲁夫曾说：“只有偏执狂才能生存。”</p>
+</li>
+<li><p>大处着眼，小处着手，高明是大处着眼，精明是小处着手。</p>
+</li>
+<li><p>行胜于言，质胜于华</p>
+</li>
+<li><p>我们的时代，精英们都在变着花样“割韭菜”。</p>
+</li>
+<li><p>有时跟一些看上去或者从学历上推断应该好学的人交流，但时常因一些基础的知识点产生争论或者需要耐心讲述时，我会感到烦躁。我只想说一句，把基础学好，再去探讨。<br>突然想到一句颇有道理的话，「人类的本质是复读机」。</p>
+</li>
+<li><p>世界是自己的，与他人毫无关系。向前跑，专注于提高自己，才能活出最精彩的自我。</p>
+</li>
+<li><p>面对别人的质疑，我们证明自己的唯一方式，就是拼了命地努力。</p>
+</li>
+<li><p>清朝诗人袁枚的《苔》<br></p><p>白日不到处，青春恰自来。</p><br>苔花如米小，也学牡丹开。<p></p>
+</li>
+<li><p>“你的环境并不能决定你的未来，你的过程也不能决定你的未来，而是你的心的向往决定了你的未来。”</p>
+</li>
+<li><p>未来是一个创造力与艺术能力当道的世界，从小缺乏审美的眼光，孩子将无法拥有强大的竞争力。</p>
+</li>
+<li><p>美学家张世英说：“人生有四种境界：欲求境界、求知境界、道德境界、审美境界。审美为最高境界。”</p>
+</li>
+<li><p>我厌恶透了消磨时光，没有计划，随波逐流的生活方式。我要向它们彻底说拜拜了。</p>
+</li>
+<li><p>无决心，不成事。</p>
+</li>
+<li><p>任何东西，只有你拥有的时候，才有资格说它不重要。</p>
+</li>
+<li><p>勤学似春起之苗，不见其增，而日有所长。</p>
+</li>
+<li><p>尼采在《查拉图斯特拉如是说》中的一句话『其实人跟树一样的，越是向往高处的阳光，他的根就要越要向下，伸向地底深处』。</p>
+</li>
+<li><p>自我的激励、自我的认同，能切切实实地产生强大的推动力量。而这种力量，只要运用得当，可能会让自己产生脱胎换骨的变化。</p>
+</li>
+<li><p>自黑，是内心强大的极致。这个世界有太多自以为是的人，所以能自黑的人，都是生活里真正的强者。</p>
+</li>
+<li><p>成功的关键在于勇敢地迈出第一步。如果不迈出第一步，你永远不知道自己能走多远。</p>
+</li>
+<li><p>乔丹说了这么一句话：“我输过不下300场比赛，有26次人们期待我投入制胜一球时，而我却失误了。我的一生中失败一个接着一个，但这也正是为什么我能够成功的原因。我从未害怕过失败，我可以接受失败，但我不能接受没有尝试。”</p>
+</li>
+<li><p>是什么阻止了你成为想成为的人？<br></p><p>答案是：害怕。</p><br>“害怕被拒绝。” “害怕自己不够高。” “害怕自己做不到。” “害怕别人不理解。” “害怕结果不理想。”…………<p></p>
+</li>
+<li><p>随时做好学习的准备，你就能快速成长。等你比身边的人强上好几倍，就没人会左右你的选择，因为你已经用事实证明了，自己现在的选择，就是最好的选择。</p>
+</li>
+<li><p>英雄征服世界，圣人征服自己。我更想说，欲征服世界，先征服自己。</p>
+</li>
+<li><p>有时候跟讨厌的人顶上了，非要较真的话，讲理讲得赢，打架也打得赢，但是赢了一件小事，却损失了时间和心情，划不来。<br>而在退让之后，也不觉得拧巴，淡然一笑当事情没发生过，不憋屈不失衡，内心依然平和，这是在感性上对内在精神安宁的有效维护。</p>
+</li>
+<li><p>人生是一盘很大的棋，你在这里迂回一下，可能就在那里蓄积了力量，该让的让过，不会亏的，用佛家的话说，福报在后面。</p>
+</li>
+<li><p>桃李不言下自成蹊。</p>
+</li>
+<li><p>有大智慧的人最豁达，而豁达的人才能收获满满的幸福感！</p>
+</li>
+<li><p>“戒掉不良情绪，才能收获一个更强大的自己。‍”</p>
+</li>
+<li><p>想要孩子走得更远，请放手让孩子吃点苦。</p>
+<p>想让孩子三观正，请引导孩子建立理性的金钱观和价值观。</p>
+<p>想让孩子懂得感恩，请多做给孩子看。</p>
+<p>想让孩子更自信更有安全感，请多陪伴孩子。</p>
+<p>想让孩子更懂得爱，请多宠爱妻子。</p>
+</li>
+<li><p>原腾讯副总裁吴军师在《见识》里说：“一个孩子能走到什么程度，跟父母有很大关系。”</p>
+</li>
+<li><p>宠爱妻子，让孩子在有爱的家庭中成长。</p>
+</li>
+<li><p>“父母是有有效期限的，错过了有效期，再怎么努力也难有效。对于这一辈子只有一次的经历，父母应该珍惜。孩子是上天给的一份礼物，我们应该在有效期内全情投入，耐心的陪伴着他们长大。” —— 龙应台</p>
+</li>
+<li><p>父母在子女童年时期没给到足够的情感回应，将会给孩子造成低自尊与自卑、没有归属感、没有安全感、甚至抑郁等心理创伤，并严重影响到他们今后的个人成长与人际交往。</p>
+</li>
+<li><p>常常有人问该如何让孩子爱上阅读，不如问问自己，多久没看书了。</p>
+</li>
+<li><p>还有人问为什么孩子不体恤父母，不如问问自己，平时对待自己的父母是怎样的态度。</p>
+</li>
+<li><p>法国学者波达斯曾说：“人的观念、标准，深受家长影响，并根植于脑海。”</p>
+</li>
+<li><p>电影《风雨哈佛路》的女主说：我在任何情况下都必须往前走，我和其他人来的世界不一样，我没有退路，我要更努力，更努力地把自己推到另一个世界中去。</p>
+</li>
+<li><p>热爱，责任，自信</p>
+</li>
+<li><p>长久以来，他习惯了按照别人的节奏生活，害怕拒绝，厌恶矛盾，不想做个不合群的人，因为对他来说，要么抱团，要么出局。<br>这种习惯的养成不是爱面子，而是没底气。</p>
+</li>
+<li><p>可以放松，但不能放纵。</p>
+</li>
+<li><p>人是为活着本身而活着，而不是为了活着之外的任何事物所活着。——余华《活着》</p>
+</li>
+<li><p>挖一口属于自己的井。</p>
+</li>
+<li><p>与其说是压力让人喘不过气，不如说，是不能躲开的责任，让人逼着自己成熟。</p>
+</li>
+<li><p>学习看清人性，是要持续一生的成长必经之路。</p>
+</li>
+<li><p>严歌苓曾在《芳华》里写过：“人之所以为人，就是他有着令人憎恨也令人热爱，令人发笑也令人悲怜的人性。”</p>
+</li>
+<li><p>从概率论角度，掌握了更多知识的人，总是有更大的机会获得成功。</p>
+</li>
+</ol>
+<hr>
+<h3 id="以下文字取自《启示录》"><a href="#以下文字取自《启示录》" class="headerlink" title="以下文字取自《启示录》"></a>以下文字取自《启示录》</h3><ol>
+<li><p>用户体验设计包括交互设计和视觉设计。</p>
+</li>
+<li><p>有些创业型公司陷入困境，因为他们混淆了技术爱好者和非理性消费者，不知道产品究竟满足谁的需求。</p>
+</li>
+<li><p>创新不是发现新问题，而是用新方法解决已有的问题。<code>观察人们对现有产品的不满，是创新的最佳途径。</code><br>另一种创新是跳出技术局限，完善用户体验。</p>
+</li>
+<li><p>德鲁克曾说过，公司的核心竞争力来自于创新。</p>
+</li>
+<li><p>推荐书籍《猜想与反驳》、《理性乐观派》</p>
+</li>
+<li><p>平滑部署——合理地、审慎地更新产品版本</p>
+</li>
+<li><p>产品可用性测试（检验用户能否想明白如何使用产品）</p>
+<p>产品价值测试（检验用户是否渴望使用产品）</p>
+</li>
+<li><p>邀请用户测试产品原型，确保产品是用户需要的。</p>
+</li>
+<li><p>需求调研和产品设计可以同步展开。</p>
+</li>
+<li><p>产品开发和测试可以交叉进行。但用户体验设计应该在软件开发前完成。</p>
+</li>
+<li><p>只有在开发人员要开发大量后台基础软件的情况下，用户体验设计和软件开发才能并行展开。</p>
+</li>
+<li><p>需求调研和产品设计时，要让一位开发人员检查设计工作，评估设计的可行性和成本。</p>
+</li>
+<li><p>高保真产品原型就是最好的产品说明文档。</p>
+</li>
+<li><p>一个版本一旦开始，就把重心放到执行上。</p>
+</li>
+<li><p>如果有新变化，就可以考虑下一个版本。</p>
+</li>
+<li><p>后面的版本绝不可影响前一个版本实现。</p>
+</li>
+<li><p>用户净推荐值 NPS</p>
+</li>
+<li><p><code>学习任何技术，都应考虑它的应用，付诸于真实实践。</code>否则掌握再多的技术，也无任何价值。</p>
+</li>
+<li><p>学习技术前，先搞清楚它能解决什么问题。使用它有什么优势。<br>技术都能学会，但不见得都能运用得当。<br><code>有的放矢，选择性的学习是一种更好的策略。</code></p>
+</li>
+<li><p>做事没有真正的捷径，于高明和精明两个角度反复做实事，反复磨炼心性，就是捷径</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">爱上读书</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/04/爱上读书2019-04/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/03/Linux/">Linux</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/03/Linux/" class="archive-article-date">
+  	<time datetime="2019-06-03T12:16:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：1.2k字 | 阅读本文大概需要 ：5分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>参考 <a href="https://wangchujiang.com/linux-command/" target="_blank" rel="noopener">https://wangchujiang.com/linux-command/</a></p>
+<h3 id="查询网络端口占用情况"><a href="#查询网络端口占用情况" class="headerlink" title="查询网络端口占用情况"></a>查询网络端口占用情况</h3><ul>
+<li><p>netstat 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -an | grep 3306</span><br></pre></td></tr></table></figure>
+<p>3306 替换成需要 grep 的端口号</p>
+</li>
+<li><p>lsof 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:80</span><br><span class="line"></span><br><span class="line">lsof -i tcp:80</span><br></pre></td></tr></table></figure>
+<p>-i 参数表示网络链接，:80 指明端口号</p>
+</li>
+<li><p>查看所有进程监听的端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i -P | grep -i listen</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="获取内存总大小"><a href="#获取内存总大小" class="headerlink" title="获取内存总大小"></a>获取内存总大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep MemTotal /proc/meminfo</span><br></pre></td></tr></table></figure>
+<h3 id="获取交换分区大小"><a href="#获取交换分区大小" class="headerlink" title="获取交换分区大小"></a>获取交换分区大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep SwapTotal /proc/meminfo</span><br></pre></td></tr></table></figure>
+<h3 id="查看-tomcat-进程打开文件数量"><a href="#查看-tomcat-进程打开文件数量" class="headerlink" title="查看 tomcat 进程打开文件数量"></a>查看 tomcat 进程打开文件数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查看进程 pid：</span><br><span class="line">ps aux|grep tomcat</span><br><span class="line"></span><br><span class="line">根据 pid 查看打开文件数量：</span><br><span class="line">lsof -p pid|wc -l</span><br></pre></td></tr></table></figure>
+<h3 id="查看目录下文件或目录个数"><a href="#查看目录下文件或目录个数" class="headerlink" title="查看目录下文件或目录个数"></a>查看目录下文件或目录个数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l|wc -l</span><br></pre></td></tr></table></figure>
+<h3 id="查看磁盘空间分配情况"><a href="#查看磁盘空间分配情况" class="headerlink" title="查看磁盘空间分配情况"></a>查看磁盘空间分配情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<h3 id="查看当前目录下各目录大小"><a href="#查看当前目录下各目录大小" class="headerlink" title="查看当前目录下各目录大小"></a>查看当前目录下各目录大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
+<h3 id="路径名中含空格"><a href="#路径名中含空格" class="headerlink" title="路径名中含空格"></a>路径名中含空格</h3><ul>
+<li>使用转义字符 \</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /Users/mac126/Library/Application\ Support/Beyond\ Compare/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>加双引号 “” 或 单引号’’</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls /Users/mac126/Library/&quot;Application Support&quot;/&quot;Beyond Compare&quot;/</span><br><span class="line"></span><br><span class="line">ls /Users/mac126/Library/&apos;Application Support&apos;/&apos;Beyond Compare&apos;/</span><br></pre></td></tr></table></figure>
+<h3 id="时间校准"><a href="#时间校准" class="headerlink" title="时间校准"></a>时间校准</h3><p>1) 安装 ntpdate，执行以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install ntpdate -y</span><br></pre></td></tr></table></figure></p>
+<p>2) 手工同步网络时间，执行以下命令，将从 time.nist.gov 同步时间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ntpdate 0.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">若上面的时间服务器不可用，也可以选择以下服务器同步时间</span><br><span class="line"></span><br><span class="line">　　time.nist.gov</span><br><span class="line"></span><br><span class="line">　　time.nuri.net</span><br><span class="line"></span><br><span class="line">　　0.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　1.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　2.asia.pool.ntp.org</span><br><span class="line"></span><br><span class="line">　　3.asia.pool.ntp.org</span><br></pre></td></tr></table></figure></p>
+<p>3) 使用 crontab 计划任务定时更新网络时间，修改 crontab 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/crontab</span><br><span class="line"></span><br><span class="line">* */1 * * * ntpdate 0.asia.pool.ntp.org //在末尾增加,每隔1小时同步一次时间。</span><br></pre></td></tr></table></figure></p>
+<p></p><p>4) 使用 date 命令查看当前时间</p><p></p>
+<p></p><p>5) 系统时间同步到硬件，防止系统重启后时间呗还原</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure><p></p>
+<h3 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h3><h4 id="查看-firewall-服务状态"><a href="#查看-firewall-服务状态" class="headerlink" title="查看 firewall 服务状态"></a>查看 firewall 服务状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br><span class="line"></span><br><span class="line">出现Active: active (running)切高亮显示则表示是启动状态</span><br><span class="line">出现 Active: inactive (dead)灰色表示停止</span><br></pre></td></tr></table></figure>
+<h4 id="关闭防火墙命令"><a href="#关闭防火墙命令" class="headerlink" title="关闭防火墙命令"></a>关闭防火墙命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="开启防火墙"><a href="#开启防火墙" class="headerlink" title="开启防火墙"></a>开启防火墙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="关闭开机自启动"><a href="#关闭开机自启动" class="headerlink" title="关闭开机自启动"></a>关闭开机自启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="开启开机启动"><a href="#开启开机启动" class="headerlink" title="开启开机启动"></a>开启开机启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="查看-firewall-的状态"><a href="#查看-firewall-的状态" class="headerlink" title="查看 firewall 的状态"></a>查看 firewall 的状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<h4 id="查看防火墙规则"><a href="#查看防火墙规则" class="headerlink" title="查看防火墙规则"></a>查看防火墙规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+<h4 id="查询端口是否开放"><a href="#查询端口是否开放" class="headerlink" title="查询端口是否开放"></a>查询端口是否开放</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --query-port=8080/tcp</span><br></pre></td></tr></table></figure>
+<h4 id="开放-80-端口"><a href="#开放-80-端口" class="headerlink" title="开放 80 端口"></a>开放 80 端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=80/tcp</span><br></pre></td></tr></table></figure>
+<h4 id="移除-80-端口"><a href="#移除-80-端口" class="headerlink" title="移除 80 端口"></a>移除 80 端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --remove-port=8080/tcp</span><br></pre></td></tr></table></figure>
+<h4 id="重启防火墙-修改配置后要重启防火墙"><a href="#重启防火墙-修改配置后要重启防火墙" class="headerlink" title="重启防火墙(修改配置后要重启防火墙)"></a>重启防火墙(修改配置后要重启防火墙)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h3 id="lsof-命令不识别"><a href="#lsof-命令不识别" class="headerlink" title="lsof 命令不识别"></a>lsof 命令不识别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装命令：yum install lsof</span><br></pre></td></tr></table></figure>
+<h3 id="shell-获取当前日期，当前时间"><a href="#shell-获取当前日期，当前时间" class="headerlink" title="shell 获取当前日期，当前时间"></a>shell 获取当前日期，当前时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DATE=&quot;`date +%Y-%m-%d`&quot;</span><br><span class="line">echo $DATE</span><br><span class="line"></span><br><span class="line">DATETIME=&quot;`date +%Y-%m-%d,%H:%m:%s`&quot;</span><br><span class="line">echo $DATE</span><br></pre></td></tr></table></figure>
+<h3 id="查看当前shell"><a href="#查看当前shell" class="headerlink" title="查看当前shell"></a>查看当前shell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $SHELL</span><br></pre></td></tr></table></figure>
+<h3 id="添加开机自启动脚本"><a href="#添加开机自启动脚本" class="headerlink" title="添加开机自启动脚本"></a>添加开机自启动脚本</h3><blockquote>
+<p>在/etc/rc.local中添加</p>
+</blockquote>
+<h2 id="Linux-定时任务示例"><a href="#Linux-定时任务示例" class="headerlink" title="Linux 定时任务示例"></a>Linux 定时任务示例</h2><h3 id="重启-Tomcat-服务脚本-restarttomcat-sh"><a href="#重启-Tomcat-服务脚本-restarttomcat-sh" class="headerlink" title="重启 Tomcat 服务脚本 - restarttomcat.sh"></a>重启 Tomcat 服务脚本 - restarttomcat.sh</h3><ul>
+<li><p>脚本下载地址</p>
+<p><a href="https://gitee.com/championwang/Linux/blob/master/restarttomcat.sh" target="_blank" rel="noopener">https://gitee.com/championwang/Linux/blob/master/restarttomcat.sh</a></p>
+</li>
+<li><p>可执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//赋予可执行权限命令</span><br><span class="line">chmod 777 restarttomcat.sh</span><br><span class="line"></span><br><span class="line">//执行命令-单独执行模式</span><br><span class="line">nohup ./restarttomcat.sh &amp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>脚本内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">export LANG=zh_CN.UTF-8</span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_191</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">export CATALINA_BASE=/home/wangwz/Desktop/apache-tomcat-8.0.53</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$CATALINA_BASE/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line"></span><br><span class="line">echo &quot;[$(date +&apos;%F %T&apos;)] &gt;&gt;&gt; Tomcat begin to restart.&quot;</span><br><span class="line">$CATALINA_BASE/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line"># Kill all remaining processes</span><br><span class="line">pidList=$(ps aux | grep $CATALINA_BASE | grep -v grep | awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line">for pid in $pidList; do</span><br><span class="line">	kill -9 $pid</span><br><span class="line">	echo &quot;[$(date +&apos;%F %T&apos;)] &gt;&gt;&gt; Kill the process [$pid] successfully.&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">sleep 5</span><br><span class="line">$CATALINA_BASE/bin/startup.sh</span><br><span class="line">echo &quot;[$(date +&apos;%F %T&apos;)] &gt;&gt;&gt; Tomcat restart complete.&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="添加定时任务，实现定时重启-Tomcat-服务器"><a href="#添加定时任务，实现定时重启-Tomcat-服务器" class="headerlink" title="添加定时任务，实现定时重启 Tomcat 服务器"></a>添加定时任务，实现定时重启 Tomcat 服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>添加内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 * * * /bin/bash /home/wangwz/Desktop/restarttomcat.sh &gt;&gt; /home/restart.log</span><br></pre></td></tr></table></figure>
+<h3 id="查看定时任务"><a href="#查看定时任务" class="headerlink" title="查看定时任务"></a>查看定时任务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+<h3 id="忘记-root-密码"><a href="#忘记-root-密码" class="headerlink" title="忘记 root 密码"></a>忘记 root 密码</h3><blockquote>
+<p>以 单用户模式进入，修改 root 密码。如果 /etc/passwd 文件不存在，则需要手动创建，并填写如下内容「必需」<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">sssd:x:989:986:User for sssd:/:/sbin/nologin</span><br><span class="line">gdm:x:42:42::/var/lib/gdm:/sbin/nologin</span><br><span class="line">gnome-initial-setup:x:988:983::/run/gnome-initial-setup/:/sbin/nologin</span><br><span class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Ubuntu-开启-root"><a href="#Ubuntu-开启-root" class="headerlink" title="Ubuntu 开启 root"></a>Ubuntu 开启 root</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//给 root 用户设置密码</span><br><span class="line">sudo passwd root</span><br><span class="line"></span><br><span class="line">//使用 root 用户登陆</span><br><span class="line">sudo vi /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</span><br><span class="line">在最后增加 greeter-show-manual-login=true </span><br><span class="line"></span><br><span class="line">//关闭 guest 用户</span><br><span class="line">sudo vi /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</span><br><span class="line">在最后增加 allow-guest=false</span><br></pre></td></tr></table></figure>
+<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><ol>
+<li><p>将 jdkXXX.tar.gz 放入/usr/java 文件夹中，解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf jdkXXX.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line">在最后添加：</span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_191</span><br><span class="line">export JRE_HOME=/usr/java/jdk1.8.0_191/jre</span><br><span class="line">export PATH=$PATH:./:/usr/java/jdk1.8.0_191/bin:/sbin</span><br><span class="line">export CLASSPATH=./:/usr/java/jdk1.8.0_191/lib:/usr/java/jdk1.8.0_191/jre/lib</span><br><span class="line"></span><br><span class="line">//使刚才的修改生效</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立软链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//先删除软连接</span><br><span class="line">rm -fr /usr/bin/java</span><br><span class="line"></span><br><span class="line">ln –s /usr/java/1.8.0_191/bin/java  /usr/bin/java</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试 jdk 是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java –version</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Samba"><a href="#Samba" class="headerlink" title="Samba"></a>Samba</h2><blockquote>
+<p>待整理</p>
+<p>E:\Study\Samba</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/03/Linux/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Windows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -421,7 +1556,7 @@
 <h3 id="win10-操作中心开关呈灰色无法打开"><a href="#win10-操作中心开关呈灰色无法打开" class="headerlink" title="win10 操作中心开关呈灰色无法打开"></a>win10 操作中心开关呈灰色无法打开</h3><ol>
 <li>运行 gpedit.msc</li>
 <li>用户配置 - 管理模板 - “开始”菜单和任务栏-右侧设置中「删除通知和操作中心」-双击打开新窗口-来回切换至「未配置」-确定</li>
-<li>设置-任务栏通知区域-打开或关闭系统图标-操作中心</li>
+<li>设置-任务栏通知区域-打开或关闭系统图标-操作中心 </li>
 </ol>
 
       
@@ -620,7 +1755,8 @@
 <li>删除JOB<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; begin</span><br><span class="line">　　2 dbms_job.remove（:jobno）; :jobno可以用dba_jobs.job的值代替如：1198</span><br><span class="line">　　3 end;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="处理空表"><a href="#处理空表" class="headerlink" title="处理空表"></a>处理空表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; connect sgp/sgp</span><br><span class="line">SQL&gt; set echo off</span><br><span class="line">SQL&gt; set feedback off</span><br><span class="line">SQL&gt; set pagesize 0</span><br><span class="line">SQL&gt; set linesize 9000</span><br><span class="line">SQL&gt; set tab off</span><br><span class="line">SQL&gt; spool sgp_deal_tablenull_107.sql</span><br><span class="line">SQL&gt; select &apos;alter table &apos;||table_name||&apos; allocate extent;&apos; from user_tables where num_rows=0;</span><br><span class="line">SQL&gt; spool off</span><br><span class="line"></span><br><span class="line">执行完以后，你会得到一个文件：sgp_deal_tablenull_107.sql，</span><br><span class="line">把这个文件里面的非sql语句删掉，只保留alter table的那些sql，</span><br><span class="line">然后执行一下这些sql</span><br></pre></td></tr></table></figure>
+<h4 id="处理空表"><a href="#处理空表" class="headerlink" title="处理空表"></a>处理空表</h4><p><code>alter table tablename allocate extent;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; connect sgp/sgp</span><br><span class="line">SQL&gt; set echo off</span><br><span class="line">SQL&gt; set feedback off</span><br><span class="line">SQL&gt; set pagesize 0</span><br><span class="line">SQL&gt; set linesize 9000</span><br><span class="line">SQL&gt; set tab off</span><br><span class="line">SQL&gt; spool sgp_deal_tablenull_107.sql</span><br><span class="line">SQL&gt; select &apos;alter table &apos;||table_name||&apos; allocate extent;&apos; from user_tables where num_rows=0;</span><br><span class="line">SQL&gt; spool off</span><br><span class="line"></span><br><span class="line">执行完以后，你会得到一个文件：sgp_deal_tablenull_107.sql，</span><br><span class="line">把这个文件里面的非sql语句删掉，只保留alter table的那些sql，</span><br><span class="line">然后执行一下这些sql</span><br></pre></td></tr></table></figure>
 <h4 id="注释处理"><a href="#注释处理" class="headerlink" title="注释处理"></a>注释处理</h4><h5 id="获取表注释"><a href="#获取表注释" class="headerlink" title="获取表注释"></a>获取表注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &apos;comment on table &apos;||t.table_name||&apos; is &apos;&apos;&apos;||t.comments||&apos;&apos;&apos;;&apos; from user_tab_comments t;</span><br></pre></td></tr></table></figure>
 <h5 id="获取列注释"><a href="#获取列注释" class="headerlink" title="获取列注释"></a>获取列注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &apos;comment on column &apos;||c.table_name||&apos;.&apos;||c.column_name||&apos; is &apos;&apos;&apos;||c.comments||&apos;&apos;&apos;;&apos; from user_col_comments c;</span><br></pre></td></tr></table></figure>
 <h5 id="删除表注释"><a href="#删除表注释" class="headerlink" title="删除表注释"></a>删除表注释</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、select &apos;comment on table &apos;||t.table_name||&apos; is &apos;&apos;&apos;&apos;;&apos; from user_tab_comments t;   </span><br><span class="line">2、导出到cvs文件中，使用execl打开，（删除第一行）拷贝到plsql中执行即可删除</span><br></pre></td></tr></table></figure>
@@ -1009,7 +2145,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.5k字 | 阅读本文大概需要 ：10分钟
+					字数：2.6k字 | 阅读本文大概需要 ：10分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -1176,6 +2312,7 @@
 <p>Xnip  —— 截长图**</p>
 <p>QQ —— Command + Ctrl + A</p>
 <h4 id="录屏"><a href="#录屏" class="headerlink" title="录屏"></a>录屏</h4><p>QQ —— Command + Ctrl + R</p>
+<p>Kap</p>
 <h4 id="视频压缩"><a href="#视频压缩" class="headerlink" title="视频压缩"></a>视频压缩</h4><p>HandBrake</p>
 <h4 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h4><ul>
 <li><p>Bob「支持<strong>划词翻译</strong>和<strong>截图翻译</strong>」</p>
@@ -1248,8 +2385,9 @@
 <li><p>uTools「已不用」</p>
 <p>快速启动、包含各种工具的工具</p>
 </li>
-<li><p>QuickLook Plugins</p>
-<p>Mac 空格预览文件增强</p>
+<li><p><code>QuickLook Plugins</code></p>
+<p><code>Mac 空格预览文件增强</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>BetterAndBetter「已不用」</p>
 <p>Mac 性能检测，快速启动，快捷键等集成工具</p>
@@ -1831,15 +2969,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">5+App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">5+App</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1851,7 +2997,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1859,11 +3005,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Flex布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1875,11 +3025,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1887,19 +3033,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1915,6 +3061,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
@@ -1923,11 +3077,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1935,15 +3085,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1951,19 +3093,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1971,19 +3109,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1991,11 +3133,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
