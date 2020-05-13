@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 70</p>
-			<p>总字数 <span class="post-count">71.5k</span></p>
+			<p>总文章数 72</p>
+			<p>总字数 <span class="post-count">73.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,250 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-经验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/26/经验/">经验</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/26/经验/" class="archive-article-date">
+  	<time datetime="2020-04-26T10:22:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：100字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h2><ol>
+<li>做手机端开发，包括微信公众号、App等，调试时，想办法切换到在PC浏览器上，这样有助于提高调试效率</li>
+<li>手机端后台接口中不要从 session 中获取值，这些值可能已经失效。可以从手机端传值到后端，也可以根据传的值「例如userid」等再次从数据库获取</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">经验</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/26/经验/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-微信公众号开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/22/微信公众号开发/">微信公众号开发</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/22/微信公众号开发/" class="archive-article-date">
+  	<time datetime="2020-04-22T04:24:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：1.4k字 | 阅读本文大概需要 ：6分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
+<li>微信公众号分为订阅号、服务号和小程序 3 种，应用场景不同，能力依次增强<ol>
+<li>订阅号：为媒体和个人提供一种新的信息传播方式，构建与读者之间更好的沟通与管理模式</li>
+<li>服务号：给企业和组织提供更强大的业务服务与用户管理能力，帮助企业快速实现全新的公众号服务平台</li>
+<li>小程序：一种新的开放能力,可以在微信内被便捷地获取和传播,同时具有出色的使用体验</li>
+</ol>
+</li>
+</ol>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><ol>
+<li><p>测试号管理——<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&amp;t=sandbox/index" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&amp;t=sandbox/index</a></p>
+<p>内网穿透参考<a href="http://114.67.95.48/tools/NATAPP.html" target="_blank" rel="noopener">NATAPP配置</a>，获取<code>域名</code></p>
+<ul>
+<li><code>appID</code> 和 <code>appsecret</code> 配置到项目 <code>wx.properties</code> 相关配置项中</li>
+<li>接口配置信息：http://<code>域名</code>/<code>项目路径</code>/checkIn/checkIn.do</li>
+<li>JS 接口安全域名：<code>域名</code></li>
+<li>网页账号-网页授权获取用户基本信息：<code>域名</code></li>
+</ul>
+</li>
+<li><p>微信公众平台接口调试工具——<a href="https://mp.weixin.qq.com/debug?token=1849350301&amp;lang=zh_CN" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug?token=1849350301&amp;lang=zh_CN</a></p>
+<p>获取、创建、删除菜单，菜单中注册路径使用正确<code>域名</code></p>
+<ul>
+<li><p>创建菜单</p>
+<p>参考 <a href="https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        &quot;button&quot;: [</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;name&quot;: &quot;随手拍&quot;, </span><br><span class="line">                &quot;sub_button&quot;: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;view&quot;, </span><br><span class="line">                        &quot;name&quot;: &quot;我要举报&quot;, </span><br><span class="line">                        &quot;url&quot;: &quot;http://wangwz.natapp1.cc/scm-web/oauth2/oauth2buildAuthor.do?page=addevent&quot;, </span><br><span class="line">                        &quot;sub_button&quot;: [ ]</span><br><span class="line">                    &#125;, </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;view&quot;, </span><br><span class="line">                        &quot;name&quot;: &quot;举报查询&quot;, </span><br><span class="line">                        &quot;url&quot;: &quot;http://wangwz.natapp1.cc/scm-web/oauth2/oauth2buildAuthor.do?page=eventSearch&quot;, </span><br><span class="line">                        &quot;sub_button&quot;: [ ]</span><br><span class="line">                    &#125;, </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;view&quot;, </span><br><span class="line">                        &quot;name&quot;: &quot;诉求咨询&quot;, </span><br><span class="line">                        &quot;url&quot;: &quot;http://wangwz.natapp1.cc/scm-web/oauth2/oauth2buildAuthor.do?page=appeal&quot;, </span><br><span class="line">                        &quot;sub_button&quot;: [ ]</span><br><span class="line">                    &#125;, </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;view&quot;, </span><br><span class="line">                        &quot;name&quot;: &quot;我的诉求&quot;, </span><br><span class="line">                        &quot;url&quot;: &quot;http://wangwz.natapp1.cc/scm-web/oauth2/oauth2buildAuthor.do?page=myAppeal&quot;, </span><br><span class="line">                        &quot;sub_button&quot;: [ ]</span><br><span class="line">                    &#125;, </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;view&quot;, </span><br><span class="line">                        &quot;name&quot;: &quot;我的积分&quot;, </span><br><span class="line">                        &quot;url&quot;: &quot;http://wangwz.natapp1.cc/scm-web/oauth2/oauth2buildAuthor.do?page=myScore&quot;, </span><br><span class="line">                        &quot;sub_button&quot;: [ ]</span><br><span class="line">                    &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="生成环境"><a href="#生成环境" class="headerlink" title="生成环境"></a>生成环境</h2><ol>
+<li><p>登录微信公众号后台——<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">https://mp.weixin.qq.com/</a></p>
+</li>
+<li><p>配置域名——</p>
+<ol>
+<li>打开 “设置 — 公众号设置 — 功能设置”，点击业务域名最右侧的 “设置”</li>
+<li>下载校验文件（txt 格式的），下载之后，上传到应用服务器上，放在 Tomcat—webapps—ROOT 文件夹下（如果 webapps 下没有 ROOT 文件夹，可新建一个 ROOT 文件夹，ROOT 要大写）</li>
+<li>填写<code>域名</code>，点击保存，提示保存成功，则业务域名绑定成功</li>
+<li>设置“JS 接口安全域名” 和 “网页授权域名”，不需要下载 <code>txt</code></li>
+<li>微信公众号后台——自定义菜单路径「包含<code>域名</code>」</li>
+<li>项目 <code>wx.properties</code>中服务路径「包含<code>域名</code>」</li>
+</ol>
+</li>
+<li><p>开发者 ID 和开发者密码的获取</p>
+<ol>
+<li><p>在左侧找到 “开发 — 基本配置”，如果是新申请的微信公众号，会提示让开通成为开发者，点击同意开通即可</p>
+</li>
+<li><p>开通之后可以直接看到开发者 ID</p>
+</li>
+<li>点击开发者密码（APPSecret）后面的 “启用”，需要微信公众号的管理员进行验证，才能查看开发者密码。管理员验证通过后，查看开发者密码</li>
+<li>将<code>appID</code> 和 <code>appsecret</code> 配置到项目 <code>wx.properties</code> 相关配置项中，重启项目</li>
+</ol>
+</li>
+</ol>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ol>
+<li><p>maven 引入依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.soecode.wx-tools&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;wx-tools&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.1.4-RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wx.properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#测试</span><br><span class="line">wx.appId=wxbcb076b53ecd69b0</span><br><span class="line">wx.appSecret=be4ada6c0a205409e3d9274374080a34</span><br><span class="line">wx.token=hingesoft</span><br><span class="line">wx.aesKey=</span><br><span class="line">wx.destUrl=http://mau56w.natappfree.cc/scm-web/</span><br><span class="line"></span><br><span class="line">#正式</span><br><span class="line">#wx.appId=wxc182e8edfd4b7c64</span><br><span class="line">#wx.appSecret=b34419838c36ef79b81bb57c34c60a89</span><br><span class="line">#wx.token=hingesoft</span><br><span class="line">#wx.aesKey=</span><br><span class="line">#wx.destUrl=http://lz.bjtcrj.com/scm/</span><br><span class="line"></span><br><span class="line">wx.eventAddUrl=addevent</span><br><span class="line">wx.eventSearchUrl=eventSearch</span><br><span class="line">wx.myScoreUrl=myScore</span><br><span class="line">wx.appealUrl=appeal</span><br><span class="line">wx.myAppealUrl=myAppeal</span><br><span class="line"></span><br><span class="line">#微信公众号后台-自定义菜单配置</span><br><span class="line">#案件上报： http://域名/项目名称/oauth2/oauth2buildAuthor.do?page=addevent</span><br><span class="line">#案件查询： http://域名/项目名称/oauth2/oauth2buildAuthor.do?page=eventSearch</span><br><span class="line">#我的积分： http://域名/项目名称/oauth2/oauth2buildAuthor.do?page=myScore</span><br><span class="line">#诉求咨询： http://域名/项目名称/oauth2/oauth2buildAuthor.do?page=appeal</span><br><span class="line">#我的诉求： http://域名/项目名称/oauth2/oauth2buildAuthor.do?page=myAppeal</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><ol>
+<li><p>weui</p>
+<p><a href="https://github.com/Tencent/weui/wiki" target="_blank" rel="noopener">https://github.com/Tencent/weui/wiki</a></p>
+</li>
+<li><p>weui.js——weui 的轻量级 js 封装</p>
+<p><a href="https://github.com/Tencent/weui.js" target="_blank" rel="noopener">https://github.com/Tencent/weui.js</a></p>
+<p>注意：由于微信小程序不支持 dom 操作，所以 weui.js 并不适用于小程序。不过 WeUI 也为小程序开发了另外的版本</p>
+</li>
+<li><p>JS-SDK</p>
+<p><a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html</a></p>
+<ol>
+<li><p>处理图片数据为 base64</p>
+<p><code>wx.chooseImage</code> 获取到的图片为一个临时路径，微信同时提供了 <code>wx.getLocalImgData</code> 方法可以把获取到的路径转为 base64 格式的数据，至此就可以轻松许多了，但是转出来的 base64 在 android 和 iOS 中稍有不同，需要特别注意一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wx.getLocalImgData(&#123;</span><br><span class="line">    localId: req.localIds[0].toString(),</span><br><span class="line">    success: function (res) &#123;</span><br><span class="line">        const localData = res.localData;</span><br><span class="line">        let imageBase64 = &apos;&apos;;</span><br><span class="line">        if (localData.indexOf(&apos;data:image&apos;) == 0) &#123;</span><br><span class="line">            //苹果的直接赋值，默认生成&apos;data:image/jpeg;base64,&apos;的头部拼接</span><br><span class="line">            imageBase64 = localData;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //此处是安卓中的唯一得坑！在拼接前需要对localData进行换行符的全局替换</span><br><span class="line">            //此时一个正常的base64图片路径就完美生成赋值到img的src中了</span><br><span class="line">            imageBase64 = &apos;data:image/jpeg;base64,&apos; + localData.replace(/\n/g, &apos;&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>WeixinJSBridge</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//关闭当前页面</span><br><span class="line">WeixinJSBridge.call(&apos;closeWindow&apos;);</span><br><span class="line"></span><br><span class="line">//对比：JS-SDK</span><br><span class="line">//需要引入微信的 js-sdk ,需要配置认证信息</span><br><span class="line">wx.closeWindow();</span><br><span class="line"></span><br><span class="line">//隐藏右下面工具栏</span><br><span class="line">WeixinJSBridge.call(&apos;hideToolbar&apos;);</span><br><span class="line"></span><br><span class="line">//显示右下面工具栏</span><br><span class="line">WeixinJSBridge.call(&apos;showToolbar&apos;); </span><br><span class="line"></span><br><span class="line">//隐藏右上角三个点按钮</span><br><span class="line">WeixinJSBridge.call(&apos;hideOptionMenu&apos;); </span><br><span class="line"></span><br><span class="line">//显示右上角三个点按钮</span><br><span class="line">WeixinJSBridge.call(&apos;showOptionMenu&apos;); </span><br><span class="line"></span><br><span class="line">//还提供一些高级功能功能，比如分享等</span><br><span class="line">WeixinJSBridge.invoke</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p><del>Wx-tools——<a href="https://antgan.gitbooks.io/wx-tools/content/" target="_blank" rel="noopener">https://antgan.gitbooks.io/wx-tools/content/</a></del></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">微信公众号开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/22/微信公众号开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-BaiduMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -904,7 +1148,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：183字 | 阅读本文大概需要 ：1分钟
+					字数：293字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -922,8 +1166,12 @@
 <h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><ol>
 <li><code>UI 调试</code>在 PC 浏览器-移动模式下调试，<code>先模拟数据，再真实数据</code></li>
 <li><code>5+ 接口调试</code>在真机环境下调试</li>
+<li>测试版 App：应用名称和 apk 文件名都加上测试标识，例如：智慧执法测试版，zhsqapp_test.apk</li>
+<li>App 检测更新：先更新，再清除缓存，后重启App</li>
+<li>不管打正式包还是测试包，注意核查 index.js 中服务端配置地址。正式包对应正式地址，测试包对应测试地址，切不可搞混。</li>
 </ol>
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><ol>
+<h2 id="离线打包"><a href="#离线打包" class="headerlink" title="离线打包"></a>离线打包</h2><p>《5+App 离线打包指南.md》</p>
+<h2 id="云打包"><a href="#云打包" class="headerlink" title="云打包"></a>云打包</h2><ol>
 <li><p>App 打更新包，只能更新静态资源，如果新增 5+ 模块或 SDK 权限等，则需要打新版本包，并让用户检测自动执行相应下载、更新或安装操作</p>
 </li>
 <li><p>App 打包时记清楚 <code>Android 包名</code> 和 <code>是否使用自有证书，及相关证书文件、证书别名、证书私钥密码</code>，在 unipush 配置中开通应用推送功能时，要填写正确。</p>
@@ -984,178 +1232,9 @@
 
 
   
-    <article id="post-MUI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/22/MUI/">MUI.md</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/22/MUI/" class="archive-article-date">
-  	<time datetime="2020-02-22T15:32:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：221字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>引入资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--基础mui资源--&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/css/mui.min.css&quot;&gt;</span><br><span class="line">&lt;script src=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/js/mui.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--mui picker 选择器资源--&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/css/mui.picker.min.css&quot;&gt;</span><br><span class="line">&lt;script src=&quot;$&#123;pageContext.request.contextPath&#125;/pages/app/infos/js/mui.picker.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>日期时间选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//html</span><br><span class="line">&lt;input id=&quot;departtime&quot; type=&quot;text&quot; placeholder=&quot;请选择出发日期&quot;/&gt;</span><br><span class="line">&lt;input id=&quot;visittime&quot; type=&quot;text&quot; placeholder=&quot;请选择到达日期&quot;/&gt;</span><br><span class="line"></span><br><span class="line">//js</span><br><span class="line">$(&apos;#departtime, #visittime&apos;).click(function () &#123;</span><br><span class="line">            var _self = this;</span><br><span class="line">            if(_self.picker) &#123;</span><br><span class="line">                _self.picker.show(function (rs) &#123;</span><br><span class="line">                    _self.value = rs.text;</span><br><span class="line">                    _self.picker.dispose();</span><br><span class="line">                    _self.picker = null;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                _self.picker = new mui.DtPicker(&#123;&#125;);</span><br><span class="line">                _self.picker.show(function(rs) &#123;</span><br><span class="line">                    _self.value = rs.text;</span><br><span class="line">                    _self.picker.dispose();</span><br><span class="line">                    _self.picker = null;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MUI.md</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/22/MUI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SLF4J-Logback" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/SLF4J-Logback/">SLF4J+Logback</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/18/SLF4J-Logback/" class="archive-article-date">
-  	<time datetime="2020-01-18T05:27:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：1.3k字 | 阅读本文大概需要 ：7分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- slf4j + logback --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;1.8.0-beta2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;logback-core&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;1.3.0-alpha4&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;logback-classic&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;1.3.0-alpha4&lt;/version&gt;</span><br><span class="line">			&lt;exclusions&gt;</span><br><span class="line">				&lt;exclusion&gt;</span><br><span class="line">					&lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;</span><br><span class="line">					&lt;groupId&gt;org.slf4j&lt;/groupId&gt;</span><br><span class="line">				&lt;/exclusion&gt;</span><br><span class="line">			&lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="logback-xml"><a href="#logback-xml" class="headerlink" title="logback.xml"></a>logback.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径--&gt;  </span><br><span class="line">    &lt;property name=&quot;LOG_HOME&quot; value=&quot;../logs&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 控制台输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</span><br><span class="line">       &lt;!-- 日志输出编码 --&gt;  </span><br><span class="line">       &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;   </span><br><span class="line">        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;   </span><br><span class="line">             &lt;!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符--&gt; </span><br><span class="line">            &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n   </span><br><span class="line">            &lt;/pattern&gt;   </span><br><span class="line">        &lt;/layout&gt;   </span><br><span class="line">    &lt;/appender&gt;   </span><br><span class="line"></span><br><span class="line">    &lt;!-- 访问日志 appender  --&gt;</span><br><span class="line">    &lt;appender name=&quot;DEBUG&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 按天回滚 daily --&gt;</span><br><span class="line">            &lt;fileNamePattern&gt;$&#123;LOG_HOME&#125;/debug-%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 30天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;30&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger - %msg%n&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;!--日志文件最大的大小--&gt;</span><br><span class="line">        &lt;triggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;</span><br><span class="line">            &lt;MaxFileSize&gt;500MB&lt;/MaxFileSize&gt;</span><br><span class="line">        &lt;/triggeringPolicy&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- info日志 appender  --&gt;</span><br><span class="line">    &lt;appender name=&quot;INFO&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 按天回滚 daily --&gt;</span><br><span class="line">            &lt;fileNamePattern&gt;$&#123;LOG_HOME&#125;/info-%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 30天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;30&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger - %msg%n&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line">            &lt;level&gt;INFO&lt;/level&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">        &lt;!--日志文件最大的大小--&gt;</span><br><span class="line">        &lt;triggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;</span><br><span class="line">            &lt;MaxFileSize&gt;100MB&lt;/MaxFileSize&gt;</span><br><span class="line">        &lt;/triggeringPolicy&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- warn 日志 appender  --&gt;</span><br><span class="line">    &lt;appender name=&quot;WARN&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 按天回滚 daily --&gt;</span><br><span class="line">            &lt;fileNamePattern&gt;$&#123;LOG_HOME&#125;/warn-%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 30天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;30&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger - %msg%n&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line">            &lt;level&gt;WARN&lt;/level&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">        &lt;!--日志文件最大的大小--&gt;</span><br><span class="line">        &lt;triggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;</span><br><span class="line">            &lt;MaxFileSize&gt;100MB&lt;/MaxFileSize&gt;</span><br><span class="line">        &lt;/triggeringPolicy&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 出错日志 appender  --&gt;</span><br><span class="line">    &lt;appender name=&quot;ERROR&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 按天回滚 daily --&gt;</span><br><span class="line">            &lt;fileNamePattern&gt;$&#123;LOG_HOME&#125;/error-%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 30天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;30&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger - %msg%n&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;&lt;!-- 只打印错误日志 --&gt;</span><br><span class="line">            &lt;level&gt;ERROR&lt;/level&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">        &lt;!--日志文件最大的大小--&gt;</span><br><span class="line">        &lt;triggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt;</span><br><span class="line">            &lt;MaxFileSize&gt;100MB&lt;/MaxFileSize&gt;</span><br><span class="line">        &lt;/triggeringPolicy&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--控制台打印资源加载信息--&gt;</span><br><span class="line">    &lt;!--一般开发或测试环境开启,对应 debug、info 级别 --&gt;</span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--日志打印的包的范围，及分类日志文件存储 --&gt;</span><br><span class="line">    &lt;!--一般生产环境开启--&gt;</span><br><span class="line">    &lt;logger name=&quot;com.bjtcrj.dealemptytables&quot; level=&quot;DEBUG&quot; additivity=&quot;false&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;DEBUG&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;INFO&quot; /&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;WARN&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;ERROR&quot;/&gt;</span><br><span class="line">    &lt;/logger&gt;</span><br><span class="line"></span><br><span class="line">     &lt;!--日志异步到数据库 --&gt;  </span><br><span class="line">    &lt;!-- &lt;appender name=&quot;DB&quot; class=&quot;ch.qos.logback.classic.db.DBAppender&quot;&gt;</span><br><span class="line">        日志异步到数据库 </span><br><span class="line">        &lt;connectionSource class=&quot;ch.qos.logback.core.db.DriverManagerConnectionSource&quot;&gt;</span><br><span class="line">           连接池 </span><br><span class="line">           &lt;dataSource class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;</span><br><span class="line">              &lt;driverClass&gt;com.mysql.jdbc.Driver&lt;/driverClass&gt;</span><br><span class="line">              &lt;url&gt;jdbc:mysql://127.0.0.1:3306/databaseName&lt;/url&gt;</span><br><span class="line">              &lt;user&gt;root&lt;/user&gt;</span><br><span class="line">              &lt;password&gt;root&lt;/password&gt;</span><br><span class="line">            &lt;/dataSource&gt;</span><br><span class="line">        &lt;/connectionSource&gt;</span><br><span class="line">  &lt;/appender&gt; --&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private static final Logger logger = LoggerFactory.getLogger(Classname.class); </span><br><span class="line"></span><br><span class="line">logger.debug(&quot;debug&quot;);</span><br><span class="line">logger.info(&quot;info&quot;);</span><br><span class="line">logger.warn(&quot;warn&quot;);</span><br><span class="line">logger.error(&quot;error&quot;);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SLF4J+Logback</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/SLF4J-Logback/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1250,7 +1329,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">5+App 离线打包指南</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1258,7 +1337,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1270,15 +1357,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1286,7 +1365,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1294,11 +1377,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,15 +1389,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1322,7 +1401,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1330,11 +1409,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1342,11 +1421,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,7 +1433,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1366,11 +1449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1378,19 +1461,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1398,7 +1473,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1406,11 +1481,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1418,11 +1497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1430,11 +1509,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1454,10 +1537,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
@@ -1466,11 +1545,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
               </li>
              
               <li class="article-tag-list-item">

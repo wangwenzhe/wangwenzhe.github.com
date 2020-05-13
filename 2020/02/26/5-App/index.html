@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>5+App | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MUI MUI 使用教程 https://www.kancloud.cn/benhailong/mui/319751 官方MUI https://dev.dcloud.net.cn/mui/ui/  HTML5+ 5+  接口 http://www.html5plus.org/doc/  经验 UI 调试在 PC 浏览器-移动模式下调试，先模拟数据，再真实数据 5+ 接口调试在真机环境下调试  打">
+  <meta name="description" content="MUI MUI 使用教程 https://www.kancloud.cn/benhailong/mui/319751 官方MUI https://dev.dcloud.net.cn/mui/ui/  HTML5+ 5+  接口 http://www.html5plus.org/doc/  经验 UI 调试在 PC 浏览器-移动模式下调试，先模拟数据，再真实数据 5+ 接口调试在真机环境下调试 测试">
 <meta name="keywords" content="5+App">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5+App">
 <meta property="og:url" content="https://championwang.gitee.io/2020/02/26/5-App/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="MUI MUI 使用教程 https://www.kancloud.cn/benhailong/mui/319751 官方MUI https://dev.dcloud.net.cn/mui/ui/  HTML5+ 5+  接口 http://www.html5plus.org/doc/  经验 UI 调试在 PC 浏览器-移动模式下调试，先模拟数据，再真实数据 5+ 接口调试在真机环境下调试  打">
+<meta property="og:description" content="MUI MUI 使用教程 https://www.kancloud.cn/benhailong/mui/319751 官方MUI https://dev.dcloud.net.cn/mui/ui/  HTML5+ 5+  接口 http://www.html5plus.org/doc/  经验 UI 调试在 PC 浏览器-移动模式下调试，先模拟数据，再真实数据 5+ 接口调试在真机环境下调试 测试">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/oW5pSI.png">
 <meta property="og:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/cWbKLv.png">
-<meta property="og:updated_time" content="2020-05-08T03:03:58.557Z">
+<meta property="og:updated_time" content="2020-05-13T11:00:49.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5+App">
-<meta name="twitter:description" content="MUI MUI 使用教程 https://www.kancloud.cn/benhailong/mui/319751 官方MUI https://dev.dcloud.net.cn/mui/ui/  HTML5+ 5+  接口 http://www.html5plus.org/doc/  经验 UI 调试在 PC 浏览器-移动模式下调试，先模拟数据，再真实数据 5+ 接口调试在真机环境下调试  打">
+<meta name="twitter:description" content="MUI MUI 使用教程 https://www.kancloud.cn/benhailong/mui/319751 官方MUI https://dev.dcloud.net.cn/mui/ui/  HTML5+ 5+  接口 http://www.html5plus.org/doc/  经验 UI 调试在 PC 浏览器-移动模式下调试，先模拟数据，再真实数据 5+ 接口调试在真机环境下调试 测试">
 <meta name="twitter:image" content="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/oW5pSI.png">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
@@ -96,8 +96,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 70</p>
-			<p>总字数 <span class="post-count">71.5k</span></p>
+			<p>总文章数 72</p>
+			<p>总字数 <span class="post-count">73.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -180,7 +180,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：183字 | 阅读本文大概需要 ：1分钟
+					字数：293字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -198,8 +198,12 @@
 <h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><ol>
 <li><code>UI 调试</code>在 PC 浏览器-移动模式下调试，<code>先模拟数据，再真实数据</code></li>
 <li><code>5+ 接口调试</code>在真机环境下调试</li>
+<li>测试版 App：应用名称和 apk 文件名都加上测试标识，例如：智慧执法测试版，zhsqapp_test.apk</li>
+<li>App 检测更新：先更新，再清除缓存，后重启App</li>
+<li>不管打正式包还是测试包，注意核查 index.js 中服务端配置地址。正式包对应正式地址，测试包对应测试地址，切不可搞混。</li>
 </ol>
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><ol>
+<h2 id="离线打包"><a href="#离线打包" class="headerlink" title="离线打包"></a>离线打包</h2><p>《5+App 离线打包指南.md》</p>
+<h2 id="云打包"><a href="#云打包" class="headerlink" title="云打包"></a>云打包</h2><ol>
 <li><p>App 打更新包，只能更新静态资源，如果新增 5+ 模块或 SDK 权限等，则需要打新版本包，并让用户检测自动执行相应下载、更新或安装操作</p>
 </li>
 <li><p>App 打包时记清楚 <code>Android 包名</code> 和 <code>是否使用自有证书，及相关证书文件、证书别名、证书私钥密码</code>，在 unipush 配置中开通应用推送功能时，要填写正确。</p>
@@ -459,7 +463,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">5+App 离线打包指南</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,7 +471,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,15 +491,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,7 +499,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,11 +511,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,15 +523,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,11 +543,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,11 +555,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,7 +567,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,11 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,19 +595,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,7 +607,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,11 +615,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,11 +631,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,11 +643,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,10 +671,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
@@ -675,11 +679,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 检测 img src 变化 https://www.manongdao.com/article-1012985.ht">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-09T03:19:16.952Z">
+<meta property="og:updated_time" content="2020-05-09T06:35:43.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web">
 <meta name="twitter:description" content="HTML 引入css文件时，必须指定  rel=&amp;quot;stylesheet&amp;quot;  否则会加载失败 1&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;iconfont.css&amp;quot; /&amp;gt;   JavaScript 检测 img src 变化 https://www.manongdao.com/article-1012985.ht">
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 70</p>
-			<p>总字数 <span class="post-count">71.5k</span></p>
+			<p>总文章数 72</p>
+			<p>总字数 <span class="post-count">73.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.8k字 | 阅读本文大概需要 ：13分钟
+					字数：2.9k字 | 阅读本文大概需要 ：13分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -396,10 +396,17 @@ $(&quot;#inputid&quot;).on(&apos;focus&apos;, function () {
 <p><progress id="progressBar" value="0" max="100" style="width: 300px;"></progress><br><span id="percentage"></span><span id="time"></span><br><br /><br /></p>
 <p><input type="file" id="file" name="myfile" accept="image/x-png, image/jpg, image/jpeg, image/gif"/></p>
 <p><input type="button" onclick="UpladFile()" value="上传" /></p>
-<p><input type="button" onclick="cancleUploadFile()" value="取消" /><br></body><br></html><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Chrome 浏览器中点击链接，打开 IE 浏览器，跳转到指定页面并传递参数</span><br><span class="line"></span><br><span class="line">https://blog.csdn.net/zhaoyunfei1/article/details/104899996?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5</span><br><span class="line"></span><br><span class="line">1. 示例</span><br></pre></td></tr></table></figure></p>
-<p>   &lt;!DOCTYPE html&gt;<br>   <html lang="en"><br>   <head><br>       <meta charset="UTF-8"><br>       <title>调用本地 IE 浏览器打开百度首页</title><br>   </head><br>   <body><br>   <a href="openie://www.baidu.com">百度一下</a><br>   </body><br>   </html><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 注册文件 `openie.reg`</span><br></pre></td></tr></table></figure></p>
-<p>   Windows Registry Editor Version 5.00<br>   [HKEY_CLASSES_ROOT\openie]<br>   @=”URL:openie Protocol Handler”<br>   “URL Protocol”=””<br>   [HKEY_CLASSES_ROOT\openie\DefaultIcon]<br>   @=”C:\Program Files (x86)\Internet Explorer\iexplore.exe”<br>   [HKEY_CLASSES_ROOT\openie\shell]<br>   [HKEY_CLASSES_ROOT\openie\shell\open]<br>   [HKEY_CLASSES_ROOT\openie\shell\open\command]<br>   @=”cmd /c set m=%1 &amp; call set m=%%m:openie:=%% &amp; call \”C:\Program Files (x86)\Internet Explorer\iexplore.exe\” %%m%%”<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 注册文件说明</span><br><span class="line"></span><br><span class="line">## IE 浏览器打开其他浏览器</span><br></pre></td></tr></table></figure></p>
-<p>function start(){<br>            var objShell = new ActiveXObject(“wscript.shell”);<br>            var cmd= “cmd /c start C:/\”Program Files (x86)\”/Google/Chrome/Application/chrome.exe \”<a href="http://www.baidu.com\&quot;&quot;">http://www.baidu.com\&quot;&quot;</a>;<br>            objShell.Run(cmd,0,true);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 问题</span><br><span class="line"></span><br><span class="line">1. 点击 button 按钮后页面引起刷新</span><br></pre></td></tr></table></figure></p>
+<p><input type="button" onclick="cancleUploadFile()" value="取消" /><br></body><br></html><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Chrome 中打开 IE 浏览器，跳转到指定页面并传递参数</span><br><span class="line"></span><br><span class="line">https://blog.csdn.net/zhaoyunfei1/article/details/104899996?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5</span><br><span class="line"></span><br><span class="line">为方便使用，使用`winrar`将指定目录打包为`exe`，参考文档`《Windows-winrar打包exe.md》`</span><br><span class="line"></span><br><span class="line">1. 示例</span><br></pre></td></tr></table></figure></p>
+<p>   &lt;!DOCTYPE html&gt;<br>   <html lang="en"><br>   <head><br>       <meta charset="UTF-8"><br>       <title>调用本地 IE 浏览器打开百度首页</title><br>   </head><br>   <body><br>   <a href="openIE://www.baidu.com?a=1&b=2" />百度一下<br>   </body><br>   </html><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. `runreg.bat`</span><br></pre></td></tr></table></figure></p>
+<p>   REGEDIT /S openIE.reg<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. `openIE.reg`</span><br></pre></td></tr></table></figure></p>
+<p>   Windows Registry Editor Version 5.00</p>
+<p>   [HKEY_CLASSES_ROOT\openIE]<br>   @=”URL:openIE Protocol”<br>   “URL Protocol”=””</p>
+<p>   [HKEY_CLASSES_ROOT\openIE\DefaultIcon]<br>   @=”iexplore.exe,1”</p>
+<p>   [HKEY_CLASSES_ROOT\openIE\shell]</p>
+<p>   [HKEY_CLASSES_ROOT\openIE\shell\open]</p>
+<p>   [HKEY_CLASSES_ROOT\openIE\shell\open\command]<br>   @=”\”C:\Program Files\openIE\openIE.bat\” \”%1\””<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. `openIE.bat`</span><br></pre></td></tr></table></figure></p>
+<p>   @echo off<br>   set m=%1%<br>   set m=%m:openIE:=%<br>   IF “%PROCESSOR_ARCHITECTURE%” == “x86” (<br>       start “” “C:\Program Files\Internet Explorer\iexplore.exe” %m%<br>   ) ELSE (<br>       IF “%PROCESSOR_ARCHITECTURE%” == “X86” (<br>           start “” “C:\Program Files\Internet Explorer\iexplore.exe” %m%<br>       ) ELSE (<br>            start “” “C:\Program Files (x86)\Internet Explorer\iexplore.exe” %m%<br>       )<br>   )<br>   exit<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## IE 浏览器打开其他浏览器</span><br></pre></td></tr></table></figure></p>
+<p>function start(){<br>            var objShell = new ActiveXObject(“wscript.shell”);<br>            var cmd= “cmd /c start C:/\”Program Files (x86)\”/Google/Chrome/Application/chrome.exe \”http://www.baidu.com\””;<br>            objShell.Run(cmd,0,true);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 问题</span><br><span class="line"></span><br><span class="line">1. 点击 button 按钮后页面引起刷新</span><br></pre></td></tr></table></figure></p>
 <p>   button 缺少 type=button 属性</p>
 <p>   <button type="button">xxx</button><br>   <code>`</code></p>
 </script></head></p>
@@ -654,7 +661,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color3">5+App 离线打包指南</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,7 +669,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,15 +689,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,7 +697,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +709,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,15 +721,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,7 +733,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,11 +741,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,11 +753,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">NATAPP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,7 +765,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,11 +781,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -782,19 +793,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,7 +805,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -810,11 +813,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,11 +829,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,11 +841,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -858,10 +869,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
@@ -870,11 +877,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTMP</a>
               </li>
              
               <li class="article-tag-list-item">
