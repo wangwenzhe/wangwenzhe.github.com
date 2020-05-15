@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 72</p>
-			<p>总字数 <span class="post-count">73.3k</span></p>
+			<p>总文章数 74</p>
+			<p>总字数 <span class="post-count">76.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,272 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/17/Nginx/">Nginx</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/17/Nginx/" class="archive-article-date">
+  	<time datetime="2019-07-17T05:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：694字 | 阅读本文大概需要 ：3分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><strong>超实用的 Nginx 极简教程，覆盖了常用场景</strong><a href="https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/RfaPtO3VWDozIZvGxN2ASQ</a></p>
+<p><img src="http://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/2F60pt.png" alt="2F60pt" style="zoom:50%;"></p>
+<p>基础入门：<a href="http://wiki.jikexueyuan.com/project/nginx/overwise.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/nginx/overwise.html</a></p>
+<ol>
+<li>Nginx 是一款轻量级的 Web 服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用</li>
+<li>正向代理“代理”的是客户端，而且客户端是知道目标的，而目标是不知道客户端是通过VPN访问的</li>
+<li>反向代理“代理”的是服务器端，而且这一个过程对于客户端而言是透明的</li>
+</ol>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ol>
+<li><p>拉取 nginx 镜像，采用网易云的镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull hub.c.163.com/library/nginx:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看本地镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line">REPOSITORY                          TAG                 IMAGE ID            CREATED				SIZE</span><br><span class="line">hub.c.163.com/library/nginx         latest              46102226f2fd        2 years ago       109MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>后台</strong>运行 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -d -p 8080:80 --name nginx -v /mac126/docker/www:/www -v /mac126/docker/conf/nginx.conf:/etc/nginx/nginx.conf -v /mac126/docker/logs:/wwwlogs  -d hub.c.163.com/library/nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>命令说明：</p>
+<p>-d 让 Docker 在后台运行而不是直接把执行命令的结果输出在当前宿主机下</p>
+<p> -p 8080:80 将容器的 80 端口映射到主机的 8080 端口<br> –name nginx：将容器命名为 nginx<br> -v /mac126/docker/www:/www：将主机中当前目录下的 www 挂载到容器的 /www<br> -v /mac126/docker/conf/nginx.conf:/etc/nginx/nginx.conf：将主机中当前目录下的 nginx.conf 挂载到容器的 /etc/nginx/nginx.conf<br> -v /mac126/docker/logs:/wwwlogs：将主机中当前目录下的 logs 挂载到容器的 /wwwlogs</p>
+</blockquote>
+</li>
+<li><p>查看运行的容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it nginx /bin/bash</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><ol>
+<li><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://nginx.org/en/download.html</span><br></pre></td></tr></table></figure>
+<p> <img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647782397.jpg" alt="UTOOLS1576647782397.jpg"><br><strong><em>下载 nginx/Windows-1.17.2</em></strong></p>
+</li>
+<li><p>启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd D:\nginx-1.17.2</span><br><span class="line"></span><br><span class="line">start nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist|findstr nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动状态下重载配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><ol>
+<li><p>安装 brew「软件包管理工具」</p>
+<ul>
+<li><p>参考</p>
+<p><a href="https://www.jianshu.com/p/2ca8a4e47dff" target="_blank" rel="noopener">https://www.jianshu.com/p/2ca8a4e47dff</a></p>
+</li>
+<li><p>安装命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>安装 nginx</p>
+<ul>
+<li><p>参考</p>
+<p><a href="https://segmentfault.com/a/1190000016020328" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016020328</a></p>
+</li>
+<li><p>命令</p>
+<ol>
+<li><p>更新 homebrew</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/Cellar/nginx/1.17.1/</span><br><span class="line"></span><br><span class="line">bin 目录中 nginx 为可执行文件，/usr/local/bin/nginx 指向该文件</span><br><span class="line">html 目录为软连接，指向 /usr/local/var/www</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>发布目录和配置文件</p>
+<ul>
+<li><p>发布目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/var/www</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx 默认使用 8080 端口，配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>启动 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新启动 nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="负责均衡"><a href="#负责均衡" class="headerlink" title="负责均衡"></a>负责均衡</h1><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/xyang81/article/details/51702900" target="_blank" rel="noopener">https://blog.csdn.net/xyang81/article/details/51702900</a></p>
+<h2 id="修改-nginx-conf-配置文件"><a href="#修改-nginx-conf-配置文件" class="headerlink" title="修改 nginx_conf 配置文件"></a>修改 nginx_conf 配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	#省略</span><br><span class="line">	</span><br><span class="line">    #负责均衡多台服务器</span><br><span class="line">    upstream tomcats &#123;</span><br><span class="line">        server 192.168.0.109:8080;</span><br><span class="line">        server 192.168.0.109:8081;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">			proxy_pass http://tomcats;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        #省略</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/17/Nginx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Node-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/16/Node-js/">Node.js</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/16/Node-js/" class="archive-article-date">
+  	<time datetime="2019-07-16T01:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：54字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ol>
+<li>廖雪峰 <a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1022910821149312/1023025235359040</a></li>
+<li></li>
+</ol>
+<h3 id="配置-Nodejs-镜像"><a href="#配置-Nodejs-镜像" class="headerlink" title="配置 Nodejs 镜像"></a>配置 Nodejs 镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org --global</span><br><span class="line">npm config set disturl https://npm.taobao.org/dist --global</span><br><span class="line"></span><br><span class="line">yarn config set registry https://registry.npm.taobao.org --global</span><br><span class="line">yarn config set disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/16/Node-js/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-爱上读书2019-07" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1512,285 +1778,6 @@
 
 
   
-    <article id="post-爱上读书2019-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/22/爱上读书2019-05/">爱上读书2019-05</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/22/爱上读书2019-05/" class="archive-article-date">
-  	<time datetime="2019-06-22T05:41:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-22</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：1.9k字 | 阅读本文大概需要 ：6分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>山本耀司说：“自己这个东西是看不见的,撞上一些别的什么,反弹回来,才会了解自己。</p>
-</li>
-<li><p>孔子对儿子孔鲤说：“不读《诗》，无以言。</p>
-</li>
-<li><p>互联网既不安全也不永久。它不可能永远保存数据，用户不应该有这种想法。</p>
-</li>
-<li><p>一个人的命运啊,当然要靠自我奋斗,但是也要考虑到历史的行程。</p>
-</li>
-<li><p>跟技术人讨论技术，跟业务人员讨论业务，跟产品人讨论产品，跟不相关人员谈论天气就好。</p>
-</li>
-<li><p>这世间，太少的相濡以沫，太多的相忘江湖</p>
-</li>
-<li><p>不要太执着于让别人同意你，越是在庸庸碌碌人前越少说话，没那么多人愿意当你的观众。寻找到适合你的观众，而不是改变本来就不属于你的观众。</p>
-</li>
-<li><p>那些赚到大钱的人，没有一个是靠时间换取收入的。他们要么通过积累资产致富，要么购买他人的时间，为自己创造财富。你应该警惕，不要落入“时间换取收入”的陷井，不要只顾着为别人生产代码，而要注意积累自己的资产，以及适时开展属于自己的业务。</p>
-</li>
-<li><p>开发软件是一件很棒的事情，但绝不会像写一本能存活几个世纪的著作那样伟大，最终总是会有新的软件取代它。所以，有时我相信，我所做的一切最终都是徒劳的。– antirez[58]，Redis 的发明者</p>
-</li>
-<li><p>知识广义上来讲可以分为五类：数据、信息、知识、才能和智慧。数据经过整理变成信息，信息能解决某个问题就是知识，知识通过反复实践形成才能，才能融会贯通就是智慧。才能和智慧就属于元认知的范畴。</p>
-</li>
-<li><p>小诗一首</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">时光啊</span><br><span class="line">你走得太匆匆</span><br><span class="line">我好想追上你</span><br><span class="line">拉着你的手</span><br><span class="line">说说话</span><br><span class="line">漫无目的的走</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一路走来，有人呵护你，有人摧残你；有人激励你，有人折磨你。但撑过去了，它们就成了你成长的养分和垫脚石。人最应该拥有的就是坚不可摧的意志。</p>
-</li>
-<li><p>所有的方案都是为了解决问题。先搞清楚问题的本质，再想办法解决。</p>
-</li>
-<li><p>商界大佬精神结构的特质就是：</p>
-<ul>
-<li>拥有强烈的成功欲望</li>
-<li>拥有说干就干的行动力</li>
-<li>都是深度学习的机器</li>
-<li>非常善于死磕和坚持</li>
-<li>愿意延迟满足</li>
-</ul>
-</li>
-<li><p>普通人胖，那叫胖；有钱人胖，那叫胖着玩玩。</p>
-</li>
-<li><p>没有积累，妄谈突破就是扯淡。</p>
-</li>
-<li><p>读书之所以会没有用，一个重大的原因就在于，你只是知道了，但却从来没有去实践它而已。</p>
-</li>
-<li><p>上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。</p>
-</li>
-<li><p>你的同事不是笨蛋，你的客户也不是白痴，你自己才是蠢货。所以，对他们出现的错误要能够理解，你的同事开发的软件会有缺陷，客户不会用则是因为软件做得不够好，做的真不够好。</p>
-</li>
-<li><p>今天偷的懒，就是明天必须偿还的债。</p>
-</li>
-<li><p>快速成长=做事勤奋+总结经验或教训</p>
-</li>
-<li><p>所以大家问我的时间是哪里来的，其实就是这样节省出来，不喜欢的事情全部忽略掉，省出来的时间就可以专注干自己喜欢做的事情了。</p>
-</li>
-<li><p>为了一个健康的、有着丰富社交的生活，你需要多在网上展示自己、接触他人。对于那些互联网上沉默寡言的人，未来的人生将会非常孤独。</p>
-</li>
-<li><p>勤奋+善于总结</p>
-</li>
-<li><p>胜负欲强的人，就是那群把“优秀”当成刚需的人，没做到最好就会难受的人。</p>
-</li>
-<li><p>他认为：什么是牛人？用三句话就能描述清楚了。有“做第一”的执念；有过“做第一”的经验；有过多次“做第一”的经验并能将其总结出来。</p>
-</li>
-<li><p>宁可输，不能怕。</p>
-</li>
-<li><p>因为一个人能取得多大的成就，和他的胜负欲有多强烈，有极大的关系。最有胜负欲的人，往往最主动积极、最有克己精神，最能严格要求自己，最愿意热烈地拥抱竞争。</p>
-</li>
-<li><p>落入平庸，是从丢失胜负欲开始的</p>
-</li>
-<li><p>每个人都在寻找机遇的风口，</p>
-</li>
-<li><p>但真正热爱的事就是你的风口</p>
-</li>
-<li><p>修炼内功，是为了在选择的时候有主动权，在被选择的时候能脱颖而出，不成熟期该做的是自我超越，而不是自我怀疑。</p>
-</li>
-<li><p>进入社会前后，你会感觉到自己缺乏实力，这是一件很正常的事，不仅是你，你的同龄人也会有这种感受。</p>
-</li>
-<li><p>在面对记者的一次采访中，当被问到：你在 Facebook 上学到了什么的时候，Adam 回答说：”专注于长期发展，始终做那些对未来发展有益的事，而不是只盯着短期利益。”</p>
-</li>
-<li><p>强者心态，就是可以输，但永远不能怕。</p>
-</li>
-<li><p>稻盛和夫在《活法》里说的：工作本身就是最好的修行，每天认真工作就能塑造高尚的人格，就能获得幸福的人生。希望你铭记这一点。</p>
-</li>
-<li><p>营销大师 JimRohn曾经说过：“当你成为百万富翁后，你可以捐出你所有的钱，因为重要的不是那百万美元的财富，而在于一个通过赚取百万财富的过程使自己成为了一个更优秀的人。”</p>
-</li>
-<li><p>以前我也相信别人说的有钱人都很不快乐，但当我有了一点点钱之后，我发现很多人觉得有钱人不快乐，是因为人家的快乐你根本想象不到。</p>
-</li>
-<li><p>先努力赚钱，你才能看到24H全力以赴之下，自己的上限在哪里；你才能认识更多优秀的人，去更多的地方，实现更多梦想。</p>
-</li>
-<li><p>电影《真情假爱》里说的：我爱的不是钱，我喜欢的是钱带来的独立和自由生活。</p>
-</li>
-<li><p>当你最艰难的时候，这个世界会直接让你看到残酷、现实的一面。</p>
-</li>
-<li><p>你强起来，全世界都会对你和颜悦色。</p>
-</li>
-<li><p>王尔德说：在我年轻的时候，曾以为金钱是世界上最重要的东西。现在我老了，才知道，的确如此。</p>
-</li>
-<li><p>你得先经历过一系列苦难之后才能成为一个英雄。如果你没有感受到过恐惧，你就不会有一身厚实的盔甲。</p>
-</li>
-<li><p>不要轻易给客户承诺，承诺就是成本。</p>
-</li>
-<li><p>人类是一种极为低效的可怜生物。只拥有三维的感官能力，困在四维的世界里。尚在使用一种叫做语言的一维工具沟通协作!</p>
-</li>
-<li><p>但凡让用户感到负担与阻力的，都是成本。</p>
-</li>
-<li><p>对于一个城市来说，最重要的不是建筑，而是规划。——贝聿铭</p>
-</li>
-<li><p>真正的爱情是专一的，爱情的领域非常狭小，它狭小到只能容下两个人生存。</p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">爱上读书</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/22/爱上读书2019-05/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-springmvc-post复杂对象接收" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/19/springmvc-post复杂对象接收/">spring mvc post复杂对象接收</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/19/springmvc-post复杂对象接收/" class="archive-article-date">
-  	<time datetime="2019-06-19T04:04:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：336字 | 阅读本文大概需要 ：1分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>请求方式 POST</li>
-<li><p>请求参数格式为 json「包括复杂数据结构」：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;vname&quot;: &quot;hello&quot;,</span><br><span class="line">    &quot;vip&quot;: &quot;ip地址&quot;,</span><br><span class="line">    &quot;videodatas&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;data&quot;,</span><br><span class="line">            &quot;count&quot;: &quot;sdfsdf&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>HTTP请求报文<br>Content-Type 为 application/json</p>
-</li>
-<li><p>controller 接口处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">   //必须实现序列化</span><br><span class="line">public class Video implements Serializable&#123;</span><br><span class="line">	String vname;</span><br><span class="line">	String vip;</span><br><span class="line">	List&lt;Videodata&gt; videodatas;</span><br><span class="line">	</span><br><span class="line">	public String getVname() &#123;</span><br><span class="line">		return vname;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setVname(String vname) &#123;</span><br><span class="line">		this.vname = vname;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getVip() &#123;</span><br><span class="line">		return vip;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setVip(String vip) &#123;</span><br><span class="line">		this.vip = vip;</span><br><span class="line">	&#125;</span><br><span class="line">	public List&lt;Videodata&gt; getVideodatas() &#123;</span><br><span class="line">		return videodatas;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setVideodatas(List&lt;Videodata&gt; videodatas) &#123;</span><br><span class="line">		this.videodatas = videodatas;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Videodata &#123;</span><br><span class="line">	String name;</span><br><span class="line">	String count;</span><br><span class="line">	</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getCount() &#123;</span><br><span class="line">		return count;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setCount(String count) &#123;</span><br><span class="line">		this.count = count;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@RequestMapping(value = &quot;/pushVideodata&quot;, method=RequestMethod.POST)</span><br><span class="line">public void pushVideodata(HttpServletRequest request, HttpServletResponse response, @RequestBody Video video) throws Exception &#123;</span><br><span class="line">	Json json = new Json();</span><br><span class="line">	System.out.println(video.toString());</span><br><span class="line">	json.setSuccess(true);</span><br><span class="line">	json.setMsg(&quot;成功&quot;);</span><br><span class="line">	this.writeJson(json, request, response);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//springmvc 配置中使用 Jackson 处理 json</span><br><span class="line">&lt;bean id=&quot;mappingJacksonHttpMessageConverter&quot; class=&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;supportedMediaTypes&quot;&gt;</span><br><span class="line">           &lt;list&gt;</span><br><span class="line">               &lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;</span><br><span class="line">               &lt;value&gt;application/json;charset=UTF-8&lt;/value&gt;</span><br><span class="line">           &lt;/list&gt;</span><br><span class="line">       &lt;/property&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;data&quot;: &#123;</span><br><span class="line">        videoid: &quot;1594835398594&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;code&quot;: &quot;200&quot;,</span><br><span class="line">    &quot;msg&quot;: &quot;操作成功!&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring MVC Post</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/19/springmvc-post复杂对象接收/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -1892,15 +1879,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">5-App-离线打包简化版</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">5+App</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1909,6 +1900,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1924,10 +1919,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -1936,7 +1927,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1944,15 +1935,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1960,7 +1947,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1968,15 +1955,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1992,11 +1987,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2004,11 +1999,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2016,11 +2011,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2036,11 +2031,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2052,19 +2047,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2072,11 +2059,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2084,11 +2075,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">

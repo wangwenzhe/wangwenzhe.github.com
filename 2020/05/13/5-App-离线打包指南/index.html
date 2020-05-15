@@ -8,18 +8,25 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>5+App 离线打包指南 | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考">
+  <meta name="description" content="简介https://nativesupport.dcloud.net.cn/AppDocs/README  App 离线开发工具包，即 App 离线 SDK，是把 App 运行环境（runtime）封装为原生开发调用接口，开发者可以在自己的 Android 及 iOS 原生开发环境配置工程使用，包括 Android 离线开发 SDK 及 iOS 离线开发 SDK App 离线 SDK 主要用于 A">
 <meta name="keywords" content="5+App 离线打包指南">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5+App 离线打包指南">
 <meta property="og:url" content="https://championwang.gitee.io/2020/05/13/5-App-离线打包指南/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="参考">
+<meta property="og:description" content="简介https://nativesupport.dcloud.net.cn/AppDocs/README  App 离线开发工具包，即 App 离线 SDK，是把 App 运行环境（runtime）封装为原生开发调用接口，开发者可以在自己的 Android 及 iOS 原生开发环境配置工程使用，包括 Android 离线开发 SDK 及 iOS 离线开发 SDK App 离线 SDK 主要用于 A">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-13T11:01:37.443Z">
+<meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200514174739_JAk2M7.png">
+<meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515112315_image-20200515112315057.png">
+<meta property="og:image" content="https://img.cdn.aliyun.dcloud.net.cn/nativedocs/5%2BSDK-android/image/5-8.png">
+<meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515111903_image-20200515111903152.png">
+<meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515111050_image-20200515111050128.png">
+<meta property="og:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515111641_image-20200515111641248.png">
+<meta property="og:updated_time" content="2020-05-15T03:29:58.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5+App 离线打包指南">
-<meta name="twitter:description" content="参考">
+<meta name="twitter:description" content="简介https://nativesupport.dcloud.net.cn/AppDocs/README  App 离线开发工具包，即 App 离线 SDK，是把 App 运行环境（runtime）封装为原生开发调用接口，开发者可以在自己的 Android 及 iOS 原生开发环境配置工程使用，包括 Android 离线开发 SDK 及 iOS 离线开发 SDK App 离线 SDK 主要用于 A">
+<meta name="twitter:image" content="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200514174739_JAk2M7.png">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +100,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 72</p>
-			<p>总字数 <span class="post-count">73.3k</span></p>
+			<p>总文章数 74</p>
+			<p>总字数 <span class="post-count">76.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +184,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2字 | 阅读本文大概需要 ：1分钟
+					字数：1.2k字 | 阅读本文大概需要 ：4分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,7 +192,105 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://nativesupport.dcloud.net.cn/AppDocs/README" target="_blank" rel="noopener">https://nativesupport.dcloud.net.cn/AppDocs/README</a></p>
+<ol>
+<li>App 离线开发工具包，即 App 离线 SDK，是把 App 运行环境（runtime）封装为原生开发调用接口，开发者可以在自己的 Android 及 iOS 原生开发环境配置工程使用，包括 Android 离线开发 SDK 及 iOS 离线开发 SDK</li>
+<li>App 离线 SDK 主要用于 <code>App 本地离线打包</code>及<code>扩展原生能力</code><ol>
+<li>App 本地离线打包： 对应 HBuilderX 的云端打包功能，<code>uni-app</code>、<code>5+ App</code> 等项目发行为原生 App 时，无需将 App 资源及打包要使用的签名证书等提交到云端打包服务器，在开发者本地配置的原生开发环境中生成安装包 apk/ipa</li>
+<li>扩展原生能力： 当 HBuilderX 中提供的能力无法满足 App 功能需求，需要通过使用 Andorid/iOS 原生开发实现时，可使用 App 离线 SDK 开发原生插件来扩展原生能力。<ul>
+<li><code>uni-app</code> 项目扩展原生能力需开发 <a href="https://nativesupport.dcloud.net.cn/NativePlugin/README" target="_blank" rel="noopener">uni 原生插件</a>，支持云端打包，有完善的开发者生态<a href="https://ext.dcloud.net.cn/?cat1=5&amp;cat2=51" target="_blank" rel="noopener">插件市场</a></li>
+<li><code>5+ App</code> 项目扩展原生能力需开发 <code>5+原生插件</code>，仅支持本地离线打包</li>
+</ul>
+</li>
+<li><code>5+原生插件</code>将不再继续维护，建议开发者升级应用为 <code>uni-app</code> 项目并使用 <code>uni原生插件</code>。如需继续使用 5 + 原生插件，请参考以下文档：<ul>
+<li><a href="http://ask.dcloud.net.cn/article/66" target="_blank" rel="noopener">Android 平台 5 + 原生插件开发</a></li>
+<li><a href="http://ask.dcloud.net.cn/article/67" target="_blank" rel="noopener">iOS 平台 5 + 原生插件开发</a></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Android-平台-5-原生插件开发"><a href="#Android-平台-5-原生插件开发" class="headerlink" title="Android 平台 5 + 原生插件开发"></a><del>Android 平台 5 + 原生插件开发</del></h2><p><a href="http://ask.dcloud.net.cn/article/66" target="_blank" rel="noopener">http://ask.dcloud.net.cn/article/66</a></p>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p><a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android" target="_blank" rel="noopener">https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android</a></p>
+<ol>
+<li><p><code>Android Studio</code> 打开离线打包工程<code>HBuilder-Hello</code></p>
+</li>
+<li><p>打开<code>app/build.gradle</code>，修改如下 3 项信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">        applicationId &quot;io.dcloud.HelloH5&quot;</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>applicationId</code>  为 Android 包名。如果 已经使用 HBuilderX 云打包，则使用云打包的 Android 包名，查看参考下图：</p>
+<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200514174739_JAk2M7.png" alt="20200514174739_JAk2M7" style="zoom:50%;"></p>
+</li>
+<li><p><code>versionCode</code> 为应用的版本号（整数值），用于各应用市场的升级判断，建议与 manifest.json 中 version -&gt; code 值一致</p>
+</li>
+<li><p><code>versionName</code> 为应用的版本名称（字符串），在系统应用管理程序中显示的版本号，建议与 manifest.json 中 version -&gt; name 值一致</p>
+</li>
+</ul>
+</li>
+<li><p><code>AndroidManifest.xml</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    package=&quot;io.dcloud.HelloH5&quot;&gt;</span><br><span class="line">//package 项目中自定义的包名，在下面引入 activity 时作为其基础路径</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>修改百度地图 ak</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta-data</span><br><span class="line">android:name=&quot;com.baidu.lbsapi.API_KEY&quot;</span><br><span class="line">android:value=&quot;u1vrG5cDGQLioX9fezNAdGkR&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Speech(语音识别)-讯飞语音，不要修改「它是和libs目录下的jar包是绑定的」</p>
+</li>
+<li><p>provider——<code>${applicationId}</code> 为应用 <code>applicationId</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;provider</span><br><span class="line">  android:name=&quot;io.dcloud.gdt.GdtFileProvider&quot;</span><br><span class="line">  android:authorities=&quot;$&#123;applicationId&#125;.fileprovider&quot;</span><br><span class="line">  android:exported=&quot;false&quot;</span><br><span class="line">  android:grantUriPermissions=&quot;true&quot;&gt;</span><br><span class="line">  &lt;meta-data</span><br><span class="line">  android:name=&quot;android.support.FILE_PROVIDER_PATHS&quot;</span><br><span class="line">  android:resource=&quot;@xml/gdt_file_path&quot;</span><br><span class="line">  tools:replace=&quot;android:resource&quot;/&gt;</span><br><span class="line">&lt;/provider&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>配置应用名称</p>
+<p>打开 app-&gt;res -&gt; main -&gt; values -&gt; strings.xml 文件，修改 “app_name” 字段值，该值为安装到手机上桌面显示的应用名称，建议与 manifest.json 中 name（基础配置中的应用名称）对应</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;string name=&quot;app_name&quot;&gt;智慧执法&lt;/string&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置应用图标和启动界面</p>
+<p>drawable 目录</p>
+<ul>
+<li><p>icon.png 为应用的图标</p>
+</li>
+<li><p>push.png 为推送消息的图标</p>
+</li>
+<li><p>splash.png 为应用启动页的图标</p>
+</li>
+</ul>
+</li>
+<li><p>获取并放置本地打包资源</p>
+<p>HBuilderX 导出离线打包资源「发行——原生App-本地打包——生成本地打包App资源」，将导出的资源复制到 assets-&gt;apps 下，如下图所示：</p>
+<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515112315_image-20200515112315057.png" alt="image-20200515112315057" style="zoom:50%;"></p>
+<p><img src="https://img.cdn.aliyun.dcloud.net.cn/nativedocs/5%2BSDK-android/image/5-8.png" alt="资源"></p>
+</li>
+<li><p>修改 dcloud_control.xml 文件</p>
+<p>确保 dcloud_control.xml 中的 appid 与 manifest.json 中的 id 与文件夹名一致</p>
+</li>
+<li><p>Android Studio 打包</p>
+<ul>
+<li><p>签名证书不要随意更换，否则会导致用户升级失败</p>
+</li>
+<li><p>若之前云打包使用的是 DCloud 默认证书，为保证正常升级，依然继续下载 DCloud 证书使用。<a href="http://ask.dcloud.net.cn/article/68" target="_blank" rel="noopener">证书地址</a></p>
+</li>
+<li>若之前使用自有证书，则同样使用该自有证书</li>
+<li>生成 apk，Build Variants 建议选 release（正式发行尽量杜绝选择 debug），Signature Versions 建议都选，点击 Finish</li>
+</ul>
+</li>
+</ol>
+<h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><ol>
+<li><p>普通版本升级</p>
+<p>HBuilderX 中修改项目 <code>manifest.json</code> 应用版本名称和应用版本号，导出升级包 wgt ，放到服务器上 <code>app</code> 目录并修改<code>version.json</code> 版本信息和升级包文件名</p>
+<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515111903_image-20200515111903152.png" alt="image-20200515111903152" style="zoom:50%;"></p>
+<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515111050_image-20200515111050128.png" alt="image-20200515111050128" style="zoom:50%;"></p>
+<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200515111641_image-20200515111641248.png" alt="image-20200515111641248" style="zoom:50%;"></p>
+</li>
+<li><p>版本升级并提供离线 <code>apk</code>包「参考打包步骤 1、6、8」</p>
+<ol>
+<li>修改 <code>Android</code> 离线打包项目 <code>app/build.gradle</code> 中版本名和版本号</li>
+<li>从 HBuilderX 导出离线打包资源，复制到 Android 项目 <code>assets-&gt;apps</code></li>
+<li>Android Studio 打包，apk 文件放到 服务器上 <code>app</code> 目录，修改  <code>apkdownload.jsp</code>中 <code>apk</code> 名称</li>
+</ol>
+</li>
+</ol>
+<h3 id="android——-离线打包制作自定义基座"><a href="#android——-离线打包制作自定义基座" class="headerlink" title="android—— 离线打包制作自定义基座"></a><del>android—— 离线打包制作自定义基座</del></h3><p><a href="https://ask.dcloud.net.cn/article/35482" target="_blank" rel="noopener">https://ask.dcloud.net.cn/article/35482</a></p>
+
       
 
       
@@ -288,6 +393,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/14/Android反编译/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android反编译
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/13/Poi-tl/" id="article-nav-older" class="article-nav-link-wrap">
@@ -432,15 +546,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">5-App-离线打包简化版</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">5+App</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,6 +567,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,10 +586,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Excel</a>
               </li>
              
@@ -476,7 +594,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,15 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,7 +614,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,15 +622,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,11 +654,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,11 +666,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,11 +678,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,11 +698,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,19 +714,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教育</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle 数据备份</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,11 +726,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+                <a href="javascript:void(0)" class="js-tag color3">教育</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,11 +742,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发技术栈</a>
               </li>
              
               <li class="article-tag-list-item">
