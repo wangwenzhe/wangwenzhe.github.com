@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="视频源 湖南卫视 1rtmp://58.200.131.2:1935/livetv/hunantv  香港财经 1rtmp://202.69.69.180:443/webcast/bshdlive-pc   问题 1935 端口 rtmp 能播放，非 1935 端口 rtmp 视频无法播放 视频源端口缺少处理   TCPlayer「腾讯出品-支持 rtmp|flv|m3u8等」1234567891">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-12T06:20:38.892Z">
+<meta property="og:updated_time" content="2020-05-20T02:33:27.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RTMP">
 <meta name="twitter:description" content="视频源 湖南卫视 1rtmp://58.200.131.2:1935/livetv/hunantv  香港财经 1rtmp://202.69.69.180:443/webcast/bshdlive-pc   问题 1935 端口 rtmp 能播放，非 1935 端口 rtmp 视频无法播放 视频源端口缺少处理   TCPlayer「腾讯出品-支持 rtmp|flv|m3u8等」1234567891">
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 74</p>
-			<p>总字数 <span class="post-count">76.5k</span></p>
+			<p>总文章数 84</p>
+			<p>总字数 <span class="post-count">79.8k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.4k字 | 阅读本文大概需要 ：13分钟
+					字数：2.4k字 | 阅读本文大概需要 ：12分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -203,9 +203,10 @@
 <h2 id="Videojs-Flash"><a href="#Videojs-Flash" class="headerlink" title="Videojs+Flash"></a>Videojs+Flash</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;link href=&quot;http://vjs.zencdn.net/5.19/video-js.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- 引入播放器 js--&gt;</span><br><span class="line">    &lt;script src=&quot;http://vjs.zencdn.net/5.19/video.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        // 设置 flash 路径，用于在 videojs 发现浏览器不支持 HTML5 播放器的时候自动唤起 flash 播放器</span><br><span class="line">        videojs.options.flash.swf = &apos;https://cdn.bootcss.com/videojs-swf/5.4.1/video-js.swf&apos;;</span><br><span class="line">        var player = videojs(&apos;my-player&apos;); //my-player 为页面 video 元素的 id</span><br><span class="line">        player.play(); // 播放</span><br><span class="line">        //    1. 播放   player.play ()</span><br><span class="line"></span><br><span class="line">        //    2. 停止   player.pause ()</span><br><span class="line"></span><br><span class="line">        //    3. 暂停   player.pause ()</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;video id=&quot;my-player&quot; class=&quot;video-js vjs-default-skin vjs-big-play-centered&quot; controls preload=&quot;auto&quot;</span><br><span class="line">       autoplay=&quot;autoplay&quot; poster=&quot;//vjs.zencdn.net/v/oceans.png&quot; width=&quot;500&quot; height=&quot;400&quot; data-setup=&apos;&#123;&#125;&apos;&gt;</span><br><span class="line">    &lt;!--src: 规定媒体文件的 URL  type: 规定媒体资源的类型 --&gt;</span><br><span class="line">    &lt;source src=&apos;rtmp://58.200.131.2:1935/livetv/hunantv&apos; type=&apos;rtmp/flv&apos;/&gt;</span><br><span class="line">&lt;/video&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="EZuikit「萤石云」"><a href="#EZuikit「萤石云」" class="headerlink" title="EZuikit「萤石云」"></a>EZuikit「萤石云」</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</span><br><span class="line">		&lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</span><br><span class="line">		&lt;title&gt;EZUIPlayer RTMP&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			body &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #myPlayer &#123;</span><br><span class="line">            width: 650px;</span><br><span class="line">            height: 400px;</span><br><span class="line">            margin: 50px auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;script src=&quot;https://open.ys7.com/sdk/js/2.0/ezuikit.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;video id=&quot;myPlayer&quot; controls playsInline webkit-playsinline autoplay&gt;</span><br><span class="line">			&lt;source src=&quot;rtmp://rtmp01open.ys7.com/openlive/ab96409e80af42d8a7becba03d2ea97b&quot; type=&quot;rtmp/flv&quot; /&gt;</span><br><span class="line">		&lt;/video&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			var player = new EZuikit.EZUIPlayer(&apos;myPlayer&apos;);</span><br><span class="line">			player.play();  //播放</span><br><span class="line">			//player.pause(); //暂停</span><br><span class="line">			//player.stop();  //停止</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="EZuikit-VLC"><a href="#EZuikit-VLC" class="headerlink" title="EZuikit+VLC"></a>EZuikit+VLC</h2><p><code>首选浏览器页面播放，也可以调起本地 VLC 客户端软件播放「Windows」</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        html, body &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 100%;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .content &#123;</span><br><span class="line">            width: 60%;</span><br><span class="line">            margin: 50px auto;</span><br><span class="line">            background-color: #191919;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #myPlayer &#123;</span><br><span class="line">            height: 500px;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #tips &#123;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            color: #ccc;</span><br><span class="line">            padding: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        .problem &#123;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            color: #ccc;</span><br><span class="line">            padding: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;link href=&quot;https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;http://www.jq22.com/jquery/jquery-2.1.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;https://open.ys7.com/sdk/js/2.0/ezuikit.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">    &lt;video id=&quot;myPlayer&quot; controls playsInline webkit-playsinline autoplay&gt;</span><br><span class="line">        &lt;source src=&quot;rtmp://58.200.131.2:1935/livetv/hunantv&quot; type=&quot;rtmp/flv&quot;/&gt;</span><br><span class="line">    &lt;/video&gt;</span><br><span class="line">    &lt;div class=&quot;problem&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;播放存在问题 ?&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;tips&quot; style=&quot;display: none;&quot;&gt;</span><br><span class="line">        &lt;p&gt;1. 窗口上方提示：您没有安装flash插件，无法播放视频，请点击此处下载安装最新的flash插件，根据提示点击，开启 flash 支持&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;2. 如果播放画面一直无法正常出现，请点击下面 2 个链接，下载文件并默认安装&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a style=&quot;color: #ac8989;&quot; href=&quot;vlc_2.2.4.0.exe&quot;  download=&quot;vlc_2.2.4.0.exe&quot;&gt;下载 VLC 播放器&lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a style=&quot;color: #ac8989;&quot; href=&quot;rtmp.reg&quot;  download=&quot;rtmp.reg&quot;&gt;下载 rtmp 注册文件&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;span&gt;3. 如果已经安装上述 2 个文件，则可以尝试使用 VLC 播放，体验更好哦！&lt;/span&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a href=&quot;rtmp://58.200.131.2:1935/livetv/hunantv&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-small btn-primary&quot;&gt;播放&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var player = new EZuikit.EZUIPlayer(&apos;myPlayer&apos;);</span><br><span class="line">    player.play();  //播放</span><br><span class="line">    //player.pause(); //暂停</span><br><span class="line">    //player.stop();  //停止</span><br><span class="line"></span><br><span class="line">    $(&quot;.problem&quot;).click(function() &#123;</span><br><span class="line">        $(&apos;#tips&apos;).toggle();</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><code>rtmp.reg</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">[HKEY_CLASSES_ROOT\rtmp]</span><br><span class="line">@=&quot;URL:rtmp Protocol Handler&quot;</span><br><span class="line">&quot;URL Protocol&quot;=&quot;&quot;</span><br><span class="line">[HKEY_CLASSES_ROOT\rtmp\DefaultIcon]</span><br><span class="line">@=&quot;C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe&quot;</span><br><span class="line">[HKEY_CLASSES_ROOT\rtmp\shell]</span><br><span class="line">[HKEY_CLASSES_ROOT\rtmp\shell\open]</span><br><span class="line">[HKEY_CLASSES_ROOT\rtmp\shell\open\command]</span><br><span class="line">@=&quot;\&quot;C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe\&quot; \&quot;%1\&quot;&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        html, body &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 100%;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .content &#123;</span><br><span class="line">            width: 60%;</span><br><span class="line">            margin: 50px auto;</span><br><span class="line">            background-color: #191919;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #myPlayer &#123;</span><br><span class="line">            height: 500px;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #tips &#123;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            color: #ccc;</span><br><span class="line">            padding: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        .problem &#123;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            color: #ccc;</span><br><span class="line">            padding: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;link href=&quot;https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;http://www.jq22.com/jquery/jquery-2.1.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;https://open.ys7.com/sdk/js/2.0/ezuikit.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">    &lt;video id=&quot;myPlayer&quot; controls playsInline webkit-playsinline autoplay&gt;</span><br><span class="line">        &lt;source src=&quot;rtmp://58.200.131.2:1935/livetv/hunantv&quot; type=&quot;rtmp/flv&quot;/&gt;</span><br><span class="line">    &lt;/video&gt;</span><br><span class="line">    &lt;div class=&quot;problem&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;播放存在问题 ?&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;tips&quot; style=&quot;display: none;&quot;&gt;</span><br><span class="line">        &lt;p&gt;1. 窗口上方提示：您没有安装flash插件，无法播放视频。请根据提示点击，开启 flash 支持&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;2. 如果画面一直无法正常出现，请点击下面播放按钮进行播放。如果点击后没有反应，请先点击「下载播放器」，下载并默认安装&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a style=&quot;color: #ac8989;&quot; href=&quot;$&#123;pageContext.request.contextPath&#125;/app/rtmp.exe&quot;  download=&quot;rtmp.exe&quot;&gt;下载播放器&lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a href=&quot;rtmp://58.200.131.2:1935/livetv/hunantv&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-small btn-primary&quot;&gt;播放&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var player = new EZuikit.EZUIPlayer(&apos;myPlayer&apos;);</span><br><span class="line">    player.play();  //播放</span><br><span class="line">    //player.pause(); //暂停</span><br><span class="line">    //player.stop();  //停止</span><br><span class="line"></span><br><span class="line">    $(&quot;.problem&quot;).click(function() &#123;</span><br><span class="line">        $(&apos;#tips&apos;).toggle();</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="rtmp-exe"><a href="#rtmp-exe" class="headerlink" title="rtmp.exe"></a>rtmp.exe</h2><p>使用 winrar 打包 run.bat、rtmp.reg、vlc.exe 而成，双击安装后，即可完成 VLC 客户软件安装和 rtmp 注册，在页面中可通过 a 标签调起 VLC 播放器播放</p>
+<p><code>test.html</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;调用本地 VLC 客户端软件播放 rtsp&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;a href=&quot;rtmp://58.200.131.2:1935/livetv/hunantv&quot;&gt;播放&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -458,11 +459,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">5-App-离线打包简化版</a>
+                <a href="javascript:void(0)" class="js-tag color4">All</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">5+App</a>
+                <a href="javascript:void(0)" class="js-tag color4">5-App-离线打包简化版</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,7 +471,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
+                <a href="javascript:void(0)" class="js-tag color1">5+App</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,7 +491,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Ant Design Pro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ES</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,7 +503,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ES</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +519,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Fastjson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -518,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+                <a href="javascript:void(0)" class="js-tag color5">HBuilderX</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,15 +543,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,11 +551,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,11 +591,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,7 +603,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +615,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,15 +631,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,7 +643,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,11 +663,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,7 +687,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">建立个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,6 +720,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
               </li>
              
               <li class="article-tag-list-item">
