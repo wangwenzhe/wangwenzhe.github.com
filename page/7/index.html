@@ -92,8 +92,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 84</p>
-			<p>总字数 <span class="post-count">79.8k</span></p>
+			<p>总文章数 86</p>
+			<p>总字数 <span class="post-count">82k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -159,6 +159,670 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-JUnit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/JUnit/">JUnit</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/25/JUnit/" class="archive-article-date">
+  	<time datetime="2019-07-25T01:36:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：165字 | 阅读本文大概需要 ：1分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="引入资源-jar-包"><a href="#引入资源-jar-包" class="headerlink" title="引入资源 jar 包"></a>引入资源 jar 包</h4><ul>
+<li><p>Spring boot 引入测试模块，包括 JUnit、Hamcrest、Mockito</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">  &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>单独引入 JUnit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Idea-JUnit-插件"><a href="#Idea-JUnit-插件" class="headerlink" title="Idea JUnit 插件"></a>Idea JUnit 插件</h4><ul>
+<li><p>安装 JUnitGenerator V2.0</p>
+</li>
+<li><p>配置</p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576595373491.png" alt="UTOOLS1576595373491.png"></p>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576595320398.png" alt="UTOOLS1576595320398.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="生成基础测试代码"><a href="#生成基础测试代码" class="headerlink" title="生成基础测试代码"></a>生成基础测试代码</h4><p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576595586761.png" alt="UTOOLS1576595586761.png"></p>
+<h4 id="断言测试"><a href="#断言测试" class="headerlink" title="断言测试"></a>断言测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void select() &#123;</span><br><span class="line">List&lt;User&gt; users = userMapper.selectList(null);</span><br><span class="line">	Assert.assertEquals(users.size(), 17);</span><br><span class="line">	Assert.assertTrue(0==0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JUnit</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/25/JUnit/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/17/MySQL/">MySQL</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/17/MySQL/" class="archive-article-date">
+  	<time datetime="2019-07-17T07:21:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+</a>
+        
+      </header>
+			<div align="center" style="font-size: 12px; color: #1a5f14;">
+					字数：4.4k字 | 阅读本文大概需要 ：18分钟
+			</div>
+    
+			<!-- 目录内容 -->
+					
+			<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>廖雪峰：<a href="https://www.liaoxuefeng.com/wiki/1177760294764384" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1177760294764384</a></li>
+</ol>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h3><p><a href="https://www.cnblogs.com/chyingp/p/mysql-character-set-collation.html" target="_blank" rel="noopener">https://www.cnblogs.com/chyingp/p/mysql-character-set-collation.html</a></p>
+<h4 id="方式一：创建数据库的时候进行配置"><a href="#方式一：创建数据库的时候进行配置" class="headerlink" title="方式一：创建数据库的时候进行配置"></a>方式一：创建数据库的时候进行配置</h4><p>这种方式比较灵活，也比较保险，它不依赖于默认的字符集 / 字符序。当你创建数据库的时候指定字符集 / 字符序，后续创建 table、column 的时候，如果不特殊指定，会继承对应数据库的字符集 / 字符序。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="string">`test`</span> <span class="keyword">default</span> <span class="built_in">character</span> <span class="keyword">set</span> utf8mb4 <span class="keyword">collate</span> utf8mb4_general_ci;</span><br></pre></td></tr></table></figure>
+<h4 id="方式二：mysql-server-启动的时候进行配置"><a href="#方式二：mysql-server-启动的时候进行配置" class="headerlink" title="方式二：mysql server 启动的时候进行配置"></a>方式二：mysql server 启动的时候进行配置</h4><p>可以添加以下配置，这样 mysql server 启动的时候，会对 character-set-server、collation-server 进行配置。</p>
+<p>当你通过 mysql client 创建 database/table/column，且没有显示声明字符集 / 字符序，那么就会用 character-set-server/collation-server 作为默认的字符集 / 字符序。</p>
+<p>另外，client、server 连接时的字符集 / 字符序，还是需要通过 SET NAMES 进行设置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
+<h4 id="方式三：从源码编译-mysql-的时候，通过编译参数进行设置"><a href="#方式三：从源码编译-mysql-的时候，通过编译参数进行设置" class="headerlink" title="方式三：从源码编译 mysql 的时候，通过编译参数进行设置"></a>方式三：从源码编译 mysql 的时候，通过编译参数进行设置</h4><p>编译的时候如果指定了 <code>-DDEFAULT_CHARSET</code> 和 <code>-DDEFAULT_COLLATION</code>，那么：</p>
+<ul>
+<li>创建 database、table 时，会将其作为默认的字符集 / 字符序。</li>
+<li>client 连接 server 时，会将其作为默认的字符集 / 字符序。（不用单独 SET NAMES）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; cmake . -DDEFAULT_CHARSET=utf8 \</span><br><span class="line">           -DDEFAULT_COLLATION=utf8_general_ci</span><br></pre></td></tr></table></figure>
+<h3 id="必知"><a href="#必知" class="headerlink" title="必知"></a>必知</h3><ol>
+<li><p>MySQL本身实际上只是一个SQL接口，它的内部还包含了多种存储引擎，常用的包括</p>
+<ul>
+<li>InnoDB：支持事务，行级别锁，外键</li>
+<li>MyISAM：MySQL早期集成的默认数据库引擎，不支持事务</li>
+</ul>
+</li>
+<li><p>安装 MySQL 过程中，创建了默认的 4 个数据库：，创建了 root 账号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| test							 |</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在MySQL 8下,认证加密方式默认变成了default_authentication_plugin=caching_sha2_password，包括你刚初始化的root用户也是这个认证加密方式。除非用新的协议驱动，例如 8 自带的 MySQL  客户端,否则连接不上数据库</p>
+</li>
+<li><p>修改认证加密方式</p>
+<ul>
+<li><p>Windows</p>
+<blockquote>
+<p>默认路径 C:\ProgramData\MySQL\MySQL Server 8.0\my.ini</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修改后</span><br><span class="line">#default_authentication_plugin=caching_sha2_password</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim my.cnf</span><br><span class="line">[mysqld]</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br></pre></td></tr></table></figure>
+<p>重启 MySQL 即可生效，新创建的用户，就会使用修改后的认证密码方式</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ol>
+<li><p>查看 MySQL 服务器版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前 MySQL  提供什么存储引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show engines;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前默认的存储引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;%storage_engine%&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看表用了什么引擎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表引擎方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students engine=innodb;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ol>
+<li><p>连接数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql -u 用户名 -p 用户密码 -h IP地址 -P 端口</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">mysql -u root -p 123456 -h 192.168.0.99 -P 3306</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出所有数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE test;</span><br><span class="line"></span><br><span class="line">//如果test数据库不存在，就创建</span><br><span class="line">CREATE DATABASE IF NOT EXISTS test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//该数据库的所有表全部被删除</span><br><span class="line">DROP DATABASE test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换到数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//操作数据库前先切换到数据库</span><br><span class="line">USE test;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前使用的数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select database();</span><br><span class="line"></span><br><span class="line">show tables;</span><br><span class="line">+----------------+</span><br><span class="line">| Tables_in_test |</span><br><span class="line">+----------------+</span><br><span class="line">| students       |</span><br><span class="line">+----------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>状态信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">status</span><br><span class="line"></span><br><span class="line">--------------</span><br><span class="line">mysql  Ver 8.0.15 for Win64 on x86_64 (MySQL Community Server - GPL)</span><br><span class="line"></span><br><span class="line">Connection id:          32</span><br><span class="line">Current database:       test</span><br><span class="line">Current user:           root@localhost</span><br><span class="line">SSL:                    Cipher in use is DHE-RSA-AES128-GCM-SHA256</span><br><span class="line">Using delimiter:        ;</span><br><span class="line">Server version:         8.0.15 MySQL Community Server - GPL</span><br><span class="line">Protocol version:       10</span><br><span class="line">Connection:             localhost via TCP/IP</span><br><span class="line">Server characterset:    utf8mb4</span><br><span class="line">Db     characterset:    utf8mb4</span><br><span class="line">Client characterset:    gbk</span><br><span class="line">Conn.  characterset:    gbk</span><br><span class="line">TCP port:               3306</span><br><span class="line">Uptime:                 21 hours 19 min 24 sec</span><br><span class="line"></span><br><span class="line">Threads: 2  Questions: 91  Slow queries: 0  Opens: 195  Flush tables: 2  Open tables: 169  Queries per second avg: 0.001</span><br><span class="line">--------------</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看各用户认证密码方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select Host,User,plugin,authentication_string from mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断当前到数据库的连接是否有效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 1;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><ol>
+<li><p>创建用户</p>
+<ul>
+<li><p>创建 test 用户，只允许本地 localhost 访问 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;test&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 demo 用户，只允许指定的 ip 主机访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;demo&apos;@&apos;192.168.0.109&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 admin 用户，允许任何ip主机访问「localhost 除外」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;admin&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>用户授权</p>
+<ul>
+<li><p>允许用户 test 拥有数据库 mydb 的所有权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户并分配适当的权限后，请确保重新加载权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>撤消用户权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">REVOKE DELETE ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;; //撤销 delete 权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &apos;test&apos;@&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改用户密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从「数据库-8」查看各用户认证密码方式</span><br><span class="line"></span><br><span class="line">alter user &apos;test&apos;@&apos;localhost&apos; identified by &apos;123&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改用户名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">use mysql;</span><br><span class="line">update user set user=&quot;test1&quot; where user=&quot;test&quot;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加admin并提升为超级管理员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all on *.* to &apos;admin&apos;@&apos;localhost&apos; identified by &apos;123456&apos; with grant option;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除所有用户,包括root超级用户「<strong>禁用</strong>」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from mysql.user;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><ol>
+<li>ALL [PRIVILEGES] -授予用户所有权限</li>
+<li>CREATE -授予用户创建新数据库和表的权限</li>
+<li>DROP -授予用户删除（drop）数据库和表的权限</li>
+<li>DELETE -授予用户删除表中的行的权限</li>
+<li>ALTER -授予用户修改表结构的权限</li>
+<li>INSERT -授予用户在表中插入（add）行的权限</li>
+<li>SELECT -授予用户运行select命令以从表中读取数据的权限</li>
+<li>UPDATE -授予用户更新表中的数据的权限</li>
+<li>EXECUTE -授予用户执行存储的例程的权限</li>
+<li>FILE -授予用户访问服务器主机上的文件的权限</li>
+<li><p>GRANT OPTION -授予用户授予或删除其他用户权限的权限</p>
+</li>
+<li><p>允许对数据库mydb上的‘test‘@’localhost’进行CREATE，DELETE，INSERT，UPDATE访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT CREATE,DELETE,INSERT,UPDATE ON mydb.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="表管理"><a href="#表管理" class="headerlink" title="表管理"></a>表管理</h2><ol>
+<li><p>列出当前数据库的所有表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students(</span><br><span class="line">id bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">class_id bigint(20) NOT NULL, </span><br><span class="line">name varchar(100) NOT NULL,</span><br><span class="line">gender varchar(1) NOT NULL,</span><br><span class="line">score int(11) NOT NULL,</span><br><span class="line">PRIMARY KEY (id) </span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表是先判断表是否存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists students(id bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">class_id bigint(20) NOT NULL, </span><br><span class="line">name varchar(100) NOT NULL,</span><br><span class="line">gender varchar(1) NOT NULL,</span><br><span class="line">score int(11) NOT NULL,</span><br><span class="line">PRIMARY KEY (id) </span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看一个表的结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看创建表的 SQL 语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students rename to stu;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="7">
+<li><p>删除表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE students;</span><br><span class="line"></span><br><span class="line">//存在即删除</span><br><span class="line">DROP TABLE IF EXISTS students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给<code>students</code>表新增一列<code>birth</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把<code>birth</code>列名改为<code>birthday</code>，类型改为<code>VARCHAR(20)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除列<code>birthday</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students DROP COLUMN birthday;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="表和字段注释"><a href="#表和字段注释" class="headerlink" title="表和字段注释"></a>表和字段注释</h2><ol>
+<li><p>创建带注释的表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students( </span><br><span class="line">  sid INT PRIMARY KEY AUTO_INCREMENT COMMENT &apos;设置主键自增&apos;,</span><br><span class="line">  sname VARCHAR(200) COMMENT &apos;列注释&apos;</span><br><span class="line"> ) COMMENT=&apos;表注释&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改现有表，加上注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students COMMENT=&apos;学生表&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改现有列，加上注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table students modify column sname VARCHAR(200) comment &apos;xxxx&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看表注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT table_name,table_comment FROM information_schema.tables  WHERE table_schema = &apos;test&apos; AND table_name =&apos;students&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看列的注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT  column_name, column_comment FROM information_schema.columns WHERE table_schema =&apos;test&apos;  AND table_name = &apos;students&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="MySQL-备份和恢复机制"><a href="#MySQL-备份和恢复机制" class="headerlink" title="MySQL 备份和恢复机制"></a>MySQL 备份和恢复机制</h2><p><a href="https://juejin.im/entry/5a0aa2026fb9a045132a369f" target="_blank" rel="noopener">https://juejin.im/entry/5a0aa2026fb9a045132a369f</a></p>
+<h2 id="表查询"><a href="#表查询" class="headerlink" title="表查询"></a>表查询</h2><h3 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h3><ol>
+<li><p>多个条件中有 not、and、or 等，则尽量使用小括号 () </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students WHERE (score &lt; 80 OR score &gt; 90) AND gender = &apos;M&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果不加括号，条件运算按照<code>NOT</code>、<code>AND</code>、<code>OR</code>的优先级进行，即<code>NOT</code>优先级最高，其次是<code>AND</code>，最后是<code>OR</code>。加上括号可以改变优先级</p>
+</li>
+</ol>
+<h3 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h3><ol>
+<li>使用<code>SELECT *</code>查询表的所有列，使用<code>SELECT 列1, 列2, 列3</code>返回指定列，这种操作称为投影</li>
+<li><code>SELECT</code>语句可以对结果集的列进行重命名</li>
+</ol>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ol>
+<li>使用<code>ORDER BY</code>可以对结果集进行排序</li>
+<li>默认的排序规则是<code>ASC</code>：“升序”，即从小到大</li>
+<li>可以对多列进行升序、倒序排序</li>
+</ol>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><ol>
+<li><p>通过<code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students ORDER BY score DESC LIMIT 3 OFFSET 0;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>LIMIT</code>和<code>OFFSET</code>应该设定的值</p>
+<ol>
+<li><code>LIMIT</code>总是设定为 <code>pageSize</code></li>
+<li><code>OFFSET</code>计算公式为<code>pageSize * (pageIndex - 1)</code></li>
+</ol>
+</li>
+<li><p><code>OFFSET</code>是可选的，如果只写<code>LIMIT 15</code>，那么相当于<code>LIMIT 15 OFFSET 0</code></p>
+</li>
+<li><code>LIMIT 15 OFFSET 30</code>还可以简写成<code>LIMIT 30, 15</code></li>
+</ol>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">COUNT</td>
+<td style="text-align:left">计算结果集行数</td>
+</tr>
+<tr>
+<td style="text-align:left">SUM</td>
+<td style="text-align:left">计算某一列的合计值，该列必须为数值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">AVG</td>
+<td style="text-align:left">计算某一列的平均值，该列必须为数值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">MAX</td>
+<td style="text-align:left">计算某一列的最大值</td>
+</tr>
+<tr>
+<td style="text-align:left">MIN</td>
+<td style="text-align:left">计算某一列的最小值</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>COUNT(*)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(*) num FROM students;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果聚合查询的<code>WHERE</code>条件没有匹配到任何行，<code>COUNT()</code>会返回0，而<code>SUM()</code>、<code>AVG()</code>、<code>MAX()</code>和<code>MIN()</code>会返回<code>NULL</code></p>
+</li>
+</ol>
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><ol>
+<li><p>聚合查询返回列中，只能放入分组的列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, COUNT(*) num FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用多个列进行分组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非分组列拼接后返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT class_id, group_concat(name), COUNT(*) num FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="多表"><a href="#多表" class="headerlink" title="多表"></a>多表</h3><ol>
+<li><p>查询多张表的语法是：<code>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;</code></p>
+<ol>
+<li>使用多表查询可以获取M x N行记录</li>
+<li>多表查询的结果集可能非常巨大，要小心使用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students, classes;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><ol>
+<li><p>INNER JOIN「<strong>交集</strong>」</p>
+<p>只返回同时存在于两张表的行数据</p>
+</li>
+<li><p>LEFT OUTER JOIN</p>
+<p>以左表为基准，匹配返回，右表匹配不到的字段返回null</p>
+</li>
+<li><p>RIGHT OUTER JOIN</p>
+<p>以右表为基准，匹配返回，左表匹配不到的字段返回null</p>
+</li>
+<li><p>FULL OUTER JOIN「<strong>并集</strong>」</p>
+<p>把两张表的所有记录全部选择出来，并且，自动把对方不存在的列填充为NULL</p>
+</li>
+</ol>
+<h3 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h3><ol>
+<li><p>INSERT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);</span><br><span class="line"></span><br><span class="line">//多条</span><br><span class="line">INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...),(值1, 值2, ...);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>UPDATE</p>
+<ul>
+<li><p>在执行<code>UPDATE</code>语句前，最好先用<code>SELECT</code>语句来测试<code>WHERE</code>条件是否筛选出了期望的记录集，然后再用<code>UPDATE</code>更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM students WHERE id=1;</span><br><span class="line"></span><br><span class="line">UPDATE students SET name=&apos;大牛&apos;, score=66 WHERE id=1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>UPDATE</code>语句会返回<code>更新的行数</code>以及<code>WHERE</code>条件<code>匹配的行数</code>，匹配不到时，返回0</p>
+</li>
+</ul>
+</li>
+<li><p>DELETE</p>
+<ul>
+<li><p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM &lt;表名&gt; WHERE ...;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果<code>WHERE</code>条件没有匹配到任何记录，<code>DELETE</code>语句不会报错，也不会有任何记录被删除</p>
+</li>
+<li><p>在执行<code>delete</code>语句前，最好先用<code>SELECT</code>语句来测试<code>WHERE</code>条件是否筛选出了期望的记录集，然后再用<code>delete</code>删除</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><h4 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h4><ol>
+<li>索引的效率取决于索引列的值是否散列，即该列的值如果越互不相同，那么索引效率越高。反过来，如果记录的列存在大量相同的值，例如<code>gender</code>列，大约一半的记录值是<code>M</code>，另一半是<code>F</code>，因此，对该列创建索引就没有意义</li>
+<li>可以对一张表创建多个索引。索引的优点是提高了查询效率，缺点是在插入、更新和删除记录时，需要同时修改索引，因此，索引越多，插入、更新和删除记录的速度就越慢</li>
+<li>对于主键，关系数据库会自动对其创建主键索引。使用主键索引的效率是最高的，因为主键会保证绝对唯一</li>
+<li>索引对于用户和应用程序来说都是透明的</li>
+</ol>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><ol>
+<li><p>对<code>score</code>列创建索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD INDEX idx_score (score);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对<code>name、score</code> 创建复合索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD INDEX idx_name_score (name, score);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>唯一索引</p>
+<ul>
+<li><p>通过创建唯一索引，可以保证某一列的值具有唯一性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD UNIQUE INDEX uni_name (name);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>对某一列添加一个<strong>唯一约束而不创建唯一索引</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE students ADD CONSTRAINT uni_name UNIQUE (name);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="实用SQL语句"><a href="#实用SQL语句" class="headerlink" title="实用SQL语句"></a>实用SQL语句</h2><ol>
+<li><p>插入或替换</p>
+<blockquote>
+<p>若<code>id=1</code>的记录不存在，<code>REPLACE</code>语句将插入新记录，否则，当前<code>id=1</code>的记录将被删除，然后再插入新记录</p>
+<p><strong>不存在则插入，存在则先删除后插入</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入或更新</p>
+<blockquote>
+<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，当前<code>id=1</code>的记录将被更新，更新的字段由<code>UPDATE</code>指定</p>
+<p><strong>不存在则插入，存在则更新指定字段数据</strong>「<em>非指定字段数据不变</em>」</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99) ON DUPLICATE KEY UPDATE name=&apos;小明&apos;, gender=&apos;F&apos;, score=99;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入或忽略</p>
+<p>若<code>id=1</code>的记录不存在，<code>INSERT</code>语句将插入新记录，否则，不执行任何操作。</p>
+<p><strong>即不存在则插入，存在则不执行任何操作</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, &apos;小明&apos;, &apos;F&apos;, 99);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表快照</p>
+<p>新创建的表结构和<code>SELECT</code>使用的表结构完全一致</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询结果集写入表中</p>
+<p>确保<code>INSERT</code>语句的列和<code>SELECT</code>语句的列能对应，数量和类型一致</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ol>
+<li>数据库事务具有<code>ACID</code>这4个特性<ul>
+<li>A：Atomic，原子性，将所有SQL作为原子工作单元执行，要么全部执行，要么全部不执行；</li>
+<li>C：Consistent，一致性，事务完成后，所有数据的状态都是一致的，即A账户只要减去了100，B账户则必定加上了100；</li>
+<li>I：Isolation，隔离性，如果有多个事务并发执行，每个事务作出的修改必须与其他事务隔离；</li>
+<li>D：Duration，持久性，即事务完成后，对数据库数据的修改被持久化存储。</li>
+</ul>
+</li>
+<li><p>对于单条SQL语句，数据库系统自动将其作为一个事务执行，这种事务被称为<em>隐式事务</em></p>
+</li>
+<li><p>多条SQL语句作为一个事务执行，使用<code>BEGIN</code>开启一个事务，使用<code>COMMIT</code>提交一个事务，这种事务被称为<em>显式事务</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BEGIN;</span><br><span class="line">UPDATE accounts SET balance = balance - 100 WHERE id = 1;</span><br><span class="line">UPDATE accounts SET balance = balance + 100 WHERE id = 2;</span><br><span class="line">COMMIT;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><p>对于两个并发执行的事务，如果涉及到操作同一条记录的时候，可能会发生问题。因为并发操作会带来数据的不一致性，包括脏读、不可重复读、幻读等。数据库系统提供了隔离级别来让我们有针对性地选择事务的隔离级别，避免数据不一致的问题</p>
+<p>SQL标准定义了4种<strong>事件之间的隔离级别</strong>，分别对应可能出现的数据不一致的情况</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Isolation Level</th>
+<th style="text-align:left">脏读（Dirty Read）</th>
+<th style="text-align:left">不可重复读（Non Repeatable Read）</th>
+<th style="text-align:left">幻读（Phantom Read）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Read Uncommitted</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Read Committed</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Repeatable Read</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Serializable</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p><code>Read Uncommitted</code>是隔离级别最低的一种事务级别。在这种隔离级别下，一个事务会<strong>读到另一个事务更新后但未提交的数据</strong>，如果另一个事务回滚，那么当前事务读到的数据就是脏数据，这就是<strong>脏读</strong>（Dirty Read）</p>
+</li>
+<li><p>在<code>Read Committed</code>隔离级别下，一个事务可能会遇到<strong>不可重复读</strong>（Non Repeatable Read）的问题</p>
+<p>不可重复读是指，在一个事务内，多次读同一数据，在这个事务还没有结束时，如果<strong>另一个事务恰好修改了这个数据并且提交</strong>，那么，在第一个事务中，两次读取的数据就可能不一致</p>
+</li>
+<li><p>在<code>Repeatable Read</code>隔离级别下，一个事务可能会遇到<strong>幻读</strong>（Phantom Read）的问题</p>
+<p>幻读是指，在一个事务中，第一次查询某条记录，发现没有，但是，当试图更新这条不存在的记录时，竟然能成功，并且，再次读取同一条记录，它就神奇地出现了</p>
+</li>
+<li><p><code>Serializable</code>是最严格的隔离级别。在Serializable隔离级别下，所有事务按照次序依次执行，因此，脏读、不可重复读、幻读都不会出现</p>
+<p>虽然Serializable隔离级别下的事务具有最高的安全性，但是，由于事务是串行执行，所以效率会大大下降，应用程序的性能会急剧降低。如果没有特别重要的情景，一般都不会使用Serializable隔离级别</p>
+<p>如果没有指定隔离级别，数据库就会使用默认的隔离级别。在MySQL中，如果使用InnoDB，默认的隔离级别是<code>Repeatable Read</code></p>
+</li>
+</ol>
+<h2 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h2><p>​    <a href="https://zhuanlan.zhihu.com/p/27960044" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27960044</a></p>
+<ol>
+<li><p>下载、安装</p>
+</li>
+<li><p>启动、停止</p>
+</li>
+</ol>
+<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647620108.png" alt="UTOOLS1576647620108.png"><br><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576647722226.jpg" alt="UTOOLS1576647722226.jpg"></p>
+<ol start="3">
+<li><p>连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p </span><br><span class="line">输入 123456</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="对实体-“useSSL”-的引用必须以-‘-’-分隔符结尾"><a href="#对实体-“useSSL”-的引用必须以-‘-’-分隔符结尾" class="headerlink" title="对实体 “useSSL” 的引用必须以 ‘;’ 分隔符结尾"></a>对实体 “useSSL” 的引用必须以 ‘;’ 分隔符结尾</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&amp; 替换为 &amp;amp;</span><br><span class="line"></span><br><span class="line">&lt;bean id=&quot;dataSource_mid&quot;</span><br><span class="line">		  class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/test?characterEncoding=utf8&amp;amp;useSSL=true&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">		&lt;property name=&quot;password&quot; value=&quot;123456&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="配置-mysql-允许远程连接的方法"><a href="#配置-mysql-允许远程连接的方法" class="headerlink" title="配置 mysql 允许远程连接的方法"></a><a href="https://www.cnblogs.com/linjiqin/p/5270938.html" target="_blank" rel="noopener">配置 mysql 允许远程连接的方法</a></h3><ol>
+<li><p>修改 <code>/etc/mysql/my.conf</code>「Linux」 或  <code>my.ini</code>「Windows」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">把</span><br><span class="line">bind-address = 127.0.0.1</span><br><span class="line">改成</span><br><span class="line">bind-address = 0.0.0.0</span><br><span class="line">重启 MySQL 服务</span><br><span class="line"></span><br><span class="line">// 注释使用 # 开头</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为需要远程登录的用户赋予权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grant all on *.* to &apos;admin&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line">允许任何 ip 地址 (% 表示允许任何 ip 地址) 的电脑用 admin 帐户和密码 (123456) 来访问这个 mysql server。</span><br><span class="line">注意 admin 账户不一定要存在</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>支持 root 用户允许远程连接 mysql 数据库</p>
+<ol>
+<li><p>方法一「优选」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">update user set host=&apos;%&apos; where user=&apos;root&apos; AND host=&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; [identified by &apos;123456&apos;] with grant option;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>查看系统用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">select user, host from user;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DataGrip 连接 mysql 报错 Server returns invalid timezone. Go to ‘Advanced’ tab and set’serverTimezone’ property</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置界面-Advanced 选项中搜索到 Name 为 serverTimezone 其 Value设置为 GMT</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/17/MySQL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1232,552 +1896,6 @@
 
 
   
-    <article id="post-IDEA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/IDEA/">IDEA</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/IDEA/" class="archive-article-date">
-  	<time datetime="2019-07-05T04:39:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.2k字 | 阅读本文大概需要 ：9分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="IDEA-安装注册"><a href="#IDEA-安装注册" class="headerlink" title="IDEA 安装注册"></a>IDEA 安装注册</h3><h3 id="IDEA-快捷键—windows"><a href="#IDEA-快捷键—windows" class="headerlink" title="IDEA 快捷键—windows"></a>IDEA 快捷键—windows</h3><blockquote>
-<p>以下快捷键是根据自己使用习惯配置的，仅供参考</p>
-</blockquote>
-<ol>
-<li><p>双击 Shift 查找文件</p>
-</li>
-<li><p><strong>Ctrl + E 最近打开文件</strong></p>
-</li>
-<li><p>Ctrl + D 删除当前行或选中行</p>
-</li>
-<li><p><del>Ctrl + W 删除光标前 word「word之间一般以空格或逗号分隔」</del></p>
-</li>
-<li><p>Ctrl + W 关闭 Editor Tab<code>Close</code></p>
-</li>
-<li><p>Ctrl + Shift + W 关闭所有 Editor Tab <code>Close All</code></p>
-</li>
-<li><p>Ctrl + Z 撤销</p>
-</li>
-<li><p>Ctrl + Y 恢复撤销</p>
-</li>
-<li><p>Ctrl + F 当前文件范围内查找</p>
-</li>
-<li><p>Ctrl + R 当前文件范围内替换</p>
-</li>
-<li><p>Ctrl + Shift + F 全局范围内查找</p>
-</li>
-<li><p>Ctrl + Shift + R 全局范围内替换</p>
-</li>
-<li><p>Ctrl + L 定位到指定行 </p>
-</li>
-<li><p>Ctrl + / 单行注释与反注释</p>
-</li>
-<li><p>Ctrl + Shift + / 块注释与反注释</p>
-</li>
-<li><p><strong>Alt+Shift + 鼠标左键选择或左键双击  选中多个单词或代码块</strong></p>
-</li>
-<li><p>Ctrl + 鼠标左键 进入方法定义代码处; Show usages … 「定位到使用的代码处」</p>
-</li>
-<li><p>Ctrl + 鼠标右键 进入方法实现类定义代码处</p>
-</li>
-<li><p>Ctrl + H 查看类或接口继承关系</p>
-</li>
-<li><p>Ctrl + Alt + H 查看方法被调用关系</p>
-</li>
-<li><p>Ctrl + Alt + 方向下键 复制所在行或选中行</p>
-</li>
-<li><p>Alt + 方向左键/右键 回退/前进</p>
-</li>
-<li><p>Alt + 方向上键/下键 移动所在行或选中行 <code>Move Line Down/Up</code></p>
-</li>
-<li><p>Alt + U 切换大小写</p>
-</li>
-<li><p>Alt + F  代码格式化</p>
-</li>
-<li><p>Alt + S Surround With…</p>
-</li>
-<li><p>Alt + G Generate</p>
-</li>
-<li><p>F4 打开文件所在目录 Show in Explorer</p>
-</li>
-<li><p>F2 文件重命名</p>
-</li>
-<li><p>F5 进入函数</p>
-</li>
-<li><p>F6 单步执行</p>
-</li>
-<li><p>F7 跳出函数</p>
-</li>
-<li><p>F8 运行至下一个断点</p>
-</li>
-<li><p>Alt + R  运行 Run</p>
-</li>
-<li><p>for 循环</p>
-<ol>
-<li>100.for</li>
-<li>array.for</li>
-<li>list.for</li>
-<li>map.for</li>
-</ol>
-</li>
-<li><p>psvm 生成 main 方法</p>
-</li>
-<li><p>sout 生成代码 <code>System.out.println();</code></p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576590198001.png" alt="UTOOLS1576590198001.png"></p>
-</li>
-<li><p>IDEA 默认自动保存，所以不用 Ctrl + S 手动保存了</p>
-</li>
-<li><p>在打开文件页签上右键，Split Vertically 竖向分隔 和 Split Horizontally 横向分隔</p>
-</li>
-<li><p>Ctrl + Alt +M 代码块抽离成函数</p>
-</li>
-<li><p>Ctrl + Alt + S  <code>Settings</code></p>
-</li>
-<li><p>Alt + V <code>Split Vertically</code></p>
-</li>
-<li><p>Alt + H <code>Split Horizontally</code></p>
-</li>
-<li><p><strong>Ctrl + Shift + M 代码窗口最大化</strong> <code>Hide All Tool Windows</code></p>
-</li>
-</ol>
-<h3 id="IDEA-快捷键—Mac"><a href="#IDEA-快捷键—Mac" class="headerlink" title="IDEA 快捷键—Mac"></a>IDEA 快捷键—Mac</h3><blockquote>
-<p>以下快捷键是IDEA 默认快捷键+根据自己使用习惯配置快捷键，仅供参考</p>
-</blockquote>
-<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ol>
-<li>双击 Shift 查找文件</li>
-<li>Command + F 当前文件范围内查找 <code>Find...</code></li>
-<li>Command + Shift + F 全局范围内查找 <code>Find in Path...</code></li>
-<li>Command + \  查询接口位置</li>
-</ol>
-<h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><ol>
-<li>Command + R 当前文件范围内替换 <code>Replace...</code></li>
-<li>Command + Shift + R 全局范围内替换 <code>Replace in Path...</code></li>
-</ol>
-<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><ol>
-<li>Command + D 复制当前行或选中行</li>
-<li>Command + Delete  删除光标所在行或选中行（一行或多行）</li>
-<li>Option + Shift + ⇧ <code>Move Line Up</code></li>
-<li>Option + Shift + ⇩ <code>Move Line Down</code></li>
-<li>Command + Option + L 代码格式化 <code>Reformat Code</code></li>
-<li>Command + Shift + U  切换大小写</li>
-<li>Command + Z 撤销 <code>Undo</code></li>
-<li>Command + Y 恢复撤销 <code>Redo</code></li>
-<li>Option + Delete  <code>Delete to Word Start</code></li>
-<li>Option + S <code>Surround With</code>…</li>
-<li>Option + G <code>Generate</code> </li>
-<li>Option + Enter 显示意向动作和快速修复代码</li>
-<li>Command + Option + O <code>Optimize Imports</code>  优化导入</li>
-<li><strong>Option+Shift + 鼠标左键选择或左键双击  选中多个单词或代码块</strong></li>
-</ol>
-<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><ol>
-<li>F2  重命名</li>
-<li>F4  打开文件所在位置 <code>Reveal in Finder</code></li>
-</ol>
-<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ol>
-<li>Command + /   单行注释</li>
-<li>Ctrl + Shift + /  块注释</li>
-</ol>
-<h4 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h4><ol>
-<li>Command + 左键  进入函数定义或使用「调用」</li>
-<li>Command + Option + 左键 进入函数实现</li>
-<li>Command + Option + ⇦  上一个位置 Back</li>
-<li>Command + Option + ⇨  下一个位置 Forward</li>
-<li>Command + Shift + Delete 上一个编辑位置</li>
-<li>Ctrl + Shift + Delete 下一个编辑位置</li>
-<li>Command + G 定位到行 <code>Line/Column...</code></li>
-<li>Command + E  最近打开过的文件</li>
-<li>Option + J  智能提示下拉框向下切换，与方向键 ↓ 一样</li>
-<li>Option + K  智能提示下拉框向上切换，与方向键 ↑ 一样</li>
-</ol>
-<h4 id="层级关系"><a href="#层级关系" class="headerlink" title="层级关系"></a>层级关系</h4><ol>
-<li>Ctrl + Option + H  调用层级关系</li>
-<li>Command + Shift + H 方法层级关系</li>
-</ol>
-<h4 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h4><ol>
-<li>Command + Option + M 代码块抽离成函数</li>
-</ol>
-<h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><ol>
-<li>Option + V <code>Split Vertically</code></li>
-<li>Option + H <code>Split Horizontally</code></li>
-</ol>
-<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><ol>
-<li>Command + W  <code>Close</code></li>
-<li><p>Command + Shift + W  <code>Close All</code></p>
-</li>
-<li><p>Command + Shift + O  <code>Close Others</code></p>
-</li>
-<li>Command + Shift + F12 代码窗口最大化<code>Hide All Tool Windows</code></li>
-</ol>
-<h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><ol>
-<li><p>F7 进入函数</p>
-</li>
-<li><p>Shift + F7 跳出函数</p>
-</li>
-<li><p>F8 单步执行</p>
-</li>
-<li><p>F9 运行至下一个断点</p>
-</li>
-<li><p>Shift + F8  运行 Run</p>
-</li>
-<li><p>Shift + F9  运行 Debug</p>
-</li>
-<li><p>Command + F2  Stop</p>
-</li>
-</ol>
-<h3 id="IDEA-配置"><a href="#IDEA-配置" class="headerlink" title="IDEA 配置"></a>IDEA 配置</h3><ol>
-<li>教程大全 <a href="https://mp.weixin.qq.com/s/JnEow9mPyEjM-W9DnMkt1Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/JnEow9mPyEjM-W9DnMkt1Q</a></li>
-</ol>
-<h4 id="设置编码为-utf-8-编码"><a href="#设置编码为-utf-8-编码" class="headerlink" title="设置编码为 utf-8 编码"></a>设置编码为 utf-8 编码</h4><p><code>File-&gt;Settings-&gt;Editor-&gt;File Encodings</code></p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576592423060.png" alt="UTOOLS1576592423060.png"></p>
-<h4 id="IntelliJ-IDEA-添加过滤文件或目录"><a href="#IntelliJ-IDEA-添加过滤文件或目录" class="headerlink" title="IntelliJ IDEA 添加过滤文件或目录"></a>IntelliJ IDEA 添加过滤文件或目录</h4><p>Settings→Editor→File Types</p>
-<p>在窗口最下方 “Ignore files and folders” 一栏中添加如下忽略：          </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*.iml;*.idea;*.gitignore;*.sh;*.classpath;*.project;*.settings;</span><br></pre></td></tr></table></figure>
-<h4 id="修改-IntelliJ-IDEA-默认配置路径"><a href="#修改-IntelliJ-IDEA-默认配置路径" class="headerlink" title="修改 IntelliJ IDEA 默认配置路径"></a>修改 IntelliJ IDEA 默认配置路径</h4><blockquote>
-<p>修改 {IDEA 安装目录}/bin/idea.properties 文件</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">idea.config.path=D:/Java/JetBrains/.IntelliJIdea2018.1/config</span><br><span class="line">idea.system.path=D:/Java/JetBrains/.IntelliJIdea2018.1/system</span><br><span class="line">idea.plugins.path=$&#123;idea.config.path&#125;/plugins</span><br><span class="line">idea.log.path=$&#123;idea.system.path&#125;/log</span><br></pre></td></tr></table></figure>
-<h4 id="必备插件"><a href="#必备插件" class="headerlink" title="必备插件"></a>必备插件</h4><p><strong>优选：<a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/plugins-settings.md" target="_blank" rel="noopener">https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/plugins-settings.md</a></strong></p>
-<p>参考<a href="http://mp.weixin.qq.com/s?__biz=MzU3MDc5NjU2OA==&amp;mid=2247485262&amp;idx=1&amp;sn=a230af43d181635d206d3f7fbd885667&amp;chksm=fce8b839cb9f312f019a6b704bc312f0f10f1916ace73d58222d2a85d4d39a865c2ac8254a48&amp;mpshare=1&amp;scene=23&amp;srcid=&amp;sharer_sharetime=1577765192594&amp;sharer_shareid=16528a282b16ff19bf19092da87399ff#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzU3MDc5NjU2OA==&amp;mid=2247485262&amp;idx=1&amp;sn=a230af43d181635d206d3f7fbd885667&amp;chksm=fce8b839cb9f312f019a6b704bc312f0f10f1916ace73d58222d2a85d4d39a865c2ac8254a48&amp;mpshare=1&amp;scene=23&amp;srcid=&amp;sharer_sharetime=1577765192594&amp;sharer_shareid=16528a282b16ff19bf19092da87399ff#rd</a></p>
-<ol>
-<li><p>MyBatisCodeHelper-Pro——MyBatis 高效编码插件</p>
-<p><a href="https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/README" target="_blank" rel="noopener">https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/README</a></p>
-</li>
-<li><p>JRebel</p>
-<blockquote>
-<p>JRebel 是一种热部署生产力工具，修改代码后不用重新启动程序，所有的更改便可以生效。它跳过了Java开发中常见的重建、重新启动和重新部署周期</p>
-</blockquote>
-<p><a href="https://blog.csdn.net/weixin_42831477/article/details/82229436" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42831477/article/details/82229436</a></p>
-</li>
-<li><p><strong>FindBugs-IDEA</strong></p>
-</li>
-<li><p><strong>Alibaba Java Coding Guidelines</strong></p>
-</li>
-<li><p>CodeGlance</p>
-<blockquote>
-<p>在编辑代码最右侧，显示一块代码小地图，类似 Sublime Text</p>
-</blockquote>
-</li>
-<li><p><strong>Maven Helper</strong> </p>
-</li>
-<li><p><strong>Free Mybatis plugin</strong></p>
-<ul>
-<li>Java 与 XML 来回跳转</li>
-<li>Mapper 方法自动生成 XML</li>
-</ul>
-</li>
-<li><p><strong>GenerateAllSetter</strong></p>
-<blockquote>
-<p>new 一个对象，然后选中对象，Alt+Enter</p>
-</blockquote>
-</li>
-<li><p><strong>Json2Pojo with Lombok</strong></p>
-</li>
-<li><p><strong>SGsonFormat</strong></p>
-</li>
-<li><p><strong>Lombok</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//另外项目添加依赖</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;1.18.8&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>RestfulToolkit</strong></p>
-<ul>
-<li>Ctrl + \ 查找 Controller 中 url</li>
-<li>http get、post 测试</li>
-</ul>
-</li>
-<li><p><strong>JUnitGenerator V2.0</strong></p>
-<p>参考文章 JUnit <a href="https://championwang.gitee.io/2019/07/25/JUnit/">https://championwang.gitee.io/2019/07/25/JUnit/</a></p>
-</li>
-<li><p><strong>MyBatis Log Plugin</strong></p>
-<ul>
-<li>开启方法 Tools—Mybatis Log Plugin</li>
-<li>将 Mybatis 执行的 sql 脚本显示出来，无需处理，可以直接复制出来执行</li>
-</ul>
-</li>
-<li><p>Rainbow Brackets「repo」</p>
-</li>
-<li><p>Translation</p>
-</li>
-<li><p>Grep console</p>
-<blockquote>
-<p>自定义日志颜色，idea控制台可以彩色显示各种级别的log，安装完成后，在console中右键就能打开</p>
-</blockquote>
-</li>
-<li><p>VisualVM Launcher</p>
-</li>
-<li><p>stackoverflow</p>
-</li>
-<li><p>Iedis</p>
-<blockquote>
-<p>Redis 插件</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="IDEA-操作体验优化"><a href="#IDEA-操作体验优化" class="headerlink" title="IDEA 操作体验优化"></a>IDEA 操作体验优化</h4><ol>
-<li><p>增加 jvm 内存配置</p>
-<p>bin 目录下 idea64.exe.vmoptions 和 idea.exe.vmoptions</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-Xms1024m</span><br><span class="line">-Xmx4096m</span><br><span class="line">-XX:ReservedCodeCacheSize=1024m</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭不用的插件</p>
-</li>
-<li><p>选中项目，鼠标右键，Load/Unload Modules，只导入需要的模块</p>
-</li>
-<li><p>点击 idea 右下角头像标志，调整 idea 检查级别</p>
-</li>
-</ol>
-<h4 id="IDEA一定要改的八条配置"><a href="#IDEA一定要改的八条配置" class="headerlink" title="IDEA一定要改的八条配置"></a>IDEA一定要改的八条配置</h4><ol>
-<li>自动编译开关</li>
-<li>忽略大小写开关</li>
-<li>智能导包开关</li>
-<li>悬浮提示开关</li>
-<li>取消单行显示tabs的操作</li>
-<li>项目文件编码</li>
-<li>滚轴修改字体大小<br>内容来源: <a href="https://mp.weixin.qq.com/s/YJfFxVft-5BQ-XOphqc4Qg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/YJfFxVft-5BQ-XOphqc4Qg</a></li>
-</ol>
-<h3 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h3><p>参考  <a href="https://mp.weixin.qq.com/s/aBMnMqao-ZLeUZa6hzrhIw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/aBMnMqao-ZLeUZa6hzrhIw</a></p>
-<ol>
-<li>循环中设置条件断点</li>
-<li>强制返回指定值</li>
-<li>模拟抛出异常</li>
-<li>多线程调试</li>
-<li>Evaluate Expression 查看和设置变量值</li>
-</ol>
-<h3 id="其它使用"><a href="#其它使用" class="headerlink" title="其它使用"></a>其它使用</h3><h4 id="发布其它项目"><a href="#发布其它项目" class="headerlink" title="发布其它项目"></a>发布其它项目</h4><p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576592547822.png" alt="UTOOLS1576592547822.png"></p>
-<h4 id="远程部署"><a href="#远程部署" class="headerlink" title="远程部署"></a>远程部署</h4><ol>
-<li>自带工具 Deployment</li>
-<li>Cloud Toolkit</li>
-</ol>
-<h4 id="反编译-jar-包，查看源码"><a href="#反编译-jar-包，查看源码" class="headerlink" title="反编译 jar 包，查看源码"></a>反编译 jar 包，查看源码</h4><p>可以点击 <code>File-Open</code> 或者 拖拽文件到窗口中，选择文件，右键 <code>Add as Library...</code> <code>ok</code> 即可展开<code>jar</code>文件查看源码</p>
-<h4 id="序列化类快速生成-serialVersionUID"><a href="#序列化类快速生成-serialVersionUID" class="headerlink" title="序列化类快速生成 serialVersionUID"></a>序列化类快速生成 serialVersionUID</h4><ol>
-<li><p>设置序列化的类无 <code>serialVersionUID</code> 的提醒</p>
-<p>关键词 <code>Inspections</code> <code>serialVersionUID</code></p>
-<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577257188189.png" alt="UTOOLS1577257188189.png"></p>
-</li>
-<li><p>类名有黄色提醒，光标放在类名上，按下 Alt + Enter，提示添加 serialVersionUID </p>
-<p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/UTOOLS1577158522536.png" alt="UTOOLS1577158522536.png"></p>
-</li>
-</ol>
-<h3 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h3><h4 id="全局搜索快捷键-Ctrl-Shift-F-不起作用"><a href="#全局搜索快捷键-Ctrl-Shift-F-不起作用" class="headerlink" title="全局搜索快捷键 Ctrl + Shift + F 不起作用"></a>全局搜索快捷键 Ctrl + Shift + F 不起作用</h4><blockquote>
-<p>与输入法简繁体切换快捷键冲突，可以把输入法中该快捷键停掉「毕竟不常用」</p>
-</blockquote>
-<h4 id="某模块提示-Java-编译版本过低，不支持-XXX"><a href="#某模块提示-Java-编译版本过低，不支持-XXX" class="headerlink" title="某模块提示 Java 编译版本过低，不支持 XXX"></a>某模块提示 Java 编译版本过低，不支持 XXX</h4><ol>
-<li><p>查看 Java 编译版本，此处修改也可，但有问题的模块都要修改</p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576592602212.jpg" alt="UTOOLS1576592602212.jpg"></p>
-</li>
-<li><p>最快解决方法：在工程的 pom.xml 中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">	&lt;plugins&gt;</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;3.3&lt;/version&gt;</span><br><span class="line">			&lt;configuration&gt;</span><br><span class="line">				&lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">				&lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">			&lt;/configuration&gt;</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	&lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="修改-jsp、js等前台文件后没有手动重启情况下，没有生效"><a href="#修改-jsp、js等前台文件后没有手动重启情况下，没有生效" class="headerlink" title="修改 jsp、js等前台文件后没有手动重启情况下，没有生效"></a>修改 jsp、js等前台文件后没有手动重启情况下，没有生效</h4><p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576592650703.jpg" alt="UTOOLS1576592650703.jpg"></p>
-<p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576592716228.gif" alt="UTOOLS1576592716228.gif"></p>
-<h4 id="IntelliJ-IDEA-中用谷歌浏览器打开页面，出现-windows-找不到文件-chrome"><a href="#IntelliJ-IDEA-中用谷歌浏览器打开页面，出现-windows-找不到文件-chrome" class="headerlink" title="IntelliJ IDEA 中用谷歌浏览器打开页面，出现 windows 找不到文件 chrome"></a>IntelliJ IDEA 中用谷歌浏览器打开页面，出现 windows 找不到文件 chrome</h4><ol>
-<li><p>右击谷歌浏览器快捷方式打开文件位置「确定 Chrome 位置」</p>
-</li>
-<li><p>打开 IntelliJ IDEA 软件，找到 file–&gt;settings–&gt; 找到 Web Browsers</p>
-<p>在 chrome 那一栏最右边的 path 中选择上步骤中位置的 chrome.exe 文件</p>
-</li>
-<li><p>保存，然后再次点击编辑器页面悬浮的 chrome 按钮 即可打开</p>
-</li>
-</ol>
-<h4 id="Open-Recent"><a href="#Open-Recent" class="headerlink" title="Open Recent"></a>Open Recent</h4><p><img src="https://wangwenzhe.oss-cn-beijing.aliyuncs.com/UTOOLS1576637586789.png" alt="UTOOLS1576637586789.png" style="zoom:50%;"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G:\JavaDevelop\IntelliJIdeaConfig\config\options\recentProjects.xml</span><br></pre></td></tr></table></figure>
-<h4 id="修改默认的-Maven-配置"><a href="#修改默认的-Maven-配置" class="headerlink" title="修改默认的 Maven 配置"></a>修改默认的 Maven 配置</h4><p>每次新建项目或导入项目时，IDEA会使用默认的 Maven 配置</p>
-<p><img src="/Users/mac126/Library/Application Support/typora-user-images/image-20200106141413044.png" alt="image-20200106141413044"></p>
-<p><img src="/Users/mac126/Library/Application Support/typora-user-images/image-20200106141604581.png" alt="image-20200106141604581"></p>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="Http-Client"><a href="#Http-Client" class="headerlink" title="Http Client"></a>Http Client</h4><p><em>IDEA 自带 Http Client 工具，<code>Tools</code> - &gt; <code>Http Client-&gt; Test RESTful Web Service</code></em></p>
-<p>参考：<a href="https://segmentfault.com/a/1190000021357738" target="_blank" rel="noopener">https://segmentfault.com/a/1190000021357738</a></p>
-<h4 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h4><ol>
-<li>支持多种数据库</li>
-<li>数据导出，可选择导出数据的格式，可选择导出到文件或剪切板</li>
-<li>数据排序，支持多字段</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/IDEA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/Tomcat/">Tomcat</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/Tomcat/" class="archive-article-date">
-  	<time datetime="2019-07-05T03:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：471字 | 阅读本文大概需要 ：2分钟
-			</div>
-    
-			<!-- 目录内容 -->
-					
-			<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/jiang1245764446/article/details/51898723" target="_blank" rel="noopener">https://blog.csdn.net/jiang1245764446/article/details/51898723</a></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
-<li><p>JVM 内存配置「提高内存利用率」</p>
-</li>
-<li><p>连接数配置「提高 CPU 利用率」</p>
-<p><code>server.xml</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;Executor name=&quot;tomcatThreadPool&quot; namePrefix=&quot;catalina-exec-&quot;</span><br><span class="line">       maxThreads=&quot;500&quot; minSpareThreads=&quot;100&quot; prestartminSpareThreads=&quot;true&quot;</span><br><span class="line">   maxQueueSize=&quot;100&quot;/&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;Connector </span><br><span class="line">      executor=&quot;tomcatThreadPool&quot;</span><br><span class="line">      port=&quot;8080&quot;</span><br><span class="line">      protocol=&quot;org.apache.coyote.http11.Http11Nio2Protocol&quot;</span><br><span class="line">      connectionTimeout=&quot;20000&quot;</span><br><span class="line">      maxConnections=&quot;10000&quot;</span><br><span class="line">      redirectPort=&quot;8443&quot;</span><br><span class="line">      enableLookups=&quot;false&quot;</span><br><span class="line">      acceptCount=&quot;100&quot;</span><br><span class="line">      maxPostSize=&quot;10485760&quot; </span><br><span class="line">      compression=&quot;on&quot;</span><br><span class="line">      disableUploadTimeout=&quot;true&quot;</span><br><span class="line">      compressionMinSize=&quot;2048&quot;</span><br><span class="line">      acceptorThreadCount=&quot;2&quot;</span><br><span class="line">      compressableMimeType=&quot;text/html,text/xml,text/plain,text/css,text/javascript,application/javascript&quot;</span><br><span class="line">      URIEncoding=&quot;utf-8&quot;</span><br><span class="line">   /&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="3">
-<li><p>CATALINA_HOME 与 CATALINA_BASE</p>
-<p><strong>注意：不要在环境变量中加入这两个变量，否则启动多个Tomcat错误</strong></p>
-<ul>
-<li>CATALINA_HOME 是 Tomcat 的安装目录，CATALINA_BASE 是 Tomcat 的工作目录</li>
-<li>使用场景：一个 Tomcat 运行多个实例。Tomcat 中 bin、lib 目录为公用目录，其它目录每个实例都有一份，各自配置，独立运行。</li>
-<li>参考 <a href="https://blog.csdn.net/jiaotuwoaini/article/details/51455829" target="_blank" rel="noopener">https://blog.csdn.net/jiaotuwoaini/article/details/51455829</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="指定项目目录发布"><a href="#指定项目目录发布" class="headerlink" title="指定项目目录发布"></a>指定项目目录发布</h2><p><code>server.xml</code> <code>Host</code> 内部添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;scm&quot; path=&quot;../scm&quot; reloadable=&quot;true&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Tomcat-日志排查问题"><a href="#Tomcat-日志排查问题" class="headerlink" title="Tomcat 日志排查问题"></a>Tomcat 日志排查问题</h2><ol>
-<li><p>项目日志文件: tomcat/bin/XXX.log  XXX.log 日志文件名称在项目 log4j.properties 中配置</p>
-<blockquote>
-<p>项目运行过程中报 500 错误时，从该日志文件查找原因</p>
-</blockquote>
-</li>
-<li><p>Tomcat 日志文件: tomcat/logs/catalina.out tomcat/logs/catalina.yyyy-mm-dd.log</p>
-<blockquote>
-<p>Tomcat 报错问题</p>
-</blockquote>
-</li>
-<li><p>查看方法 </p>
-<ul>
-<li>日志文件较小时，10Mb 以内。windows 平台中直接打开查看，例如使用 notepad++等。Linux 平台中可以将文件拷贝至 windows 中查看，也可通过命令 <code>less 文件名</code> 查看文件，大写字母 <code>G</code> 快速跳转至文件尾部，<code>Ctrl u</code> 向上翻页，<code>Ctrl d</code> 向下翻页</li>
-<li>日志文件较大时，10Mb 以上。windows 平台中借助 LogViewer 工具查看。Linux 平台通过上述 <code>less</code> 等命令查看</li>
-</ul>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/Tomcat/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -1899,11 +2017,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ant Design Pro</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color5">Ant Design Pro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1911,11 +2029,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1927,19 +2045,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Fastjson</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Flex布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1951,15 +2065,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java爬坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1971,7 +2089,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1979,11 +2097,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1995,15 +2117,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2011,19 +2125,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Poi-tl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2031,15 +2141,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2051,11 +2169,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebStorm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2063,7 +2185,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2079,7 +2205,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2087,7 +2213,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+                <a href="javascript:void(0)" class="js-tag color5">产品管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2095,15 +2221,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">产品管理</a>
+                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">探索</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2115,19 +2237,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2136,6 +2254,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">
