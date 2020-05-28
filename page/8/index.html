@@ -93,7 +93,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 86</p>
-			<p>总字数 <span class="post-count">82k</span></p>
+			<p>总字数 <span class="post-count">82.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -178,7 +178,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：2.2k字 | 阅读本文大概需要 ：9分钟
+					字数：2.3k字 | 阅读本文大概需要 ：9分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -528,6 +528,8 @@
 <h4 id="修改默认的-Maven-配置"><a href="#修改默认的-Maven-配置" class="headerlink" title="修改默认的 Maven 配置"></a>修改默认的 Maven 配置</h4><p>每次新建项目或导入项目时，IDEA会使用默认的 Maven 配置</p>
 <p><img src="/Users/mac126/Library/Application Support/typora-user-images/image-20200106141413044.png" alt="image-20200106141413044"></p>
 <p><img src="/Users/mac126/Library/Application Support/typora-user-images/image-20200106141604581.png" alt="image-20200106141604581"></p>
+<h4 id="清除-svn-保存的账号密码信息"><a href="#清除-svn-保存的账号密码信息" class="headerlink" title="清除 svn 保存的账号密码信息"></a>清除 svn 保存的账号密码信息</h4><p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200527092415_image-20200527092414829.png" alt="image-20200527092414829"></p>
+<h4 id="idea-svn-连接-https-报错问题-E230001-Server-SSL-certificate-verification-failed-certificate-issued"><a href="#idea-svn-连接-https-报错问题-E230001-Server-SSL-certificate-verification-failed-certificate-issued" class="headerlink" title="idea svn 连接 https 报错问题: E230001: Server SSL certificate verification failed: certificate issued"></a>idea svn 连接 https 报错问题: E230001: Server SSL certificate verification failed: certificate issued</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cmd 打开运行窗口，执行以下命令</span><br><span class="line"></span><br><span class="line">//xxx 是具体的 svn 项目地址</span><br><span class="line">svn ls https://xxx</span><br><span class="line"></span><br><span class="line">最后会显示 (R) eject, accept (t) emporarily or accept (p) ermanently?</span><br><span class="line">输入 p</span><br><span class="line">然后根据提示输入 svn 账户名 userName 和密码 password</span><br><span class="line"></span><br><span class="line">最后 checkout from subversion 刷新一下就好了</span><br></pre></td></tr></table></figure>
 <h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><h4 id="Http-Client"><a href="#Http-Client" class="headerlink" title="Http Client"></a>Http Client</h4><p><em>IDEA 自带 Http Client 工具，<code>Tools</code> - &gt; <code>Http Client-&gt; Test RESTful Web Service</code></em></p>
 <p>参考：<a href="https://segmentfault.com/a/1190000021357738" target="_blank" rel="noopener">https://segmentfault.com/a/1190000021357738</a></p>
 <h4 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h4><ol>
@@ -535,6 +537,7 @@
 <li>数据导出，可选择导出数据的格式，可选择导出到文件或剪切板</li>
 <li>数据排序，支持多字段</li>
 </ol>
+<p>#### </p>
 
       
 
@@ -1040,7 +1043,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：565字 | 阅读本文大概需要 ：2分钟
+					字数：476字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -1100,7 +1103,6 @@
 <h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><h3 id="清除-svn-保存的账号密码信息"><a href="#清除-svn-保存的账号密码信息" class="headerlink" title="清除 svn 保存的账号密码信息"></a>清除 svn 保存的账号密码信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TortoiseSVN--&gt;settings——&gt;Saved Data——&gt;Clear</span><br></pre></td></tr></table></figure>
 <h3 id="so-文件-commit-无法提交「没有-add」"><a href="#so-文件-commit-无法提交「没有-add」" class="headerlink" title="so 文件 commit 无法提交「没有 add」"></a>so 文件 commit 无法提交「没有 add」</h3><p>Settings——Subversion—— Global ignore pattern: 中删除 <code>*.so</code></p>
 <p><img src="https://wangqinpei.oss-cn-qingdao.aliyuncs.com/uPic/20200521163814_CE3957237C3EED73501415EB8A61DB8D.jpg" alt="CE3957237C3EED73501415EB8A61DB8D" style="zoom:50%;"></p>
-<h3 id="idea-svn-连接-https-报错问题-E230001-Server-SSL-certificate-verification-failed-certificate-issued"><a href="#idea-svn-连接-https-报错问题-E230001-Server-SSL-certificate-verification-failed-certificate-issued" class="headerlink" title="idea svn 连接 https 报错问题: E230001: Server SSL certificate verification failed: certificate issued"></a>idea svn 连接 https 报错问题: E230001: Server SSL certificate verification failed: certificate issued</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cmd 打开运行窗口，执行以下命令</span><br><span class="line"></span><br><span class="line">//xxx 是具体的 svn 项目地址</span><br><span class="line">svn ls https://xxx</span><br><span class="line"></span><br><span class="line">最后会显示 (R) eject, accept (t) emporarily or accept (p) ermanently?</span><br><span class="line">输入 p</span><br><span class="line">然后根据提示输入 svn 账户名 userName 和密码 password</span><br><span class="line"></span><br><span class="line">最后 checkout from subversion 刷新一下就好了</span><br></pre></td></tr></table></figure>
 
       
 
@@ -2512,10 +2514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Ant Design Pro</a>
               </li>
              
@@ -2524,11 +2522,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2552,7 +2554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HBuilderX</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2560,7 +2562,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">HBuilderX</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2584,6 +2586,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
@@ -2592,15 +2602,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2612,15 +2614,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2628,15 +2626,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2644,15 +2634,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2660,15 +2658,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2676,11 +2674,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2688,11 +2686,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2704,7 +2698,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">frp内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2712,15 +2722,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2732,23 +2734,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
+                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2756,7 +2746,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
               </li>
              
               <li class="article-tag-list-item">

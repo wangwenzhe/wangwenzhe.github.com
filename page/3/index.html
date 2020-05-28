@@ -93,7 +93,7 @@
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
 			<p>总文章数 86</p>
-			<p>总字数 <span class="post-count">82k</span></p>
+			<p>总字数 <span class="post-count">82.3k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -263,7 +263,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：975字 | 阅读本文大概需要 ：5分钟
+					字数：1.1k字 | 阅读本文大概需要 ：6分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -272,34 +272,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="测试视频源"><a href="#测试视频源" class="headerlink" title="测试视频源"></a>测试视频源</h2><ol>
+<li>rtsp://admin:<a href="mailto:hz12345678hz@192.168.0.122" target="_blank" rel="noopener">hz12345678hz@192.168.0.122</a>:554/Streaming/Channels/101</li>
 <li>rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov</li>
 </ol>
 <h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p><a href="https://github.com/Streamedian/html5_rtsp_player" target="_blank" rel="noopener">https://github.com/Streamedian/html5_rtsp_player</a></p>
-<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>安装 VLC 播放器软件，并注册标识到注册表。通过页面 a 标签调起 VLC 进行播放</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.cnblogs.com/pangys/p/5980454.html" target="_blank" rel="noopener">Js 调用 exe 程序方法 (通过 URL Protocol 实现网页调用本地应用程序)</a></p>
+<h2 id="方案二「目前选择」"><a href="#方案二「目前选择」" class="headerlink" title="方案二「目前选择」"></a>方案二「目前选择」</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li><code>open360.html</code> 为调起 360 极速浏览器逻辑页面</li>
+<li><code>index.html</code> 为 播放 rtsp 视频页面「360 极速浏览器中」</li>
+<li><code>open360.exe</code> 包含 360 极速浏览器安装文件和注册文件</li>
+<li><code>rtsp.exe</code> 包含 VLC 客户端软件和注册文件</li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ol>
+<li>调用 360 极速浏览器播放 rtsp「没有安装 360 极速浏览器则下载安装注册 open360.exe」</li>
+<li>如果页面中 VLC 插件播放不了，则调起本地 VLC 软件播放「没有安装，则下载安装注册 rtsp.exe」</li>
+</ol>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><p>运行 <code>rtsp.exe</code> 安装 <code>vlc</code> 客户端软件并注册 <code>rtsp</code> 到注册表</p>
+<li><p>调用 360 极速浏览器<code>open360.html</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;调用本地 360 浏览器打开rtsp播放页面&lt;/title&gt;</span><br><span class="line">    &lt;link href=&quot;https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;http://www.jq22.com/jquery/jquery-2.1.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        #tips &#123;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            color: #ccc;</span><br><span class="line">            padding: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        .problem &#123;</span><br><span class="line">            font-size: 13px;</span><br><span class="line">            color: #ccc;</span><br><span class="line">            padding: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(function () &#123;</span><br><span class="line">        //rtsp 地址</span><br><span class="line">        var rtsp = &quot;rtsp://admin:hz12345678hz@192.168.0.122:554/Streaming/Channels/101&quot;;</span><br><span class="line">        //rtsp 播放页面</span><br><span class="line">        var url = &quot;open360://192.168.43.51:8081/Web/RTSP/index.html?url=&quot;+encodeURIComponent(rtsp);</span><br><span class="line"></span><br><span class="line">        $(&apos;#open360&apos;).click(function () &#123;</span><br><span class="line">            let eleLink = document.createElement(&apos;a&apos;);</span><br><span class="line">            eleLink.style.display = &apos;none&apos;;</span><br><span class="line">            eleLink.href = url;</span><br><span class="line">            // 受浏览器安全策略的因素，动态创建的元素必须添加到浏览器后才能实施点击</span><br><span class="line">            document.body.appendChild(eleLink);</span><br><span class="line">            // 触发点击</span><br><span class="line">            eleLink.click();</span><br><span class="line">            // 然后移除</span><br><span class="line">            document.body.removeChild(eleLink);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        $(&quot;.problem button&quot;).click(function() &#123;</span><br><span class="line">            $(&apos;#tips&apos;).toggle();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;div id=&quot;open360&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;播放&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;problem&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;播放存在问题 ?&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;tips&quot; style=&quot;display: none;&quot;&gt;</span><br><span class="line">    &lt;p&gt;如果点击没有反应，则点击下载360极速浏览器，默认安装&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;&lt;a style=&quot;color: #ac8989;&quot; href=&quot;open360.exe&quot;  download=&quot;open360.exe&quot;&gt;下载360极速浏览器&lt;/a&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>测试脚本 <code>startVLC_Test.bat</code>，调取本地 <code>VLC</code> 软件，播放指定 <code>rtsp</code> 视频流。脚本内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start &quot;C:\Program Files (x86)\VideoLAN\VLC\vlc.exe&quot; &quot;rtsp://admin:hz12345678hz@192.168.0.122:554/Streaming/Channels/101&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Test 版页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;调用本地 VLC 客户端软件播放 rtsp&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;a href=&quot;rtsp://admin:hz12345678hz@192.168.0.122:554/Streaming/Channels/101&quot;&gt;播放&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Release 版播放页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html, body &#123;</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">			background: #191919 !important;</span><br><span class="line">			overflow: hidden;</span><br><span class="line">		&#125;</span><br><span class="line">		.content &#123;</span><br><span class="line">			width: 60%;</span><br><span class="line">			margin: 50px auto;</span><br><span class="line">			text-align: center;</span><br><span class="line">		&#125;</span><br><span class="line">		#tips &#123;</span><br><span class="line">			font-size: 13px;</span><br><span class="line">			color: #ccc;</span><br><span class="line">			padding: 20px;</span><br><span class="line">		&#125;</span><br><span class="line">		.problem &#123;</span><br><span class="line">			font-size: 13px;</span><br><span class="line">			color: #ccc;</span><br><span class="line">			padding: 10px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;link href=&quot;https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">	&lt;script src=&quot;http://www.jq22.com/jquery/jquery-2.1.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">	&lt;object classid=&quot;clsid:E23FE9C6-778E-49D4-B537-38FCDE4887D8&quot; codebase=&quot;http://downloads.videolan.org/pub/videolan/vlc/latest/win32/axvlc.cab&quot;</span><br><span class="line">			width=&quot;640&quot; height=&quot;480&quot; events=&quot;True&quot; id=&quot;vlc2&quot;&gt;</span><br><span class="line">		&lt;param name=&quot;ShowDisplay&quot; value=&quot;True&quot; /&gt;</span><br><span class="line">		&lt;param name=&quot;Loop&quot; value=&quot;False&quot; /&gt;</span><br><span class="line">		&lt;param name=&quot;AutoPlay&quot; value=&quot;True&quot; /&gt;</span><br><span class="line">		&lt;embed type=&quot;application/x-vlc-plugin&quot; pluginspage=&quot;http://www.videolan.org&quot; width=&quot;640&quot; height=&quot;480&quot;</span><br><span class="line">			   src=&quot;rtsp://admin:hz12345678hz@192.168.0.122:554/Streaming/Channels/101&quot;&gt;</span><br><span class="line">		&lt;!--			&lt;embed type=&quot;application/x-vlc-plugin&quot; pluginspage=&quot;http://www.videolan.org&quot; width=&quot;640&quot; height=&quot;480&quot;--&gt;</span><br><span class="line">		&lt;!--			src=&quot;rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov&quot;&gt;--&gt;</span><br><span class="line">		&lt;/embed&gt;</span><br><span class="line">	&lt;/object&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div class=&quot;problem&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;播放存在问题 ?&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div id=&quot;tips&quot; style=&quot;display: none;&quot;&gt;</span><br><span class="line">		&lt;p&gt;如果提示该插件不受支持，请点击下面链接，下载文件并默认安装&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;&lt;a style=&quot;color: #ac8989;&quot; href=&quot;rtsp.exe&quot;  download=&quot;rtsp.exe&quot;&gt;下载播放器&lt;/a&gt;</span><br><span class="line">		&lt;/p&gt;</span><br><span class="line">&lt;!--		&lt;p&gt;&lt;a href=&quot;rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-small btn-primary&quot;&gt;播放&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;--&gt;</span><br><span class="line">		&lt;p&gt;&lt;a href=&quot;rtsp://admin:hz12345678hz@192.168.0.122:554/Streaming/Channels/101&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-small btn-primary&quot;&gt;播放&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	$(&quot;.problem button&quot;).click(function() &#123;</span><br><span class="line">		$(&apos;#tips&apos;).toggle();</span><br><span class="line">	&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<li><p>在 360 极速浏览器中播放<code>index.html</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		html, body &#123;</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">			background: #191919 !important;</span><br><span class="line">			overflow: hidden;</span><br><span class="line">		&#125;</span><br><span class="line">		.content &#123;</span><br><span class="line">			width: 60%;</span><br><span class="line">			margin: 50px auto;</span><br><span class="line">			text-align: center;</span><br><span class="line">		&#125;</span><br><span class="line">		#tips &#123;</span><br><span class="line">			font-size: 13px;</span><br><span class="line">			color: #ccc;</span><br><span class="line">			padding: 20px;</span><br><span class="line">		&#125;</span><br><span class="line">		.problem &#123;</span><br><span class="line">			font-size: 13px;</span><br><span class="line">			color: #ccc;</span><br><span class="line">			padding: 10px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;link href=&quot;https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">	&lt;script src=&quot;http://www.jq22.com/jquery/jquery-2.1.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;</span><br><span class="line">	&lt;object classid=&quot;clsid:E23FE9C6-778E-49D4-B537-38FCDE4887D8&quot; codebase=&quot;http://downloads.videolan.org/pub/videolan/vlc/latest/win32/axvlc.cab&quot;</span><br><span class="line">			width=&quot;640&quot; height=&quot;480&quot; events=&quot;True&quot;&gt;</span><br><span class="line">		&lt;param name=&quot;ShowDisplay&quot; value=&quot;True&quot; /&gt;</span><br><span class="line">		&lt;param name=&quot;Loop&quot; value=&quot;False&quot; /&gt;</span><br><span class="line">		&lt;param name=&quot;AutoPlay&quot; value=&quot;True&quot; /&gt;</span><br><span class="line">		&lt;embed id=&quot;vlc&quot; type=&quot;application/x-vlc-plugin&quot; pluginspage=&quot;http://www.videolan.org&quot; width=&quot;640&quot; height=&quot;480&quot; src=&quot;&quot;&gt;</span><br><span class="line">		&lt;/embed&gt;</span><br><span class="line">	&lt;/object&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div class=&quot;problem&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;播放存在问题 ?&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div id=&quot;tips&quot; style=&quot;display: none;&quot;&gt;</span><br><span class="line">		&lt;p&gt;提示插件不受支持，请点击下面链接，下载并默认安装&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;&lt;a style=&quot;color: #ac8989;&quot; href=&quot;rtsp.exe&quot;  download=&quot;rtsp.exe&quot;&gt;下载播放器&lt;/a&gt;</span><br><span class="line">		&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;&lt;a id=&quot;openVlc&quot; href=&quot;&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-small btn-primary&quot;&gt;播放&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	const parseQueryString = ()=&gt;&#123;</span><br><span class="line">		var json = &#123;&#125;;</span><br><span class="line">		let url = location.href;</span><br><span class="line">		var arr = url.substr(url.indexOf(&apos;?&apos;) + 1).split(&apos;&amp;&apos;);</span><br><span class="line">		arr.forEach(item=&gt;&#123;</span><br><span class="line">			var tmp = item.split(&apos;=&apos;);</span><br><span class="line">			json[tmp[0]] = tmp[1];</span><br><span class="line">		&#125;);</span><br><span class="line">		return json;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	var query = parseQueryString();</span><br><span class="line"></span><br><span class="line">	let src = decodeURIComponent(query.url);</span><br><span class="line">	$(&quot;#vlc&quot;).attr(&quot;src&quot;, src);</span><br><span class="line">	$(&quot;#openVlc&quot;).attr(&quot;href&quot;, src);</span><br><span class="line"></span><br><span class="line">	$(&quot;.problem button&quot;).click(function() &#123;</span><br><span class="line">		$(&apos;#tips&apos;).toggle();</span><br><span class="line">	&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>使用软件播放，速度块、延时小、稳定</p>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>只能播放客户机所在局域网范围内的视频流或公网视频流，无法通过公网播放内网视频流</p>
-<h2 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h2><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>安装 360 极速浏览器，并注册标识到注册表。通过页面 a 标签调起 360 极速浏览器进行播放</p>
-<h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li><p>运行 <code>open360.exe</code> 安装 <code>360 极速浏览器</code>软件并注册 <code>open360</code> 到注册表</p>
-</li>
-<li><p>Test 版页面 <code>open360.html</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;调用本地 360 浏览器打开rtsp 播放页面&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;a href=&quot;open360://ip:port/index.html?id=xxxx&quot;&gt;播放&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 
       
 
@@ -915,25 +911,25 @@
 
 
   
-    <article id="post-内网穿透" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-frp内网穿透" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/内网穿透/">内网穿透</a>
+      <a class="article-title" href="/2020/04/11/frp内网穿透/">frp内网穿透</a>
     </h1>
   
 
         
-        <a href="/2020/04/11/内网穿透/" class="archive-article-date">
+        <a href="/2020/04/11/frp内网穿透/" class="archive-article-date">
   	<time datetime="2020-04-11T10:41:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
 </a>
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：690字 | 阅读本文大概需要 ：3分钟
+					字数：697字 | 阅读本文大概需要 ：3分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -941,11 +937,10 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="公网服务器准备"><a href="#公网服务器准备" class="headerlink" title="公网服务器准备"></a>公网服务器准备</h3><p>首先准备一台有公网IP的服务器，可以选用阿里云或者腾讯云，如果选用的是阿里云的，可以使用我的<a href="https://chuangke.aliyun.com/invite?userCode=r8z5amhr" target="_blank" rel="noopener">优惠链接</a>购买</p>
-<h3 id="内网穿透frp搭建"><a href="#内网穿透frp搭建" class="headerlink" title="内网穿透frp搭建"></a>内网穿透frp搭建</h3><blockquote>
-<p>frp 安装程序：<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a></p>
-</blockquote>
-<h4 id="frp服务端搭建"><a href="#frp服务端搭建" class="headerlink" title="frp服务端搭建"></a>frp服务端搭建</h4><p>服务端搭建在上一步准备的公网服务器上，因为服务器是centos7 x64的系统，因此，这里下载安装包版本为linux_amd64的 <a href="https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_linux_amd64.tar.gz" target="_blank" rel="noopener">frp_0.27.0_linux_amd64.tar.gz</a> 。</p>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.mrabit.com/details/75" target="_blank" rel="noopener">https://blog.mrabit.com/details/75</a></p>
+<h2 id="公网服务器准备"><a href="#公网服务器准备" class="headerlink" title="公网服务器准备"></a>公网服务器准备</h2><p>首先准备一台有公网IP的服务器，可以选用阿里云或者腾讯云，如果选用的是阿里云的，可以使用我的<a href="https://chuangke.aliyun.com/invite?userCode=r8z5amhr" target="_blank" rel="noopener">优惠链接</a>购买</p>
+<h2 id="内网穿透frp搭建"><a href="#内网穿透frp搭建" class="headerlink" title="内网穿透frp搭建"></a>内网穿透frp搭建</h2><p>frp 安装程序：<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a></p>
+<h3 id="frp服务端搭建"><a href="#frp服务端搭建" class="headerlink" title="frp服务端搭建"></a>frp服务端搭建</h3><p>服务端搭建在上一步准备的公网服务器上，因为服务器是centos7 x64的系统，因此，这里下载安装包版本为linux_amd64的 <a href="https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_linux_amd64.tar.gz" target="_blank" rel="noopener">frp_0.27.0_linux_amd64.tar.gz</a> 。</p>
 <ol>
 <li><p>下载安装包</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
@@ -960,7 +955,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ./frps -c frps.ini</span><br><span class="line">2019/06/15 16:42:02 [I] [service.go:139] frps tcp listen on 0.0.0.0:7100</span><br><span class="line">2019/06/15 16:42:02 [I] [service.go:181] http service listen on 0.0.0.0:7200</span><br><span class="line">2019/06/15 16:42:02 [I] [root.go:204] Start frps success</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="frp客户端搭建"><a href="#frp客户端搭建" class="headerlink" title="frp客户端搭建"></a>frp客户端搭建</h4><p>客户端搭建在本地的Mac上，因此下载安装包版本为darwin_amd64的 <a href="https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_darwin_amd64.tar.gz" target="_blank" rel="noopener">frp_0.27.0_darwin_amd64.tar.gz</a> 。</p>
+<h3 id="frp客户端搭建"><a href="#frp客户端搭建" class="headerlink" title="frp客户端搭建"></a>frp客户端搭建</h3><p>客户端搭建在本地的Mac上，因此下载安装包版本为darwin_amd64的 <a href="https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_darwin_amd64.tar.gz" target="_blank" rel="noopener">frp_0.27.0_darwin_amd64.tar.gz</a> 。</p>
 <ol>
 <li><p>下载安装包</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> wget https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_darwin_amd64.tar.gz</span><br></pre></td></tr></table></figure>
@@ -1004,7 +999,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内网穿透</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">frp内网穿透</a>
         		</li>
       		
 		</ul>
@@ -1014,7 +1009,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/11/内网穿透/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/11/frp内网穿透/">展开全文 >></a>
         </p>
       
 
@@ -1341,10 +1336,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Ant Design Pro</a>
               </li>
              
@@ -1353,11 +1344,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1381,7 +1376,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HBuilderX</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1389,7 +1384,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">HBuilderX</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1413,6 +1408,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
@@ -1421,15 +1424,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MUI.md</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1441,15 +1436,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PageHelper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1457,15 +1448,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+                <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1473,15 +1456,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1489,15 +1480,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1505,11 +1496,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows-cmd</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1517,11 +1508,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1533,7 +1520,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">frp内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教育</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1541,15 +1544,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1561,23 +1556,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
+                <a href="javascript:void(0)" class="js-tag color5">爱上读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1585,7 +1568,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目管理</a>
               </li>
              
               <li class="article-tag-list-item">
