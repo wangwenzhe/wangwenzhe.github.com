@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>ElasticSearch | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考阮一峰：https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 注意 创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器  Windows 安装 ESMac 安装 ESDocker 安装 ES 下载镜像：docker pull elasticsearch:6.5.3">
+  <meta name="description" content="参考阮一峰：https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html Elasticsearch 教程（一），全程直播（小白级别）：https://www.sojson.com/blog/81.html 注意 创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器  Window">
 <meta name="keywords" content="Java,Web,开发工具,开发总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch">
 <meta property="og:url" content="https://championwang.gitee.io/2019/07/26/ElasticSearch/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="参考阮一峰：https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 注意 创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器  Windows 安装 ESMac 安装 ESDocker 安装 ES 下载镜像：docker pull elasticsearch:6.5.3">
+<meta property="og:description" content="参考阮一峰：https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html Elasticsearch 教程（一），全程直播（小白级别）：https://www.sojson.com/blog/81.html 注意 创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器  Window">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-14T05:53:17.824Z">
+<meta property="og:updated_time" content="2020-05-28T02:48:52.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ElasticSearch">
-<meta name="twitter:description" content="参考阮一峰：https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html 注意 创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器  Windows 安装 ESMac 安装 ESDocker 安装 ES 下载镜像：docker pull elasticsearch:6.5.3">
+<meta name="twitter:description" content="参考阮一峰：https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html Elasticsearch 教程（一），全程直播（小白级别）：https://www.sojson.com/blog/81.html 注意 创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器  Window">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 86</p>
-			<p>总字数 <span class="post-count">82.3k</span></p>
+			<p>总文章数 96</p>
+			<p>总字数 <span class="post-count">84.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：312字 | 阅读本文大概需要 ：1分钟
+					字数：331字 | 阅读本文大概需要 ：1分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,11 +185,12 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>阮一峰：<a href="https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html</a></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>阮一峰：<a href="https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2017/08/elasticsearch.html</a></p>
+<p>Elasticsearch 教程（一），全程直播（小白级别）：<a href="https://www.sojson.com/blog/81.html" target="_blank" rel="noopener">https://www.sojson.com/blog/81.html</a></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li>创建索引时，指定索引结构信息时，字段为中文，类型都是文本（text），需要指定中文分词器，不能使用默认的英文分词器</li>
 </ol>
-<h1 id="Windows-安装-ES"><a href="#Windows-安装-ES" class="headerlink" title="Windows 安装 ES"></a>Windows 安装 ES</h1><h1 id="Mac-安装-ES"><a href="#Mac-安装-ES" class="headerlink" title="Mac 安装 ES"></a>Mac 安装 ES</h1><h1 id="Docker-安装-ES"><a href="#Docker-安装-ES" class="headerlink" title="Docker 安装 ES"></a>Docker 安装 ES</h1><ol>
+<h2 id="Windows-安装-ES"><a href="#Windows-安装-ES" class="headerlink" title="Windows 安装 ES"></a>Windows 安装 ES</h2><h2 id="Mac-安装-ES"><a href="#Mac-安装-ES" class="headerlink" title="Mac 安装 ES"></a>Mac 安装 ES</h2><h2 id="Docker-安装-ES"><a href="#Docker-安装-ES" class="headerlink" title="Docker 安装 ES"></a>Docker 安装 ES</h2><ol>
 <li><p>下载镜像：<code>docker pull elasticsearch:6.5.3</code></p>
 </li>
 <li><p>运行容器：<code>docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-6.5.3 elasticsearch:6.5.3</code></p>
@@ -208,7 +209,7 @@
 <li><p>启动容器：<code>docker start elasticsearch-6.5.3</code></p>
 </li>
 </ol>
-<h1 id="可视化客户端"><a href="#可视化客户端" class="headerlink" title="可视化客户端"></a>可视化客户端</h1><h4 id="Kibina"><a href="#Kibina" class="headerlink" title="Kibina"></a>Kibina</h4><ul>
+<h2 id="可视化客户端"><a href="#可视化客户端" class="headerlink" title="可视化客户端"></a>可视化客户端</h2><h4 id="Kibina"><a href="#Kibina" class="headerlink" title="Kibina"></a>Kibina</h4><ul>
 <li>下载 kibana 6.4.0 的 docker 镜像；</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull kibana:6.4.0</span><br></pre></td></tr></table></figure>
@@ -464,11 +465,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">All</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">5-App</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">All</a>
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,11 +481,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,11 +493,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,10 +517,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Fastjson</a>
               </li>
              
@@ -524,11 +525,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,11 +545,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java-Word</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,7 +561,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java文件上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,10 +601,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -596,15 +613,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,11 +625,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring Data JPA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,6 +650,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浏览器解析工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,11 +681,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,7 +697,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,7 +705,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,15 +713,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">产品管理</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">学习参考手册</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,7 +737,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考Think</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据库访问框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,19 +753,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">

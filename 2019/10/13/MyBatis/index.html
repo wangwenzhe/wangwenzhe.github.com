@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://championwang.gitee.io">
   <title>MyBatis | championwang&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MyBatisdatabaseIdProvider 支持多数据库https://www.jianshu.com/p/b21a8b3fbd53 SpringSpring-mybatis.xml123456789101112131415161718192021&amp;lt;!--	多数据库支持--&amp;gt;&amp;lt;bean id=&amp;quot;vendorProperties&amp;quot;	  class=&amp;qu">
+  <meta name="description" content="参考https://mybatis.org/mybatis-3/zh/index.html 支持不同数据库厂商——databaseIdProvider根据不同的数据库厂商执行不同的语句 https://www.jianshu.com/p/b21a8b3fbd53 1. Spring-mybatis.xml123456789101112131415161718192021&amp;lt;!--	多数据库支持">
 <meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis">
 <meta property="og:url" content="https://championwang.gitee.io/2019/10/13/MyBatis/index.html">
 <meta property="og:site_name" content="championwang&#39;s blog">
-<meta property="og:description" content="MyBatisdatabaseIdProvider 支持多数据库https://www.jianshu.com/p/b21a8b3fbd53 SpringSpring-mybatis.xml123456789101112131415161718192021&amp;lt;!--	多数据库支持--&amp;gt;&amp;lt;bean id=&amp;quot;vendorProperties&amp;quot;	  class=&amp;qu">
+<meta property="og:description" content="参考https://mybatis.org/mybatis-3/zh/index.html 支持不同数据库厂商——databaseIdProvider根据不同的数据库厂商执行不同的语句 https://www.jianshu.com/p/b21a8b3fbd53 1. Spring-mybatis.xml123456789101112131415161718192021&amp;lt;!--	多数据库支持">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-29T09:37:45.666Z">
+<meta property="og:updated_time" content="2020-06-03T01:21:30.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis">
-<meta name="twitter:description" content="MyBatisdatabaseIdProvider 支持多数据库https://www.jianshu.com/p/b21a8b3fbd53 SpringSpring-mybatis.xml123456789101112131415161718192021&amp;lt;!--	多数据库支持--&amp;gt;&amp;lt;bean id=&amp;quot;vendorProperties&amp;quot;	  class=&amp;qu">
+<meta name="twitter:description" content="参考https://mybatis.org/mybatis-3/zh/index.html 支持不同数据库厂商——databaseIdProvider根据不同的数据库厂商执行不同的语句 https://www.jianshu.com/p/b21a8b3fbd53 1. Spring-mybatis.xml123456789101112131415161718192021&amp;lt;!--	多数据库支持">
   
     <link rel="alternative" href="/atom.xml" title="championwang&#39;s blog" type="application/atom+xml">
   
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 86</p>
-			<p>总字数 <span class="post-count">82.3k</span></p>
+			<p>总文章数 96</p>
+			<p>总字数 <span class="post-count">84.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -177,7 +177,7 @@
         
       </header>
 			<div align="center" style="font-size: 12px; color: #1a5f14;">
-					字数：858字 | 阅读本文大概需要 ：5分钟
+					字数：731字 | 阅读本文大概需要 ：4分钟
 			</div>
     
 			<!-- 目录内容 -->
@@ -185,34 +185,23 @@
 			<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h3 id="databaseIdProvider-支持多数据库"><a href="#databaseIdProvider-支持多数据库" class="headerlink" title="databaseIdProvider 支持多数据库"></a>databaseIdProvider 支持多数据库</h3><p><a href="https://www.jianshu.com/p/b21a8b3fbd53" target="_blank" rel="noopener">https://www.jianshu.com/p/b21a8b3fbd53</a></p>
-<h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><h5 id="Spring-mybatis-xml"><a href="#Spring-mybatis-xml" class="headerlink" title="Spring-mybatis.xml"></a>Spring-mybatis.xml</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--	多数据库支持--&gt;</span><br><span class="line">&lt;bean id=&quot;vendorProperties&quot;</span><br><span class="line">	  class=&quot;org.springframework.beans.factory.config.PropertiesFactoryBean&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;properties&quot;&gt;</span><br><span class="line">		&lt;props&gt;</span><br><span class="line">			&lt;prop key=&quot;Oracle&quot;&gt;oracle&lt;/prop&gt;</span><br><span class="line">			&lt;prop key=&quot;Dm&quot;&gt;dm&lt;/prop&gt;</span><br><span class="line">		&lt;/props&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;bean id=&quot;databaseIdProvider&quot; class=&quot;org.apache.ibatis.mapping.VendorDatabaseIdProvider&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;properties&quot; ref=&quot;vendorProperties&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;</span><br><span class="line">	&lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapping/*.xml&quot; /&gt;</span><br><span class="line">	&lt;!-- 新增项 --&gt;</span><br><span class="line">	&lt;property name=&quot;databaseIdProvider&quot; ref=&quot;databaseIdProvider&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="Mapper-xml"><a href="#Mapper-xml" class="headerlink" title="***Mapper.xml"></a>***Mapper.xml</h5><h6 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h6><blockquote>
-<p>databaseId=”dynamo”</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper namespace=&quot;com.hengzhe.hz.manager.data.biz.dao.TestDBMapper&quot;&gt;</span><br><span class="line">  &lt;select id=&quot;selectTime&quot;  resultType=&quot;String&quot; databaseId=&quot;mysql&quot;&gt;</span><br><span class="line">        select now() from dual</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;select id=&quot;selectTime&quot;  resultType=&quot;String&quot; databaseId=&quot;oracle&quot;&gt;</span><br><span class="line">        select sysdate from dual</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h6><blockquote>
-<if test="_databaseId == 'dbname'"><br>       xxxx<br></if>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;mapper namespace=&quot;com.hengzhe.hz.manager.data.biz.dao.TestDBMapper&quot;&gt;</span><br><span class="line">    &lt;select id=&quot;selectTime2&quot;  resultType=&quot;String&quot;&gt;</span><br><span class="line">        select</span><br><span class="line">        &lt;if test=&quot;_databaseId == &apos;mysql&apos;&quot;&gt;</span><br><span class="line">          now()</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        &lt;if test=&quot;_databaseId == &apos;oracle&apos;&quot;&gt;</span><br><span class="line">          sysdate</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        from dual</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">				&lt;when test=&quot;_databaseId == &apos;oracle&apos;&quot;&gt;</span><br><span class="line">					NLS_UPPER(LOGINNAME) &amp;lt;&amp;gt; &apos;ROOT&apos;</span><br><span class="line">				&lt;/when&gt;</span><br><span class="line">				&lt;otherwise&gt;</span><br><span class="line">					UCASE(LOGINNAME) &amp;lt;&amp;gt; &apos;ROOT&apos;</span><br><span class="line">				&lt;/otherwise&gt;</span><br><span class="line">			&lt;/choose&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="参数处理"><a href="#参数处理" class="headerlink" title="参数处理"></a>参数处理</h3><p><a href="https://www.cnblogs.com/mingyue1818/p/3714162.html" target="_blank" rel="noopener">https://www.cnblogs.com/mingyue1818/p/3714162.html</a></p>
-<h4 id="单个参数"><a href="#单个参数" class="headerlink" title="单个参数"></a>单个参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXBean&gt; getXXBeanList(String id);  </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select t.* from tableName t where t.id= #&#123;id&#125;  </span><br><span class="line">&lt;/select&gt;  </span><br><span class="line"></span><br><span class="line">//#&#123;&#125;中的参数名与方法中的参数名一致</span><br></pre></td></tr></table></figure>
-<h4 id="多参数"><a href="#多参数" class="headerlink" title="多参数"></a>多参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(String xxId, String xxCode); </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select t.* from tableName where id = #&#123;0&#125; and name = #&#123;1&#125;  </span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">//由于是多参数那么就不能使用parameterType， 改用#｛index｝是第几个就用第几个的索引，索引从0开始</span><br></pre></td></tr></table></figure>
-<h4 id="多参数注解"><a href="#多参数注解" class="headerlink" title="多参数注解"></a>多参数注解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int getXXXBeanList(@Param(&quot;score&quot;)int score ,@Param(&quot;name&quot;)String name);</span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select * from tableName where score = #&#123;score&#125; and name = #&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Map-封装多参数"><a href="#Map-封装多参数" class="headerlink" title="Map 封装多参数"></a>Map 封装多参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">map.put(&quot;score&quot;, 90);</span><br><span class="line">map.put(&quot;name&quot;, &quot;hello&quot;);</span><br><span class="line"></span><br><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(HashMap map); </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; parameterType=&quot;java.util.Map&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select * from tableName where id = #&#123;score&#125; and name = #&#123;name&#125;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Array-集合"><a href="#Array-集合" class="headerlink" title="Array 集合"></a>Array 集合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(String[] ids);  </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot; parameterType=&quot;java.lang.String&quot;&gt;</span><br><span class="line">　　select * from tableName where id in</span><br><span class="line">　　&lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;array&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;  </span><br><span class="line">　　　　#&#123;item&#125;</span><br><span class="line">　　&lt;/foreach&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="List-集合"><a href="#List-集合" class="headerlink" title="List 集合"></a>List 集合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;XXXBean&gt; getXXXBeanList(List&lt;String&gt; list);  </span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getXXXBeanList&quot; resultType=&quot;XXBean&quot;&gt;</span><br><span class="line">　　select * from tableName where id in</span><br><span class="line">　　&lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;list&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;  </span><br><span class="line">　　　　#&#123;item&#125;</span><br><span class="line">　　&lt;/foreach&gt;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="多参数（String-list-）"><a href="#多参数（String-list-）" class="headerlink" title="多参数（String  list ）"></a>多参数（String  list ）</h4><h5 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h5><h6 id="方式-1：map"><a href="#方式-1：map" class="headerlink" title="方式 1：map"></a>方式 1：map</h6><ol>
-<li><p>参数封装到 map</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map.put(&quot;score&quot;, 90);</span><br><span class="line">map.put(&quot;list&quot;, list);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dao 方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public int operateBatch(Map&lt;String, Object&gt; map);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h6 id="方式-2：-param-注解-Dao-参数"><a href="#方式-2：-param-注解-Dao-参数" class="headerlink" title="方式 2：@param 注解 Dao 参数"></a>方式 2：@param 注解 Dao 参数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public int operateBatch(@Param(&quot;score&quot;)int score ,@Param(&quot;list&quot;)List&lt;Student&gt; list);</span><br></pre></td></tr></table></figure>
-<h5 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;update id=&quot;operateBatch&quot;&gt;</span><br><span class="line">        update student</span><br><span class="line">        set store=#&#123;score&#125;</span><br><span class="line">        where id in</span><br><span class="line">        &lt;foreach collection=&quot;list&quot; index=&quot;index&quot; item=&quot;item&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;</span><br><span class="line">            #&#123;item.id&#125;</span><br><span class="line">        &lt;/foreach&gt;</span><br><span class="line">&lt;/delete&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://mybatis.org/mybatis-3/zh/index.html" target="_blank" rel="noopener">https://mybatis.org/mybatis-3/zh/index.html</a></p>
+<h2 id="支持不同数据库厂商——databaseIdProvider"><a href="#支持不同数据库厂商——databaseIdProvider" class="headerlink" title="支持不同数据库厂商——databaseIdProvider"></a>支持不同数据库厂商——databaseIdProvider</h2><p>根据不同的数据库厂商执行不同的语句</p>
+<p><a href="https://www.jianshu.com/p/b21a8b3fbd53" target="_blank" rel="noopener">https://www.jianshu.com/p/b21a8b3fbd53</a></p>
+<h3 id="1-Spring-mybatis-xml"><a href="#1-Spring-mybatis-xml" class="headerlink" title="1. Spring-mybatis.xml"></a>1. Spring-mybatis.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--	多数据库支持--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"vendorProperties"</span></span></span><br><span class="line"><span class="tag">	  <span class="attr">class</span>=<span class="string">"org.springframework.beans.factory.config.PropertiesFactoryBean"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"properties"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">props</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">"Oracle"</span>&gt;</span>oracle<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">"Dm"</span>&gt;</span>dm<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">props</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"databaseIdProvider"</span> <span class="attr">class</span>=<span class="string">"org.apache.ibatis.mapping.VendorDatabaseIdProvider"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"properties"</span> <span class="attr">ref</span>=<span class="string">"vendorProperties"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"mapperLocations"</span> <span class="attr">value</span>=<span class="string">"classpath:mapping/*.xml"</span> /&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 新增项 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"databaseIdProvider"</span> <span class="attr">ref</span>=<span class="string">"databaseIdProvider"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Mapper-xml"><a href="#2-Mapper-xml" class="headerlink" title="2. Mapper.xml"></a>2. Mapper.xml</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.hengzhe.hz.manager.data.biz.dao.TestDBMapper"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectTime"</span>  <span class="attr">resultType</span>=<span class="string">"String"</span> <span class="attr">databaseId</span>=<span class="string">"mysql"</span>&gt;</span></span><br><span class="line">        select now() from dual</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectTime"</span>  <span class="attr">resultType</span>=<span class="string">"String"</span> <span class="attr">databaseId</span>=<span class="string">"oracle"</span>&gt;</span></span><br><span class="line">        select sysdate from dual</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.hengzhe.hz.manager.data.biz.dao.TestDBMapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectTime2"</span>  <span class="attr">resultType</span>=<span class="string">"String"</span>&gt;</span></span><br><span class="line">        select</span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId == 'mysql'"</span>&gt;</span></span><br><span class="line">          now()</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId == 'oracle'"</span>&gt;</span></span><br><span class="line">          sysdate</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        from dual</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">choose</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"_databaseId == 'oracle'"</span>&gt;</span></span><br><span class="line">    NLS_UPPER(LOGINNAME) &amp;lt;&amp;gt; 'ROOT'</span><br><span class="line">  <span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">otherwise</span>&gt;</span></span><br><span class="line">    UCASE(LOGINNAME) &amp;lt;&amp;gt; 'ROOT'</span><br><span class="line">  <span class="tag">&lt;/<span class="name">otherwise</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">choose</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="参数处理"><a href="#参数处理" class="headerlink" title="参数处理"></a>参数处理</h2><p><a href="https://www.cnblogs.com/mingyue1818/p/3714162.html" target="_blank" rel="noopener">https://www.cnblogs.com/mingyue1818/p/3714162.html</a></p>
+<h3 id="单个参数"><a href="#单个参数" class="headerlink" title="单个参数"></a>单个参数</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List<span class="tag">&lt;<span class="name">XXBean</span>&gt;</span> getXXBeanList(String id);  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getXXXBeanList"</span> <span class="attr">parameterType</span>=<span class="string">"java.lang.String"</span> <span class="attr">resultType</span>=<span class="string">"XXBean"</span>&gt;</span></span><br><span class="line">　　select t.* from tableName t where t.id= #&#123;id&#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line">//#&#123;&#125;中的参数名与方法中的参数名一致</span><br></pre></td></tr></table></figure>
+<h3 id="多参数"><a href="#多参数" class="headerlink" title="多参数"></a>多参数</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public List<span class="tag">&lt;<span class="name">XXXBean</span>&gt;</span> getXXXBeanList(String xxId, String xxCode); </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getXXXBeanList"</span> <span class="attr">resultType</span>=<span class="string">"XXBean"</span>&gt;</span></span><br><span class="line">　　select t.* from tableName where id = #&#123;0&#125; and name = #&#123;1&#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//由于是多参数那么就不能使用parameterType， 改用#｛index｝是第几个就用第几个的索引，索引从0开始</span><br></pre></td></tr></table></figure>
+<h3 id="多参数注解"><a href="#多参数注解" class="headerlink" title="多参数注解"></a>多参数注解</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public int getXXXBeanList(@Param("score")int score ,@Param("name")String name);</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getXXXBeanList"</span> <span class="attr">resultType</span>=<span class="string">"XXBean"</span>&gt;</span></span><br><span class="line">　　select * from tableName where score = #&#123;score&#125; and name = #&#123;name&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Map-封装多参数"><a href="#Map-封装多参数" class="headerlink" title="Map 封装多参数"></a>Map 封装多参数</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">map.put("score", 90);</span><br><span class="line">map.put("name", "hello");</span><br><span class="line"></span><br><span class="line">public List<span class="tag">&lt;<span class="name">XXXBean</span>&gt;</span> getXXXBeanList(HashMap map); </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getXXXBeanList"</span> <span class="attr">parameterType</span>=<span class="string">"java.util.Map"</span> <span class="attr">resultType</span>=<span class="string">"XXBean"</span>&gt;</span></span><br><span class="line">　　select * from tableName where id = #&#123;score&#125; and name = #&#123;name&#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Array-集合"><a href="#Array-集合" class="headerlink" title="Array 集合"></a>Array 集合</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public List<span class="tag">&lt;<span class="name">XXXBean</span>&gt;</span> getXXXBeanList(String[] ids);  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getXXXBeanList"</span> <span class="attr">resultType</span>=<span class="string">"XXBean"</span> <span class="attr">parameterType</span>=<span class="string">"java.lang.String"</span>&gt;</span></span><br><span class="line">　　select * from tableName where id in</span><br><span class="line">　　<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">collection</span>=<span class="string">"array"</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span>  </span><br><span class="line">　　　　#&#123;item&#125;</span><br><span class="line">　　<span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="List-集合"><a href="#List-集合" class="headerlink" title="List 集合"></a>List 集合</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public List<span class="tag">&lt;<span class="name">XXXBean</span>&gt;</span> getXXXBeanList(List<span class="tag">&lt;<span class="name">String</span>&gt;</span> list);  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getXXXBeanList"</span> <span class="attr">resultType</span>=<span class="string">"XXBean"</span>&gt;</span></span><br><span class="line">　　select * from tableName where id in</span><br><span class="line">　　<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span>  </span><br><span class="line">　　　　#&#123;item&#125;</span><br><span class="line">　　<span class="tag">&lt;/<span class="name">foreach</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="多参数（String-list-）"><a href="#多参数（String-list-）" class="headerlink" title="多参数（String  list ）"></a>多参数（String  list ）</h3><h4 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h4><h6 id="方式-1：参数封装到-map-中，Dao-接口为-map"><a href="#方式-1：参数封装到-map-中，Dao-接口为-map" class="headerlink" title="方式 1：参数封装到 map 中，Dao 接口为 map"></a>方式 1：参数封装到 map 中，Dao 接口为 map</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">map.put(<span class="string">"score"</span>, <span class="number">90</span>);</span><br><span class="line">map.put(<span class="string">"list"</span>, list);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">operateBatch</span><span class="params">(Map&lt;String, Object&gt; map)</span></span>;</span><br></pre></td></tr></table></figure>
+<h6 id="方式-2：-param-注解-Dao-参数"><a href="#方式-2：-param-注解-Dao-参数" class="headerlink" title="方式 2：@param 注解 Dao 参数"></a>方式 2：@param 注解 Dao 参数</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">operateBatch</span><span class="params">(@Param(<span class="string">"score"</span>)</span><span class="keyword">int</span> score ,@<span class="title">Param</span><span class="params">(<span class="string">"list"</span>)</span>List&lt;Student&gt; list)</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"operateBatch"</span>&gt;</span></span><br><span class="line">        update student</span><br><span class="line">        set store=#&#123;score&#125;</span><br><span class="line">        where id in</span><br><span class="line">        <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">index</span>=<span class="string">"index"</span> <span class="attr">item</span>=<span class="string">"item"</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">            #&#123;item.id&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -469,11 +458,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">All</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">5-App</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">All</a>
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,10 +510,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Fastjson</a>
               </li>
              
@@ -529,11 +518,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,11 +538,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java-Word</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,7 +554,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java文件上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,10 +594,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -601,15 +606,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,11 +618,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring Data JPA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,6 +643,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浏览器解析工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +674,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,7 +690,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,7 +698,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,15 +706,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">产品管理</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">学习参考手册</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,7 +730,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考Think</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据库访问框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -717,19 +746,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">

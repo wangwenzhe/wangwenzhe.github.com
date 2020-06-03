@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="championwang&#39;s blog">
 <meta property="og:description" content="Lambdahttps://www.kancloud.cn/hanxt/javacrazy/1568811 Java反射http://www.51gjie.com/java/82 集合简述 Collection  集合的顶级接口。  List 列表  保证元素的存储顺序 — 有序； 有下标 —- 存储重复的元素 List 是有序可重复的集合  ArrayList  底层用数组存储数据。内存连续的，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-20T01:50:03.663Z">
+<meta property="og:updated_time" content="2020-06-03T10:01:29.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java">
 <meta name="twitter:description" content="Lambdahttps://www.kancloud.cn/hanxt/javacrazy/1568811 Java反射http://www.51gjie.com/java/82 集合简述 Collection  集合的顶级接口。  List 列表  保证元素的存储顺序 — 有序； 有下标 —- 存储重复的元素 List 是有序可重复的集合  ArrayList  底层用数组存储数据。内存连续的，">
@@ -93,8 +93,8 @@
 			</div>
 		</nav>
 		<nav style="margin-top: 80px; font-size: 13px; color: #4d4d4d;">
-			<p>总文章数 86</p>
-			<p>总字数 <span class="post-count">82.3k</span></p>
+			<p>总文章数 96</p>
+			<p>总字数 <span class="post-count">84.9k</span></p>
 		</nav>
 	</header>		
 </div>
@@ -280,7 +280,8 @@
 </li>
 </ol>
 <h2 id="Set-转换-String"><a href="#Set-转换-String" class="headerlink" title="Set  转换 String"></a>Set<string>  转换 String</string></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; result = XXXX;</span><br><span class="line">String.join(&quot;,&quot;, result); //逗号连接</span><br></pre></td></tr></table></figure>
-<h2 id="iterable-转-List或Set"><a href="#iterable-转-List或Set" class="headerlink" title="iterable 转 List或Set"></a>iterable 转 List或Set</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterable&lt;Law&gt; iterable = lawService.getAll();</span><br><span class="line"></span><br><span class="line">Set&lt;String&gt; result = StreamSupport.stream(iterable.spliterator(), false).map(Law::getName).collect(Collectors.toSet());</span><br><span class="line">        </span><br><span class="line">List&lt;Law&gt; result = StreamSupport.stream(iterable.spliterator(), false).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<h2 id="遍历-Map"><a href="#遍历-Map" class="headerlink" title="遍历 Map"></a>遍历 Map</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String key;</span><br><span class="line">Iterator&lt;String&gt; iterator = map.keySet().iterator();</span><br><span class="line">while (iterator.hasNext()) &#123;</span><br><span class="line">    key = iterator.next();</span><br><span class="line">    String value = (String) map.get(key);</span><br><span class="line"></span><br><span class="line">    System.out.println(key+&quot;:&quot;+value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Iterable-转-List或Set"><a href="#Iterable-转-List或Set" class="headerlink" title="Iterable 转 List或Set"></a>Iterable 转 List或Set</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterable&lt;Law&gt; iterable = lawService.getAll();</span><br><span class="line"></span><br><span class="line">Set&lt;String&gt; result = StreamSupport.stream(iterable.spliterator(), false).map(Law::getName).collect(Collectors.toSet());</span><br><span class="line">        </span><br><span class="line">List&lt;Law&gt; result = StreamSupport.stream(iterable.spliterator(), false).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
 <h2 id="Iterable-数量"><a href="#Iterable-数量" class="headerlink" title="Iterable 数量"></a>Iterable 数量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Iterable&lt;Integer&gt; newIterable = () -&gt; iter;</span><br><span class="line">long count = StreamSupport.stream(newIterable.spliterator(), false).count();</span><br></pre></td></tr></table></figure>
 <h2 id="多参数「同类型」"><a href="#多参数「同类型」" class="headerlink" title="多参数「同类型」"></a>多参数「同类型」</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void del(String... key) &#123;</span><br><span class="line">    if (key != null &amp;&amp; key.length &gt; 0) &#123;</span><br><span class="line">        if (key.length == 1) &#123;</span><br><span class="line">        	redisTemplate.delete(key[0]);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        	redisTemplate.delete(CollectionUtils.arrayToList(key));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="TreeMap、TreeSet"><a href="#TreeMap、TreeSet" class="headerlink" title="TreeMap、TreeSet"></a>TreeMap、TreeSet</h2><p><strong>待完善</strong>s</p>
@@ -622,11 +623,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">All</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">5-App</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">All</a>
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,11 +639,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color1">Android反编译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,11 +651,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BaiduMap</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,10 +675,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Fastjson</a>
               </li>
              
@@ -682,11 +683,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel 导入导出</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,11 +703,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA 远程调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JUnit</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java-Word</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,7 +719,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java编程规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Linux-Nginx流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Java文件上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,10 +759,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -754,15 +771,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,11 +783,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SLF4J+Logback</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVN</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring Boot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring Data JPA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,6 +808,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Sublime </a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">浏览器解析工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -810,11 +839,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows-winrar打包exe</a>
+                <a href="javascript:void(0)" class="js-tag color5">Oracle 安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -826,7 +855,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,7 +863,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spring MVC Post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -842,15 +871,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">产品管理</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">团队管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">探索</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">学习参考手册</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -862,7 +895,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考Think</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信公众号开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据库访问框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,19 +911,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">GitHub RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">经验</a>
+                <a href="javascript:void(0)" class="js-tag color3">禅道</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">签名证书SHA1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">经验</a>
               </li>
              
               <li class="article-tag-list-item">
